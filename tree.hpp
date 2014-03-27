@@ -29,7 +29,7 @@
  * $Date$ 2014/03/27
  * $Rev$ 0.1
  * $Author$ Benjamin Sientzoff
- * $URL$
+ * $URL$ http://www.github.com/blasterbug
  */
 
 #ifndef HASHWORK_HPP
@@ -42,42 +42,42 @@
 using std::sting;
 using std::list;
 
-// class for knots of a tree
+/// class for knots of a tree
 <template T = char>
 class Knot {
 	
 	private:
-		// letter stored into knot, the tag
+		/// letter stored into knot, the tag
 		T _tag;
-		// children of the knot
+		/// children of the knot
 		list<Knot<T>> _children;
 	
 	public:
-		// copy constructor
+		/// \brief copy constructor
 		Knot<T>(const Knot<T>&);
-		// constructors
+		/// \brief constructors
 		Knot<T>(T);
-		// destructor
+		/// \brief destructor
 		~Knot<T>();
-		// assignment operator
+		/// \brief assignment operator
 		Knot<T>& operator =(Knot<T>);
-		// equal operator
+		/// \brief equal operator
 		bool operator ==(const Knot<T>&, const Knot<T>&);
-		// ne operator
+		/// \brief ne operator
 		bool operator !=(const Knot<T>&, const Knot<T>&);
-		// Is the knot a leaf ?
+		/// \brief Is the knot a leaf ?
 		bool isLeaf();
-		// the height of the knot
+		/// \brief the height of the knot
 		int height();
-		// Hook up a new child
+		/// \brief Hook up a new child
 		void append(<T>);
-		// remove a child
+		/// \brief remove a child
 		void remove(<T>);
-		// get a representation of the knot
+		/// \brief get a representation of the knot
 		string toString();
 }
 
-// class for the tree, use Knot
+/// class for the tree, use Knot
 <template T = string>
 class Tree {
 	
@@ -85,29 +85,29 @@ class Tree {
 		Knot<T> _root;
 	
 	public:
-		// copy constructor
+		/// \brief copy constructor
 		Tree(const Tree<T>&);
-		// common constructor
+		/// \brief common constructor
 		Tree();
-		// destructor
+		/// \brief destructor
 		~Tree();
-		// assignment operator
+		/// \brief assignment operator
 		Tree<T>& operator =(Tree<T>);
-		// equal operator
+		/// \brief equal operator
 		bool operator ==(const Tree<T>&, const Tree<T>&);
-		// ne operator
+		/// \brief ne operator
 		bool operator !=(const Tree<T>&, const Tree<T>&);
-		// Is the element in the tree ?
+		/// \brief Is the element in the tree ?
 		bool contains(T);
-		// count among of appearances of a particular element
+		/// \brief count among of appearances of a particular element
 		int count(T);
-		// the height of the tree
+		/// \brief the height of the tree
 		int height();
-		// add an element in the tree
+		/// \brief add an element in the tree
 		void add(T);
-		// remove an element from the tree
+		/// \brief remove an element from the tree
 		void remove(T);
-		// get the whole list of elements in the tree
+		/// \brief get the whole list of elements in the tree
 		T[] elements();
 }
 

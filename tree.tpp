@@ -29,7 +29,7 @@
  * $Date$ 2014/03/27
  * $Rev$ 0.1
  * $Author$ Benjamin Sientzoff
- * $URL$
+ * $URL$ http://www.github.com/blasterbug
  */
 
 #ifndef HASHWORK_TPP
