@@ -49,7 +49,9 @@ class HashException : std::exception {
 		 * called then HashExceptions are threw
 		 * @param[in] cause description of exception origin
 		 */
-		HashException(char* cause) _cause(cause){}
+		HashException(char* cause):
+			_cause(cause)
+			{}
 		
 		/** destructor
 		 * currently, do anything special

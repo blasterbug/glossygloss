@@ -63,28 +63,36 @@ class Alveole{
 		 * Copy constructor
 		 * @param[in] other the alveole to copy
 		 */
-		Alveole(const Alveole<K,V> &other){
-			_key = other._key;
-			_value = other._value;
-			// if there are elements coming next
-			if(END != other._next){
-				_next = new Alveole(other._next);
-			}
-			else { _next = END; }
+		Alveole(const Alveole<K,V> &other):
+			_key(other._key),
+			_valu(other._value)
+			{
+				// if there are elements coming next
+				if(END != other._next){
+					_next = new Alveole(other._next);
+				}
+				else { _next = END; }
 		}
 		
 		/** Pair constructor
 		 * @param[in] key key of the pair
 		 * @param[in] value value of the pair
 		 */
-		Alveole(K key, V value) _key(key),c_value(value), _next(END){}
+		Alveole(K key, V value) :
+			_key(key), _value(value),
+			_next(END)
+			{}
 		
 		/** Complex constructor
 		 * @param[in] key key of the pair
 		 * @param[in] value value of the pair
 		 * @param[in] next adresse to the next alveole
 		 */
-		Alveole(K key, V value, Alveole<K,V>* next) _key(key), _value(value), _next(next){}
+		Alveole(K key, V value, Alveole<K,V>* next):
+			_key(key),
+			_value(value),
+			_next(next)
+			{}
 		
 		/** Does alveole have next ?
 		 * @param[out] true if elements coming next, else false
