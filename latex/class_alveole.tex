@@ -12,9 +12,23 @@
 \item 
 \hyperlink{class_alveole_a9e4aecc9d0671a5887bb11ed3aadfb8c}{Alveole} (K key, V value) \-\_\-key(key)
 \item 
-\hyperlink{class_alveole_a2e5ad3e79a9cabaee646590a7568c519}{\-\_\-value} (value)
+\hyperlink{class_alveole_ad28d7b0a0de255e2fcdaa0826dafa376}{c\-\_\-value} (value)
 \item 
 \hyperlink{class_alveole_a6e9f9d96861447f8406314dad1746176}{\-\_\-next} (\hyperlink{_hash_table_8hpp_a29fd18bed01c4d836c7ebfe73a125c3f}{E\-N\-D})
+\item 
+\hyperlink{class_alveole_acb54d4f5ede392e30c60c4e85e55239a}{Alveole} (K key, V value, \hyperlink{class_alveole}{Alveole}$<$ K, V $>$ $\ast$next) \-\_\-key(key)
+\item 
+\hyperlink{class_alveole_a2e5ad3e79a9cabaee646590a7568c519}{\-\_\-value} (value)
+\item 
+\hyperlink{class_alveole_afb926f1df7eb182975a5a5b52ded736d}{\-\_\-next} (next)
+\item 
+bool \hyperlink{class_alveole_a50d6115afd8f29ed898e210b51e901e5}{is\-Queue} ()
+\item 
+K \hyperlink{class_alveole_a851fe0cac8f81cae711385f10973cf5d}{get\-Key} ()
+\item 
+V \hyperlink{class_alveole_a0c56d83c6f8152a7674cddf1faf56bc5}{get\-Value} ()
+\item 
+void \hyperlink{class_alveole_afd3607532906bead78ba7c52f956e0b0}{set\-Value} (V n\-\_\-value)
 \end{DoxyCompactItemize}
 
 
@@ -42,11 +56,29 @@ Copy constructor
 \item[{V}]{value}
 \end{DoxyParamCaption}
 )}}\label{class_alveole_a9e4aecc9d0671a5887bb11ed3aadfb8c}
-pair constructor 
+Pair constructor 
 \begin{DoxyParams}[1]{Parameters}
 \mbox{\tt in}  & {\em key} & key of the pair \\
 \hline
 \mbox{\tt in}  & {\em value} & value of the pair \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_alveole_acb54d4f5ede392e30c60c4e85e55239a}{\index{Alveole@{Alveole}!Alveole@{Alveole}}
+\index{Alveole@{Alveole}!Alveole@{Alveole}}
+\subsubsection[{Alveole}]{\setlength{\rightskip}{0pt plus 5cm}Alveole\-::\-Alveole (
+\begin{DoxyParamCaption}
+\item[{K}]{key, }
+\item[{V}]{value, }
+\item[{{\bf Alveole}$<$ K, V $>$ $\ast$}]{next}
+\end{DoxyParamCaption}
+)}}\label{class_alveole_acb54d4f5ede392e30c60c4e85e55239a}
+Complex constructor 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em key} & key of the pair \\
+\hline
+\mbox{\tt in}  & {\em value} & value of the pair \\
+\hline
+\mbox{\tt in}  & {\em next} & adresse to the next alveole \\
 \hline
 \end{DoxyParams}
 
@@ -59,6 +91,13 @@ pair constructor
 \item[{{\bf E\-N\-D}}]{}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_alveole_a6e9f9d96861447f8406314dad1746176}
+\hypertarget{class_alveole_afb926f1df7eb182975a5a5b52ded736d}{\index{Alveole@{Alveole}!\-\_\-next@{\-\_\-next}}
+\index{\-\_\-next@{\-\_\-next}!Alveole@{Alveole}}
+\subsubsection[{\-\_\-next}]{\setlength{\rightskip}{0pt plus 5cm}Alveole\-::\-\_\-next (
+\begin{DoxyParamCaption}
+\item[{next}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_alveole_afb926f1df7eb182975a5a5b52ded736d}
 \hypertarget{class_alveole_a2e5ad3e79a9cabaee646590a7568c519}{\index{Alveole@{Alveole}!\-\_\-value@{\-\_\-value}}
 \index{\-\_\-value@{\-\_\-value}!Alveole@{Alveole}}
 \subsubsection[{\-\_\-value}]{\setlength{\rightskip}{0pt plus 5cm}Alveole\-::\-\_\-value (
@@ -66,6 +105,61 @@ pair constructor
 \item[{value}]{}
 \end{DoxyParamCaption}
 )}}\label{class_alveole_a2e5ad3e79a9cabaee646590a7568c519}
+\hypertarget{class_alveole_ad28d7b0a0de255e2fcdaa0826dafa376}{\index{Alveole@{Alveole}!c\-\_\-value@{c\-\_\-value}}
+\index{c\-\_\-value@{c\-\_\-value}!Alveole@{Alveole}}
+\subsubsection[{c\-\_\-value}]{\setlength{\rightskip}{0pt plus 5cm}Alveole\-::c\-\_\-value (
+\begin{DoxyParamCaption}
+\item[{value}]{}
+\end{DoxyParamCaption}
+)}}\label{class_alveole_ad28d7b0a0de255e2fcdaa0826dafa376}
+\hypertarget{class_alveole_a851fe0cac8f81cae711385f10973cf5d}{\index{Alveole@{Alveole}!get\-Key@{get\-Key}}
+\index{get\-Key@{get\-Key}!Alveole@{Alveole}}
+\subsubsection[{get\-Key}]{\setlength{\rightskip}{0pt plus 5cm}K Alveole\-::get\-Key (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_alveole_a851fe0cac8f81cae711385f10973cf5d}
+Get the key of an alveole 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt out}  & {\em key} & stored into the alveole \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_alveole_a0c56d83c6f8152a7674cddf1faf56bc5}{\index{Alveole@{Alveole}!get\-Value@{get\-Value}}
+\index{get\-Value@{get\-Value}!Alveole@{Alveole}}
+\subsubsection[{get\-Value}]{\setlength{\rightskip}{0pt plus 5cm}V Alveole\-::get\-Value (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_alveole_a0c56d83c6f8152a7674cddf1faf56bc5}
+Get the value stored into an alveole 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt out}  & {\em value} & of the alveole \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_alveole_a50d6115afd8f29ed898e210b51e901e5}{\index{Alveole@{Alveole}!is\-Queue@{is\-Queue}}
+\index{is\-Queue@{is\-Queue}!Alveole@{Alveole}}
+\subsubsection[{is\-Queue}]{\setlength{\rightskip}{0pt plus 5cm}bool Alveole\-::is\-Queue (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_alveole_a50d6115afd8f29ed898e210b51e901e5}
+Does alveole have next ? 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt out}  & {\em true} & if elements coming next, else false \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_alveole_afd3607532906bead78ba7c52f956e0b0}{\index{Alveole@{Alveole}!set\-Value@{set\-Value}}
+\index{set\-Value@{set\-Value}!Alveole@{Alveole}}
+\subsubsection[{set\-Value}]{\setlength{\rightskip}{0pt plus 5cm}void Alveole\-::set\-Value (
+\begin{DoxyParamCaption}
+\item[{V}]{n\-\_\-value}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_alveole_afd3607532906bead78ba7c52f956e0b0}
+Set the value stored into an alveole 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em n\-\_\-value} & The new value of the pair \\
+\hline
+\end{DoxyParams}
 
 
 The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}

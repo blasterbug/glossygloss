@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['tostring',['toString',['../class_knot.html#af8b780d91b4f2a43556c7b53c8f6243c',1,'Knot']]]
+  ['knot',['Knot',['../class_knot.html#a92883dc27430396af88d6e8a0b216d7d',1,'Knot']]]
 ];

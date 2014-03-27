@@ -1,89 +1,143 @@
 \begin{theindex}
 
   \item {$\sim $\discretionary {-}{}{}Bag\discretionary {-}{}{}Exception}
-    \subitem {Hash\discretionary {-}{}{}Exception}, \hyperpage{10}
+    \subitem {Hash\discretionary {-}{}{}Exception}, \hyperpage{11}
   \item {$\sim $\discretionary {-}{}{}Knot}
-    \subitem {Knot}, \hyperpage{11}
+    \subitem {Knot}, \hyperpage{12}
+  \item {$\sim $\discretionary {-}{}{}Tree}
+    \subitem {Tree}, \hyperpage{15}
+  \item {\discretionary {-}{}{}\_\discretionary {-}{}{}children}
+    \subitem {Knot}, \hyperpage{12}
   \item {\discretionary {-}{}{}\_\discretionary {-}{}{}next}
-    \subitem {Alveole}, \hyperpage{9}
+    \subitem {Alveole}, \hyperpage{10}
   \item {\discretionary {-}{}{}\_\discretionary {-}{}{}value}
-    \subitem {Alveole}, \hyperpage{9}
+    \subitem {Alveole}, \hyperpage{10}
 
   \indexspace
 
+  \item {add}
+    \subitem {Tree}, \hyperpage{15}
   \item {Alveole}, \hyperpage{9}
     \subitem {\discretionary {-}{}{}\_\discretionary {-}{}{}next}, 
-		\hyperpage{9}
+		\hyperpage{10}
     \subitem {\discretionary {-}{}{}\_\discretionary {-}{}{}value}, 
-		\hyperpage{9}
-    \subitem {Alveole}, \hyperpage{9}
+		\hyperpage{10}
+    \subitem {Alveole}, \hyperpage{9, 10}
+    \subitem {c\discretionary {-}{}{}\_\discretionary {-}{}{}value}, 
+		\hyperpage{10}
+    \subitem {get\discretionary {-}{}{}Key}, \hyperpage{10}
+    \subitem {get\discretionary {-}{}{}Value}, \hyperpage{10}
+    \subitem {is\discretionary {-}{}{}Queue}, \hyperpage{10}
+    \subitem {set\discretionary {-}{}{}Value}, \hyperpage{10}
   \item {append}
-    \subitem {Knot}, \hyperpage{11}
+    \subitem {Knot}, \hyperpage{12}
+
+  \indexspace
+
+  \item {c\discretionary {-}{}{}\_\discretionary {-}{}{}value}
+    \subitem {Alveole}, \hyperpage{10}
+  \item {contains}
+    \subitem {Tree}, \hyperpage{15}
+  \item {count}
+    \subitem {Tree}, \hyperpage{15}
 
   \indexspace
 
   \item {E\discretionary {-}{}{}N\discretionary {-}{}{}D}
     \subitem {Hash\discretionary {-}{}{}Table.\discretionary {-}{}{}hpp}, 
-		\hyperpage{14}
+		\hyperpage{18}
+  \item {elements}
+    \subitem {Tree}, \hyperpage{15}
 
   \indexspace
 
-  \item {Hash\discretionary {-}{}{}Exception}, \hyperpage{10}
+  \item {get\discretionary {-}{}{}Key}
+    \subitem {Alveole}, \hyperpage{10}
+  \item {get\discretionary {-}{}{}Value}
+    \subitem {Alveole}, \hyperpage{10}
+
+  \indexspace
+
+  \item {Hash\discretionary {-}{}{}Exception}, \hyperpage{11}
     \subitem {$\sim $\discretionary {-}{}{}Bag\discretionary {-}{}{}Exception}, 
-		\hyperpage{10}
-    \subitem {Hash\discretionary {-}{}{}Exception}, \hyperpage{10}
-    \subitem {Hash\discretionary {-}{}{}Exception}, \hyperpage{10}
-    \subitem {what}, \hyperpage{10}
+		\hyperpage{11}
+    \subitem {Hash\discretionary {-}{}{}Exception}, \hyperpage{11}
+    \subitem {Hash\discretionary {-}{}{}Exception}, \hyperpage{11}
+    \subitem {what}, \hyperpage{11}
   \item {Hash\discretionary {-}{}{}Exception.\discretionary {-}{}{}hpp}, 
-		\hyperpage{13}
+		\hyperpage{17}
   \item {Hash\discretionary {-}{}{}Table.\discretionary {-}{}{}hpp}, 
-		\hyperpage{13}
+		\hyperpage{17}
     \subitem {E\discretionary {-}{}{}N\discretionary {-}{}{}D}, 
-		\hyperpage{14}
+		\hyperpage{18}
   \item {height}
-    \subitem {Knot}, \hyperpage{11}
+    \subitem {Knot}, \hyperpage{13}
+    \subitem {Tree}, \hyperpage{15}
 
   \indexspace
 
   \item {is\discretionary {-}{}{}Leaf}
-    \subitem {Knot}, \hyperpage{11}
+    \subitem {Knot}, \hyperpage{13}
+  \item {is\discretionary {-}{}{}Queue}
+    \subitem {Alveole}, \hyperpage{10}
 
   \indexspace
 
-  \item {Knot}, \hyperpage{11}
-    \subitem {$\sim $\discretionary {-}{}{}Knot}, \hyperpage{11}
-    \subitem {append}, \hyperpage{11}
-    \subitem {height}, \hyperpage{11}
-    \subitem {is\discretionary {-}{}{}Leaf}, \hyperpage{11}
-    \subitem {Knot}, \hyperpage{11}
-    \subitem {operator=}, \hyperpage{11}
-    \subitem {operator==}, \hyperpage{11}
-    \subitem {remove}, \hyperpage{11}
-    \subitem {to\discretionary {-}{}{}String}, \hyperpage{11}
+  \item {Knot}, \hyperpage{12}
+    \subitem {$\sim $\discretionary {-}{}{}Knot}, \hyperpage{12}
+    \subitem {\discretionary {-}{}{}\_\discretionary {-}{}{}children}, 
+		\hyperpage{12}
+    \subitem {append}, \hyperpage{12}
+    \subitem {height}, \hyperpage{13}
+    \subitem {is\discretionary {-}{}{}Leaf}, \hyperpage{13}
+    \subitem {Knot}, \hyperpage{12}
+    \subitem {operator=}, \hyperpage{13}
+    \subitem {operator==}, \hyperpage{13}
+    \subitem {remove}, \hyperpage{13}
+    \subitem {to\discretionary {-}{}{}String}, \hyperpage{14}
 
   \indexspace
 
   \item {operator=}
-    \subitem {Knot}, \hyperpage{11}
+    \subitem {Knot}, \hyperpage{13}
+    \subitem {Tree}, \hyperpage{15}
   \item {operator==}
-    \subitem {Knot}, \hyperpage{11}
+    \subitem {Knot}, \hyperpage{13}
+    \subitem {Tree}, \hyperpage{15}
 
   \indexspace
 
   \item {R\discretionary {-}{}{}E\discretionary {-}{}{}A\discretionary {-}{}{}D\discretionary {-}{}{}M\discretionary {-}{}{}E.\discretionary {-}{}{}md}, 
-		\hyperpage{14}
+		\hyperpage{18}
   \item {remove}
-    \subitem {Knot}, \hyperpage{11}
+    \subitem {Knot}, \hyperpage{13}
+    \subitem {Tree}, \hyperpage{15}
+
+  \indexspace
+
+  \item {set\discretionary {-}{}{}Value}
+    \subitem {Alveole}, \hyperpage{10}
 
   \indexspace
 
   \item {to\discretionary {-}{}{}String}
-    \subitem {Knot}, \hyperpage{11}
-  \item {tree.\discretionary {-}{}{}hpp}, \hyperpage{14}
+    \subitem {Knot}, \hyperpage{14}
+  \item {Tree}, \hyperpage{14}
+    \subitem {$\sim $\discretionary {-}{}{}Tree}, \hyperpage{15}
+    \subitem {add}, \hyperpage{15}
+    \subitem {contains}, \hyperpage{15}
+    \subitem {count}, \hyperpage{15}
+    \subitem {elements}, \hyperpage{15}
+    \subitem {height}, \hyperpage{15}
+    \subitem {operator=}, \hyperpage{15}
+    \subitem {operator==}, \hyperpage{15}
+    \subitem {remove}, \hyperpage{15}
+    \subitem {Tree}, \hyperpage{15}
+  \item {tree.\discretionary {-}{}{}hpp}, \hyperpage{18}
 
   \indexspace
 
   \item {what}
-    \subitem {Hash\discretionary {-}{}{}Exception}, \hyperpage{10}
+    \subitem {Hash\discretionary {-}{}{}Exception}, \hyperpage{11}
 
 \end{theindex}

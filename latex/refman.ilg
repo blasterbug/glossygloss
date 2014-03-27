@@ -1,11 +1,16 @@
 This is makeindex, version 2.15 [TeX Live 2013] (kpathsea + Thai support).
 Scanning input file refman.idx....
-!! Input index error (file = refman.idx, line = 30):
+!! Input index error (file = refman.idx, line = 44):
    -- Extra `!' at position 33 of first argument.
-!! Input index error (file = refman.idx, line = 31):
+!! Input index error (file = refman.idx, line = 45):
    -- Extra `!' at position 24 of first argument.
-done (43 entries accepted, 2 rejected).
-Sorting entries....done (237 comparisons).
-Generating output file refman.ind....done (89 lines written, 0 warnings).
+
+!! Input index error (file = refman.idx, line = 71):
+   -- Extra `!' at position 33 of first argument.
+!! Input index error (file = refman.idx, line = 72):
+   -- Extra `!' at position 24 of first argument.
+done (80 entries accepted, 4 rejected).
+Sorting entries....done (532 comparisons).
+Generating output file refman.ind....done (143 lines written, 0 warnings).
 Output written in refman.ind.
 Transcript written in refman.ilg.

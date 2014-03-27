@@ -117,20 +117,36 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;            }</div>
 <div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;            <span class="keywordflow">else</span> { _next = <a class="code" href="_hash_table_8hpp.html#a29fd18bed01c4d836c7ebfe73a125c3f">END</a>; }</div>
 <div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        }</div>
-<div class="line"><a name="l00080"></a><span class="lineno"><a class="line" href="class_alveole.html#a6e9f9d96861447f8406314dad1746176">   80</a></span>&#160;        <a class="code" href="class_alveole.html#a3ebfa3f42acae6ad928e8168114b3965">Alveole</a>(K key, V value) _key(key), _value(value), <a class="code" href="class_alveole.html#a6e9f9d96861447f8406314dad1746176">_next</a>(<a class="code" href="_hash_table_8hpp.html#a29fd18bed01c4d836c7ebfe73a125c3f">END</a>){}</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;        </div>
+<div class="line"><a name="l00080"></a><span class="lineno"><a class="line" href="class_alveole.html#a6e9f9d96861447f8406314dad1746176">   80</a></span>&#160;        <a class="code" href="class_alveole.html#a3ebfa3f42acae6ad928e8168114b3965">Alveole</a>(K key, V value) _key(key),<a class="code" href="class_alveole.html#ad28d7b0a0de255e2fcdaa0826dafa376">c_value</a>(value), <a class="code" href="class_alveole.html#a6e9f9d96861447f8406314dad1746176">_next</a>(<a class="code" href="_hash_table_8hpp.html#a29fd18bed01c4d836c7ebfe73a125c3f">END</a>){}</div>
 <div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;        </div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;}</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;<span class="preprocessor">#endif // HASHTABLE_HPP</span></div>
+<div class="line"><a name="l00087"></a><span class="lineno"><a class="line" href="class_alveole.html#afb926f1df7eb182975a5a5b52ded736d">   87</a></span>&#160;        <a class="code" href="class_alveole.html#a3ebfa3f42acae6ad928e8168114b3965">Alveole</a>(K key, V value, <a class="code" href="class_alveole.html">Alveole&lt;K,V&gt;</a>* next) _key(key), _value(value), <a class="code" href="class_alveole.html#afb926f1df7eb182975a5a5b52ded736d">_next</a>(next){}</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;        </div>
+<div class="line"><a name="l00092"></a><span class="lineno"><a class="line" href="class_alveole.html#a50d6115afd8f29ed898e210b51e901e5">   92</a></span>&#160;        <span class="keywordtype">bool</span> <a class="code" href="class_alveole.html#a50d6115afd8f29ed898e210b51e901e5">isQueue</a>(){ <span class="keywordflow">return</span> <a class="code" href="_hash_table_8hpp.html#a29fd18bed01c4d836c7ebfe73a125c3f">END</a> == _next; }</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;        </div>
+<div class="line"><a name="l00097"></a><span class="lineno"><a class="line" href="class_alveole.html#a851fe0cac8f81cae711385f10973cf5d">   97</a></span>&#160;         K <a class="code" href="class_alveole.html#a851fe0cac8f81cae711385f10973cf5d">getKey</a>(){ <span class="keywordflow">return</span> _key; }</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;         </div>
+<div class="line"><a name="l00102"></a><span class="lineno"><a class="line" href="class_alveole.html#a0c56d83c6f8152a7674cddf1faf56bc5">  102</a></span>&#160;        V <a class="code" href="class_alveole.html#a0c56d83c6f8152a7674cddf1faf56bc5">getValue</a>(){ <span class="keywordflow">return</span> _value; }</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;         </div>
+<div class="line"><a name="l00107"></a><span class="lineno"><a class="line" href="class_alveole.html#afd3607532906bead78ba7c52f956e0b0">  107</a></span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_alveole.html#afd3607532906bead78ba7c52f956e0b0">setValue</a>(V n_value){ _value = n_value; }</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;};</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;<span class="preprocessor">#endif // HASHTABLE_HPP</span></div>
 <div class="ttc" id="_hash_exception_8hpp_html"><div class="ttname"><a href="_hash_exception_8hpp.html">HashException.hpp</a></div></div>
 <div class="ttc" id="_hash_table_8hpp_html_a29fd18bed01c4d836c7ebfe73a125c3f"><div class="ttname"><a href="_hash_table_8hpp.html#a29fd18bed01c4d836c7ebfe73a125c3f">END</a></div><div class="ttdeci">#define END</div><div class="ttdef"><b>Definition:</b> HashTable.hpp:41</div></div>
+<div class="ttc" id="class_alveole_html_afd3607532906bead78ba7c52f956e0b0"><div class="ttname"><a href="class_alveole.html#afd3607532906bead78ba7c52f956e0b0">Alveole::setValue</a></div><div class="ttdeci">void setValue(V n_value)</div><div class="ttdef"><b>Definition:</b> HashTable.hpp:107</div></div>
 <div class="ttc" id="class_alveole_html_a6e9f9d96861447f8406314dad1746176"><div class="ttname"><a href="class_alveole.html#a6e9f9d96861447f8406314dad1746176">Alveole::_next</a></div><div class="ttdeci">_next(END)</div><div class="ttdef"><b>Definition:</b> HashTable.hpp:80</div></div>
 <div class="ttc" id="class_alveole_html"><div class="ttname"><a href="class_alveole.html">Alveole</a></div><div class="ttdef"><b>Definition:</b> HashTable.hpp:56</div></div>
 <div class="ttc" id="class_alveole_html_a3ebfa3f42acae6ad928e8168114b3965"><div class="ttname"><a href="class_alveole.html#a3ebfa3f42acae6ad928e8168114b3965">Alveole::Alveole</a></div><div class="ttdeci">Alveole(const Alveole&lt; K, V &gt; &amp;other)</div><div class="ttdef"><b>Definition:</b> HashTable.hpp:66</div></div>
+<div class="ttc" id="class_alveole_html_a0c56d83c6f8152a7674cddf1faf56bc5"><div class="ttname"><a href="class_alveole.html#a0c56d83c6f8152a7674cddf1faf56bc5">Alveole::getValue</a></div><div class="ttdeci">V getValue()</div><div class="ttdef"><b>Definition:</b> HashTable.hpp:102</div></div>
+<div class="ttc" id="class_alveole_html_a851fe0cac8f81cae711385f10973cf5d"><div class="ttname"><a href="class_alveole.html#a851fe0cac8f81cae711385f10973cf5d">Alveole::getKey</a></div><div class="ttdeci">K getKey()</div><div class="ttdef"><b>Definition:</b> HashTable.hpp:97</div></div>
+<div class="ttc" id="class_alveole_html_afb926f1df7eb182975a5a5b52ded736d"><div class="ttname"><a href="class_alveole.html#afb926f1df7eb182975a5a5b52ded736d">Alveole::_next</a></div><div class="ttdeci">_next(next)</div><div class="ttdef"><b>Definition:</b> HashTable.hpp:87</div></div>
+<div class="ttc" id="class_alveole_html_a50d6115afd8f29ed898e210b51e901e5"><div class="ttname"><a href="class_alveole.html#a50d6115afd8f29ed898e210b51e901e5">Alveole::isQueue</a></div><div class="ttdeci">bool isQueue()</div><div class="ttdef"><b>Definition:</b> HashTable.hpp:92</div></div>
+<div class="ttc" id="class_alveole_html_ad28d7b0a0de255e2fcdaa0826dafa376"><div class="ttname"><a href="class_alveole.html#ad28d7b0a0de255e2fcdaa0826dafa376">Alveole::c_value</a></div><div class="ttdeci">c_value(value)</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Mar 27 2014 21:48:43 for HashTable by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu Mar 27 2014 23:22:19 for HashTable by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

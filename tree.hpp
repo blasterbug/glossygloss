@@ -37,7 +37,6 @@
 
 #include <string>
 #include <list>
-#include "Alist.hpp"
 
 using std::sting;
 using std::list;
@@ -53,29 +52,111 @@ class Knot {
 		list<Knot<T>> _children;
 	
 	public:
-		/// \brief copy constructor
-		Knot<T>(const Knot<T>&);
-		/// \brief constructors
-		Knot<T>(T);
-		/// \brief destructor
-		~Knot<T>();
-		/// \brief assignment operator
-		Knot<T>& operator =(Knot<T>);
-		/// \brief equal operator
-		bool operator ==(const Knot<T>&, const Knot<T>&);
-		/// \brief ne operator
-		bool operator !=(const Knot<T>&, const Knot<T>&);
-		/// \brief Is the knot a leaf ?
-		bool isLeaf();
-		/// \brief the height of the knot
-		int height();
-		/// \brief Hook up a new child
-		void append(<T>);
-		/// \brief remove a child
-		void remove(<T>);
+		/** Copy constructor
+		 * @param[in] other Knot to copy
+		 */
+		Knot<T>(const Knot<T> &other) _tag(other._tag), _children(other._children)
+		/** Simple constructor
+		 * @param[in] data to store into the knot
+		 */
+		Knot<T>(T data){
+			// initialize the list
+			_children = list<Knot<T>>(Knot<T>, sizeof(Knot<T>>));
+		}
+		/** Destructor for knot
+		 */
+		~Knot<T>(){
+			// usefull ?
+			delete _children;
+		}
+		
+		/** assignment operator overload
+		 * @param[in] other knot to assign
+		 * @param[out] assigned knot
+		 */
+		Knot<T>& operator =(Knot<T> &other){
+			// prevent objet copying itself
+			if(this != &other){
+				this->_tag = other._key;
+				this.->_children = other._children;
+			}
+			return (*this); // allow a = b = c
+		}
+		
+		/** equality operator
+		 * @param[in] lhs left hand side, first knot to compare
+		 * @param[in] rhs right hand side, second knot to compare
+		 * @param[out] true if knots have the same memory adress, else false
+		 */
+		operator ==(const Knot<T> &lhs, const Knot<T> &rhs){
+			// same adress -> same item
+			return &lhs == &rhs;
+		}
+		/** inequality operator
+		 * @param[in] lhs first knot to compare
+		 * @param[in] rhs second knot to compare
+		 * @param[out] true if knots have not the same memory adress, else false
+		 */
+		bool operator !=(const Knot<T> &lhs, const Knot<T> &rhs){
+			return &lhs != &rhs;
+			// return not(lhs == rhs);
+		}
+		/** Is the knot a leaf ?
+		 * @param[out] true, if no child, else false
+		 */
+		bool isLeaf(){
+			return 0 == _children.size();
+		}
+		/** The height of the knot
+		 * @param[out] height of the knot
+		 */
+		int height(){
+			if(isLeaf()){
+				return 0;
+			}
+			else {
+				// start heights at zero
+				// heights[0] : greatest height, heights[1] : computed height in the loop
+				int heights[2] = {0,0};
+				// for each child, using C++11 syntax
+				//for(_children::iterator it=_children.begin(); it!=_children.end(); ++it){
+				for(Knot<T> child : _children){
+					// compute child height and store it
+					heights[1] = child.height();
+					// if computed height is greater then the old one
+					if(heights[0] < heights[1]){
+						// store it as the new greate one
+						heights[0] = heights[1];
+					} // else, nothing
+				}
+				return heights[0];
+			}
+		}
+		/** Hook up a new child to the knot
+		 * @param[in] n_data new data to store as a child of the knot
+		 */
+		void append(<T> n_data){
+			// add the value in chilmdren list as a new knot
+			_children.push_front(new Knot<T>(n_data));
+		}
+		/** Remove a leaf from the knot
+		 * @param[in] data data of the knot's tag to remove
+		 */
+		void remove(<T> data){
+			// remove child with the right tag
+			list<int>::iterator it=_children.begin();
+			bool removed = false;
+			while(it != it.end() and not removed){
+				if(it->_tag == data and it->isLeaf()){
+					removed = true;
+					delete it;
+				}
+				++it;
+			}
+		}
 		/// \brief get a representation of the knot
 		string toString();
-}
+};
 
 /// class for the tree, use Knot
 <template T = string>
@@ -109,9 +190,8 @@ class Tree {
 		void remove(T);
 		/// \brief get the whole list of elements in the tree
 		T[] elements();
-}
+};
 
 
-#include "HashWord.tpp"
 
 #endif // HASHWORK_HPP

@@ -11,43 +11,67 @@
 \contentsline {subsection}{\numberline {5.1.2}Constructor \& Destructor Documentation}{9}{subsection.5.1.2}
 \contentsline {subsubsection}{\numberline {5.1.2.1}Alveole}{9}{subsubsection.5.1.2.1}
 \contentsline {subsubsection}{\numberline {5.1.2.2}Alveole}{9}{subsubsection.5.1.2.2}
-\contentsline {subsection}{\numberline {5.1.3}Member Function Documentation}{9}{subsection.5.1.3}
-\contentsline {subsubsection}{\numberline {5.1.3.1}\discretionary {-}{}{}\_\discretionary {-}{}{}next}{9}{subsubsection.5.1.3.1}
-\contentsline {subsubsection}{\numberline {5.1.3.2}\discretionary {-}{}{}\_\discretionary {-}{}{}value}{10}{subsubsection.5.1.3.2}
-\contentsline {section}{\numberline {5.2}Hash\discretionary {-}{}{}Exception Class Reference}{10}{section.5.2}
-\contentsline {subsection}{\numberline {5.2.1}Detailed Description}{10}{subsection.5.2.1}
-\contentsline {subsection}{\numberline {5.2.2}Constructor \& Destructor Documentation}{10}{subsection.5.2.2}
-\contentsline {subsubsection}{\numberline {5.2.2.1}Hash\discretionary {-}{}{}Exception}{10}{subsubsection.5.2.2.1}
-\contentsline {subsubsection}{\numberline {5.2.2.2}$\sim $\discretionary {-}{}{}Bag\discretionary {-}{}{}Exception}{10}{subsubsection.5.2.2.2}
-\contentsline {subsection}{\numberline {5.2.3}Member Function Documentation}{10}{subsection.5.2.3}
-\contentsline {subsubsection}{\numberline {5.2.3.1}what}{10}{subsubsection.5.2.3.1}
-\contentsline {section}{\numberline {5.3}Knot Class Reference}{11}{section.5.3}
-\contentsline {subsection}{\numberline {5.3.1}Constructor \& Destructor Documentation}{11}{subsection.5.3.1}
-\contentsline {subsubsection}{\numberline {5.3.1.1}Knot}{11}{subsubsection.5.3.1.1}
-\contentsline {subsubsection}{\numberline {5.3.1.2}Knot}{11}{subsubsection.5.3.1.2}
-\contentsline {subsubsection}{\numberline {5.3.1.3}$\sim $\discretionary {-}{}{}Knot}{11}{subsubsection.5.3.1.3}
-\contentsline {subsection}{\numberline {5.3.2}Member Function Documentation}{11}{subsection.5.3.2}
-\contentsline {subsubsection}{\numberline {5.3.2.1}append}{11}{subsubsection.5.3.2.1}
-\contentsline {subsubsection}{\numberline {5.3.2.2}height}{11}{subsubsection.5.3.2.2}
-\contentsline {subsubsection}{\numberline {5.3.2.3}is\discretionary {-}{}{}Leaf}{11}{subsubsection.5.3.2.3}
-\contentsline {subsubsection}{\numberline {5.3.2.4}operator!=}{11}{subsubsection.5.3.2.4}
-\contentsline {subsubsection}{\numberline {5.3.2.5}operator=}{11}{subsubsection.5.3.2.5}
-\contentsline {subsubsection}{\numberline {5.3.2.6}operator==}{11}{subsubsection.5.3.2.6}
-\contentsline {subsubsection}{\numberline {5.3.2.7}remove}{11}{subsubsection.5.3.2.7}
-\contentsline {subsubsection}{\numberline {5.3.2.8}to\discretionary {-}{}{}String}{11}{subsubsection.5.3.2.8}
-\contentsline {chapter}{\numberline {6}File Documentation}{13}{chapter.6}
-\contentsline {section}{\numberline {6.1}Hash\discretionary {-}{}{}Exception.\discretionary {-}{}{}hpp File Reference}{13}{section.6.1}
-\contentsline {subsection}{\numberline {6.1.1}Detailed Description}{13}{subsection.6.1.1}
-\contentsline {subsection}{\numberline {6.1.2}File description}{13}{subsection.6.1.2}
-\contentsline {subsection}{\numberline {6.1.3}Copyright}{13}{subsection.6.1.3}
-\contentsline {subsection}{\numberline {6.1.4}File informations}{13}{subsection.6.1.4}
-\contentsline {section}{\numberline {6.2}Hash\discretionary {-}{}{}Table.\discretionary {-}{}{}hpp File Reference}{13}{section.6.2}
-\contentsline {subsection}{\numberline {6.2.1}Detailed Description}{14}{subsection.6.2.1}
-\contentsline {subsection}{\numberline {6.2.2}File description}{14}{subsection.6.2.2}
-\contentsline {subsection}{\numberline {6.2.3}Copyright}{14}{subsection.6.2.3}
-\contentsline {subsection}{\numberline {6.2.4}File informations}{14}{subsection.6.2.4}
-\contentsline {subsection}{\numberline {6.2.5}Macro Definition Documentation}{14}{subsection.6.2.5}
-\contentsline {subsubsection}{\numberline {6.2.5.1}E\discretionary {-}{}{}N\discretionary {-}{}{}D}{14}{subsubsection.6.2.5.1}
-\contentsline {section}{\numberline {6.3}R\discretionary {-}{}{}E\discretionary {-}{}{}A\discretionary {-}{}{}D\discretionary {-}{}{}M\discretionary {-}{}{}E.\discretionary {-}{}{}md File Reference}{14}{section.6.3}
-\contentsline {section}{\numberline {6.4}tree.\discretionary {-}{}{}hpp File Reference}{14}{section.6.4}
-\contentsline {chapter}{Index}{16}{section*.9}
+\contentsline {subsubsection}{\numberline {5.1.2.3}Alveole}{10}{subsubsection.5.1.2.3}
+\contentsline {subsection}{\numberline {5.1.3}Member Function Documentation}{10}{subsection.5.1.3}
+\contentsline {subsubsection}{\numberline {5.1.3.1}\discretionary {-}{}{}\_\discretionary {-}{}{}next}{10}{subsubsection.5.1.3.1}
+\contentsline {subsubsection}{\numberline {5.1.3.2}\discretionary {-}{}{}\_\discretionary {-}{}{}next}{10}{subsubsection.5.1.3.2}
+\contentsline {subsubsection}{\numberline {5.1.3.3}\discretionary {-}{}{}\_\discretionary {-}{}{}value}{10}{subsubsection.5.1.3.3}
+\contentsline {subsubsection}{\numberline {5.1.3.4}c\discretionary {-}{}{}\_\discretionary {-}{}{}value}{10}{subsubsection.5.1.3.4}
+\contentsline {subsubsection}{\numberline {5.1.3.5}get\discretionary {-}{}{}Key}{10}{subsubsection.5.1.3.5}
+\contentsline {subsubsection}{\numberline {5.1.3.6}get\discretionary {-}{}{}Value}{10}{subsubsection.5.1.3.6}
+\contentsline {subsubsection}{\numberline {5.1.3.7}is\discretionary {-}{}{}Queue}{10}{subsubsection.5.1.3.7}
+\contentsline {subsubsection}{\numberline {5.1.3.8}set\discretionary {-}{}{}Value}{10}{subsubsection.5.1.3.8}
+\contentsline {section}{\numberline {5.2}Hash\discretionary {-}{}{}Exception Class Reference}{11}{section.5.2}
+\contentsline {subsection}{\numberline {5.2.1}Detailed Description}{11}{subsection.5.2.1}
+\contentsline {subsection}{\numberline {5.2.2}Constructor \& Destructor Documentation}{11}{subsection.5.2.2}
+\contentsline {subsubsection}{\numberline {5.2.2.1}Hash\discretionary {-}{}{}Exception}{11}{subsubsection.5.2.2.1}
+\contentsline {subsubsection}{\numberline {5.2.2.2}$\sim $\discretionary {-}{}{}Bag\discretionary {-}{}{}Exception}{11}{subsubsection.5.2.2.2}
+\contentsline {subsection}{\numberline {5.2.3}Member Function Documentation}{11}{subsection.5.2.3}
+\contentsline {subsubsection}{\numberline {5.2.3.1}what}{11}{subsubsection.5.2.3.1}
+\contentsline {section}{\numberline {5.3}Knot Class Reference}{12}{section.5.3}
+\contentsline {subsection}{\numberline {5.3.1}Detailed Description}{12}{subsection.5.3.1}
+\contentsline {subsection}{\numberline {5.3.2}Constructor \& Destructor Documentation}{12}{subsection.5.3.2}
+\contentsline {subsubsection}{\numberline {5.3.2.1}Knot}{12}{subsubsection.5.3.2.1}
+\contentsline {subsubsection}{\numberline {5.3.2.2}$\sim $\discretionary {-}{}{}Knot}{12}{subsubsection.5.3.2.2}
+\contentsline {subsection}{\numberline {5.3.3}Member Function Documentation}{12}{subsection.5.3.3}
+\contentsline {subsubsection}{\numberline {5.3.3.1}\discretionary {-}{}{}\_\discretionary {-}{}{}children}{12}{subsubsection.5.3.3.1}
+\contentsline {subsubsection}{\numberline {5.3.3.2}append}{12}{subsubsection.5.3.3.2}
+\contentsline {subsubsection}{\numberline {5.3.3.3}height}{13}{subsubsection.5.3.3.3}
+\contentsline {subsubsection}{\numberline {5.3.3.4}is\discretionary {-}{}{}Leaf}{13}{subsubsection.5.3.3.4}
+\contentsline {subsubsection}{\numberline {5.3.3.5}operator!=}{13}{subsubsection.5.3.3.5}
+\contentsline {subsubsection}{\numberline {5.3.3.6}operator=}{13}{subsubsection.5.3.3.6}
+\contentsline {subsubsection}{\numberline {5.3.3.7}operator==}{13}{subsubsection.5.3.3.7}
+\contentsline {subsubsection}{\numberline {5.3.3.8}remove}{13}{subsubsection.5.3.3.8}
+\contentsline {subsubsection}{\numberline {5.3.3.9}to\discretionary {-}{}{}String}{14}{subsubsection.5.3.3.9}
+\contentsline {section}{\numberline {5.4}Tree Class Reference}{14}{section.5.4}
+\contentsline {subsection}{\numberline {5.4.1}Detailed Description}{14}{subsection.5.4.1}
+\contentsline {subsection}{\numberline {5.4.2}Constructor \& Destructor Documentation}{15}{subsection.5.4.2}
+\contentsline {subsubsection}{\numberline {5.4.2.1}Tree}{15}{subsubsection.5.4.2.1}
+\contentsline {subsubsection}{\numberline {5.4.2.2}Tree}{15}{subsubsection.5.4.2.2}
+\contentsline {subsubsection}{\numberline {5.4.2.3}$\sim $\discretionary {-}{}{}Tree}{15}{subsubsection.5.4.2.3}
+\contentsline {subsection}{\numberline {5.4.3}Member Function Documentation}{15}{subsection.5.4.3}
+\contentsline {subsubsection}{\numberline {5.4.3.1}add}{15}{subsubsection.5.4.3.1}
+\contentsline {subsubsection}{\numberline {5.4.3.2}contains}{15}{subsubsection.5.4.3.2}
+\contentsline {subsubsection}{\numberline {5.4.3.3}count}{15}{subsubsection.5.4.3.3}
+\contentsline {subsubsection}{\numberline {5.4.3.4}elements}{15}{subsubsection.5.4.3.4}
+\contentsline {subsubsection}{\numberline {5.4.3.5}height}{15}{subsubsection.5.4.3.5}
+\contentsline {subsubsection}{\numberline {5.4.3.6}operator!=}{15}{subsubsection.5.4.3.6}
+\contentsline {subsubsection}{\numberline {5.4.3.7}operator=}{15}{subsubsection.5.4.3.7}
+\contentsline {subsubsection}{\numberline {5.4.3.8}operator==}{15}{subsubsection.5.4.3.8}
+\contentsline {subsubsection}{\numberline {5.4.3.9}remove}{16}{subsubsection.5.4.3.9}
+\contentsline {chapter}{\numberline {6}File Documentation}{17}{chapter.6}
+\contentsline {section}{\numberline {6.1}Hash\discretionary {-}{}{}Exception.\discretionary {-}{}{}hpp File Reference}{17}{section.6.1}
+\contentsline {subsection}{\numberline {6.1.1}Detailed Description}{17}{subsection.6.1.1}
+\contentsline {subsection}{\numberline {6.1.2}File description}{17}{subsection.6.1.2}
+\contentsline {subsection}{\numberline {6.1.3}Copyright}{17}{subsection.6.1.3}
+\contentsline {subsection}{\numberline {6.1.4}File informations}{17}{subsection.6.1.4}
+\contentsline {section}{\numberline {6.2}Hash\discretionary {-}{}{}Table.\discretionary {-}{}{}hpp File Reference}{17}{section.6.2}
+\contentsline {subsection}{\numberline {6.2.1}Detailed Description}{18}{subsection.6.2.1}
+\contentsline {subsection}{\numberline {6.2.2}File description}{18}{subsection.6.2.2}
+\contentsline {subsection}{\numberline {6.2.3}Copyright}{18}{subsection.6.2.3}
+\contentsline {subsection}{\numberline {6.2.4}File informations}{18}{subsection.6.2.4}
+\contentsline {subsection}{\numberline {6.2.5}Macro Definition Documentation}{18}{subsection.6.2.5}
+\contentsline {subsubsection}{\numberline {6.2.5.1}E\discretionary {-}{}{}N\discretionary {-}{}{}D}{18}{subsubsection.6.2.5.1}
+\contentsline {section}{\numberline {6.3}R\discretionary {-}{}{}E\discretionary {-}{}{}A\discretionary {-}{}{}D\discretionary {-}{}{}M\discretionary {-}{}{}E.\discretionary {-}{}{}md File Reference}{18}{section.6.3}
+\contentsline {section}{\numberline {6.4}tree.\discretionary {-}{}{}hpp File Reference}{18}{section.6.4}
+\contentsline {chapter}{Index}{20}{section*.10}

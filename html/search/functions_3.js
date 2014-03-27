@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['isleaf',['isLeaf',['../class_knot.html#a68386ab11edd866495dfbcf61cab0e01',1,'Knot']]]
+  ['elements',['elements',['../class_tree.html#ab6844d5e6d1ed48ff3c7c205a8a5b16b',1,'Tree']]]
 ];

@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['operator_21_3d',['operator!=',['../class_knot.html#a9c74db22b55223425df18b137046031c',1,'Knot']]],
-  ['operator_3d',['operator=',['../class_knot.html#aeb819a0e20abb34efb8723ed87b8709f',1,'Knot']]],
-  ['operator_3d_3d',['operator==',['../class_knot.html#a8010e44411d47b302c1fe0afa3ac8c31',1,'Knot']]]
+  ['hashexception',['HashException',['../class_hash_exception.html#a8c2082a0f1bd55ff67869045d26d79b5',1,'HashException']]],
+  ['height',['height',['../class_knot.html#a9988255f899344c9f16797c4b918ac7b',1,'Knot::height()'],['../class_tree.html#a70ffa62a683750147c7e0243c4a15c0c',1,'Tree::height()']]]
 ];

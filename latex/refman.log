@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2014.2.2)  27 MAR 2014 21:48
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2014.2.2)  27 MAR 2014 23:22
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1048,15 +1048,19 @@ LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <6> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1.
  [3
 
-])
+]
+LaTeX Font Info:    Font shape `T1/phv/bx/n' in size <7> not available
+(Font)              Font shape `T1/phv/b/n' tried instead on input line 70.
+LaTeX Font Info:    Font shape `T1/phv/b/n' will be
+(Font)              scaled to size 6.29996pt on input line 70.
+ [4])
 \tf@toc=\write5
 \openout5 = `refman.toc'.
 
-LaTeX Font Info:    Font shape `T1/phv/bx/n' in size <7> not available
-(Font)              Font shape `T1/phv/b/n' tried instead on input line 128.
-LaTeX Font Info:    Font shape `T1/phv/b/n' will be
-(Font)              scaled to size 6.29996pt on input line 128.
- [4]
+ [5]
+[6
+
+]
 Package hyperref Info: Option `pageanchor' set `true' on input line 130.
 
 Chapter 1.
@@ -1073,7 +1077,6 @@ LaTeX Font Info:    Try loading font information for T1+pcr on input line 3.
  (/usr/share/texlive/texmf-dist/tex/latex/psnfss/t1pcr.fd
 File: t1pcr.fd 2001/06/04 font definitions for T1/pcr.
 )) [1
-
 
 ] [2
 
@@ -1112,21 +1115,21 @@ File: ts1phv.fd 2001/06/04 scalable font definitions for TS1/phv.
 LaTeX Font Info:    Font shape `TS1/phv/m/n' will be
 (Font)              scaled to size 8.99994pt on input line 11.
 LaTeX Font Info:    Font shape `T1/phv/bc/n' will be
-(Font)              scaled to size 8.99994pt on input line 31.
+(Font)              scaled to size 8.99994pt on input line 45.
 LaTeX Font Info:    Font shape `T1/phv/bc/it' in size <10> not available
-(Font)              Font shape `T1/phv/bc/sl' tried instead on input line 31.
+(Font)              Font shape `T1/phv/bc/sl' tried instead on input line 45.
 LaTeX Font Info:    Font shape `T1/phv/bc/sl' will be
-(Font)              scaled to size 8.99994pt on input line 31.
+(Font)              scaled to size 8.99994pt on input line 45.
 
 LaTeX Font Warning: Font shape `T1/pcr/bc/n' undefined
-(Font)              using `T1/pcr/m/n' instead on input line 31.
+(Font)              using `T1/pcr/m/n' instead on input line 45.
 
 LaTeX Font Info:    Font shape `T1/phv/m/it' in size <10> not available
-(Font)              Font shape `T1/phv/m/sl' tried instead on input line 34.
+(Font)              Font shape `T1/phv/m/sl' tried instead on input line 48.
 LaTeX Font Info:    Font shape `T1/phv/m/sl' will be
-(Font)              scaled to size 8.99994pt on input line 34.
-[9]) (./class_hash_exception.tex
-<class_hash_exception.pdf, id=368, 501.875pt x 386.06232pt>
+(Font)              scaled to size 8.99994pt on input line 48.
+[9] [10]) (./class_hash_exception.tex
+<class_hash_exception.pdf, id=520, 501.875pt x 386.06232pt>
 File: class_hash_exception.pdf Graphic file (type pdf)
 
 <use class_hash_exception.pdf>
@@ -1145,22 +1148,38 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 47.
 
-) (./class_knot.tex [10 <./class_hash_exception.pdf>]
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 56.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\sim' on input line 56.
+) (./class_knot.tex [11 <./class_hash_exception.pdf>]
+LaTeX Font Info:    Font shape `T1/phv/m/it' in size <9> not available
+(Font)              Font shape `T1/phv/m/sl' tried instead on input line 37.
+LaTeX Font Info:    Font shape `T1/phv/m/sl' will be
+(Font)              scaled to size 8.09995pt on input line 37.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 56.
+(hyperref)                removing `math shift' on input line 62.
 
-) [11] [12
 
-]
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\sim' on input line 62.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 62.
+
+[12] [13]) (./class_tree.tex [14]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 74.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\sim' on input line 74.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 74.
+
+[15]) [16]
 Chapter 6.
 (./_hash_exception_8hpp.tex
 Underfull \hbox (badness 10000) in paragraph at lines 4--5
@@ -1172,8 +1191,10 @@ Underfull \hbox (badness 10000) in paragraph at lines 4--6
 
  []
 
-[13]pdfTeX warning (ext4): destination with the same identifier (name{_hash_tab
-le_8hpp_desc}) has been already used, duplicate ignored
+[17
+
+]pdfTeX warning (ext4): destination with the same identifier (name{_hash_table_
+8hpp_desc}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
 l.19 \hypertarget{_hash_table_8hpp_desc}{}
@@ -1191,20 +1212,22 @@ hpp_infos}) has been already used, duplicate ignored
 l.29 ...\-A.\hypertarget{_hash_table_8hpp_infos}{}
                                                   \subsection{File informati...
 ) (./_r_e_a_d_m_e_8md.tex) (./tree_8hpp.tex
-Underfull \hbox (badness 10000) in paragraph at lines 4--8
+Underfull \hbox (badness 10000) in paragraph at lines 4--6
 
  []
 
-) [14] [15] (./refman.ind [16
+[18]) [19] (./refman.ind [20
+
+] [21
 
 ])
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 160.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 160.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 161.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 161.
  (./refman.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 160.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 160.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 161.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 161.
 Package rerunfilecheck Info: File `refman.out' has not changed.
-(rerunfilecheck)             Checksum: 8DDE2D875B53BBCBD568DF6C9BA1AE4A;7578.
+(rerunfilecheck)             Checksum: 8FAA9B45B9B91F7648B8689CACC937F5;10574.
 
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
@@ -1212,16 +1235,16 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
 LaTeX Warning: There were multiply-defined labels.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 160.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 161.
  ) 
 Here is how much of TeX's memory you used:
- 12327 strings out of 493307
- 171476 string characters out of 6139906
- 253404 words of memory out of 5000000
- 15454 multiletter control sequences out of 15000+600000
- 64321 words of font info for 79 fonts, out of 8000000 for 9000
+ 12440 strings out of 493307
+ 174462 string characters out of 6139906
+ 257437 words of memory out of 5000000
+ 15514 multiletter control sequences out of 15000+600000
+ 67337 words of font info for 81 fonts, out of 8000000 for 9000
  957 hyphenation exceptions out of 8191
- 48i,12n,43p,378b,402s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 48i,13n,43p,378b,514s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texliv
 e/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texm
 f-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist
@@ -1230,10 +1253,10 @@ urw/helvetic/uhvb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic
 /uhvb8ac.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvbo8ac.p
 fb></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/sha
 re/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvro8a.pfb>
-Output written on refman.pdf (20 pages, 104048 bytes).
+Output written on refman.pdf (27 pages, 121839 bytes).
 PDF statistics:
- 548 PDF objects out of 1000 (max. 8388607)
- 510 compressed objects within 6 object streams
- 108 named destinations out of 1000 (max. 500000)
- 430 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 801 PDF objects out of 1000 (max. 8388607)
+ 754 compressed objects within 8 object streams
+ 158 named destinations out of 1000 (max. 500000)
+ 622 words of extra memory for PDF output out of 10000 (max. 10000000)
 
