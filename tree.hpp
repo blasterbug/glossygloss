@@ -49,6 +49,8 @@ class Knot {
 	private:
 		// letter stored into knot, the tag
 		T _tag;
+		// ancestor of the knot
+		Knot<T> _forebear;
 		// children of the knot
 		list<Knot<T>> _children;
 	
