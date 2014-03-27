@@ -49,15 +49,13 @@ class Knot {
 	private:
 		// letter stored into knot, the tag
 		T _tag;
-		// ancestor of the knot
-		Knot<T> _forebear;
 		// children of the knot
 		list<Knot<T>> _children;
 	
 	public:
 		// copy constructor
 		Knot<T>(const Knot<T>&);
-		// constructor
+		// constructors
 		Knot<T>(T);
 		// destructor
 		~Knot<T>();

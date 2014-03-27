@@ -47,35 +47,90 @@ Knot::Knot<T>(const Knot<T> &other) _tag(other._tag), _children(other._children)
 // constructor
 <template T>
 Knot::Knot<T>(T tag) _tag(tag){
+	// initialise the list
 	_children = list<Knot<T>>(Knot<T>, sizeof(Knot<T>>));
 }
+
 // destructor
 <template T>
-Knot::~Knot<T>();
+Knot::~Knot<T>(){
+	delete _children;
+}
+
 // assignment operator
 <template T>
-Knot<T>& Knot::operator =(Knot<T>);
+Knot<T>& Knot::operator =(Knot<T>){
+	return Knot(this);
+}
+
 // equal operator
 <template T>
-bool Knot::operator ==(const Knot<T>&, const Knot<T>&);
+bool Knot::operator ==(const Knot<T> &lhs, const Knot<T> &rhs){
+	// same adress -> same item
+	return &lhs == &rhs
+}
 // ne operator
 <template T>
-bool Knot::operator !=(const Knot<T>&, const Knot<T>&);
+bool Knot::operator !=(const Knot<T> &lhs, const Knot<T> &rhs){
+	return lhs != rhs;
+}
 // Is the knot a leaf ?
 <template T>
-bool Knot::isLeaf();
+bool Knot::isLeaf(){
+	// leaf if no child
+	return 0 == _children.size();
+}
 // the height of the knot
 <template T>
-int Knot::height();
+int Knot::height(){
+	if(isLeaf()){
+		return 0;
+	}
+	else {
+		// start heights at zero
+		// heights[0] : greatest height, heights[1] : computed height in the loop
+		int heights[2] = {0,0};
+		// for each child, using C++11 syntax
+		//for(_children::iterator it=_children.begin(); it!=_children.end(); ++it){
+		for(Knot<T> child : _children){
+			// compute child height and store it
+			heights[1] = child.height();
+			// if computed height is greater then the old one
+			if(heights[0] < heights[1]){
+				// store it as the new greate one
+				heights[0] = heights[1];
+			} // else, nothing
+		}
+		return heights[0];
+	}
+}
+
 // Hook up a new child
 <template T>
-void Knot::append(<T>);
-// remove a child
+void Knot::append(<T> n_data){
+	// add the value in chilmdren list as a new knot
+	_children.push_front(new Knot<T>(n_data));
+}
+// remove a child, which MUST BE leaf
 <template T>
-void Knot::remove(<T>);
+void Knot::remove(<T> data){
+	// remove child with the right tag
+	list<int>::iterator it=_children.begin();
+	bool removed = false;
+	while(it != it.end() and not removed){
+		if(it->_tag == data){
+			removed = true;
+			delete it;
+		}
+		++it;
+	}
+}
 // get a representation of the knot
 <template T>
-string Knot::toString();
+string Knot::toString(){
+	string repr = "";
+	for(Knot child : _children
+}
 
 /**
  * CODE OF TREE CLASS
