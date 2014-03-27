@@ -105,6 +105,6 @@ class Alveole{
 		  * @param[in] n_value The new value of the pair
 		  */
 		void setValue(V n_value){ _value = n_value; }
-}
+};
 
 #endif // HASHTABLE_HPP
