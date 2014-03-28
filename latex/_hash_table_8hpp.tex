@@ -1,35 +1,66 @@
-\hypertarget{_hash_table_8hpp}{\section{Hash\-Table.\-hpp File Reference}
-\label{_hash_table_8hpp}\index{Hash\-Table.\-hpp@{Hash\-Table.\-hpp}}
+\hypertarget{_hash_table_8hpp}{\section{\-Hash\-Table.\-hpp \-File \-Reference}
+\label{_hash_table_8hpp}\index{\-Hash\-Table.\-hpp@{\-Hash\-Table.\-hpp}}
 }
-{\ttfamily \#include $<$string$>$}\\*
-{\ttfamily \#include \char`\"{}Hash\-Exception.\-hpp\char`\"{}}\\*
-\subsection*{Classes}
+{\ttfamily \#include $<$string$>$}\*
+{\ttfamily \#include \char`\"{}\-Hash\-Exception.\-hpp\char`\"{}}\*
+\subsection*{\-Classes}
 \begin{DoxyCompactItemize}
 \item 
-class \hyperlink{class_alveole}{Alveole}
-\end{DoxyCompactItemize}
-\subsection*{Macros}
+class \hyperlink{class_alveole}{\-Alveole}
+\begin{DoxyCompactList}\small\item\em \hyperlink{class_alveole}{\-Alveole} class embodies a hashtable's alveole. \-An alveole store a pair $<$k,v$>$. \-Alveoles are simply-\/linked elements. \end{DoxyCompactList}\item 
+class \hyperlink{class_hash_table}{\-Hash\-Table}
+\begin{DoxyCompactList}\small\item\em \-Class \hyperlink{class_hash_table}{\-Hash\-Table} to manage hash structure in an array. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{\-Defines}
 \begin{DoxyCompactItemize}
 \item 
-\#define \hyperlink{_hash_table_8hpp_a29fd18bed01c4d836c7ebfe73a125c3f}{E\-N\-D}~0
+\#define \hyperlink{_hash_table_8hpp_a29fd18bed01c4d836c7ebfe73a125c3f}{\-E\-N\-D}~0
+\begin{DoxyCompactList}\small\item\em macro to define end of alveole chains \end{DoxyCompactList}\item 
+\#define \hyperlink{_hash_table_8hpp_a78d344caabde729a4559393a0552bf1c}{\-A\-R\-R\-A\-Y\-S\-I\-Z\-E}~50
+\begin{DoxyCompactList}\small\item\em macro to define size of hash arrays \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{\-Functions}
+\begin{DoxyCompactItemize}
+\item 
+$<$ template\-K $>$ int \hyperlink{_hash_table_8hpp_aa6ed3652d06b4cf38350bfba9482c396}{computehash} (\-K key)
 \end{DoxyCompactItemize}
 
 
-\subsection{Detailed Description}
-\hypertarget{_hash_table_8hpp_desc}{}\subsection{File description}\label{_hash_table_8hpp_desc}
+\subsection{\-Detailed \-Description}
+\hypertarget{_hash_table_8hpp_desc}{}\subsection{\-File description}\label{_hash_table_8hpp_desc}
 data structure to store pair in a table a hashcode is compute with k to evaluate the suitable place to store the pair
 
-!! W\-A\-R\-N\-I\-N\-G\-: int hash\-Code(\-K key) must be implemented !!\hypertarget{_hash_table_8hpp_copyright}{}\subsection{Copyright}\label{_hash_table_8hpp_copyright}
-This source code is protected by the French intellectual property law.
+!! \-W\-A\-R\-N\-I\-N\-G\-: int hash\-Code(\-K key) must be implemented !!\hypertarget{_hash_table_8hpp_copyright}{}\subsection{\-Copyright}\label{_hash_table_8hpp_copyright}
+\-This source code is protected by the \-French intellectual property law.
 
-This program is free software; you can redistribute it and/or modify it under the terms of the G\-N\-U General Public License as published by the Free Software Foundation; version 2 of the License.
+\-This program is free software; you can redistribute it and/or modify it under the terms of the \-G\-N\-U \-General \-Public \-License as published by the \-Free \-Software \-Foundation; version 2 of the \-License.
 
-This program is distributed in the hope that it will be useful, but W\-I\-T\-H\-O\-U\-T A\-N\-Y W\-A\-R\-R\-A\-N\-T\-Y; without even the implied warranty of M\-E\-R\-C\-H\-A\-N\-T\-A\-B\-I\-L\-I\-T\-Y or F\-I\-T\-N\-E\-S\-S F\-O\-R A P\-A\-R\-T\-I\-C\-U\-L\-A\-R P\-U\-R\-P\-O\-S\-E. See the G\-N\-U General Public License for more details.
+\-This program is distributed in the hope that it will be useful, but \-W\-I\-T\-H\-O\-U\-T \-A\-N\-Y \-W\-A\-R\-R\-A\-N\-T\-Y; without even the implied warranty of \-M\-E\-R\-C\-H\-A\-N\-T\-A\-B\-I\-L\-I\-T\-Y or \-F\-I\-T\-N\-E\-S\-S \-F\-O\-R \-A \-P\-A\-R\-T\-I\-C\-U\-L\-A\-R \-P\-U\-R\-P\-O\-S\-E. \-See the \-G\-N\-U \-General \-Public \-License for more details.
 
-You should have received a copy of the G\-N\-U General Public License along with this program; if not, write to the Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, M\-A 02110-\/1301, U\-S\-A.\hypertarget{_hash_table_8hpp_infos}{}\subsection{File informations}\label{_hash_table_8hpp_infos}
-\$\-Date\$ 2014/03/27 \$\-Rev\$ 0.\-1 \$\-Author\$ Benjamin Sientzoff \$\-U\-R\-L\$ \href{http://www.github.com/blasterbug}{\tt http\-://www.\-github.\-com/blasterbug} 
+\-You should have received a copy of the \-G\-N\-U \-General \-Public \-License along with this program; if not, write to the \-Free \-Software \-Foundation, \-Inc., 51 \-Franklin \-Street, \-Fifth \-Floor, \-Boston, \-M\-A 02110-\/1301, \-U\-S\-A.\hypertarget{_hash_table_8hpp_infos}{}\subsection{\-File informations}\label{_hash_table_8hpp_infos}
+\$\-Date\$ 2014/03/27 \$\-Rev\$ 0.\-1 \$\-Author\$ \-Benjamin \-Sientzoff \$\-U\-R\-L\$ \href{http://www.github.com/blasterbug}{\tt http\-://www.\-github.\-com/blasterbug} 
 
-\subsection{Macro Definition Documentation}
-\hypertarget{_hash_table_8hpp_a29fd18bed01c4d836c7ebfe73a125c3f}{\index{Hash\-Table.\-hpp@{Hash\-Table.\-hpp}!E\-N\-D@{E\-N\-D}}
-\index{E\-N\-D@{E\-N\-D}!HashTable.hpp@{Hash\-Table.\-hpp}}
-\subsubsection[{E\-N\-D}]{\setlength{\rightskip}{0pt plus 5cm}\#define E\-N\-D~0}}\label{_hash_table_8hpp_a29fd18bed01c4d836c7ebfe73a125c3f}
+\subsection{\-Define \-Documentation}
+\hypertarget{_hash_table_8hpp_a78d344caabde729a4559393a0552bf1c}{\index{\-Hash\-Table.\-hpp@{\-Hash\-Table.\-hpp}!\-A\-R\-R\-A\-Y\-S\-I\-Z\-E@{\-A\-R\-R\-A\-Y\-S\-I\-Z\-E}}
+\index{\-A\-R\-R\-A\-Y\-S\-I\-Z\-E@{\-A\-R\-R\-A\-Y\-S\-I\-Z\-E}!HashTable.hpp@{\-Hash\-Table.\-hpp}}
+\subsubsection[{\-A\-R\-R\-A\-Y\-S\-I\-Z\-E}]{\setlength{\rightskip}{0pt plus 5cm}\#define {\bf \-A\-R\-R\-A\-Y\-S\-I\-Z\-E}~50}}\label{_hash_table_8hpp_a78d344caabde729a4559393a0552bf1c}
+
+
+macro to define size of hash arrays 
+
+\hypertarget{_hash_table_8hpp_a29fd18bed01c4d836c7ebfe73a125c3f}{\index{\-Hash\-Table.\-hpp@{\-Hash\-Table.\-hpp}!\-E\-N\-D@{\-E\-N\-D}}
+\index{\-E\-N\-D@{\-E\-N\-D}!HashTable.hpp@{\-Hash\-Table.\-hpp}}
+\subsubsection[{\-E\-N\-D}]{\setlength{\rightskip}{0pt plus 5cm}\#define {\bf \-E\-N\-D}~0}}\label{_hash_table_8hpp_a29fd18bed01c4d836c7ebfe73a125c3f}
+
+
+macro to define end of alveole chains 
+
+
+
+\subsection{\-Function \-Documentation}
+\hypertarget{_hash_table_8hpp_aa6ed3652d06b4cf38350bfba9482c396}{\index{\-Hash\-Table.\-hpp@{\-Hash\-Table.\-hpp}!computehash@{computehash}}
+\index{computehash@{computehash}!HashTable.hpp@{\-Hash\-Table.\-hpp}}
+\subsubsection[{computehash}]{\setlength{\rightskip}{0pt plus 5cm}$<$template\-K$>$ int {\bf computehash} (
+\begin{DoxyParamCaption}
+\item[{\-K}]{key}
+\end{DoxyParamCaption}
+)}}\label{_hash_table_8hpp_aa6ed3652d06b4cf38350bfba9482c396}
+\-Fonction you must define 

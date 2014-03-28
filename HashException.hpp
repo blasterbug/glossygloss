@@ -39,7 +39,7 @@
 using std::string;
 
 /**
- *  Exception class to manage hashtable errors
+ * \brief Exception class to manage hashtable errors
  */
 class HashException : std::exception {
 	private:
