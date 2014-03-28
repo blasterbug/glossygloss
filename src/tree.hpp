@@ -1,5 +1,5 @@
 /**
- * @file HashWord.hpp
+ * @file tree.hpp
  *
  * @section desc File description
  *
@@ -41,7 +41,7 @@
 using std::sting;
 using std::list;
 
-/// \brief exception class for trees
+/// @brief exception class for trees
 class TreeException : std::exception {
 	private:
 		char* _cause; /* store exception description */
@@ -50,7 +50,7 @@ class TreeException : std::exception {
 		 * called then TreeExceptions are threw
 		 * @param[in] cause description of exception origin
 		 */
-		HashException(char* cause):
+		TreeException(char* cause):
 			_cause(cause)
 			{}
 		
@@ -69,32 +69,32 @@ class TreeException : std::exception {
 		}
 };
 
-/// class for knots of a tree
-/// Knoy store a tag and can have several children
+/// @brief class for knots of a tree
+/// A knot store a tag and can have several children
 <template T = char>
-class Knot {
+class knot {
 	
 	private:
 		/// letter stored into knot, the tag
 		T _tag;
 		/// children of the knot
-		list<Knot<T>> _children;
+		list<knot<T>> _children;
 	
 	public:
 		/** Copy constructor
-		 * @param[in] other Knot to copy
+		 * @param[in] other knot to copy
 		 */
-		Knot<T>(const Knot<T> &other) _tag(other._tag), _children(other._children)
+		knot<T>(const knot<T> &other) _tag(other._tag), _children(other._children)
 		/** Simple constructor
 		 * @param[in] data to store into the knot
 		 */
-		Knot<T>(T data){
+		knot<T>(T data){
 			// initialize the list
-			_children = list<Knot<T>>(Knot<T>, sizeof(Knot<T>>));
+			_children = list<knot<T>>(knot<T>, sizeof(knot<T>>));
 		}
 		/** Destructor for knot
 		 */
-		~Knot<T>(){
+		~knot<T>(){
 			// usefull ?
 			delete _children;
 		}
@@ -103,7 +103,7 @@ class Knot {
 		 * @param[in] other knot to assign
 		 * @param[out] assigned knot
 		 */
-		Knot<T>& operator =(Knot<T> &other){
+		knot<T>& operator =(knot<T> &other){
 			// prevent objet copying itself
 			if(this != &other){
 				this->_tag = other._key;
@@ -117,7 +117,7 @@ class Knot {
 		 * @param[in] rhs right hand side, second knot to compare
 		 * @param[out] true if knots have the same memory adress, else false
 		 */
-		operator ==(const Knot<T> &lhs, const Knot<T> &rhs){
+		operator ==(const knot<T> &lhs, const knot<T> &rhs){
 			// same adress -> same item
 			return &lhs == &rhs;
 		}
@@ -126,7 +126,7 @@ class Knot {
 		 * @param[in] rhs second knot to compare
 		 * @param[out] true if knots have not the same memory adress, else false
 		 */
-		bool operator !=(const Knot<T> &lhs, const Knot<T> &rhs){
+		bool operator !=(const knot<T> &lhs, const knot<T> &rhs){
 			return &lhs != &rhs;
 			// return not(lhs == rhs);
 		}
@@ -149,7 +149,7 @@ class Knot {
 				int heights[2] = {0,0};
 				// for each child, using C++11 syntax
 				//for(_children::iterator it=_children.begin(); it!=_children.end(); ++it){
-				for(Knot<T> child : _children){
+				for(knot<T> child : _children){
 					// compute child height and store it
 					heights[1] = child.height();
 					// if computed height is greater then the old one
@@ -166,7 +166,7 @@ class Knot {
 		 */
 		void append(<T> n_data){
 			// add the value in chilmdren list as a new knot
-			_children.push_front(new Knot<T>(n_data));
+			_children.push_front(new knot<T>(n_data));
 		}
 		/** Remove a leaf from the knot
 		 * @param[in] data data of the knot's tag to remove
@@ -183,41 +183,41 @@ class Knot {
 				++it;
 			}
 		}
-		/// \brief get a representation of the knot
+		/// @brief get a representation of the knot
 		string toString();
 };
 
-/// class for the tree, use Knot
+/// class for the tree, use knot
 <template T = string>
 class Tree {
 	
 	private:
-		Knot<T> _root;
+		knot<T> _root;
 	
 	public:
-		/// \brief copy constructor
+		/// @brief copy constructor
 		Tree(const Tree<T>&);
-		/// \brief common constructor
+		/// @brief common constructor
 		Tree();
-		/// \brief destructor
+		/// @brief destructor
 		~Tree();
-		/// \brief assignment operator
+		/// @brief assignment operator
 		Tree<T>& operator =(Tree<T>);
-		/// \brief equal operator
+		/// @brief equal operator
 		bool operator ==(const Tree<T>&, const Tree<T>&);
-		/// \brief ne operator
+		/// @brief ne operator
 		bool operator !=(const Tree<T>&, const Tree<T>&);
-		/// \brief Is the element in the tree ?
+		/// @brief Is the element in the tree ?
 		bool contains(T);
-		/// \brief count among of appearances of a particular element
+		/// @brief count among of appearances of a particular element
 		int count(T);
-		/// \brief the height of the tree
+		/// @brief the height of the tree
 		int height();
-		/// \brief add an element in the tree
+		/// @brief add an element in the tree
 		void add(T);
-		/// \brief remove an element from the tree
+		/// @brief remove an element from the tree
 		void remove(T);
-		/// \brief get the whole list of elements in the tree
+		/// @brief get the whole list of elements in the tree
 		T[] elements();
 };
 

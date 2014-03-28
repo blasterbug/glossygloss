@@ -1,5 +1,5 @@
 /**
- * @file HashTable.hpp
+ * @file hashtable.hpp
  *
  * @section desc File description
  *
@@ -58,7 +58,7 @@
 int computehash(K key);
 
 using std::string;
-/** \brief Alveole class
+/** Alveole class
  * embodies a hashtable's alveole. An alveole store a pair <k,v>.
  * Alveoles are simply-linked elements.
  */
@@ -140,64 +140,59 @@ class Alveole{
 		}
 };
 
-/** \brief Class HashTable to manage hash structure in an array
+/** @brief Class hashtable to manage hash structure in an array
  */
 <template K = int, V = double>
-class HashTable {
+class hashtable {
+	
 	private:
 		Alveole<K,V>** _table; /* array of alveoles */
-		bool** _toc; /* array of occuped array cells */
+		
 	public:
 		/** Simple constructor
 		 */
-		HashTable(){
+		hashtable(){
 			_table = new Alveole<K,V>[ARRAYSIZE];
-			_toc = new bool[ARRAYSIZE];
+			for(int i = 0; i<ARRAYSIZE; ++i){
+				_table[i] = END;
+			}
 		}
 		
 		/** Destructor
 		 */
-		~HashTable(){
+		~hashtable(){
 			delete _table;
-			delete _toc;
 		}
 		
-		/** Add a new pair in the hash table,
-		 * might not be already in
+		/** Do table contains key ?
+		 * @param[in] key key to find
+		 * @param[out] True if the key is here, else false
+		 */
+		bool contains(const K &key){
+			bool here = false;
+			int index = computehash(key)%ARRAYSIZE;
+			Alveole<K,V>* browser = _table[index];
+			while(not here and END != browser){
+				if(key == browser->getKey()){
+					here = true;
+				}
+				browser = browser->getNext();
+			}
+			return here;
+		}
+		
+		/** Put a new pair in the hash table
+		 * or update the value associate with the key
 		 * @param[in] key key of the pair
-		 * @param[in] value of the pair
-		 * @exception HashException Threw if key already recorded
+		 * @param[in] value value of the pair
 		 */
 		// TODO: optimize this fucking code
-		void add(K key, V value){
+		void put(K key, V value){
+			// where to put the pair ?
 			int index = computehash(key)%ARRAYSIZE;
 			// browse alveoles at this place
 			Alveole<K,V>* browser = _table[index];
 			bool undone = true;
-			while(undone and END != browser){
-				if(key == browser->getKey()){
-					//if(value == browser->getValue()){
-						throw HashException("Pair already recorded!");
-					//} else {
-						browser->setNext(new Alveole<K,V>(key, value));
-						undone = false;
-					}
-				}
-				browser = browser->getNext();
-			}
-			_toc[index] = true;
-		}
-
-		/** Change a value asociated to a kay
-		 * @param[in] key the key of the pair to change
-		 * @apram[in] n_value the new value of the pair
-		 * @exception HashException threw if key not recorded
-		 */
-		void setValue(const K &key, V value){
-			int index = computehash(key);
-			bool undone = true;
-			// browse alveole
-			Alveole<K,V>* browser = _table[index];
 			while(undone and END != browser){
 				if(key == browser->getKey()){
 					browser->setValue(value);
@@ -205,10 +200,15 @@ class HashTable {
 				}
 				browser = browser->getNext();
 			}
-			if(undone){
-				throw HashException("Key lost");
-			}
+			undone? _table[index] = new Alveole<K,V>(key, value);
 		}
+		
+		/** Remove the pair recorded with key
+		 * @param[in] key Key of the pair to delete
+		 * @exception TreeException threw if table does not contain key
+		 */
+		void remove
+		
 };
 
 #endif // HASHTABLE_HPP
