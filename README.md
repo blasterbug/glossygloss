@@ -1,6 +1,6 @@
 glossygloss
 ===========
 
-Glossygloss est un petit programme écrit en C++ permettant de stocker dans un dictionnaire un mot associé à une valeur.
+Glossygloss is set of classes to use several data structure as Tree or hash table.
 
-Usefull : http://fr.wikibooks.org/wiki/Programmation_C%2B%2B
+Usefull : http://en.wikibooks.org/wiki/C%2B%2B_Programming
