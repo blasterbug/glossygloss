@@ -6,8 +6,8 @@ var hierarchy =
       [ "HashException", "class_hash_exception.html", null ],
       [ "TreeException", "class_tree_exception.html", null ]
     ] ],
-    [ "HashTable", "class_hash_table.html", null ],
-    [ "Knot", "class_knot.html", null ],
-    [ "Knot< T >", "class_knot.html", null ],
+    [ "hashtable", "classhashtable.html", null ],
+    [ "knot", "classknot.html", null ],
+    [ "knot< T >", "classknot.html", null ],
     [ "Tree", "class_tree.html", null ]
 ];
