@@ -41,7 +41,36 @@
 using std::sting;
 using std::list;
 
+/// exception class for trees
+class TreeException : std::exception {
+	private:
+		char* _cause; /* store exception description */
+	public:
+		/** constructor
+		 * called then TreeExceptions are threw
+		 * @param[in] cause description of exception origin
+		 */
+		HashException(char* cause):
+			_cause(cause)
+			{}
+		
+		/** destructor
+		 * currently, do anything special
+		 */
+		virtual ~BagException() throw(){
+			// do nothing
+		}
+		
+		/** virtual fonction from superclass,
+		 * usefull to get the exception description
+		 */
+		virtual const char* what()const throw(){
+			return _cause;
+		}
+};
+
 /// class for knots of a tree
+/// Knoy store a tag and can have several children
 <template T = char>
 class Knot {
 	
