@@ -1,6 +1,4 @@
 var searchData=
 [
-  ['tostring',['toString',['../class_alveole.html#a504981011163116c40d710a0e1d26a81',1,'Alveole::toString()'],['../class_hashtable.html#ad3141029cd09f8e5e2026af5156c1e0e',1,'Hashtable::toString()'],['../class_knot.html#af6c178e7d0af0a5c39e07dc692359882',1,'Knot::toString()']]],
-  ['tree',['Tree',['../class_tree.html#a42310d852cd0998fbb46829b22cbc3e8',1,'Tree::Tree(const Tree&lt; T &gt; &amp;)'],['../class_tree.html#a30ebe31999547d31fea5b40cc805f6a2',1,'Tree::Tree()']]],
-  ['treeexception',['TreeException',['../class_tree_exception.html#aa75b34acf02d0e86fb70a63242894311',1,'TreeException']]]
+  ['what',['what',['../class_hash_exception.html#a542711eb0045dcec64d7a8596b2450ff',1,'HashException::what()'],['../class_tree_exception.html#ab899a6ec0f82bf770b88ba4982e3d696',1,'TreeException::what()']]]
 ];

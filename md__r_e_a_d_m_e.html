@@ -47,8 +47,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
       <li class="current"><a href="pages.html"><span>Related&#160;Pages</span></a></li>
-      <li><a href="annotated.html"><span>Classes</span></a></li>
-      <li><a href="files.html"><span>Files</span></a></li>
       <li>
         <div id="MSearchBox" class="MSearchBoxInactive">
         <span class="left">
@@ -87,7 +85,7 @@ $(document).ready(function(){initNavTree('md__r_e_a_d_m_e.html','');});
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Macros</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -101,7 +99,7 @@ $(document).ready(function(){initNavTree('md__r_e_a_d_m_e.html','');});
 <div class="title">glossygloss </div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p>Glossygloss is set of classes to use several data structure as <a class="el" href="class_tree.html" title="class for the tree, use Knot ">Tree</a> or hash table.</p>
+<div class="textblock"><p>Glossygloss is set of classes to use several data structure as Tree or hash table.</p>
 <h3>Documentation ?</h3>
 <p>All documented things are here : <a href="http://blasterbug.github.io/glossygloss/">http://blasterbug.github.io/glossygloss/</a></p>
 <p>Usefull : <a href="http://en.wikibooks.org/wiki/C%2B%2B_Programming">http://en.wikibooks.org/wiki/C%2B%2B_Programming</a> </p>
@@ -110,7 +108,7 @@ $(document).ready(function(){initNavTree('md__r_e_a_d_m_e.html','');});
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Fri Mar 28 2014 18:33:35 for Glossygloss by
+    <li class="footer">Generated on Fri Mar 28 2014 19:23:51 for Glossygloss by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
   </ul>
