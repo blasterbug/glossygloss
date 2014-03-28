@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['remove',['remove',['../classknot.html#aa076b1ef22b52143b93a6a8fe0d772c4',1,'knot::remove()'],['../class_tree.html#a715e07e21bb3da46c21e67abd529867c',1,'Tree::remove()']]]
+  ['put',['put',['../class_hashtable.html#af6f9a4e3d5c74f0d5d5f966eece2fc2b',1,'Hashtable']]]
 ];

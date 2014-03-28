@@ -1,6 +1,6 @@
 var searchData=
 [
   ['hashexception',['HashException',['../class_hash_exception.html#a0ab1147731b1598569ec51f028870cda',1,'HashException']]],
-  ['hashtable',['hashtable',['../classhashtable.html#a0e8cd243f696051b91e3ac04205564c5',1,'hashtable']]],
-  ['height',['height',['../classknot.html#a3e0e85448ccada94ba2a723eb76c0916',1,'knot::height()'],['../class_tree.html#a70ffa62a683750147c7e0243c4a15c0c',1,'Tree::height()']]]
+  ['hashtable',['Hashtable',['../class_hashtable.html#a2f77d0c6d61286bf8d66552b5ade3f27',1,'Hashtable']]],
+  ['height',['height',['../class_knot.html#ab668bcac1c947490a7999fc4691a8073',1,'Knot::height()'],['../class_tree.html#a9300caf575a5a89292e620e8b73112c7',1,'Tree::height()']]]
 ];

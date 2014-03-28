@@ -1,16 +1,16 @@
 var class_tree =
 [
-    [ "Tree", "class_tree.html#a4c1ca289903050527f6b18c367fa6a2d", null ],
-    [ "Tree", "class_tree.html#ad376a7c639d857312f5de2ef47482f68", null ],
-    [ "~Tree", "class_tree.html#abdc38545cf3f588725b5d8b8075b3866", null ],
-    [ "add", "class_tree.html#a1c70114e580bdb15fd4fb8a951edd58b", null ],
-    [ "contains", "class_tree.html#a82e827d8af5a3359fcf7a301ec60dda2", null ],
-    [ "count", "class_tree.html#a10b806a5e1bd73f0533c8359c828bfe5", null ],
-    [ "elements", "class_tree.html#ab6844d5e6d1ed48ff3c7c205a8a5b16b", null ],
-    [ "height", "class_tree.html#a70ffa62a683750147c7e0243c4a15c0c", null ],
-    [ "operator!=", "class_tree.html#ad9b3fd4767ddc1010e37e12353904195", null ],
-    [ "operator=", "class_tree.html#ab577e3fc67156ff7629e34e411cf7b4e", null ],
-    [ "operator==", "class_tree.html#abe0212dfef7bb34434d5ac54db8c5491", null ],
-    [ "remove", "class_tree.html#a715e07e21bb3da46c21e67abd529867c", null ],
-    [ "_root", "class_tree.html#a8c0fd7bd08b8981dca4f2e867182ca82", null ]
+    [ "Tree", "class_tree.html#a42310d852cd0998fbb46829b22cbc3e8", null ],
+    [ "Tree", "class_tree.html#a30ebe31999547d31fea5b40cc805f6a2", null ],
+    [ "~Tree", "class_tree.html#a04affc46d89a0ef5d517ab685c9c346e", null ],
+    [ "add", "class_tree.html#a0043ad6b474f93f83cbbcddec392a69d", null ],
+    [ "contains", "class_tree.html#a0dc4041685625f0024318a79a5bd3e31", null ],
+    [ "count", "class_tree.html#a365f25c256f67c3a03adfe976b71d422", null ],
+    [ "elements", "class_tree.html#acda757d5fda0ac97a6c099d00f0fa760", null ],
+    [ "height", "class_tree.html#a9300caf575a5a89292e620e8b73112c7", null ],
+    [ "operator!=", "class_tree.html#a66eeb3d72ec08f43104e279fdcf15680", null ],
+    [ "operator=", "class_tree.html#a8b1ba4b64ed9e6709f8ca8ef701dbb7d", null ],
+    [ "operator==", "class_tree.html#a6410ebd45c2d1bb4efa84090eef8b406", null ],
+    [ "remove", "class_tree.html#a904edf2a88b74a389c05002f4b89e856", null ],
+    [ "_root", "class_tree.html#acbf4a46801c42d379913789217a31ff9", null ]
 ];

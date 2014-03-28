@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['setnext',['setNext',['../class_alveole.html#a3a542f1a81462e77d31b90e59f9f8287',1,'Alveole']]],
-  ['setvalue',['setValue',['../class_alveole.html#afd3607532906bead78ba7c52f956e0b0',1,'Alveole']]]
+  ['remove',['remove',['../class_hashtable.html#a5ff7eaa859387421be734f9573dc0ebe',1,'Hashtable::remove()'],['../class_knot.html#afafd489e6f061785fd219f88189f25ae',1,'Knot::remove()'],['../class_tree.html#a904edf2a88b74a389c05002f4b89e856',1,'Tree::remove()']]]
 ];

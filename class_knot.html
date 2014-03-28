@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.6"/>
-<title>Glossygloss: Knot Class Reference</title>
+<title>Glossygloss: Knot&lt; T &gt; Class Template Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -109,59 +109,64 @@ $(document).ready(function(){initNavTree('class_knot.html','');});
 <a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="class_knot-members.html">List of all members</a>  </div>
   <div class="headertitle">
-<div class="title">Knot Class Reference</div>  </div>
+<div class="title">Knot&lt; T &gt; Class Template Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p>class for knots of a tree A knot store a tag and can have several children  
+<p>class for knots of a tree A <a class="el" href="class_knot.html" title="class for knots of a tree A Knot store a tag and can have several children ">Knot</a> store a tag and can have several children  
  <a href="class_knot.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="">tree.hpp</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a92883dc27430396af88d6e8a0b216d7d"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_knot.html#a92883dc27430396af88d6e8a0b216d7d">Knot</a> (const <a class="el" href="class_knot.html">Knot</a>&lt; T &gt; &amp;other) <a class="el" href="class_knot.html#a199001b510dcbb6e1f0979028a9b9662">_tag</a>(other._tag)</td></tr>
-<tr class="separator:a92883dc27430396af88d6e8a0b216d7d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4fbe6a4a6f834298c0972a11c49a100c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_knot.html#a4fbe6a4a6f834298c0972a11c49a100c">_children</a> (other._children) <a class="el" href="class_knot.html">Knot</a>&lt; T &gt;(T data)</td></tr>
-<tr class="separator:a4fbe6a4a6f834298c0972a11c49a100c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abe4462897569b79486b2b6cac03c3702"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_knot.html#abe4462897569b79486b2b6cac03c3702">~Knot</a> ()</td></tr>
-<tr class="separator:abe4462897569b79486b2b6cac03c3702"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2229333e1b081402213d600dd7c3b43d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_knot.html">Knot</a>&lt; T &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_knot.html#a2229333e1b081402213d600dd7c3b43d">operator=</a> (<a class="el" href="class_knot.html">Knot</a>&lt; T &gt; &amp;other)</td></tr>
-<tr class="separator:a2229333e1b081402213d600dd7c3b43d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a37de81d6b6172c19435fcf0f11658bc3"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_knot.html#a37de81d6b6172c19435fcf0f11658bc3">operator==</a> (const <a class="el" href="class_knot.html">Knot</a>&lt; T &gt; &amp;lhs, const <a class="el" href="class_knot.html">Knot</a>&lt; T &gt; &amp;rhs)</td></tr>
-<tr class="separator:a37de81d6b6172c19435fcf0f11658bc3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9d051c01a870a9071e4adede8d79af65"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_knot.html#a9d051c01a870a9071e4adede8d79af65">operator!=</a> (const <a class="el" href="class_knot.html">Knot</a>&lt; T &gt; &amp;lhs, const <a class="el" href="class_knot.html">Knot</a>&lt; T &gt; &amp;rhs)</td></tr>
-<tr class="separator:a9d051c01a870a9071e4adede8d79af65"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a68386ab11edd866495dfbcf61cab0e01"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_knot.html#a68386ab11edd866495dfbcf61cab0e01">isLeaf</a> ()</td></tr>
-<tr class="separator:a68386ab11edd866495dfbcf61cab0e01"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9988255f899344c9f16797c4b918ac7b"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_knot.html#a9988255f899344c9f16797c4b918ac7b">height</a> ()</td></tr>
-<tr class="separator:a9988255f899344c9f16797c4b918ac7b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa941112b1a0d38362bc4a1f632ecd35f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_knot.html#aa941112b1a0d38362bc4a1f632ecd35f">append</a> (&lt; T &gt; n_data)</td></tr>
-<tr class="separator:aa941112b1a0d38362bc4a1f632ecd35f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a96d632680a9180028a743cb9c36999fd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_knot.html#a96d632680a9180028a743cb9c36999fd">remove</a> (&lt; T &gt; data)</td></tr>
-<tr class="separator:a96d632680a9180028a743cb9c36999fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af8b780d91b4f2a43556c7b53c8f6243c"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_knot.html#af8b780d91b4f2a43556c7b53c8f6243c">toString</a> ()</td></tr>
-<tr class="memdesc:af8b780d91b4f2a43556c7b53c8f6243c"><td class="mdescLeft">&#160;</td><td class="mdescRight">get a representation of the knot  <a href="#af8b780d91b4f2a43556c7b53c8f6243c">More...</a><br/></td></tr>
-<tr class="separator:af8b780d91b4f2a43556c7b53c8f6243c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3ef820f3c784fc2a8ac735f0b93238d8"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_knot.html#a3ef820f3c784fc2a8ac735f0b93238d8">Knot</a> (const <a class="el" href="class_knot.html">Knot</a>&lt; T &gt; &amp;other) <a class="el" href="class_knot.html#aec85a7f96a9d3251b0ff5da03f9b9a6a">_tag</a>(other._tag)</td></tr>
+<tr class="separator:a3ef820f3c784fc2a8ac735f0b93238d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aca37a49d4636793ee5c1c1a79dda0183"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_knot.html#aca37a49d4636793ee5c1c1a79dda0183">_children</a> (other._children) <a class="el" href="class_knot.html">Knot</a>&lt; T &gt;(T data)</td></tr>
+<tr class="separator:aca37a49d4636793ee5c1c1a79dda0183"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0476eb3e8ad9172840bcca5a5dc509a0"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_knot.html#a0476eb3e8ad9172840bcca5a5dc509a0">~Knot</a> ()</td></tr>
+<tr class="separator:a0476eb3e8ad9172840bcca5a5dc509a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6d2400d71d26528bfc4fd98a7f2bca75"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_knot.html">Knot</a>&lt; T &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_knot.html#a6d2400d71d26528bfc4fd98a7f2bca75">operator=</a> (<a class="el" href="class_knot.html">Knot</a>&lt; T &gt; &amp;other)</td></tr>
+<tr class="separator:a6d2400d71d26528bfc4fd98a7f2bca75"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af4b9e62f54d67f739e4870bc8442996f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_knot.html#af4b9e62f54d67f739e4870bc8442996f">operator==</a> (const <a class="el" href="class_knot.html">Knot</a>&lt; T &gt; &amp;lhs, const <a class="el" href="class_knot.html">Knot</a>&lt; T &gt; &amp;rhs)</td></tr>
+<tr class="separator:af4b9e62f54d67f739e4870bc8442996f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa9df87201f272f838587b0a36c230f03"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_knot.html#aa9df87201f272f838587b0a36c230f03">operator!=</a> (const <a class="el" href="class_knot.html">Knot</a>&lt; T &gt; &amp;lhs, const <a class="el" href="class_knot.html">Knot</a>&lt; T &gt; &amp;rhs)</td></tr>
+<tr class="separator:aa9df87201f272f838587b0a36c230f03"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3cddbb69cac8503a02bbee89a8bc3e6a"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_knot.html#a3cddbb69cac8503a02bbee89a8bc3e6a">isLeaf</a> ()</td></tr>
+<tr class="separator:a3cddbb69cac8503a02bbee89a8bc3e6a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab668bcac1c947490a7999fc4691a8073"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_knot.html#ab668bcac1c947490a7999fc4691a8073">height</a> ()</td></tr>
+<tr class="separator:ab668bcac1c947490a7999fc4691a8073"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abbb718e3a1118c5fe9e05c517df76fdd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_knot.html#abbb718e3a1118c5fe9e05c517df76fdd">append</a> (&lt; T &gt; n_data)</td></tr>
+<tr class="separator:abbb718e3a1118c5fe9e05c517df76fdd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afafd489e6f061785fd219f88189f25ae"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_knot.html#afafd489e6f061785fd219f88189f25ae">remove</a> (&lt; T &gt; data)</td></tr>
+<tr class="separator:afafd489e6f061785fd219f88189f25ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af6c178e7d0af0a5c39e07dc692359882"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_knot.html#af6c178e7d0af0a5c39e07dc692359882">toString</a> ()</td></tr>
+<tr class="memdesc:af6c178e7d0af0a5c39e07dc692359882"><td class="mdescLeft">&#160;</td><td class="mdescRight">get a representation of the knot  <a href="#af6c178e7d0af0a5c39e07dc692359882">More...</a><br/></td></tr>
+<tr class="separator:af6c178e7d0af0a5c39e07dc692359882"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
-<tr class="memitem:a199001b510dcbb6e1f0979028a9b9662"><td class="memItemLeft" align="right" valign="top">T&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_knot.html#a199001b510dcbb6e1f0979028a9b9662">_tag</a></td></tr>
-<tr class="memdesc:a199001b510dcbb6e1f0979028a9b9662"><td class="mdescLeft">&#160;</td><td class="mdescRight">letter stored into knot, the tag  <a href="#a199001b510dcbb6e1f0979028a9b9662">More...</a><br/></td></tr>
-<tr class="separator:a199001b510dcbb6e1f0979028a9b9662"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afcf38a48b47c72fd61f0ddd3b7597c72"><td class="memItemLeft" align="right" valign="top">list&lt; <a class="el" href="class_knot.html">Knot</a>&lt; T &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_knot.html#afcf38a48b47c72fd61f0ddd3b7597c72">_children</a></td></tr>
-<tr class="memdesc:afcf38a48b47c72fd61f0ddd3b7597c72"><td class="mdescLeft">&#160;</td><td class="mdescRight">children of the knot  <a href="#afcf38a48b47c72fd61f0ddd3b7597c72">More...</a><br/></td></tr>
-<tr class="separator:afcf38a48b47c72fd61f0ddd3b7597c72"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aec85a7f96a9d3251b0ff5da03f9b9a6a"><td class="memItemLeft" align="right" valign="top">T&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_knot.html#aec85a7f96a9d3251b0ff5da03f9b9a6a">_tag</a></td></tr>
+<tr class="memdesc:aec85a7f96a9d3251b0ff5da03f9b9a6a"><td class="mdescLeft">&#160;</td><td class="mdescRight">letter stored into <a class="el" href="class_knot.html" title="class for knots of a tree A Knot store a tag and can have several children ">Knot</a>, the tag  <a href="#aec85a7f96a9d3251b0ff5da03f9b9a6a">More...</a><br/></td></tr>
+<tr class="separator:aec85a7f96a9d3251b0ff5da03f9b9a6a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa80400e1b4483adc41cb2dd488c1be50"><td class="memItemLeft" align="right" valign="top">list&lt; <a class="el" href="class_knot.html">Knot</a>&lt; T &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_knot.html#aa80400e1b4483adc41cb2dd488c1be50">_children</a></td></tr>
+<tr class="memdesc:aa80400e1b4483adc41cb2dd488c1be50"><td class="mdescLeft">&#160;</td><td class="mdescRight">children of the <a class="el" href="class_knot.html" title="class for knots of a tree A Knot store a tag and can have several children ">Knot</a>  <a href="#aa80400e1b4483adc41cb2dd488c1be50">More...</a><br/></td></tr>
+<tr class="separator:aa80400e1b4483adc41cb2dd488c1be50"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>class for knots of a tree A knot store a tag and can have several children </p>
+<div class="textblock"><h3>template&lt;typename T = char&gt;<br/>
+class Knot&lt; T &gt;</h3>
+
+<p>class for knots of a tree A <a class="el" href="class_knot.html" title="class for knots of a tree A Knot store a tag and can have several children ">Knot</a> store a tag and can have several children </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a class="anchor" id="a92883dc27430396af88d6e8a0b216d7d"></a>
+<a class="anchor" id="a3ef820f3c784fc2a8ac735f0b93238d8"></a>
 <div class="memitem">
 <div class="memproto">
+<div class="memtemplate">
+template&lt;typename T  = char&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">Knot::Knot </td>
+          <td class="memname"><a class="el" href="class_knot.html">Knot</a>&lt; T &gt;::<a class="el" href="class_knot.html">Knot</a> </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="class_knot.html">Knot</a>&lt; T &gt; &amp;&#160;</td>
           <td class="paramname"><em>other</em></td><td>)</td>
@@ -172,22 +177,24 @@ Private Attributes</h2></td></tr>
 <p>Copy constructor </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">other</td><td><a class="el" href="class_knot.html" title="class for knots of a tree A knot store a tag and can have several children ">Knot</a> to copy </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">other</td><td><a class="el" href="class_knot.html" title="class for knots of a tree A Knot store a tag and can have several children ">Knot</a> to copy </td></tr>
   </table>
   </dd>
 </dl>
 
 </div>
 </div>
-<a class="anchor" id="abe4462897569b79486b2b6cac03c3702"></a>
+<a class="anchor" id="a0476eb3e8ad9172840bcca5a5dc509a0"></a>
 <div class="memitem">
 <div class="memproto">
+<div class="memtemplate">
+template&lt;typename T  = char&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">Knot::~Knot </td>
+          <td class="memname"><a class="el" href="class_knot.html">Knot</a>&lt; T &gt;::~<a class="el" href="class_knot.html">Knot</a> </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -199,20 +206,22 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Destructor for knot </p>
+<p>Destructor for <a class="el" href="class_knot.html" title="class for knots of a tree A Knot store a tag and can have several children ">Knot</a> </p>
 
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a class="anchor" id="a4fbe6a4a6f834298c0972a11c49a100c"></a>
+<a class="anchor" id="aca37a49d4636793ee5c1c1a79dda0183"></a>
 <div class="memitem">
 <div class="memproto">
+<div class="memtemplate">
+template&lt;typename T  = char&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">Knot::_children </td>
+          <td class="memname"><a class="el" href="class_knot.html">Knot</a>&lt; T &gt;::_children </td>
           <td>(</td>
           <td class="paramtype">other.&#160;</td>
           <td class="paramname"><em>_children</em></td><td>)</td>
@@ -228,22 +237,24 @@ Private Attributes</h2></td></tr>
 <p>Simple constructor </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">data</td><td>to store into the knot </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">data</td><td>to store into the <a class="el" href="class_knot.html" title="class for knots of a tree A Knot store a tag and can have several children ">Knot</a> </td></tr>
   </table>
   </dd>
 </dl>
 
 </div>
 </div>
-<a class="anchor" id="aa941112b1a0d38362bc4a1f632ecd35f"></a>
+<a class="anchor" id="abbb718e3a1118c5fe9e05c517df76fdd"></a>
 <div class="memitem">
 <div class="memproto">
+<div class="memtemplate">
+template&lt;typename T  = char&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void Knot::append </td>
+          <td class="memname">void <a class="el" href="class_knot.html">Knot</a>&lt; T &gt;::append </td>
           <td>(</td>
           <td class="paramtype">&lt; T &gt;&#160;</td>
           <td class="paramname"><em>n_data</em></td><td>)</td>
@@ -266,15 +277,17 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a9988255f899344c9f16797c4b918ac7b"></a>
+<a class="anchor" id="ab668bcac1c947490a7999fc4691a8073"></a>
 <div class="memitem">
 <div class="memproto">
+<div class="memtemplate">
+template&lt;typename T  = char&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">int Knot::height </td>
+          <td class="memname">int <a class="el" href="class_knot.html">Knot</a>&lt; T &gt;::height </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -296,15 +309,17 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a68386ab11edd866495dfbcf61cab0e01"></a>
+<a class="anchor" id="a3cddbb69cac8503a02bbee89a8bc3e6a"></a>
 <div class="memitem">
 <div class="memproto">
+<div class="memtemplate">
+template&lt;typename T  = char&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">bool Knot::isLeaf </td>
+          <td class="memname">bool <a class="el" href="class_knot.html">Knot</a>&lt; T &gt;::isLeaf </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -326,15 +341,17 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a9d051c01a870a9071e4adede8d79af65"></a>
+<a class="anchor" id="aa9df87201f272f838587b0a36c230f03"></a>
 <div class="memitem">
 <div class="memproto">
+<div class="memtemplate">
+template&lt;typename T  = char&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">bool Knot::operator!= </td>
+          <td class="memname">bool <a class="el" href="class_knot.html">Knot</a>&lt; T &gt;::operator!= </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="class_knot.html">Knot</a>&lt; T &gt; &amp;&#160;</td>
           <td class="paramname"><em>lhs</em>, </td>
@@ -369,15 +386,17 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a2229333e1b081402213d600dd7c3b43d"></a>
+<a class="anchor" id="a6d2400d71d26528bfc4fd98a7f2bca75"></a>
 <div class="memitem">
 <div class="memproto">
+<div class="memtemplate">
+template&lt;typename T  = char&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="class_knot.html">Knot</a>&lt;T&gt;&amp; Knot::operator= </td>
+          <td class="memname"><a class="el" href="class_knot.html">Knot</a>&lt;T&gt;&amp; <a class="el" href="class_knot.html">Knot</a>&lt; T &gt;::operator= </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="class_knot.html">Knot</a>&lt; T &gt; &amp;&#160;</td>
           <td class="paramname"><em>other</em></td><td>)</td>
@@ -401,15 +420,17 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a37de81d6b6172c19435fcf0f11658bc3"></a>
+<a class="anchor" id="af4b9e62f54d67f739e4870bc8442996f"></a>
 <div class="memitem">
 <div class="memproto">
+<div class="memtemplate">
+template&lt;typename T  = char&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">Knot::operator== </td>
+          <td class="memname"><a class="el" href="class_knot.html">Knot</a>&lt; T &gt;::operator== </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="class_knot.html">Knot</a>&lt; T &gt; &amp;&#160;</td>
           <td class="paramname"><em>lhs</em>, </td>
@@ -444,15 +465,17 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a96d632680a9180028a743cb9c36999fd"></a>
+<a class="anchor" id="afafd489e6f061785fd219f88189f25ae"></a>
 <div class="memitem">
 <div class="memproto">
+<div class="memtemplate">
+template&lt;typename T  = char&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void Knot::remove </td>
+          <td class="memname">void <a class="el" href="class_knot.html">Knot</a>&lt; T &gt;::remove </td>
           <td>(</td>
           <td class="paramtype">&lt; T &gt;&#160;</td>
           <td class="paramname"><em>data</em></td><td>)</td>
@@ -475,12 +498,14 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="af8b780d91b4f2a43556c7b53c8f6243c"></a>
+<a class="anchor" id="af6c178e7d0af0a5c39e07dc692359882"></a>
 <div class="memitem">
 <div class="memproto">
+<div class="memtemplate">
+template&lt;typename T  = char&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">string Knot::toString </td>
+          <td class="memname">string <a class="el" href="class_knot.html">Knot</a>&lt; T &gt;::toString </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -493,15 +518,17 @@ Private Attributes</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
-<a class="anchor" id="afcf38a48b47c72fd61f0ddd3b7597c72"></a>
+<a class="anchor" id="aa80400e1b4483adc41cb2dd488c1be50"></a>
 <div class="memitem">
 <div class="memproto">
+<div class="memtemplate">
+template&lt;typename T  = char&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">list&lt;<a class="el" href="class_knot.html">Knot</a>&lt;T&gt; &gt; Knot::_children</td>
+          <td class="memname">list&lt;<a class="el" href="class_knot.html">Knot</a>&lt;T&gt; &gt; <a class="el" href="class_knot.html">Knot</a>&lt; T &gt;::_children</td>
         </tr>
       </table>
   </td>
@@ -511,19 +538,21 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>children of the knot </p>
+<p>children of the <a class="el" href="class_knot.html" title="class for knots of a tree A Knot store a tag and can have several children ">Knot</a> </p>
 
 </div>
 </div>
-<a class="anchor" id="a199001b510dcbb6e1f0979028a9b9662"></a>
+<a class="anchor" id="aec85a7f96a9d3251b0ff5da03f9b9a6a"></a>
 <div class="memitem">
 <div class="memproto">
+<div class="memtemplate">
+template&lt;typename T  = char&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">T Knot::_tag</td>
+          <td class="memname">T <a class="el" href="class_knot.html">Knot</a>&lt; T &gt;::_tag</td>
         </tr>
       </table>
   </td>
@@ -533,7 +562,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>letter stored into knot, the tag </p>
+<p>letter stored into <a class="el" href="class_knot.html" title="class for knots of a tree A Knot store a tag and can have several children ">Knot</a>, the tag </p>
 
 </div>
 </div>
@@ -546,7 +575,7 @@ Private Attributes</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="class_knot.html">Knot</a></li>
-    <li class="footer">Generated on Fri Mar 28 2014 16:24:29 for Glossygloss by
+    <li class="footer">Generated on Fri Mar 28 2014 18:33:35 for Glossygloss by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
   </ul>

@@ -1,7 +1,8 @@
 var searchData=
 [
-  ['getkey',['getKey',['../class_alveole.html#a851fe0cac8f81cae711385f10973cf5d',1,'Alveole']]],
-  ['getnext',['getNext',['../class_alveole.html#a9cd37fb49770eddbaa03519232b3f115',1,'Alveole']]],
-  ['getvalue',['getValue',['../class_alveole.html#a0c56d83c6f8152a7674cddf1faf56bc5',1,'Alveole']]],
+  ['get',['get',['../class_hashtable.html#a06702992ba59e62b443e1c2d380625dc',1,'Hashtable']]],
+  ['getkey',['getKey',['../class_alveole.html#add57358f630300978cfd314a9a392c8b',1,'Alveole']]],
+  ['getnext',['getNext',['../class_alveole.html#ae540dba4d60c74ff17e2abc03deb33c8',1,'Alveole']]],
+  ['getvalue',['getValue',['../class_alveole.html#a63378af984be5bb63fb755010c61002f',1,'Alveole']]],
   ['glossygloss',['glossygloss',['../md__r_e_a_d_m_e.html',1,'']]]
 ];
