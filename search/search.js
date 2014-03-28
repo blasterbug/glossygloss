@@ -7,11 +7,11 @@
 
 var indexSectionsWithContent =
 {
-  0: "_aceghikorstw~",
+  0: "_aceghikoprstw~",
   1: "ahkt",
   2: "hrt",
-  3: "_aceghikorstw~",
-  4: "_s",
+  3: "_aceghikoprstw~",
+  4: "_",
   5: "ae",
   6: "g"
 };

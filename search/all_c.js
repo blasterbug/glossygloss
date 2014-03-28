@@ -1,4 +1,7 @@
 var searchData=
 [
-  ['what',['what',['../class_hash_exception.html#a542711eb0045dcec64d7a8596b2450ff',1,'HashException::what()'],['../class_tree_exception.html#ab899a6ec0f82bf770b88ba4982e3d696',1,'TreeException::what()']]]
+  ['tostring',['toString',['../class_knot.html#af8b780d91b4f2a43556c7b53c8f6243c',1,'Knot']]],
+  ['tree',['Tree',['../class_tree.html',1,'Tree'],['../class_tree.html#a4c1ca289903050527f6b18c367fa6a2d',1,'Tree::Tree(const Tree&lt; T &gt; &amp;)'],['../class_tree.html#ad376a7c639d857312f5de2ef47482f68',1,'Tree::Tree()']]],
+  ['tree_2ehpp',['tree.hpp',['../tree_8hpp.html',1,'']]],
+  ['treeexception',['TreeException',['../class_tree_exception.html',1,'']]]
 ];
