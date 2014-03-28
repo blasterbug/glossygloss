@@ -1,6 +1,6 @@
 var NAVTREE =
 [
-  [ "HashTable", "index.html", [
+  [ "Glossygloss", "index.html", [
     [ "glossygloss", "md__r_e_a_d_m_e.html", null ],
     [ "Classes", null, [
       [ "Class List", "annotated.html", "annotated" ],
