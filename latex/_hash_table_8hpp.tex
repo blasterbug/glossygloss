@@ -21,6 +21,22 @@ class \hyperlink{class_hash_table}{\-Hash\-Table}
 \begin{DoxyCompactItemize}
 \item 
 $<$ template\-K $>$ int \hyperlink{_hash_table_8hpp_aa6ed3652d06b4cf38350bfba9482c396}{computehash} (\-K key)
+\item 
+$<$ template\-K=int, \-V=double $>$\*
+ class \hyperlink{class_hash_table}{\-Hash\-Table} \hyperlink{_hash_table_8hpp_a05acd744ff088b0f1b6d11aa8902e103}{set\-Value} (const \-K \&key, \-V value)
+\item 
+\hyperlink{_hash_table_8hpp_a5204774c7a67cc66daf4fa11d59f2239}{\-Hash\-Table} ()
+\item 
+\hyperlink{_hash_table_8hpp_a3fb3ac123f935a924aff5e636cc2a59a}{$\sim$\-Hash\-Table} ()
+\item 
+void \hyperlink{_hash_table_8hpp_a2e98eb2821514e3861dbee44c88a0f3c}{add} (\-K key, \-V value)
+\end{DoxyCompactItemize}
+\subsection*{\-Variables}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_alveole}{\-Alveole}$<$ \-K, \-V $>$ $\ast$$\ast$ \hyperlink{_hash_table_8hpp_a2e72fdff74acaddf1d6b0704dc330179}{\-\_\-table}
+\item 
+bool $\ast$$\ast$ \hyperlink{_hash_table_8hpp_a47692d1e70190c6d92332ab3a51af766}{\-\_\-toc} = true
 \end{DoxyCompactItemize}
 
 
@@ -56,6 +72,26 @@ macro to define end of alveole chains
 
 
 \subsection{\-Function \-Documentation}
+\hypertarget{_hash_table_8hpp_a2e98eb2821514e3861dbee44c88a0f3c}{\index{\-Hash\-Table.\-hpp@{\-Hash\-Table.\-hpp}!add@{add}}
+\index{add@{add}!HashTable.hpp@{\-Hash\-Table.\-hpp}}
+\subsubsection[{add}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf set\-Value\-::add} (
+\begin{DoxyParamCaption}
+\item[{\-K}]{key, }
+\item[{\-V}]{value}
+\end{DoxyParamCaption}
+)}}\label{_hash_table_8hpp_a2e98eb2821514e3861dbee44c88a0f3c}
+\-Add a new pair in the hash table, might not be already in 
+\begin{DoxyParams}[1]{\-Parameters}
+\mbox{\tt in}  & {\em key} & key of the pair \\
+\hline
+\mbox{\tt in}  & {\em value} & of the pair \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{\-Exceptions}
+{\em \hyperlink{class_hash_exception}{\-Hash\-Exception}} & \-Threw if key already recorded \\
+\hline
+\end{DoxyExceptions}
 \hypertarget{_hash_table_8hpp_aa6ed3652d06b4cf38350bfba9482c396}{\index{\-Hash\-Table.\-hpp@{\-Hash\-Table.\-hpp}!computehash@{computehash}}
 \index{computehash@{computehash}!HashTable.hpp@{\-Hash\-Table.\-hpp}}
 \subsubsection[{computehash}]{\setlength{\rightskip}{0pt plus 5cm}$<$template\-K$>$ int {\bf computehash} (
@@ -63,4 +99,44 @@ macro to define end of alveole chains
 \item[{\-K}]{key}
 \end{DoxyParamCaption}
 )}}\label{_hash_table_8hpp_aa6ed3652d06b4cf38350bfba9482c396}
-\-Fonction you must define 
+\-Fonction you must define \hypertarget{_hash_table_8hpp_a5204774c7a67cc66daf4fa11d59f2239}{\index{\-Hash\-Table.\-hpp@{\-Hash\-Table.\-hpp}!\-Hash\-Table@{\-Hash\-Table}}
+\index{\-Hash\-Table@{\-Hash\-Table}!HashTable.hpp@{\-Hash\-Table.\-hpp}}
+\subsubsection[{\-Hash\-Table}]{\setlength{\rightskip}{0pt plus 5cm}{\bf set\-Value\-::\-Hash\-Table} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{_hash_table_8hpp_a5204774c7a67cc66daf4fa11d59f2239}
+\-Simple constructor \hypertarget{_hash_table_8hpp_a05acd744ff088b0f1b6d11aa8902e103}{\index{\-Hash\-Table.\-hpp@{\-Hash\-Table.\-hpp}!set\-Value@{set\-Value}}
+\index{set\-Value@{set\-Value}!HashTable.hpp@{\-Hash\-Table.\-hpp}}
+\subsubsection[{set\-Value}]{\setlength{\rightskip}{0pt plus 5cm}$<$template\-K=int,\-V=double$>$ class {\bf \-Hash\-Table} {\bf set\-Value} (
+\begin{DoxyParamCaption}
+\item[{const \-K \&}]{key, }
+\item[{\-V}]{value}
+\end{DoxyParamCaption}
+)}}\label{_hash_table_8hpp_a05acd744ff088b0f1b6d11aa8902e103}
+\-Change a value asociated to a kay 
+\begin{DoxyParams}[1]{\-Parameters}
+\mbox{\tt in}  & {\em key} & the key of the pair to change \mbox{[}in\mbox{]} n\-\_\-value the new value of the pair \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{\-Exceptions}
+{\em \hyperlink{class_hash_exception}{\-Hash\-Exception}} & threw if key not recorded \\
+\hline
+\end{DoxyExceptions}
+\hypertarget{_hash_table_8hpp_a3fb3ac123f935a924aff5e636cc2a59a}{\index{\-Hash\-Table.\-hpp@{\-Hash\-Table.\-hpp}!$\sim$\-Hash\-Table@{$\sim$\-Hash\-Table}}
+\index{$\sim$\-Hash\-Table@{$\sim$\-Hash\-Table}!HashTable.hpp@{\-Hash\-Table.\-hpp}}
+\subsubsection[{$\sim$\-Hash\-Table}]{\setlength{\rightskip}{0pt plus 5cm}{\bf set\-Value\-::$\sim$\-Hash\-Table} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{_hash_table_8hpp_a3fb3ac123f935a924aff5e636cc2a59a}
+\-Destructor 
+
+\subsection{\-Variable \-Documentation}
+\hypertarget{_hash_table_8hpp_a2e72fdff74acaddf1d6b0704dc330179}{\index{\-Hash\-Table.\-hpp@{\-Hash\-Table.\-hpp}!\-\_\-table@{\-\_\-table}}
+\index{\-\_\-table@{\-\_\-table}!HashTable.hpp@{\-Hash\-Table.\-hpp}}
+\subsubsection[{\-\_\-table}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-Alveole}$<$\-K,\-V$>$$\ast$$\ast$ {\bf \-\_\-table}}}\label{_hash_table_8hpp_a2e72fdff74acaddf1d6b0704dc330179}
+\hypertarget{_hash_table_8hpp_a47692d1e70190c6d92332ab3a51af766}{\index{\-Hash\-Table.\-hpp@{\-Hash\-Table.\-hpp}!\-\_\-toc@{\-\_\-toc}}
+\index{\-\_\-toc@{\-\_\-toc}!HashTable.hpp@{\-Hash\-Table.\-hpp}}
+\subsubsection[{\-\_\-toc}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-\_\-toc}\mbox{[}index\mbox{]} = true}}\label{_hash_table_8hpp_a47692d1e70190c6d92332ab3a51af766}

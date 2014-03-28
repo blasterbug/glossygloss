@@ -78,7 +78,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div class="summary">
 <a href="#nested-classes">Classes</a> &#124;
 <a href="#define-members">Defines</a> &#124;
-<a href="#func-members">Functions</a>  </div>
+<a href="#func-members">Functions</a> &#124;
+<a href="#var-members">Variables</a>  </div>
   <div class="headertitle">
 <div class="title">HashTable.hpp File Reference</div>  </div>
 </div><!--header-->
@@ -103,6 +104,15 @@ Defines</h2></td></tr>
 <tr><td colspan="2"><h2><a name="func-members"></a>
 Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&lt; templateK &gt; int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_hash_table_8hpp.html#aa6ed3652d06b4cf38350bfba9482c396">computehash</a> (K key)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&lt; templateK=int, V=double &gt;<br class="typebreak"/>
+ class <a class="el" href="class_hash_table.html">HashTable</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_hash_table_8hpp.html#a05acd744ff088b0f1b6d11aa8902e103">setValue</a> (const K &amp;key, V value)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_hash_table_8hpp.html#a5204774c7a67cc66daf4fa11d59f2239">HashTable</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_hash_table_8hpp.html#a3fb3ac123f935a924aff5e636cc2a59a">~HashTable</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_hash_table_8hpp.html#a2e98eb2821514e3861dbee44c88a0f3c">add</a> (K key, V value)</td></tr>
+<tr><td colspan="2"><h2><a name="var-members"></a>
+Variables</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_alveole.html">Alveole</a>&lt; K, V &gt; **&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_hash_table_8hpp.html#a2e72fdff74acaddf1d6b0704dc330179">_table</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool **&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_hash_table_8hpp.html#a47692d1e70190c6d92332ab3a51af766">_toc</a> = true</td></tr>
 </table>
 <hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
 <div class="textblock"><h2><a class="anchor" id="desc"></a>
@@ -150,6 +160,47 @@ File informations</h2>
 </div>
 </div>
 <hr/><h2>Function Documentation</h2>
+<a class="anchor" id="a2e98eb2821514e3861dbee44c88a0f3c"></a><!-- doxytag: member="HashTable.hpp::add" ref="a2e98eb2821514e3861dbee44c88a0f3c" args="(K key, V value)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="_hash_table_8hpp.html#a2e98eb2821514e3861dbee44c88a0f3c">setValue::add</a> </td>
+          <td>(</td>
+          <td class="paramtype">K&#160;</td>
+          <td class="paramname"><em>key</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">V&#160;</td>
+          <td class="paramname"><em>value</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Add a new pair in the hash table, might not be already in </p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">key</td><td>key of the pair </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">value</td><td>of the pair </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt><b>Exceptions:</b></dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="class_hash_exception.html" title="Exception class to manage hashtable errors.">HashException</a></td><td>Threw if key already recorded </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a class="anchor" id="aa6ed3652d06b4cf38350bfba9482c396"></a><!-- doxytag: member="HashTable.hpp::computehash" ref="aa6ed3652d06b4cf38350bfba9482c396" args="(K key)" -->
 <div class="memitem">
 <div class="memproto">
@@ -168,13 +219,114 @@ File informations</h2>
 
 </div>
 </div>
+<a class="anchor" id="a5204774c7a67cc66daf4fa11d59f2239"></a><!-- doxytag: member="HashTable.hpp::HashTable" ref="a5204774c7a67cc66daf4fa11d59f2239" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_hash_table_8hpp.html#a5204774c7a67cc66daf4fa11d59f2239">setValue::HashTable</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Simple constructor </p>
+
+</div>
+</div>
+<a class="anchor" id="a05acd744ff088b0f1b6d11aa8902e103"></a><!-- doxytag: member="HashTable.hpp::setValue" ref="a05acd744ff088b0f1b6d11aa8902e103" args="(const K &amp;key, V value)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">&lt;templateK=int,V=double&gt; class <a class="el" href="class_hash_table.html">HashTable</a> <a class="el" href="_hash_table_8hpp.html#a05acd744ff088b0f1b6d11aa8902e103">setValue</a> </td>
+          <td>(</td>
+          <td class="paramtype">const K &amp;&#160;</td>
+          <td class="paramname"><em>key</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">V&#160;</td>
+          <td class="paramname"><em>value</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Change a value asociated to a kay </p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">key</td><td>the key of the pair to change [in] n_value the new value of the pair </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt><b>Exceptions:</b></dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="class_hash_exception.html" title="Exception class to manage hashtable errors.">HashException</a></td><td>threw if key not recorded </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a3fb3ac123f935a924aff5e636cc2a59a"></a><!-- doxytag: member="HashTable.hpp::~HashTable" ref="a3fb3ac123f935a924aff5e636cc2a59a" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_hash_table_8hpp.html#a3fb3ac123f935a924aff5e636cc2a59a">setValue::~HashTable</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Destructor </p>
+
+</div>
+</div>
+<hr/><h2>Variable Documentation</h2>
+<a class="anchor" id="a2e72fdff74acaddf1d6b0704dc330179"></a><!-- doxytag: member="HashTable.hpp::_table" ref="a2e72fdff74acaddf1d6b0704dc330179" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_alveole.html">Alveole</a>&lt;K,V&gt;** <a class="el" href="_hash_table_8hpp.html#a2e72fdff74acaddf1d6b0704dc330179">_table</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a47692d1e70190c6d92332ab3a51af766"></a><!-- doxytag: member="HashTable.hpp::_toc" ref="a47692d1e70190c6d92332ab3a51af766" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_hash_table_8hpp.html#a47692d1e70190c6d92332ab3a51af766">_toc</a>[index] = true</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
 </div><!-- contents -->
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Defines</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Defines</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -186,7 +338,7 @@ File informations</h2>
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Mar 28 2014 11:55:37 for HashTable by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Mar 28 2014 13:11:28 for HashTable by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>
