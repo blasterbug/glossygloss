@@ -44,7 +44,7 @@
 
 /// macro to define size of hash arrays
 #ifndef ARRAYSIZE
-#define ARRAYSIZE 50
+#define ARRAYSIZE 10
 #endif
 
 // section of included files
@@ -53,10 +53,15 @@
 /**
  * Fonction you must define
  * @param[in] element element to compute hashcode from
- * @param[out] the hashcode of element, an unsigned integer 
+ * @param[out] the hashcode of element, an unsigned integer
+ * 
+ * template<> unisgned computehash<string>(string element)
+ * {
+ * 		your implementation of hashcode function
+ * }
+}
  */
-template <typename K>
-int computehash(K element);
+template <typename K> unsigned computehash(K element);
 
 using std::string;
 
@@ -176,11 +181,11 @@ class Alveole{
 		 * @param[out] a string represention of the alveole
 		 */
 		string toString(){
-			string desc = ("{" + _key + ", " + _value + "}");
+			string desc = "{" + _key + ", " + _value + "}";
 			if(END == _next){
 				return desc;
 			} else {
-				return _next->toString() + ", " + desc;
+				return desc + ", " + _next->toString();
 			}
 		}
 };
@@ -217,7 +222,7 @@ class Hashtable {
 		 */
 		bool contains(const K &key){
 			bool here = false;
-			int index = computehash(key)%ARRAYSIZE;
+			int index = computehash<K>(key)%ARRAYSIZE;
 			Alveole<K,V>* browser = _table[index];
 			while(not here and END != browser){
 				if(key == browser->getKey()){
@@ -234,7 +239,7 @@ class Hashtable {
 		 * @exception HashException threw if key is not in the hashtable
 		 */
 		V get(const K &key){
-			int index = computehash(key)%ARRAYSIZE;
+			int index = computehash<K>(key)%ARRAYSIZE;
 			Alveole<K,V>* browser = _table[index];
 			bool undone = true;
 			while(undone and END != browser){
@@ -274,18 +279,19 @@ class Hashtable {
 		// TODO: optimize this fucking code
 		void put(K key, V value){
 			// where to put the pair ?
-			int index = computehash(key)%ARRAYSIZE;
+			int index = computehash<K>(key)%ARRAYSIZE;
 			// browse alveoles at this place
 			Alveole<K,V>* browser = _table[index];
 			bool undone = true;
 			while(undone and END != browser){
 				if(key == browser->getKey()){
+					std::cout << "update value!" << std::endl;
 					browser->setValue(value);
 					undone = false;
 				}
 				browser = browser->getNext();
 			}
-			if(undone) _table[index] = new Alveole<K,V>(key, value);
+			if(undone){_table[index] = new Alveole<K,V>(key, value, _table[index]);}
 		}
 		
 		/** Remove the key (and its corresponding value) from this hashtable.
@@ -293,7 +299,7 @@ class Hashtable {
 		 * @exception HashException threw if table does not contain key
 		 */
 		void remove(const K &key){
-			int index = computehash(key)%ARRAYSIZE;
+			int index = computehash<K>(key)%ARRAYSIZE;
 			Alveole<K,V>* bef = new Alveole<K,V>*(); 
 			bef->setNext(_table[index]);
 			Alveole<K,V>* cur =_table[index];
@@ -318,7 +324,7 @@ class Hashtable {
 			string desc = "[";
 			for(int i = 0; i<ARRAYSIZE; ++i){
 				if(END != _table[i]){
-					desc += (_table[i]->toString() + ", ");
+					desc.size()<2?desc += (_table[i]->toString()):desc += ", " + (_table[i]->toString());
 				}
 			}
 			return desc + "]";
