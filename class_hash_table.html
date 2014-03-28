@@ -70,7 +70,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow2" class="tabs2">
     <ul class="tablist">
       <li><a href="annotated.html"><span>Class&#160;List</span></a></li>
-      <li><a href="classes.html"><span>Class&#160;Index</span></a></li>
       <li><a href="hierarchy.html"><span>Class&#160;Hierarchy</span></a></li>
       <li><a href="functions.html"><span>Class&#160;Members</span></a></li>
     </ul>
@@ -108,6 +107,7 @@ $(document).ready(function(){initNavTree('class_hash_table.html','');});
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pub-attribs">Public Attributes</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="class_hash_table-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">HashTable Class Reference</div>  </div>
@@ -132,6 +132,13 @@ Public Member Functions</h2></td></tr>
 Public Attributes</h2></td></tr>
 <tr class="memitem:a9113f13baf875cb9c461c09808983978"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_hash_table.html#a9113f13baf875cb9c461c09808983978">_toc</a> [index] = true</td></tr>
 <tr class="separator:a9113f13baf875cb9c461c09808983978"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:aef0916bcea279a06ac956b4faf00a942"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_alveole.html">Alveole</a>&lt; K, V &gt; **&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_hash_table.html#aef0916bcea279a06ac956b4faf00a942">_table</a></td></tr>
+<tr class="separator:aef0916bcea279a06ac956b4faf00a942"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:accb9afb522612751c41e0d6e3b0b466a"><td class="memItemLeft" align="right" valign="top">bool **&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_hash_table.html#accb9afb522612751c41e0d6e3b0b466a">_toc</a></td></tr>
+<tr class="separator:accb9afb522612751c41e0d6e3b0b466a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Class <a class="el" href="class_hash_table.html" title="Class HashTable to manage hash structure in an array. ">HashTable</a> to manage hash structure in an array. </p>
@@ -234,6 +241,46 @@ Public Attributes</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
+<a class="anchor" id="aef0916bcea279a06ac956b4faf00a942"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_alveole.html">Alveole</a>&lt;K,V&gt;** HashTable::_table</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="accb9afb522612751c41e0d6e3b0b466a"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool** HashTable::_toc</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a class="anchor" id="a9113f13baf875cb9c461c09808983978"></a>
 <div class="memitem">
 <div class="memproto">
@@ -255,7 +302,7 @@ Public Attributes</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="class_hash_table.html">HashTable</a></li>
-    <li class="footer">Generated on Fri Mar 28 2014 15:54:22 for Glossygloss by
+    <li class="footer">Generated on Fri Mar 28 2014 15:58:52 for Glossygloss by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
   </ul>

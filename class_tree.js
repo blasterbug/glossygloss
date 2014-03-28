@@ -11,5 +11,6 @@ var class_tree =
     [ "operator!=", "class_tree.html#ad9b3fd4767ddc1010e37e12353904195", null ],
     [ "operator=", "class_tree.html#ab577e3fc67156ff7629e34e411cf7b4e", null ],
     [ "operator==", "class_tree.html#abe0212dfef7bb34434d5ac54db8c5491", null ],
-    [ "remove", "class_tree.html#a715e07e21bb3da46c21e67abd529867c", null ]
+    [ "remove", "class_tree.html#a715e07e21bb3da46c21e67abd529867c", null ],
+    [ "_root", "class_tree.html#a54cb544eb7fd70d77ebb02de76620c01", null ]
 ];

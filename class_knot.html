@@ -70,7 +70,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow2" class="tabs2">
     <ul class="tablist">
       <li><a href="annotated.html"><span>Class&#160;List</span></a></li>
-      <li><a href="classes.html"><span>Class&#160;Index</span></a></li>
       <li><a href="hierarchy.html"><span>Class&#160;Hierarchy</span></a></li>
       <li><a href="functions.html"><span>Class&#160;Members</span></a></li>
     </ul>
@@ -107,6 +106,7 @@ $(document).ready(function(){initNavTree('class_knot.html','');});
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="class_knot-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">Knot Class Reference</div>  </div>
@@ -117,7 +117,7 @@ $(document).ready(function(){initNavTree('class_knot.html','');});
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a92883dc27430396af88d6e8a0b216d7d"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_knot.html#a92883dc27430396af88d6e8a0b216d7d">Knot</a> (const <a class="el" href="class_knot.html">Knot</a>&lt; T &gt; &amp;other) _tag(other._tag)</td></tr>
+<tr class="memitem:a92883dc27430396af88d6e8a0b216d7d"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_knot.html#a92883dc27430396af88d6e8a0b216d7d">Knot</a> (const <a class="el" href="class_knot.html">Knot</a>&lt; T &gt; &amp;other) <a class="el" href="class_knot.html#a199001b510dcbb6e1f0979028a9b9662">_tag</a>(other._tag)</td></tr>
 <tr class="separator:a92883dc27430396af88d6e8a0b216d7d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4fbe6a4a6f834298c0972a11c49a100c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_knot.html#a4fbe6a4a6f834298c0972a11c49a100c">_children</a> (other._children) <a class="el" href="class_knot.html">Knot</a>&lt; T &gt;(T data)</td></tr>
 <tr class="separator:a4fbe6a4a6f834298c0972a11c49a100c"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -140,6 +140,15 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:af8b780d91b4f2a43556c7b53c8f6243c"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_knot.html#af8b780d91b4f2a43556c7b53c8f6243c">toString</a> ()</td></tr>
 <tr class="memdesc:af8b780d91b4f2a43556c7b53c8f6243c"><td class="mdescLeft">&#160;</td><td class="mdescRight">get a representation of the knot  <a href="#af8b780d91b4f2a43556c7b53c8f6243c">More...</a><br/></td></tr>
 <tr class="separator:af8b780d91b4f2a43556c7b53c8f6243c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:a199001b510dcbb6e1f0979028a9b9662"><td class="memItemLeft" align="right" valign="top">T&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_knot.html#a199001b510dcbb6e1f0979028a9b9662">_tag</a></td></tr>
+<tr class="memdesc:a199001b510dcbb6e1f0979028a9b9662"><td class="mdescLeft">&#160;</td><td class="mdescRight">letter stored into knot, the tag  <a href="#a199001b510dcbb6e1f0979028a9b9662">More...</a><br/></td></tr>
+<tr class="separator:a199001b510dcbb6e1f0979028a9b9662"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afcf38a48b47c72fd61f0ddd3b7597c72"><td class="memItemLeft" align="right" valign="top">list&lt; <a class="el" href="class_knot.html">Knot</a>&lt; T &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_knot.html#afcf38a48b47c72fd61f0ddd3b7597c72">_children</a></td></tr>
+<tr class="memdesc:afcf38a48b47c72fd61f0ddd3b7597c72"><td class="mdescLeft">&#160;</td><td class="mdescRight">children of the knot  <a href="#afcf38a48b47c72fd61f0ddd3b7597c72">More...</a><br/></td></tr>
+<tr class="separator:afcf38a48b47c72fd61f0ddd3b7597c72"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>class for knots of a tree Knoy store a tag and can have several children </p>
@@ -480,6 +489,51 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a class="anchor" id="afcf38a48b47c72fd61f0ddd3b7597c72"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">list&lt;<a class="el" href="class_knot.html">Knot</a>&lt;T&gt; &gt; Knot::_children</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>children of the knot </p>
+
+</div>
+</div>
+<a class="anchor" id="a199001b510dcbb6e1f0979028a9b9662"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">T Knot::_tag</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>letter stored into knot, the tag </p>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following file:<ul>
 <li>src/<a class="el" href="">tree.hpp</a></li>
 </ul>
@@ -489,7 +543,7 @@ Public Member Functions</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="class_knot.html">Knot</a></li>
-    <li class="footer">Generated on Fri Mar 28 2014 15:54:22 for Glossygloss by
+    <li class="footer">Generated on Fri Mar 28 2014 15:58:52 for Glossygloss by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
   </ul>

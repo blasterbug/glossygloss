@@ -8,5 +8,8 @@ var class_alveole =
     [ "getValue", "class_alveole.html#a0c56d83c6f8152a7674cddf1faf56bc5", null ],
     [ "isQueue", "class_alveole.html#a50d6115afd8f29ed898e210b51e901e5", null ],
     [ "setNext", "class_alveole.html#a3a542f1a81462e77d31b90e59f9f8287", null ],
-    [ "setValue", "class_alveole.html#afd3607532906bead78ba7c52f956e0b0", null ]
+    [ "setValue", "class_alveole.html#afd3607532906bead78ba7c52f956e0b0", null ],
+    [ "_key", "class_alveole.html#aa1311396eb51a28142455cdb52c7b610", null ],
+    [ "_next", "class_alveole.html#a4013169a39f41b29da46eab8235d62ec", null ],
+    [ "_value", "class_alveole.html#a470d6550a8c1736be303a86e7498fca4", null ]
 ];

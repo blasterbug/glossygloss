@@ -70,7 +70,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow2" class="tabs2">
     <ul class="tablist">
       <li><a href="annotated.html"><span>Class&#160;List</span></a></li>
-      <li><a href="classes.html"><span>Class&#160;Index</span></a></li>
       <li><a href="hierarchy.html"><span>Class&#160;Hierarchy</span></a></li>
       <li><a href="functions.html"><span>Class&#160;Members</span></a></li>
     </ul>
@@ -107,6 +106,7 @@ $(document).ready(function(){initNavTree('class_alveole.html','');});
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="class_alveole-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">Alveole Class Reference</div>  </div>
@@ -138,6 +138,15 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:afd3607532906bead78ba7c52f956e0b0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3a542f1a81462e77d31b90e59f9f8287"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_alveole.html#a3a542f1a81462e77d31b90e59f9f8287">setNext</a> (<a class="el" href="class_alveole.html">Alveole</a>&lt; K, V &gt; *n_next)</td></tr>
 <tr class="separator:a3a542f1a81462e77d31b90e59f9f8287"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:aa1311396eb51a28142455cdb52c7b610"><td class="memItemLeft" align="right" valign="top">K&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_alveole.html#aa1311396eb51a28142455cdb52c7b610">_key</a></td></tr>
+<tr class="separator:aa1311396eb51a28142455cdb52c7b610"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a470d6550a8c1736be303a86e7498fca4"><td class="memItemLeft" align="right" valign="top">V&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_alveole.html#a470d6550a8c1736be303a86e7498fca4">_value</a></td></tr>
+<tr class="separator:a470d6550a8c1736be303a86e7498fca4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4013169a39f41b29da46eab8235d62ec"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_alveole.html">Alveole</a>&lt; K, V &gt; *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_alveole.html#a4013169a39f41b29da46eab8235d62ec">_next</a></td></tr>
+<tr class="separator:a4013169a39f41b29da46eab8235d62ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p><a class="el" href="class_alveole.html" title="Alveole class embodies a hashtable&#39;s alveole. An alveole store a pair &lt;k,v&gt;. Alveoles are simply-link...">Alveole</a> class embodies a hashtable's alveole. An alveole store a pair &lt;k,v&gt;. Alveoles are simply-linked elements. </p>
@@ -447,6 +456,67 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a class="anchor" id="aa1311396eb51a28142455cdb52c7b610"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">K Alveole::_key</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a4013169a39f41b29da46eab8235d62ec"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_alveole.html">Alveole</a>&lt;K,V&gt;* Alveole::_next</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a470d6550a8c1736be303a86e7498fca4"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">V Alveole::_value</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following file:<ul>
 <li>src/<a class="el" href="">HashTable.hpp</a></li>
 </ul>
@@ -456,7 +526,7 @@ Public Member Functions</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="class_alveole.html">Alveole</a></li>
-    <li class="footer">Generated on Fri Mar 28 2014 15:54:22 for Glossygloss by
+    <li class="footer">Generated on Fri Mar 28 2014 15:58:52 for Glossygloss by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
   </ul>

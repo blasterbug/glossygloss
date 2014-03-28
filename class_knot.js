@@ -10,5 +10,7 @@ var class_knot =
     [ "operator=", "class_knot.html#a2229333e1b081402213d600dd7c3b43d", null ],
     [ "operator==", "class_knot.html#a37de81d6b6172c19435fcf0f11658bc3", null ],
     [ "remove", "class_knot.html#a96d632680a9180028a743cb9c36999fd", null ],
-    [ "toString", "class_knot.html#af8b780d91b4f2a43556c7b53c8f6243c", null ]
+    [ "toString", "class_knot.html#af8b780d91b4f2a43556c7b53c8f6243c", null ],
+    [ "_children", "class_knot.html#afcf38a48b47c72fd61f0ddd3b7597c72", null ],
+    [ "_tag", "class_knot.html#a199001b510dcbb6e1f0979028a9b9662", null ]
 ];

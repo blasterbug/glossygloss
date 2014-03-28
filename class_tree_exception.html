@@ -70,7 +70,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow2" class="tabs2">
     <ul class="tablist">
       <li><a href="annotated.html"><span>Class&#160;List</span></a></li>
-      <li><a href="classes.html"><span>Class&#160;Index</span></a></li>
       <li><a href="hierarchy.html"><span>Class&#160;Hierarchy</span></a></li>
       <li><a href="functions.html"><span>Class&#160;Members</span></a></li>
     </ul>
@@ -107,6 +106,7 @@ $(document).ready(function(){initNavTree('class_tree_exception.html','');});
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="class_tree_exception-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">TreeException Class Reference</div>  </div>
@@ -117,9 +117,11 @@ $(document).ready(function(){initNavTree('class_tree_exception.html','');});
  <a href="class_tree_exception.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="">tree.hpp</a>&gt;</code></p>
-<div class="dynheader">
-Inheritance diagram for TreeException:</div>
-<div class="dyncontent">
+<div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Inheritance diagram for TreeException:</div>
+<div id="dynsection-0-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-0-content" class="dyncontent" style="display:none;">
  <div class="center">
   <img src="class_tree_exception.png" usemap="#TreeException_map" alt=""/>
   <map id="TreeException_map" name="TreeException_map">
@@ -134,6 +136,11 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a40fd9844273948231478fcf70e6f9468"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab899a6ec0f82bf770b88ba4982e3d696"><td class="memItemLeft" align="right" valign="top">virtual const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_tree_exception.html#ab899a6ec0f82bf770b88ba4982e3d696">what</a> () const   throw ()</td></tr>
 <tr class="separator:ab899a6ec0f82bf770b88ba4982e3d696"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:a90175b0c5a1e2a7ebb77cadc92b0388b"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_tree_exception.html#a90175b0c5a1e2a7ebb77cadc92b0388b">_cause</a></td></tr>
+<tr class="separator:a90175b0c5a1e2a7ebb77cadc92b0388b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>exception class for trees </p>
@@ -230,6 +237,27 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a class="anchor" id="a90175b0c5a1e2a7ebb77cadc92b0388b"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">char* TreeException::_cause</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following file:<ul>
 <li>src/<a class="el" href="">tree.hpp</a></li>
 </ul>
@@ -239,7 +267,7 @@ Public Member Functions</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="class_tree_exception.html">TreeException</a></li>
-    <li class="footer">Generated on Fri Mar 28 2014 15:54:22 for Glossygloss by
+    <li class="footer">Generated on Fri Mar 28 2014 15:58:52 for Glossygloss by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
   </ul>
