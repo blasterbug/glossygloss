@@ -1,11 +1,11 @@
 /**
- * @file HashException.hpp
+ * \file HashException.hpp
  *
- * @section desc File description
+ * \section desc File description
  *
  * Exception class for hash classes.
  *
- * @section copyright Copyright
+ * \section copyright Copyright
  *
  * This source code is protected by the French intellectual property law.
  *
@@ -23,7 +23,7 @@
  * along with this program; if not, write to the Free Software
  * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
  *
- * @section infos File informations
+ * \section infos File informations
  *
  * $Date$ 2014/03/27
  * $Rev$ 0.1
@@ -47,7 +47,7 @@ class HashException : std::exception {
 	public:
 		/** constructor
 		 * called then HashExceptions are threw
-		 * @param[in] cause description of exception origin
+		 * \param[in] cause description of exception origin
 		 */
 		HashException(char* cause):
 			_cause(cause)

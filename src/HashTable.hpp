@@ -3,7 +3,7 @@
  *
  * @section desc File description
  *
- * data structure to store pair in a table
+ * data structure to store pairs in a table
  * a hashcode is compute with k to evaluate the suitable place to store the pair
  * 
  * !! WARNING: int hashCode(K key) must be implemented !!
