@@ -49,21 +49,53 @@
 
 // section of included files
 #include <string>
-#include "HashException.hpp"
 
 /**
  * Fonction you must define
+ * @param[in] element element to compute hashcode from
+ * @param[out] the hashcode of element, an unsigned integer 
  */
-<template K>
-int computehash(K key);
+ template <typename K>
+unsigned computehash<K>(K element);
 
 using std::string;
+
+/**
+ * @brief Exception class to manage hashtable errors
+ */
+class HashException : std::exception {
+	private:
+		char* _cause; /* store exception description */
+	public:
+		/** constructor
+		 * called then HashExceptions are threw
+		 * @param[in] cause description of exception origin
+		 */
+		HashException(char* cause):
+			_cause(cause)
+			{}
+		
+		/** destructor
+		 * currently, do anything special
+		 */
+		virtual ~HashException() throw(){
+			// do nothing
+		}
+		
+		/** virtual fonction from superclass,
+		 * usefull to get the exception description
+		 */
+		virtual const char* what()const throw(){
+			return _cause;
+		}
+};
+
 /** Alveole class
  * embodies a hashtable's alveole. An alveole store a pair <k,v>.
  * Alveoles are simply-linked elements.
  */
 // TODO: implement iterator to browse within alveoles very quickly and easely
-<template K = int, V = double>
+template <typename K, typename V>
 class Alveole{
 	private:
 		K _key; /* key of the pair */
@@ -76,7 +108,7 @@ class Alveole{
 		 */
 		Alveole(const Alveole<K,V> &other):
 			_key(other._key),
-			_valu(other._value)
+			_value(other._value)
 			{
 				// if there are elements coming next
 				if(END != other._next){
@@ -93,6 +125,11 @@ class Alveole{
 			_key(key), _value(value),
 			_next(END)
 			{}
+			
+		/** Empty constructor
+		 * create a 'empty' alveole
+		 */
+		Alveole(){};
 		
 		/** Complex constructor
 		 * @param[in] key key of the pair
@@ -104,11 +141,6 @@ class Alveole{
 			_value(value),
 			_next(next)
 			{}
-		
-		/** Does alveole have next ?
-		 * @param[out] true if elements coming next, else false
-		 */
-		bool isQueue(){ return END == _next; }
 		
 		/** Get the key of an alveole
 		 * @param[out] key stored into the alveole
@@ -123,7 +155,7 @@ class Alveole{
 		/** Which alveole coming next ?
 		 * @param[out] memory adres of the next alveole
 		 */
-		Alveole<k,V>* getNext(){
+		Alveole<K,V>* getNext(){
 			return _next;
 		}
 		 
@@ -138,12 +170,24 @@ class Alveole{
 		void setNext(Alveole<K,V>* n_next){
 			_next = n_next;
 		}
+		
+		/** Return a string descriptionof the pair stored into the alveole
+		 * @param[out] a string represention of the alveole
+		 */
+		string toString(){
+			string desc = ("{" + _key + ", " + _value + "}");
+			if(END == _next){
+				return desc;
+			} else {
+				return _next->toString() + ", " + desc;
+			}
+		}
 };
 
-/** @brief Class hashtable to manage hash structure in an array
+/** @brief Class Hashtable to manage hash structure in an array
  */
-<template K = int, V = double>
-class hashtable {
+template <typename K, typename V>
+class Hashtable {
 	
 	private:
 		Alveole<K,V>** _table; /* array of alveoles */
@@ -151,8 +195,8 @@ class hashtable {
 	public:
 		/** Simple constructor
 		 */
-		hashtable(){
-			_table = new Alveole<K,V>[ARRAYSIZE];
+		Hashtable(){
+			_table = new Alveole<K,V>*[ARRAYSIZE];
 			for(int i = 0; i<ARRAYSIZE; ++i){
 				_table[i] = END;
 			}
@@ -160,8 +204,8 @@ class hashtable {
 		
 		/** Destructor
 		 */
-		~hashtable(){
-			delete _table;
+		~Hashtable(){
+			delete[] _table;
 		}
 		
 		/** Do table contains key ?
@@ -181,8 +225,46 @@ class hashtable {
 			return here;
 		}
 		
-		/** Put a new pair in the hash table
-		 * or update the value associate with the key
+		/** Return the value associated with the specified key
+		 * @aparam[in] key a key in the hashtable
+		 * @param[out] value associated with the key
+		 * @exception HashException threw if key is not in the hashtable
+		 */
+		V get(const K &key){
+			int index = computehash(key)%ARRAYSIZE;
+			Alveole<K,V>* browser = _table[index];
+			bool undone = true;
+			while(undone and END != browser){
+				if(key == browser->getKey()){
+					undone = false;
+				}
+				browser = browser->getNext();
+			}
+			if(undone){
+				throw HashException("The key is not associated with a value !");
+			} else {
+				return browser->getValue();
+			}
+			// undone?HashException("The key is not associated with a value !"):return browser->getValue();
+		}
+		
+		/** Tests if this hashtable maps no keys to values.
+		 * @param[out] true if no elements in the hashtable, else false;
+		 */
+		bool isEmpty(){
+			bool empty = true;
+			int i = 0;
+			while(empty and i<ARRAYSIZE){
+				if(END != _table[i]){
+					empty = false;
+				}
+				++i;
+			}
+			return empty;
+		}
+		
+		/** Map the specified key to the specified value in this hashtable.
+		 * or update the maped value to the key
 		 * @param[in] key key of the pair
 		 * @param[in] value value of the pair
 		 */
@@ -200,14 +282,44 @@ class hashtable {
 				}
 				browser = browser->getNext();
 			}
-			undone? _table[index] = new Alveole<K,V>(key, value);
+			if(undone) _table[index] = new Alveole<K,V>(key, value);
 		}
 		
-		/** Remove the pair recorded with key
+		/** Remove the key (and its corresponding value) from this hashtable.
 		 * @param[in] key Key of the pair to delete
-		 * @exception TreeException threw if table does not contain key
+		 * @exception HashException threw if table does not contain key
 		 */
-		void remove
+		void remove(const K &key){
+			int index = computehash(key)%ARRAYSIZE;
+			Alveole<K,V>* bef = new Alveole<K,V>*(); 
+			bef->setNext(_table[index]);
+			Alveole<K,V>* cur =_table[index];
+			bool undone = true;
+			while(undone and END != cur){
+				if(key == cur->getKey()){
+					bef->setNext(cur->getNext());
+					delete cur;
+					undone = false;
+				}
+				bef = cur;
+				cur = cur->getNext();
+			}
+			if(undone) throw HashException("Key is not here!");
+		}
+		
+		/** Return a description of the hashtable, enclosed in braces as
+		 * well as {key, value}.
+		 * @param[out] a string representation of this hashtable.
+		 */
+		string toString(){
+			string desc = "[";
+			for(int i = 0; i<ARRAYSIZE; ++i){
+				if(END != _table[i]){
+					desc += (_table[i]->toString() + ", ");
+				}
+			}
+			return desc + "]";
+		}
 		
 };
 

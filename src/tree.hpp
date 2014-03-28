@@ -70,31 +70,31 @@ class TreeException : std::exception {
 };
 
 /// @brief class for knots of a tree
-/// A knot store a tag and can have several children
-<template T = char>
-class knot {
+/// A Knot store a tag and can have several children
+template <typename T = char>
+class Knot {
 	
 	private:
-		/// letter stored into knot, the tag
+		/// letter stored into Knot, the tag
 		T _tag;
-		/// children of the knot
-		list<knot<T>> _children;
+		/// children of the Knot
+		list<Knot<T>> _children;
 	
 	public:
 		/** Copy constructor
-		 * @param[in] other knot to copy
+		 * @param[in] other Knot to copy
 		 */
-		knot<T>(const knot<T> &other) _tag(other._tag), _children(other._children)
+		Knot<T>(const Knot<T> &other) _tag(other._tag), _children(other._children)
 		/** Simple constructor
-		 * @param[in] data to store into the knot
+		 * @param[in] data to store into the Knot
 		 */
-		knot<T>(T data){
+		Knot<T>(T data){
 			// initialize the list
-			_children = list<knot<T>>(knot<T>, sizeof(knot<T>>));
+			_children = list<Knot<T>>(Knot<T>, sizeof(Knot<T>>));
 		}
-		/** Destructor for knot
+		/** Destructor for Knot
 		 */
-		~knot<T>(){
+		~Knot<T>(){
 			// usefull ?
 			delete _children;
 		}
@@ -103,7 +103,7 @@ class knot {
 		 * @param[in] other knot to assign
 		 * @param[out] assigned knot
 		 */
-		knot<T>& operator =(knot<T> &other){
+		Knot<T>& operator =(Knot<T> &other){
 			// prevent objet copying itself
 			if(this != &other){
 				this->_tag = other._key;
@@ -117,7 +117,7 @@ class knot {
 		 * @param[in] rhs right hand side, second knot to compare
 		 * @param[out] true if knots have the same memory adress, else false
 		 */
-		operator ==(const knot<T> &lhs, const knot<T> &rhs){
+		operator ==(const Knot<T> &lhs, const Knot<T> &rhs){
 			// same adress -> same item
 			return &lhs == &rhs;
 		}
@@ -126,7 +126,7 @@ class knot {
 		 * @param[in] rhs second knot to compare
 		 * @param[out] true if knots have not the same memory adress, else false
 		 */
-		bool operator !=(const knot<T> &lhs, const knot<T> &rhs){
+		bool operator !=(const Knot<T> &lhs, const Knot<T> &rhs){
 			return &lhs != &rhs;
 			// return not(lhs == rhs);
 		}
@@ -149,7 +149,7 @@ class knot {
 				int heights[2] = {0,0};
 				// for each child, using C++11 syntax
 				//for(_children::iterator it=_children.begin(); it!=_children.end(); ++it){
-				for(knot<T> child : _children){
+				for(Knot<T> child : _children){
 					// compute child height and store it
 					heights[1] = child.height();
 					// if computed height is greater then the old one
@@ -166,7 +166,7 @@ class knot {
 		 */
 		void append(<T> n_data){
 			// add the value in chilmdren list as a new knot
-			_children.push_front(new knot<T>(n_data));
+			_children.push_front(new Knot<T>(n_data));
 		}
 		/** Remove a leaf from the knot
 		 * @param[in] data data of the knot's tag to remove
@@ -187,12 +187,12 @@ class knot {
 		string toString();
 };
 
-/// class for the tree, use knot
-<template T = string>
+/// class for the tree, use Knot
+template <typename T = string>
 class Tree {
 	
 	private:
-		knot<T> _root;
+		Knot<T> _root;
 	
 	public:
 		/// @brief copy constructor
