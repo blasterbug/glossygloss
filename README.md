@@ -1,7 +1,7 @@
 glossygloss
 ===========
 
-Glossygloss is set of classes to use several data structure as Tree or hash table.
+Glossygloss is set of classes to use several data structure like Tree and Hashtable. More might come soon.
 
 ### Documentation ?
 

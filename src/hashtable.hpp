@@ -55,13 +55,13 @@
  * @param[in] element element to compute hashcode from
  * @param[out] the hashcode of element, an unsigned integer 
  */
- template <typename K>
-unsigned computehash<K>(K element);
+template <typename K>
+int computehash(K element);
 
 using std::string;
 
 /**
- * @brief Exception class to manage hashtable errors
+ * \brief Exception class to manage hashtable errors
  */
 class HashException : std::exception {
 	private:
@@ -90,8 +90,9 @@ class HashException : std::exception {
 		}
 };
 
-/** Alveole class
- * embodies a hashtable's alveole. An alveole store a pair <k,v>.
+/** \brief Class to define hashtable alveoles.
+ * 
+ * Alveole class embodies a hashtable's alveole. An alveole store a pair <k,v>.
  * Alveoles are simply-linked elements.
  */
 // TODO: implement iterator to browse within alveoles very quickly and easely
@@ -184,7 +185,9 @@ class Alveole{
 		}
 };
 
-/** @brief Class Hashtable to manage hash structure in an array
+/** \brief Maps a key to a value.
+ * 
+ * 
  */
 template <typename K, typename V>
 class Hashtable {

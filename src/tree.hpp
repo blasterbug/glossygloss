@@ -41,7 +41,10 @@
 using std::sting;
 using std::list;
 
-/// @brief exception class for trees
+/** \brief exception class for trees
+ * 
+ * Usefull to manage errors and the unforeseen
+ */
 class TreeException : std::exception {
 	private:
 		char* _cause; /* store exception description */
@@ -69,8 +72,11 @@ class TreeException : std::exception {
 		}
 };
 
-/// @brief class for knots of a tree
-/// A Knot store a tag and can have several children
+/** \brief Defines tree knots.
+ * 
+ * Class for knots of a tree.
+ * A Knot store a tag and can have several children
+ */
 template <typename T = char>
 class Knot {
 	
@@ -183,11 +189,14 @@ class Knot {
 				++it;
 			}
 		}
-		/// @brief get a representation of the knot
+		/// \brief get a representation of the knot
 		string toString();
 };
 
-/// class for the tree, use Knot
+/** \brief class for the tree, uses Knot
+ * 
+ * Tree is a recursive structure uses knots.
+ */
 template <typename T = string>
 class Tree {
 	
@@ -195,29 +204,29 @@ class Tree {
 		Knot<T> _root;
 	
 	public:
-		/// @brief copy constructor
+		/// \brief copy constructor
 		Tree(const Tree<T>&);
-		/// @brief common constructor
+		/// \brief common constructor
 		Tree();
-		/// @brief destructor
+		/// \brief destructor
 		~Tree();
-		/// @brief assignment operator
+		/// \brief assignment operator
 		Tree<T>& operator =(Tree<T>);
-		/// @brief equal operator
+		/// \brief equal operator
 		bool operator ==(const Tree<T>&, const Tree<T>&);
-		/// @brief ne operator
+		/// \brief ne operator
 		bool operator !=(const Tree<T>&, const Tree<T>&);
-		/// @brief Is the element in the tree ?
+		/// \brief Is the element in the tree ?
 		bool contains(T);
-		/// @brief count among of appearances of a particular element
+		/// \brief count among of appearances of a particular element
 		int count(T);
-		/// @brief the height of the tree
+		/// \brief the height of the tree
 		int height();
-		/// @brief add an element in the tree
+		/// \brief add an element in the tree
 		void add(T);
-		/// @brief remove an element from the tree
+		/// \brief remove an element from the tree
 		void remove(T);
-		/// @brief get the whole list of elements in the tree
+		/// \brief get the whole list of elements in the tree
 		T[] elements();
 };
 
