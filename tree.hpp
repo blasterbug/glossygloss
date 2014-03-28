@@ -41,7 +41,7 @@
 using std::sting;
 using std::list;
 
-/// exception class for trees
+/// \brief exception class for trees
 class TreeException : std::exception {
 	private:
 		char* _cause; /* store exception description */
