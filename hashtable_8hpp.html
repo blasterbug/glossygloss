@@ -132,15 +132,15 @@ Macros</h2></td></tr>
 <tr class="memitem:a29fd18bed01c4d836c7ebfe73a125c3f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="hashtable_8hpp.html#a29fd18bed01c4d836c7ebfe73a125c3f">END</a>&#160;&#160;&#160;0</td></tr>
 <tr class="memdesc:a29fd18bed01c4d836c7ebfe73a125c3f"><td class="mdescLeft">&#160;</td><td class="mdescRight">macro to define end of alveole chains  <a href="#a29fd18bed01c4d836c7ebfe73a125c3f">More...</a><br/></td></tr>
 <tr class="separator:a29fd18bed01c4d836c7ebfe73a125c3f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a78d344caabde729a4559393a0552bf1c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="hashtable_8hpp.html#a78d344caabde729a4559393a0552bf1c">ARRAYSIZE</a>&#160;&#160;&#160;50</td></tr>
+<tr class="memitem:a78d344caabde729a4559393a0552bf1c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="hashtable_8hpp.html#a78d344caabde729a4559393a0552bf1c">ARRAYSIZE</a>&#160;&#160;&#160;10</td></tr>
 <tr class="memdesc:a78d344caabde729a4559393a0552bf1c"><td class="mdescLeft">&#160;</td><td class="mdescRight">macro to define size of hash arrays  <a href="#a78d344caabde729a4559393a0552bf1c">More...</a><br/></td></tr>
 <tr class="separator:a78d344caabde729a4559393a0552bf1c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:af681aefa67e36f5248b75c3b45dbe50f"><td class="memTemplParams" colspan="2">template&lt;typename K &gt; </td></tr>
-<tr class="memitem:af681aefa67e36f5248b75c3b45dbe50f"><td class="memTemplItemLeft" align="right" valign="top">int&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="hashtable_8hpp.html#af681aefa67e36f5248b75c3b45dbe50f">computehash</a> (K element)</td></tr>
-<tr class="separator:af681aefa67e36f5248b75c3b45dbe50f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0884e6a3e2395d8a9cec36a7c651820b"><td class="memTemplParams" colspan="2">template&lt;typename K &gt; </td></tr>
+<tr class="memitem:a0884e6a3e2395d8a9cec36a7c651820b"><td class="memTemplItemLeft" align="right" valign="top">unsigned&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="hashtable_8hpp.html#a0884e6a3e2395d8a9cec36a7c651820b">computehash</a> (K element)</td></tr>
+<tr class="separator:a0884e6a3e2395d8a9cec36a7c651820b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><h1><a class="anchor" id="desc"></a>
@@ -162,7 +162,7 @@ File informations</h1>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define ARRAYSIZE&#160;&#160;&#160;50</td>
+          <td class="memname">#define ARRAYSIZE&#160;&#160;&#160;10</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -186,14 +186,14 @@ File informations</h1>
 </div>
 </div>
 <h2 class="groupheader">Function Documentation</h2>
-<a class="anchor" id="af681aefa67e36f5248b75c3b45dbe50f"></a>
+<a class="anchor" id="a0884e6a3e2395d8a9cec36a7c651820b"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
 template&lt;typename K &gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">int computehash </td>
+          <td class="memname">unsigned computehash </td>
           <td>(</td>
           <td class="paramtype">K&#160;</td>
           <td class="paramname"><em>element</em></td><td>)</td>
@@ -205,10 +205,11 @@ template&lt;typename K &gt; </div>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">element</td><td>element to compute hashcode from </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">the</td><td>hashcode of element, an unsigned integer </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">the</td><td>hashcode of element, an unsigned integer</td></tr>
   </table>
   </dd>
 </dl>
+<p>template&lt;&gt; unisgned computehash&lt;string&gt;(string element) { your implementation of hashcode function } } </p>
 
 </div>
 </div>
@@ -218,7 +219,7 @@ template&lt;typename K &gt; </div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="hashtable_8hpp.html">hashtable.hpp</a></li>
-    <li class="footer">Generated on Fri Mar 28 2014 19:45:17 for Glossygloss by
+    <li class="footer">Generated on Fri Mar 28 2014 23:12:09 for Glossygloss by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
   </ul>
