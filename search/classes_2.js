@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['knot',['Knot',['../class_knot.html',1,'']]]
+  ['node',['Node',['../class_node.html',1,'']]]
 ];
