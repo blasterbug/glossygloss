@@ -47,8 +47,12 @@
 #define ARRAYSIZE 10
 #endif
 
-// section of included files
+// included files section
 #include <string>
+#include <cassert>
+
+// will desactive cassert
+//#define NDEBUG 
 
 /**
  * Fonction you must define
@@ -223,6 +227,8 @@ class Hashtable {
 		bool contains(const K &key){
 			bool here = false;
 			int index = computehash<K>(key)%ARRAYSIZE;
+			assert(index>=0);
+			assert(index<ARRAYSIZE);
 			Alveole<K,V>* browser = _table[index];
 			while(not here and END != browser){
 				if(key == browser->getKey()){
@@ -240,6 +246,8 @@ class Hashtable {
 		 */
 		V get(const K &key){
 			int index = computehash<K>(key)%ARRAYSIZE;
+			assert(index>=0);
+			assert(index<ARRAYSIZE);
 			Alveole<K,V>* browser = _table[index];
 			bool undone = true;
 			while(undone and END != browser){
@@ -249,11 +257,10 @@ class Hashtable {
 				browser = browser->getNext();
 			}
 			if(undone){
-				throw HashException("The key is not associated with a value !");
+				throw HashException("Key not found!");
 			} else {
 				return browser->getValue();
 			}
-			// undone?HashException("The key is not associated with a value !"):return browser->getValue();
 		}
 		
 		/** Tests if this hashtable maps no keys to values.
@@ -263,10 +270,7 @@ class Hashtable {
 			bool empty = true;
 			int i = 0;
 			while(empty and i<ARRAYSIZE){
-				if(END != _table[i]){
-					empty = false;
-				}
-				++i;
+				empty = (END == _table[i++]);
 			}
 			return empty;
 		}
@@ -280,12 +284,14 @@ class Hashtable {
 		void put(K key, V value){
 			// where to put the pair ?
 			int index = computehash<K>(key)%ARRAYSIZE;
+			assert(index>=0);
+			assert(index<ARRAYSIZE);
 			// browse alveoles at this place
 			Alveole<K,V>* browser = _table[index];
 			bool undone = true;
 			while(undone and END != browser){
 				if(key == browser->getKey()){
-					std::cout << "update value!" << std::endl;
+					std::cout << key << " update!" << std::endl;
 					browser->setValue(value);
 					undone = false;
 				}
@@ -300,6 +306,8 @@ class Hashtable {
 		 */
 		void remove(const K &key){
 			int index = computehash<K>(key)%ARRAYSIZE;
+			assert(index>=0);
+			assert(index<ARRAYSIZE);
 			Alveole<K,V>* bef = new Alveole<K,V>(); 
 			bef->setNext(_table[index]);
 			Alveole<K,V>* cur = _table[index];

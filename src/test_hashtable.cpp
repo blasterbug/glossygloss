@@ -79,7 +79,7 @@ int main(int argc,const char** argv){
 		
 		key_file >> key;
 		key_file >> value;
-		cout << "read ing :" << key << " maps to " << value << endl;
+		cout << key << " maped to " << value << endl;
 		++i;
 	}
 	
@@ -87,14 +87,21 @@ int main(int argc,const char** argv){
 	value_file.close();
 	
 	cout << storage.toString() << endl;
-	string rm ;
+	string reader ;
 	cout << "Give the key to remove:" << endl;
-	cin >> rm;
+	cin >> reader;
 	try{
-		storage.remove(rm);
+		storage.remove(reader);
 	} catch(HashException ex) {
 		cout << ex.what() << endl;
 	}
 	cout << storage.toString() << endl;
+	cout << "Give a key to get the maped value" << endl;
+	cin >> reader;
+	try{
+		cout << reader << " maped to " << storage.get(reader) << endl;
+	} catch (HashException ex) {
+		cout << ex.what() << endl;
+	}
 	return 0;
 }

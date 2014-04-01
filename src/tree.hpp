@@ -35,6 +35,7 @@
 #ifndef HASHWORK_HPP
 #define HASHWORK_HPP
 
+#include <cassert>
 #include <string>
 #include <list>
 
