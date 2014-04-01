@@ -12,8 +12,7 @@ var indexSectionsWithContent =
   2: "hrt",
   3: "_aceghinoprstw~",
   4: "_",
-  5: "ae",
-  6: "g"
+  5: "ae"
 };
 
 var indexSectionNames =
@@ -23,8 +22,7 @@ var indexSectionNames =
   2: "files",
   3: "functions",
   4: "variables",
-  5: "defines",
-  6: "pages"
+  5: "defines"
 };
 
 function convertToId(search)
