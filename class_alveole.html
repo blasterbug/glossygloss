@@ -95,7 +95,7 @@ $(document).ready(function(){initNavTree('class_alveole.html','');});
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Macros</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Macros</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -107,6 +107,7 @@ $(document).ready(function(){initNavTree('class_alveole.html','');});
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="class_alveole-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">Alveole&lt; K, V &gt; Class Template Reference</div>  </div>
@@ -142,6 +143,15 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:ad756cdf41a7ab00c93c2264c0a1da26c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a504981011163116c40d710a0e1d26a81"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_alveole.html#a504981011163116c40d710a0e1d26a81">toString</a> ()</td></tr>
 <tr class="separator:a504981011163116c40d710a0e1d26a81"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:aebb26347bcaaaf2c0cbe96903b63bc70"><td class="memItemLeft" align="right" valign="top">K&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_alveole.html#aebb26347bcaaaf2c0cbe96903b63bc70">_key</a></td></tr>
+<tr class="separator:aebb26347bcaaaf2c0cbe96903b63bc70"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a50952a1693019a7ca857df267c047c84"><td class="memItemLeft" align="right" valign="top">V&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_alveole.html#a50952a1693019a7ca857df267c047c84">_value</a></td></tr>
+<tr class="separator:a50952a1693019a7ca857df267c047c84"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa566b7335f9ef0dc83ad2a596e659f90"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_alveole.html">Alveole</a>&lt; K, V &gt; *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_alveole.html#aa566b7335f9ef0dc83ad2a596e659f90">_next</a></td></tr>
+<tr class="separator:aa566b7335f9ef0dc83ad2a596e659f90"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><h3>template&lt;typename K, typename V&gt;<br/>
@@ -173,7 +183,7 @@ template&lt;typename K, typename V&gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Copy constructor </p>
+<p>next aveole Copy constructor </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">other</td><td>the alveole to copy </td></tr>
@@ -525,6 +535,75 @@ template&lt;typename K, typename V&gt; </div>
 
 </div>
 </div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a class="anchor" id="aebb26347bcaaaf2c0cbe96903b63bc70"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename K, typename V&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">K <a class="el" href="class_alveole.html">Alveole</a>&lt; K, V &gt;::_key</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="aa566b7335f9ef0dc83ad2a596e659f90"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename K, typename V&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_alveole.html">Alveole</a>&lt;K,V&gt;* <a class="el" href="class_alveole.html">Alveole</a>&lt; K, V &gt;::_next</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>value of the pair </p>
+
+</div>
+</div>
+<a class="anchor" id="a50952a1693019a7ca857df267c047c84"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename K, typename V&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">V <a class="el" href="class_alveole.html">Alveole</a>&lt; K, V &gt;::_value</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>key of the pair </p>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following file:<ul>
 <li>src/<a class="el" href="hashtable_8hpp_source.html">hashtable.hpp</a></li>
 </ul>
@@ -534,7 +613,7 @@ template&lt;typename K, typename V&gt; </div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="class_alveole.html">Alveole</a></li>
-    <li class="footer">Generated on Tue Apr 1 2014 18:39:46 for Glossygloss by
+    <li class="footer">Generated on Tue Apr 1 2014 19:03:16 for Glossygloss by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
   </ul>

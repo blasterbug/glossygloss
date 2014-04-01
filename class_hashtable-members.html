@@ -95,7 +95,7 @@ $(document).ready(function(){initNavTree('class_hashtable.html','');});
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Macros</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Macros</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -112,20 +112,21 @@ $(document).ready(function(){initNavTree('class_hashtable.html','');});
 
 <p>This is the complete list of members for <a class="el" href="class_hashtable.html">Hashtable&lt; K, V &gt;</a>, including all inherited members.</p>
 <table class="directory">
-  <tr class="even"><td class="entry"><a class="el" href="class_hashtable.html#a7521d8ed5476dcfef5ea1079f98acb7b">contains</a>(const K &amp;key)</td><td class="entry"><a class="el" href="class_hashtable.html">Hashtable&lt; K, V &gt;</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
-  <tr><td class="entry"><a class="el" href="class_hashtable.html#a06702992ba59e62b443e1c2d380625dc">get</a>(const K &amp;key)</td><td class="entry"><a class="el" href="class_hashtable.html">Hashtable&lt; K, V &gt;</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="class_hashtable.html#a2f77d0c6d61286bf8d66552b5ade3f27">Hashtable</a>()</td><td class="entry"><a class="el" href="class_hashtable.html">Hashtable&lt; K, V &gt;</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
-  <tr><td class="entry"><a class="el" href="class_hashtable.html#a779816cba88876b2547600f930b293db">isEmpty</a>()</td><td class="entry"><a class="el" href="class_hashtable.html">Hashtable&lt; K, V &gt;</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="class_hashtable.html#af6f9a4e3d5c74f0d5d5f966eece2fc2b">put</a>(K key, V value)</td><td class="entry"><a class="el" href="class_hashtable.html">Hashtable&lt; K, V &gt;</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
-  <tr><td class="entry"><a class="el" href="class_hashtable.html#a5ff7eaa859387421be734f9573dc0ebe">remove</a>(const K &amp;key)</td><td class="entry"><a class="el" href="class_hashtable.html">Hashtable&lt; K, V &gt;</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="class_hashtable.html#ad3141029cd09f8e5e2026af5156c1e0e">toString</a>()</td><td class="entry"><a class="el" href="class_hashtable.html">Hashtable&lt; K, V &gt;</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
-  <tr><td class="entry"><a class="el" href="class_hashtable.html#a3f4057afda4ad0f6b805f900e43b53f6">~Hashtable</a>()</td><td class="entry"><a class="el" href="class_hashtable.html">Hashtable&lt; K, V &gt;</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_hashtable.html#a741b7872f368f468f3b49d687830368a">_table</a></td><td class="entry"><a class="el" href="class_hashtable.html">Hashtable&lt; K, V &gt;</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
+  <tr><td class="entry"><a class="el" href="class_hashtable.html#a7521d8ed5476dcfef5ea1079f98acb7b">contains</a>(const K &amp;key)</td><td class="entry"><a class="el" href="class_hashtable.html">Hashtable&lt; K, V &gt;</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_hashtable.html#a06702992ba59e62b443e1c2d380625dc">get</a>(const K &amp;key)</td><td class="entry"><a class="el" href="class_hashtable.html">Hashtable&lt; K, V &gt;</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr><td class="entry"><a class="el" href="class_hashtable.html#a2f77d0c6d61286bf8d66552b5ade3f27">Hashtable</a>()</td><td class="entry"><a class="el" href="class_hashtable.html">Hashtable&lt; K, V &gt;</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_hashtable.html#a779816cba88876b2547600f930b293db">isEmpty</a>()</td><td class="entry"><a class="el" href="class_hashtable.html">Hashtable&lt; K, V &gt;</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr><td class="entry"><a class="el" href="class_hashtable.html#af6f9a4e3d5c74f0d5d5f966eece2fc2b">put</a>(K key, V value)</td><td class="entry"><a class="el" href="class_hashtable.html">Hashtable&lt; K, V &gt;</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_hashtable.html#a5ff7eaa859387421be734f9573dc0ebe">remove</a>(const K &amp;key)</td><td class="entry"><a class="el" href="class_hashtable.html">Hashtable&lt; K, V &gt;</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr><td class="entry"><a class="el" href="class_hashtable.html#ad3141029cd09f8e5e2026af5156c1e0e">toString</a>()</td><td class="entry"><a class="el" href="class_hashtable.html">Hashtable&lt; K, V &gt;</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_hashtable.html#a3f4057afda4ad0f6b805f900e43b53f6">~Hashtable</a>()</td><td class="entry"><a class="el" href="class_hashtable.html">Hashtable&lt; K, V &gt;</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
 </table></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Tue Apr 1 2014 18:39:46 for Glossygloss by
+    <li class="footer">Generated on Tue Apr 1 2014 19:03:16 for Glossygloss by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
   </ul>

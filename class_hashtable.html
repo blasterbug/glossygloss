@@ -95,7 +95,7 @@ $(document).ready(function(){initNavTree('class_hashtable.html','');});
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Macros</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Macros</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -107,6 +107,7 @@ $(document).ready(function(){initNavTree('class_hashtable.html','');});
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="class_hashtable-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">Hashtable&lt; K, V &gt; Class Template Reference</div>  </div>
@@ -133,9 +134,15 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:af6f9a4e3d5c74f0d5d5f966eece2fc2b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_hashtable.html#af6f9a4e3d5c74f0d5d5f966eece2fc2b">put</a> (K key, V value)</td></tr>
 <tr class="separator:af6f9a4e3d5c74f0d5d5f966eece2fc2b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5ff7eaa859387421be734f9573dc0ebe"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_hashtable.html#a5ff7eaa859387421be734f9573dc0ebe">remove</a> (const K &amp;key)</td></tr>
+<tr class="memdesc:a5ff7eaa859387421be734f9573dc0ebe"><td class="mdescLeft">&#160;</td><td class="mdescRight">FIXME : remove last element of a list lead to a seg. fault.  <a href="#a5ff7eaa859387421be734f9573dc0ebe">More...</a><br/></td></tr>
 <tr class="separator:a5ff7eaa859387421be734f9573dc0ebe"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad3141029cd09f8e5e2026af5156c1e0e"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_hashtable.html#ad3141029cd09f8e5e2026af5156c1e0e">toString</a> ()</td></tr>
 <tr class="separator:ad3141029cd09f8e5e2026af5156c1e0e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:a741b7872f368f468f3b49d687830368a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_alveole.html">Alveole</a>&lt; K, V &gt; **&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_hashtable.html#a741b7872f368f468f3b49d687830368a">_table</a></td></tr>
+<tr class="separator:a741b7872f368f468f3b49d687830368a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><h3>template&lt;typename K, typename V&gt;<br/>
@@ -165,7 +172,7 @@ template&lt;typename K , typename V &gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Simple constructor </p>
+<p>array of alveoles Simple constructor </p>
 
 </div>
 </div>
@@ -368,6 +375,8 @@ template&lt;typename K , typename V &gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>FIXME : remove last element of a list lead to a seg. fault. </p>
 <p>Remove the key (and its corresponding value) from this hashtable. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
@@ -416,6 +425,29 @@ template&lt;typename K , typename V &gt; </div>
 
 </div>
 </div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a class="anchor" id="a741b7872f368f468f3b49d687830368a"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename K , typename V &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_alveole.html">Alveole</a>&lt;K,V&gt;** <a class="el" href="class_hashtable.html">Hashtable</a>&lt; K, V &gt;::_table</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following file:<ul>
 <li>src/<a class="el" href="hashtable_8hpp_source.html">hashtable.hpp</a></li>
 </ul>
@@ -425,7 +457,7 @@ template&lt;typename K , typename V &gt; </div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="class_hashtable.html">Hashtable</a></li>
-    <li class="footer">Generated on Tue Apr 1 2014 18:39:46 for Glossygloss by
+    <li class="footer">Generated on Tue Apr 1 2014 19:03:16 for Glossygloss by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
   </ul>

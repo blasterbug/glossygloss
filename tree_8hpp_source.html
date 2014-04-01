@@ -93,7 +93,7 @@ $(document).ready(function(){initNavTree('tree_8hpp_source.html','');});
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Macros</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Macros</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -120,10 +120,10 @@ $(document).ready(function(){initNavTree('tree_8hpp_source.html','');});
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;</div>
 <div class="line"><a name="l00049"></a><span class="lineno"><a class="line" href="class_tree_exception.html">   49</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_tree_exception.html">TreeException</a> : std::exception {</div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        <span class="keywordtype">char</span>* _cause; <span class="comment">/* store exception description */</span></div>
+<div class="line"><a name="l00051"></a><span class="lineno"><a class="line" href="class_tree_exception.html#a90175b0c5a1e2a7ebb77cadc92b0388b">   51</a></span>&#160;        <span class="keywordtype">char</span>* <a class="code" href="class_tree_exception.html#a90175b0c5a1e2a7ebb77cadc92b0388b">_cause</a>; </div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <span class="keyword">public</span>:</div>
 <div class="line"><a name="l00057"></a><span class="lineno"><a class="line" href="class_tree_exception.html#aa75b34acf02d0e86fb70a63242894311">   57</a></span>&#160;        <a class="code" href="class_tree_exception.html#aa75b34acf02d0e86fb70a63242894311">TreeException</a>(<span class="keywordtype">char</span>* cause):</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;            _cause(cause)</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;            <a class="code" href="class_tree_exception.html#a90175b0c5a1e2a7ebb77cadc92b0388b">_cause</a>(cause)</div>
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;            {}</div>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        </div>
 <div class="line"><a name="l00064"></a><span class="lineno"><a class="line" href="class_tree_exception.html#a40fd9844273948231478fcf70e6f9468">   64</a></span>&#160;        <span class="keyword">virtual</span> <a class="code" href="class_tree_exception.html#a40fd9844273948231478fcf70e6f9468">~BagException</a>() throw(){</div>
@@ -131,7 +131,7 @@ $(document).ready(function(){initNavTree('tree_8hpp_source.html','');});
 <div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        }</div>
 <div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        </div>
 <div class="line"><a name="l00071"></a><span class="lineno"><a class="line" href="class_tree_exception.html#ab899a6ec0f82bf770b88ba4982e3d696">   71</a></span>&#160;        <span class="keyword">virtual</span> <span class="keyword">const</span> <span class="keywordtype">char</span>* <a class="code" href="class_tree_exception.html#ab899a6ec0f82bf770b88ba4982e3d696">what</a>()<span class="keyword">const</span> throw(){</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;            <span class="keywordflow">return</span> _cause;</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;            <span class="keywordflow">return</span> <a class="code" href="class_tree_exception.html#a90175b0c5a1e2a7ebb77cadc92b0388b">_cause</a>;</div>
 <div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;        }</div>
 <div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;};</div>
 <div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;</div>
@@ -139,25 +139,25 @@ $(document).ready(function(){initNavTree('tree_8hpp_source.html','');});
 <div class="line"><a name="l00082"></a><span class="lineno"><a class="line" href="class_node.html">   82</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_node.html">Node</a> {</div>
 <div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    </div>
 <div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;        T _tag;</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;        list&lt;Knot&lt;T&gt;&gt; _children;</div>
+<div class="line"><a name="l00086"></a><span class="lineno"><a class="line" href="class_node.html#a82089b860871012bc159c510408be29c">   86</a></span>&#160;        T <a class="code" href="class_node.html#a82089b860871012bc159c510408be29c">_tag</a>;</div>
+<div class="line"><a name="l00088"></a><span class="lineno"><a class="line" href="class_node.html#a36590e5fe93a99aafa01cb36c47edb70">   88</a></span>&#160;        list&lt;Knot&lt;T&gt;&gt; <a class="code" href="class_node.html#a36590e5fe93a99aafa01cb36c47edb70">_children</a>;</div>
 <div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    </div>
 <div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00094"></a><span class="lineno"><a class="line" href="class_node.html#ad94a3261a95cdf38d1eb62bc54ddd7e0">   94</a></span>&#160;        <a class="code" href="class_node.html">Node&lt;T&gt;</a>(<span class="keyword">const</span> <a class="code" href="class_node.html">Node&lt;T&gt;</a> &amp;other) _tag(other._tag), <a class="code" href="class_node.html#ad94a3261a95cdf38d1eb62bc54ddd7e0">_children</a>(other._children)</div>
+<div class="line"><a name="l00094"></a><span class="lineno"><a class="line" href="class_node.html#ad94a3261a95cdf38d1eb62bc54ddd7e0">   94</a></span>&#160;        <a class="code" href="class_node.html">Node&lt;T&gt;</a>(<span class="keyword">const</span> <a class="code" href="class_node.html">Node&lt;T&gt;</a> &amp;other) <a class="code" href="class_node.html#a82089b860871012bc159c510408be29c">_tag</a>(other._tag), <a class="code" href="class_node.html#ad94a3261a95cdf38d1eb62bc54ddd7e0">_children</a>(other._children)</div>
 <div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;        <a class="code" href="class_node.html">Node</a>&lt;T&gt;(T data){</div>
 <div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;            <span class="comment">// initialize the list</span></div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;            _children = list&lt;Node&lt;T&gt;&gt;(<a class="code" href="class_node.html">Node&lt;T&gt;</a>, <span class="keyword">sizeof</span>(Node&lt;T&gt;&gt;));</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;            <a class="code" href="class_node.html#a36590e5fe93a99aafa01cb36c47edb70">_children</a> = list&lt;Node&lt;T&gt;&gt;(<a class="code" href="class_node.html">Node&lt;T&gt;</a>, <span class="keyword">sizeof</span>(Node&lt;T&gt;&gt;));</div>
 <div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;        }</div>
 <div class="line"><a name="l00104"></a><span class="lineno"><a class="line" href="class_node.html#ae923d0417581dd19784d55b901f0f7f0">  104</a></span>&#160;        ~<a class="code" href="class_node.html">Node&lt;T&gt;</a>(){</div>
 <div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;            <span class="comment">// usefull ?</span></div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;            <span class="keyword">delete</span> _children;</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;            <span class="keyword">delete</span> <a class="code" href="class_node.html#a36590e5fe93a99aafa01cb36c47edb70">_children</a>;</div>
 <div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;        }</div>
 <div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;        </div>
 <div class="line"><a name="l00113"></a><span class="lineno"><a class="line" href="class_node.html#aa9d37ee4133ae9774c5cf2ca5a6da8af">  113</a></span>&#160;        <a class="code" href="class_node.html">Node&lt;T&gt;</a>&amp; <a class="code" href="class_node.html#aa9d37ee4133ae9774c5cf2ca5a6da8af">operator =</a>(<a class="code" href="class_node.html">Node&lt;T&gt;</a> &amp;other){</div>
 <div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;            <span class="comment">// prevent objet copying itself</span></div>
 <div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;            <span class="keywordflow">if</span>(<span class="keyword">this</span> != &amp;other){</div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;                this-&gt;_tag = other._key;</div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;                this.-&gt;_children = other._children;</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;                this-&gt;<a class="code" href="class_node.html#a82089b860871012bc159c510408be29c">_tag</a> = other._key;</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;                this.-&gt;<a class="code" href="class_node.html#a36590e5fe93a99aafa01cb36c47edb70">_children</a> = other.<a class="code" href="class_node.html#a36590e5fe93a99aafa01cb36c47edb70">_children</a>;</div>
 <div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;            }</div>
 <div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;            <span class="keywordflow">return</span> (*<span class="keyword">this</span>); <span class="comment">// allow a = b = c</span></div>
 <div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;        }</div>
@@ -171,7 +171,7 @@ $(document).ready(function(){initNavTree('tree_8hpp_source.html','');});
 <div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;            <span class="comment">// return not(lhs == rhs);</span></div>
 <div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;        }</div>
 <div class="line"><a name="l00143"></a><span class="lineno"><a class="line" href="class_node.html#a26f91ff0b0d5ea8940c7fde220aca742">  143</a></span>&#160;        <span class="keywordtype">bool</span> <a class="code" href="class_node.html#a26f91ff0b0d5ea8940c7fde220aca742">isLeaf</a>(){</div>
-<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;            <span class="keywordflow">return</span> 0 == _children.size();</div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;            <span class="keywordflow">return</span> 0 == <a class="code" href="class_node.html#a36590e5fe93a99aafa01cb36c47edb70">_children</a>.size();</div>
 <div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;        }</div>
 <div class="line"><a name="l00149"></a><span class="lineno"><a class="line" href="class_node.html#a0da7f6a2356d1e7f047f8bfda1edd8d8">  149</a></span>&#160;        <span class="keywordtype">int</span> <a class="code" href="class_node.html#a0da7f6a2356d1e7f047f8bfda1edd8d8">height</a>(){</div>
 <div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;            <span class="keywordflow">if</span>(<a class="code" href="class_node.html#a26f91ff0b0d5ea8940c7fde220aca742">isLeaf</a>()){</div>
@@ -183,7 +183,7 @@ $(document).ready(function(){initNavTree('tree_8hpp_source.html','');});
 <div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;                <span class="keywordtype">int</span> heights[2] = {0,0};</div>
 <div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;                <span class="comment">// for each child, using C++11 syntax</span></div>
 <div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;                <span class="comment">//for(_children::iterator it=_children.begin(); it!=_children.end(); ++it){</span></div>
-<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;                <span class="keywordflow">for</span>(<a class="code" href="class_node.html">Node&lt;T&gt;</a> child : _children){</div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;                <span class="keywordflow">for</span>(<a class="code" href="class_node.html">Node&lt;T&gt;</a> child : <a class="code" href="class_node.html#a36590e5fe93a99aafa01cb36c47edb70">_children</a>){</div>
 <div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;                    <span class="comment">// compute child height and store it</span></div>
 <div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;                    heights[1] = child.height();</div>
 <div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;                    <span class="comment">// if computed height is greater then the old one</span></div>
@@ -197,11 +197,11 @@ $(document).ready(function(){initNavTree('tree_8hpp_source.html','');});
 <div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;        }</div>
 <div class="line"><a name="l00174"></a><span class="lineno"><a class="line" href="class_node.html#aceee8556fee530a610039f9a6479d7cd">  174</a></span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_node.html#aceee8556fee530a610039f9a6479d7cd">append</a>(&lt;T&gt; n_data){</div>
 <div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;            <span class="comment">// add the value in chilmdren list as a new node</span></div>
-<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;            _children.push_front(<span class="keyword">new</span> <a class="code" href="class_node.html">Node&lt;T&gt;</a>(n_data));</div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;            <a class="code" href="class_node.html#a36590e5fe93a99aafa01cb36c47edb70">_children</a>.push_front(<span class="keyword">new</span> <a class="code" href="class_node.html">Node&lt;T&gt;</a>(n_data));</div>
 <div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;        }</div>
 <div class="line"><a name="l00181"></a><span class="lineno"><a class="line" href="class_node.html#a5de155624e123de3d74bc7c2803f3c3c">  181</a></span>&#160;        <span class="keywordtype">void</span> <span class="keyword">remove</span>(&lt;T&gt; data){</div>
 <div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;            <span class="comment">// remove child with the right tag</span></div>
-<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;            list&lt;int&gt;::iterator it=_children.begin();</div>
+<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;            list&lt;int&gt;::iterator it=<a class="code" href="class_node.html#a36590e5fe93a99aafa01cb36c47edb70">_children</a>.begin();</div>
 <div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;            <span class="keywordtype">bool</span> removed = <span class="keyword">false</span>;</div>
 <div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;            <span class="keywordflow">while</span>(it != it.end() and not removed){</div>
 <div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;                <span class="keywordflow">if</span>(it-&gt;_tag == data and it-&gt;isLeaf()){</div>
@@ -218,7 +218,7 @@ $(document).ready(function(){initNavTree('tree_8hpp_source.html','');});
 <div class="line"><a name="l00202"></a><span class="lineno"><a class="line" href="class_tree.html">  202</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_tree.html">Tree</a> {</div>
 <div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;    </div>
 <div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;    <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;        <a class="code" href="class_node.html">Node&lt;T&gt;</a> _root;</div>
+<div class="line"><a name="l00205"></a><span class="lineno"><a class="line" href="class_tree.html#a4f23e98860f95126711a63822b7d0a4c">  205</a></span>&#160;        <a class="code" href="class_node.html">Node&lt;T&gt;</a> <a class="code" href="class_tree.html#a4f23e98860f95126711a63822b7d0a4c">_root</a>;</div>
 <div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;    </div>
 <div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;    <span class="keyword">public</span>:</div>
 <div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;        <a class="code" href="class_tree.html#a30ebe31999547d31fea5b40cc805f6a2">Tree</a>(<span class="keyword">const</span> <a class="code" href="class_tree.html">Tree&lt;T&gt;</a>&amp;);</div>
@@ -243,12 +243,15 @@ $(document).ready(function(){initNavTree('tree_8hpp_source.html','');});
 <div class="ttc" id="class_node_html"><div class="ttname"><a href="class_node.html">Node</a></div><div class="ttdoc">Defines tree nodes. </div><div class="ttdef"><b>Definition:</b> tree.hpp:82</div></div>
 <div class="ttc" id="class_tree_html_a365f25c256f67c3a03adfe976b71d422"><div class="ttname"><a href="class_tree.html#a365f25c256f67c3a03adfe976b71d422">Tree::count</a></div><div class="ttdeci">int count(T)</div><div class="ttdoc">count among of appearances of a particular element </div></div>
 <div class="ttc" id="class_node_html_a0da7f6a2356d1e7f047f8bfda1edd8d8"><div class="ttname"><a href="class_node.html#a0da7f6a2356d1e7f047f8bfda1edd8d8">Node::height</a></div><div class="ttdeci">int height()</div><div class="ttdef"><b>Definition:</b> tree.hpp:149</div></div>
+<div class="ttc" id="class_node_html_a36590e5fe93a99aafa01cb36c47edb70"><div class="ttname"><a href="class_node.html#a36590e5fe93a99aafa01cb36c47edb70">Node::_children</a></div><div class="ttdeci">list&lt; Knot&lt; T &gt; &gt; _children</div><div class="ttdoc">children of the Knot </div><div class="ttdef"><b>Definition:</b> tree.hpp:88</div></div>
 <div class="ttc" id="class_tree_html_a8b1ba4b64ed9e6709f8ca8ef701dbb7d"><div class="ttname"><a href="class_tree.html#a8b1ba4b64ed9e6709f8ca8ef701dbb7d">Tree::operator=</a></div><div class="ttdeci">Tree&lt; T &gt; &amp; operator=(Tree&lt; T &gt;)</div><div class="ttdoc">assignment operator </div></div>
 <div class="ttc" id="class_tree_html_a04affc46d89a0ef5d517ab685c9c346e"><div class="ttname"><a href="class_tree.html#a04affc46d89a0ef5d517ab685c9c346e">Tree::~Tree</a></div><div class="ttdeci">~Tree()</div><div class="ttdoc">destructor </div></div>
 <div class="ttc" id="class_node_html_abb91d745a01f97fe51a35811e0d42801"><div class="ttname"><a href="class_node.html#abb91d745a01f97fe51a35811e0d42801">Node::toString</a></div><div class="ttdeci">string toString()</div><div class="ttdoc">get a representation of the node </div></div>
+<div class="ttc" id="class_tree_exception_html_a90175b0c5a1e2a7ebb77cadc92b0388b"><div class="ttname"><a href="class_tree_exception.html#a90175b0c5a1e2a7ebb77cadc92b0388b">TreeException::_cause</a></div><div class="ttdeci">char * _cause</div><div class="ttdef"><b>Definition:</b> tree.hpp:51</div></div>
 <div class="ttc" id="class_tree_exception_html"><div class="ttname"><a href="class_tree_exception.html">TreeException</a></div><div class="ttdoc">exception class for trees </div><div class="ttdef"><b>Definition:</b> tree.hpp:49</div></div>
 <div class="ttc" id="class_node_html_ad8f5643e23bbe29a7d84ea0cd4b06994"><div class="ttname"><a href="class_node.html#ad8f5643e23bbe29a7d84ea0cd4b06994">Node::operator==</a></div><div class="ttdeci">operator==(const Node&lt; T &gt; &amp;lhs, const Node&lt; T &gt; &amp;rhs)</div><div class="ttdef"><b>Definition:</b> tree.hpp:127</div></div>
 <div class="ttc" id="class_tree_html_a30ebe31999547d31fea5b40cc805f6a2"><div class="ttname"><a href="class_tree.html#a30ebe31999547d31fea5b40cc805f6a2">Tree::Tree</a></div><div class="ttdeci">Tree()</div><div class="ttdoc">common constructor </div></div>
+<div class="ttc" id="class_node_html_a82089b860871012bc159c510408be29c"><div class="ttname"><a href="class_node.html#a82089b860871012bc159c510408be29c">Node::_tag</a></div><div class="ttdeci">T _tag</div><div class="ttdoc">letter stored into Knot, the tag </div><div class="ttdef"><b>Definition:</b> tree.hpp:86</div></div>
 <div class="ttc" id="class_tree_html_a66eeb3d72ec08f43104e279fdcf15680"><div class="ttname"><a href="class_tree.html#a66eeb3d72ec08f43104e279fdcf15680">Tree::operator!=</a></div><div class="ttdeci">bool operator!=(const Tree&lt; T &gt; &amp;, const Tree&lt; T &gt; &amp;)</div><div class="ttdoc">ne operator </div></div>
 <div class="ttc" id="class_tree_html"><div class="ttname"><a href="class_tree.html">Tree</a></div><div class="ttdoc">Tree is a recursive structure uses nodes. </div><div class="ttdef"><b>Definition:</b> tree.hpp:202</div></div>
 <div class="ttc" id="class_tree_exception_html_ab899a6ec0f82bf770b88ba4982e3d696"><div class="ttname"><a href="class_tree_exception.html#ab899a6ec0f82bf770b88ba4982e3d696">TreeException::what</a></div><div class="ttdeci">virtual const char * what() const </div><div class="ttdef"><b>Definition:</b> tree.hpp:71</div></div>
@@ -260,6 +263,7 @@ $(document).ready(function(){initNavTree('tree_8hpp_source.html','');});
 <div class="ttc" id="class_node_html_ad94a3261a95cdf38d1eb62bc54ddd7e0"><div class="ttname"><a href="class_node.html#ad94a3261a95cdf38d1eb62bc54ddd7e0">Node::_children</a></div><div class="ttdeci">_children(other._children) Node&lt; T &gt;(T data)</div><div class="ttdef"><b>Definition:</b> tree.hpp:94</div></div>
 <div class="ttc" id="class_tree_html_a9300caf575a5a89292e620e8b73112c7"><div class="ttname"><a href="class_tree.html#a9300caf575a5a89292e620e8b73112c7">Tree::height</a></div><div class="ttdeci">int height()</div><div class="ttdoc">the height of the tree </div></div>
 <div class="ttc" id="class_tree_html_a0043ad6b474f93f83cbbcddec392a69d"><div class="ttname"><a href="class_tree.html#a0043ad6b474f93f83cbbcddec392a69d">Tree::add</a></div><div class="ttdeci">void add(T)</div><div class="ttdoc">add an element in the tree </div></div>
+<div class="ttc" id="class_tree_html_a4f23e98860f95126711a63822b7d0a4c"><div class="ttname"><a href="class_tree.html#a4f23e98860f95126711a63822b7d0a4c">Tree::_root</a></div><div class="ttdeci">Node&lt; T &gt; _root</div><div class="ttdef"><b>Definition:</b> tree.hpp:205</div></div>
 <div class="ttc" id="class_tree_exception_html_a40fd9844273948231478fcf70e6f9468"><div class="ttname"><a href="class_tree_exception.html#a40fd9844273948231478fcf70e6f9468">TreeException::~BagException</a></div><div class="ttdeci">virtual ~BagException()</div><div class="ttdef"><b>Definition:</b> tree.hpp:64</div></div>
 <div class="ttc" id="class_tree_exception_html_aa75b34acf02d0e86fb70a63242894311"><div class="ttname"><a href="class_tree_exception.html#aa75b34acf02d0e86fb70a63242894311">TreeException::TreeException</a></div><div class="ttdeci">TreeException(char *cause)</div><div class="ttdef"><b>Definition:</b> tree.hpp:57</div></div>
 </div><!-- fragment --></div><!-- contents -->
@@ -268,7 +272,7 @@ $(document).ready(function(){initNavTree('tree_8hpp_source.html','');});
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="tree_8hpp.html">tree.hpp</a></li>
-    <li class="footer">Generated on Tue Apr 1 2014 18:39:46 for Glossygloss by
+    <li class="footer">Generated on Tue Apr 1 2014 19:03:16 for Glossygloss by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
   </ul>

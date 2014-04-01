@@ -7,5 +7,6 @@ var class_hashtable =
     [ "isEmpty", "class_hashtable.html#a779816cba88876b2547600f930b293db", null ],
     [ "put", "class_hashtable.html#af6f9a4e3d5c74f0d5d5f966eece2fc2b", null ],
     [ "remove", "class_hashtable.html#a5ff7eaa859387421be734f9573dc0ebe", null ],
-    [ "toString", "class_hashtable.html#ad3141029cd09f8e5e2026af5156c1e0e", null ]
+    [ "toString", "class_hashtable.html#ad3141029cd09f8e5e2026af5156c1e0e", null ],
+    [ "_table", "class_hashtable.html#a741b7872f368f468f3b49d687830368a", null ]
 ];

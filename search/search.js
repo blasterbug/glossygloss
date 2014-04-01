@@ -11,8 +11,9 @@ var indexSectionsWithContent =
   1: "ahnt",
   2: "hrt",
   3: "_aceghinoprstw~",
-  4: "ae",
-  5: "g"
+  4: "_",
+  5: "ae",
+  6: "g"
 };
 
 var indexSectionNames =
@@ -21,8 +22,9 @@ var indexSectionNames =
   1: "classes",
   2: "files",
   3: "functions",
-  4: "defines",
-  5: "pages"
+  4: "variables",
+  5: "defines",
+  6: "pages"
 };
 
 function convertToId(search)
