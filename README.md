@@ -1,4 +1,4 @@
-glossygloss
+![logo](logo.png "Glossygloss logo") glossygloss
 ===========
 
   Glossygloss is set of classes to use several data structures as Tree and Hashtable.
