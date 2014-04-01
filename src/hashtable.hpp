@@ -124,7 +124,9 @@ class Alveole{
 				if(END != other._next){
 					_next = new Alveole(other._next);
 				}
-				else { _next = END; }
+				else {
+					_next = END;
+				}
 		}
 		
 		/** Pair constructor
@@ -137,9 +139,9 @@ class Alveole{
 			{}
 			
 		/** Empty constructor
-		 * create a 'empty' alveole
+		 * create an 'empty' alveole
 		 */
-		Alveole(){};
+		Alveole() : _next(END){};
 		
 		/** Complex constructor
 		 * @param[in] key key of the pair
@@ -151,6 +153,14 @@ class Alveole{
 			_value(value),
 			_next(next)
 			{}
+			
+		/** Destructor for Aveole
+		 */
+		~Alveole(){
+			//delete &_key;
+			//delete &_value;
+			//delete _next;
+		}
 		
 		/** Get the key of an alveole
 		 * @param[out] key stored into the alveole
@@ -165,9 +175,7 @@ class Alveole{
 		/** Which alveole coming next ?
 		 * @param[out] memory adres of the next alveole
 		 */
-		Alveole<K,V>* getNext(){
-			return _next;
-		}
+		Alveole<K,V>* getNext(){ return _next; }
 		 
 		 /** Set the value stored into an alveole
 		  * @param[in] n_value The new value of the pair
@@ -177,9 +185,7 @@ class Alveole{
 		/** Set the next adress of the next alveole
 		 * @param[in] n_next adress of the new next alveole
 		 */
-		void setNext(Alveole<K,V>* n_next){
-			_next = n_next;
-		}
+		void setNext(Alveole<K,V>* n_next){ _next = n_next; }
 		
 		/** Return a string descriptionof the pair stored into the alveole
 		 * @param[out] a string represention of the alveole
@@ -309,6 +315,7 @@ class Hashtable {
 		 * @param[in] key Key of the pair to delete
 		 * @exception HashException threw if table does not contain key
 		 */
+		/// FIXME : remove last element of a list lead to a seg. fault
 		void remove(const K &key){
 			int index = computehash<K>(key)%ARRAYSIZE;
 			assert(index>=0);
@@ -318,12 +325,14 @@ class Hashtable {
 			Alveole<K,V>* cur = _table[index];
 			bool undone = true;
 			while(undone and END != cur){
+				assert(cur != END);
 				if(key == cur->getKey()){
 					bef->setNext(cur->getNext());
-					delete cur;
 					undone = false;
+					delete cur;
 				}
 				else {
+					assert(cur != END);
 					bef = cur;
 					cur = cur->getNext();
 				}
