@@ -48,7 +48,7 @@ using std::list;
  */
 class TreeException : std::exception {
 	private:
-		char* _cause; /* store exception description */
+		char* _cause; /** store exception description */
 	public:
 		/** constructor
 		 * called then TreeExceptions are threw
@@ -108,7 +108,7 @@ class Node {
 		
 		/** assignment operator overload
 		 * @param[in] other node to assign
-		 * @param[out] assigned node
+		 * @param[out] note assigned node
 		 */
 		Node<T>& operator =(Node<T> &other){
 			// prevent objet copying itself
@@ -122,7 +122,7 @@ class Node {
 		/** equality operator
 		 * @param[in] lhs left hand side, first node to compare
 		 * @param[in] rhs right hand side, second node to compare
-		 * @param[out] true if nodes have the same memory adress, else false
+		 * @param[out] bool true if nodes have the same memory adress, else false
 		 */
 		operator ==(const Node<T> &lhs, const Node<T> &rhs){
 			// same adress -> same item
@@ -131,20 +131,20 @@ class Node {
 		/** inequality operator
 		 * @param[in] lhs first node to compare
 		 * @param[in] rhs second node to compare
-		 * @param[out] true if nodes have not the same memory adress, else false
+		 * @param[out] bool true if nodes have not the same memory adress, else false
 		 */
 		bool operator !=(const Node<T> &lhs, const Node<T> &rhs){
 			return &lhs != &rhs;
 			// return not(lhs == rhs);
 		}
 		/** Is the node a leaf ?
-		 * @param[out] true, if no child, else false
+		 * @param[out] bool true, if no child, else false
 		 */
 		bool isLeaf(){
 			return 0 == _children.size();
 		}
 		/** The height of the node
-		 * @param[out] height of the node
+		 * @param[out] hgt height of the node
 		 */
 		int height(){
 			if(isLeaf()){

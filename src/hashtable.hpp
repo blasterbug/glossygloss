@@ -57,7 +57,7 @@
 /**
  * Fonction you must define
  * @param[in] element element to compute hashcode from
- * @param[out] the hashcode of element, an unsigned integer
+ * @param[out] hashcode the hashcode of element, an unsigned integer
  * 
  * template<> unisgned computehash<string>(string element)
  * {
@@ -74,7 +74,7 @@ using std::string;
  */
 class HashException : std::exception {
 	private:
-		const char* _cause; /* store exception description */
+		const char* _cause; /** store exception description */
 	public:
 		/** constructor
 		 * called then HashExceptions are threw
@@ -108,9 +108,9 @@ class HashException : std::exception {
 template <typename K, typename V>
 class Alveole{
 	private:
-		K _key; /* key of the pair */
-		V _value; /* value of the pair */
-		Alveole<K,V>* _next; /* next aveole */
+		K _key; /** key of the pair */
+		V _value; /** value of the pair */
+		Alveole<K,V>* _next; /** next aveole */
 	public:
 		/**
 		 * Copy constructor
@@ -154,7 +154,7 @@ class Alveole{
 			_next(next)
 			{}
 			
-		/** Destructor for Aveole
+		/** Destructor for Alveole
 		 */
 		~Alveole(){
 			//delete &_key;
@@ -163,17 +163,17 @@ class Alveole{
 		}
 		
 		/** Get the key of an alveole
-		 * @param[out] key stored into the alveole
+		 * @param[out] key key stored into the alveole
 		 */
 		 K getKey(){ return _key; }
 		 
 		/** Get the value stored into an alveole
-		 * @param[out] value of the alveole
+		 * @param[out] value value of the alveole
 		 */
 		V getValue(){ return _value; }
 		
 		/** Which alveole coming next ?
-		 * @param[out] memory adres of the next alveole
+		 * @param[out] ptr memory adress of the next alveole
 		 */
 		Alveole<K,V>* getNext(){ return _next; }
 		 
@@ -188,7 +188,7 @@ class Alveole{
 		void setNext(Alveole<K,V>* n_next){ _next = n_next; }
 		
 		/** Return a string descriptionof the pair stored into the alveole
-		 * @param[out] a string represention of the alveole
+		 * @param[out] desc a string represention of the alveole
 		 */
 		string toString(){
 			string desc = "{" + _key + ", " + _value + "}";
@@ -208,7 +208,7 @@ template <typename K, typename V>
 class Hashtable {
 	
 	private:
-		Alveole<K,V>** _table; /* array of alveoles */
+		Alveole<K,V>** _table; /** array of alveoles */
 		
 	public:
 		/** Simple constructor
@@ -227,8 +227,9 @@ class Hashtable {
 		}
 		
 		/** Do table contains key ?
+		 * 
 		 * @param[in] key key to find
-		 * @param[out] True if the key is here, else false
+		 * @param[out] bool True if the key is here, else false
 		 */
 		bool contains(const K &key){
 			bool here = false;
@@ -245,9 +246,9 @@ class Hashtable {
 			return here;
 		}
 		
-		/** Return the value associated with the specified key
-		 * @aparam[in] key a key in the hashtable
-		 * @param[out] value associated with the key
+		/** Return the value maped to the specified key
+		 * @param[in] key a key in the hashtable
+		 * @param[out] value value associated with the key
 		 * @exception HashException threw if key is not in the hashtable
 		 */
 		V get(const K &key){
@@ -272,7 +273,8 @@ class Hashtable {
 		}
 		
 		/** Tests if this hashtable maps no keys to values.
-		 * @param[out] true if no elements in the hashtable, else false;
+		 * 
+		 * @param[out] bool true if no elements in the hashtable, else false;
 		 */
 		bool isEmpty(){
 			bool empty = true;
@@ -285,6 +287,7 @@ class Hashtable {
 		
 		/** Map the specified key to the specified value in this hashtable.
 		 * or update the maped value to the key
+		 * 
 		 * @param[in] key key of the pair
 		 * @param[in] value value of the pair
 		 */
@@ -299,7 +302,7 @@ class Hashtable {
 			bool undone = true;
 			while(undone and END != browser){
 				if(key == browser->getKey()){
-					std::cout << "Updating (" << key << ", " << value <<") at " << index << std::endl;
+					std::cout << "Updating (" << key << ", " << value <<") at " << index << std::endl; // debug line
 					browser->setValue(value);
 					undone = false;
 				}
@@ -307,7 +310,7 @@ class Hashtable {
 			}
 			if(undone){
 				_table[index] = new Alveole<K,V>(key, value, _table[index]);
-				std::cout << "Adding (" << key << ", " << value <<") at " << index << std::endl;
+				std::cout << "Adding (" << key << ", " << value <<") at " << index << std::endl; // debug line
 			}
 		}
 		
@@ -325,8 +328,9 @@ class Hashtable {
 			Alveole<K,V>* cur = _table[index];
 			bool undone = true;
 			while(undone and END != cur){
-				assert(cur != END);
+				std::cout << cur->toString() << std::endl; // debug line
 				if(key == cur->getKey()){
+					assert(END == cur->getNext());
 					bef->setNext(cur->getNext());
 					undone = false;
 					delete cur;
@@ -342,8 +346,8 @@ class Hashtable {
 		
 		/** Return a description of the hashtable, enclosed in braces as
 		 * well as {key, value}.
-		 * @param[out] a string representation of this hashtable.
-		 */
+		 * @param[out] desc a string representation of this hashtable.
+		 */ 
 		string toString(){
 			string desc = "[";
 			for(int i = 0; i<ARRAYSIZE; ++i){
