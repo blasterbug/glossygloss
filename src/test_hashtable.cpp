@@ -74,12 +74,9 @@ int main(int argc,const char** argv){
 	int i = 0;
 	
 	while(not key_file.eof() and not value_file.eof() and i<max){
-		
 		storage.put(key, value);
-		
 		key_file >> key;
 		key_file >> value;
-		cout << key << " maped to " << value << endl;
 		++i;
 	}
 	

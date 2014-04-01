@@ -254,7 +254,9 @@ class Hashtable {
 				if(key == browser->getKey()){
 					undone = false;
 				}
-				browser = browser->getNext();
+				else {
+					browser = browser->getNext();
+				}
 			}
 			if(undone){
 				throw HashException("Key not found!");
@@ -291,13 +293,16 @@ class Hashtable {
 			bool undone = true;
 			while(undone and END != browser){
 				if(key == browser->getKey()){
-					std::cout << key << " update!" << std::endl;
+					std::cout << "Updating (" << key << ", " << value <<") at " << index << std::endl;
 					browser->setValue(value);
 					undone = false;
 				}
 				browser = browser->getNext();
 			}
-			if(undone){_table[index] = new Alveole<K,V>(key, value, _table[index]);}
+			if(undone){
+				_table[index] = new Alveole<K,V>(key, value, _table[index]);
+				std::cout << "Adding (" << key << ", " << value <<") at " << index << std::endl;
+			}
 		}
 		
 		/** Remove the key (and its corresponding value) from this hashtable.
@@ -318,8 +323,10 @@ class Hashtable {
 					delete cur;
 					undone = false;
 				}
-				bef = cur;
-				cur = cur->getNext();
+				else {
+					bef = cur;
+					cur = cur->getNext();
+				}
 			}
 			if(undone) throw HashException("Key is not here!");
 		}
