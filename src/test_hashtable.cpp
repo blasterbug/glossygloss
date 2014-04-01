@@ -52,6 +52,11 @@ template<> unsigned computehash<K>(K element){
 
 int main(int argc,const char** argv){
 	
+	if(argc != 4){
+		perror("Bad arguments!");
+		exit(1);
+	}
+	
 	Hashtable<K, V> storage = Hashtable<K, V>();
 	fstream key_file;
 	fstream value_file;
@@ -74,7 +79,7 @@ int main(int argc,const char** argv){
 		
 		key_file >> key;
 		key_file >> value;
-		
+		cout << "read ing :" << key << " maps to " << value << endl;
 		++i;
 	}
 	
@@ -82,10 +87,11 @@ int main(int argc,const char** argv){
 	value_file.close();
 	
 	cout << storage.toString() << endl;
-	string rm = "praising";
-	cout << "~ rm " << rm << endl;
+	string rm ;
+	cout << "Give the key to remove:" << endl;
+	cin >> rm;
 	try{
-		//storage.remove(rm);
+		storage.remove(rm);
 	} catch(HashException ex) {
 		cout << ex.what() << endl;
 	}

@@ -70,13 +70,13 @@ using std::string;
  */
 class HashException : std::exception {
 	private:
-		char* _cause; /* store exception description */
+		const char* _cause; /* store exception description */
 	public:
 		/** constructor
 		 * called then HashExceptions are threw
 		 * @param[in] cause description of exception origin
 		 */
-		HashException(char* cause):
+		HashException(const char* cause):
 			_cause(cause)
 			{}
 		
@@ -302,7 +302,7 @@ class Hashtable {
 			int index = computehash<K>(key)%ARRAYSIZE;
 			Alveole<K,V>* bef = new Alveole<K,V>(); 
 			bef->setNext(_table[index]);
-			Alveole<K,V>* cur =_table[index];
+			Alveole<K,V>* cur = _table[index];
 			bool undone = true;
 			while(undone and END != cur){
 				if(key == cur->getKey()){
