@@ -29,7 +29,7 @@
  * @section infos File informations
  *
  * $Date$ 2014/03/27
- * $Rev$ 0.1
+ * $Rev$ 0.2
  * $Author$ Benjamin Sientzoff
  * $URL$ http://www.github.com/blasterbug
  */

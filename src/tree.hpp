@@ -194,7 +194,7 @@ class Node {
 		string toString();
 };
 
-/** \brief Tree is a recursive structure uses nodes.
+/** \brief Tree is a recursive structure using nodes.
  * 
  * A root value and subtrees of children, represented as a set of linked nodes.
  */
