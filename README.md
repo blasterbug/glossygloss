@@ -1,8 +1,7 @@
-![logo](logo.png "Glossygloss logo") glossygloss
+![logo](logo.png "Glossygloss logo") Glossygloss
 ===========
 
-  Glossygloss is set of classes to use several data structures as Tree and Hashtable.
-  
+  Glossygloss is set of classes to use several data structures as Tree and Hashtable.  
   More might come soon.
 
 ### Documentation
