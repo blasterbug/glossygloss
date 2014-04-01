@@ -239,27 +239,27 @@ $(document).ready(function(){initNavTree('hashtable_8hpp_source.html','');});
 <div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;            <span class="keywordflow">return</span> here;</div>
 <div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;        }</div>
 <div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;        </div>
-<div class="line"><a name="l00255"></a><span class="lineno"><a class="line" href="class_hashtable.html#a06702992ba59e62b443e1c2d380625dc">  255</a></span>&#160;        V <span class="keyword">get</span>(<span class="keyword">const</span> K &amp;key){</div>
-<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;            <span class="keywordtype">int</span> index = computehash&lt;K&gt;(key)%<a class="code" href="hashtable_8hpp.html#a78d344caabde729a4559393a0552bf1c">ARRAYSIZE</a>;</div>
-<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;            assert(index&gt;=0);</div>
-<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;            assert(index&lt;<a class="code" href="hashtable_8hpp.html#a78d344caabde729a4559393a0552bf1c">ARRAYSIZE</a>);</div>
-<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;            <a class="code" href="class_alveole.html">Alveole&lt;K,V&gt;</a>* browser = <a class="code" href="class_hashtable.html#a741b7872f368f468f3b49d687830368a">_table</a>[index];</div>
-<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;            <span class="keywordtype">bool</span> undone = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;            <span class="keywordflow">while</span>(undone and <a class="code" href="hashtable_8hpp.html#a29fd18bed01c4d836c7ebfe73a125c3f">END</a> != browser){</div>
-<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;                <span class="keywordflow">if</span>(key == browser-&gt;<a class="code" href="class_alveole.html#add57358f630300978cfd314a9a392c8b">getKey</a>()){</div>
-<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;                    undone = <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;                }</div>
-<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;                <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;                    browser = browser-&gt;<a class="code" href="class_alveole.html#ae540dba4d60c74ff17e2abc03deb33c8">getNext</a>();</div>
-<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;                }</div>
-<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;            }</div>
-<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;            <span class="keywordflow">if</span>(undone){</div>
-<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;                <span class="keywordflow">throw</span> <a class="code" href="class_hash_exception.html">HashException</a>(<span class="stringliteral">&quot;Key not found!&quot;</span>);</div>
-<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;            } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;                <span class="keywordflow">return</span> browser-&gt;<a class="code" href="class_alveole.html#a63378af984be5bb63fb755010c61002f">getValue</a>();</div>
-<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;            }</div>
-<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;        }</div>
-<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;        </div>
+<div class="line"><a name="l00254"></a><span class="lineno"><a class="line" href="class_hashtable.html#a06702992ba59e62b443e1c2d380625dc">  254</a></span>&#160;        V <span class="keyword">get</span>(<span class="keyword">const</span> K &amp;key){</div>
+<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;            <span class="keywordtype">int</span> index = computehash&lt;K&gt;(key)%<a class="code" href="hashtable_8hpp.html#a78d344caabde729a4559393a0552bf1c">ARRAYSIZE</a>;</div>
+<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;            assert(index&gt;=0);</div>
+<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;            assert(index&lt;<a class="code" href="hashtable_8hpp.html#a78d344caabde729a4559393a0552bf1c">ARRAYSIZE</a>);</div>
+<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;            <a class="code" href="class_alveole.html">Alveole&lt;K,V&gt;</a>* browser = <a class="code" href="class_hashtable.html#a741b7872f368f468f3b49d687830368a">_table</a>[index];</div>
+<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;            <span class="keywordtype">bool</span> undone = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;            <span class="keywordflow">while</span>(undone and <a class="code" href="hashtable_8hpp.html#a29fd18bed01c4d836c7ebfe73a125c3f">END</a> != browser){</div>
+<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;                <span class="keywordflow">if</span>(key == browser-&gt;<a class="code" href="class_alveole.html#add57358f630300978cfd314a9a392c8b">getKey</a>()){</div>
+<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;                    undone = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;                }</div>
+<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;                <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;                    browser = browser-&gt;<a class="code" href="class_alveole.html#ae540dba4d60c74ff17e2abc03deb33c8">getNext</a>();</div>
+<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;                }</div>
+<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;            }</div>
+<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;            <span class="keywordflow">if</span>(undone){</div>
+<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;                <span class="keywordflow">throw</span> <a class="code" href="class_hash_exception.html">HashException</a>(<span class="stringliteral">&quot;Key not found!&quot;</span>);</div>
+<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;            } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;                <span class="keywordflow">return</span> browser-&gt;<a class="code" href="class_alveole.html#a63378af984be5bb63fb755010c61002f">getValue</a>();</div>
+<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;            }</div>
+<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;        }</div>
+<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;        </div>
 <div class="line"><a name="l00279"></a><span class="lineno"><a class="line" href="class_hashtable.html#a779816cba88876b2547600f930b293db">  279</a></span>&#160;        <span class="keywordtype">bool</span> <a class="code" href="class_hashtable.html#a779816cba88876b2547600f930b293db">isEmpty</a>(){</div>
 <div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;            <span class="keywordtype">bool</span> empty = <span class="keyword">true</span>;</div>
 <div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;            <span class="keywordtype">int</span> i = 0;</div>
@@ -367,7 +367,7 @@ $(document).ready(function(){initNavTree('hashtable_8hpp_source.html','');});
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="hashtable_8hpp.html">hashtable.hpp</a></li>
-    <li class="footer">Generated on Tue Apr 1 2014 19:11:15 for Glossygloss by
+    <li class="footer">Generated on Tue Apr 1 2014 19:12:23 for Glossygloss by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
   </ul>
