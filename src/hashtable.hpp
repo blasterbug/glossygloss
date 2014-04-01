@@ -66,7 +66,7 @@ template <typename K> unsigned computehash(K element);
 using std::string;
 
 /**
- * \brief Exception class to manage hashtable errors
+ * \brief Exception class to manage Hashtable errors
  */
 class HashException : std::exception {
 	private:
@@ -95,9 +95,9 @@ class HashException : std::exception {
 		}
 };
 
-/** \brief Class to define hashtable alveoles.
+/** \brief Class to define Hashtable alveoles.
  * 
- * Alveole class embodies a hashtable's alveole. An alveole store a pair <k,v>.
+ * Alveole class embodies a Hashtable's alveole. An alveole store a pair <k,v>.
  * Alveoles are simply-linked elements.
  */
 // TODO: implement iterator to browse within alveoles very quickly and easely
@@ -300,7 +300,7 @@ class Hashtable {
 		 */
 		void remove(const K &key){
 			int index = computehash<K>(key)%ARRAYSIZE;
-			Alveole<K,V>* bef = new Alveole<K,V>*(); 
+			Alveole<K,V>* bef = new Alveole<K,V>(); 
 			bef->setNext(_table[index]);
 			Alveole<K,V>* cur =_table[index];
 			bool undone = true;

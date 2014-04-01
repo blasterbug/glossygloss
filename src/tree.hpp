@@ -72,13 +72,13 @@ class TreeException : std::exception {
 		}
 };
 
-/** \brief Defines tree knots.
+/** \brief Defines tree nodes.
  * 
- * Class for knots of a tree.
+ * Class for nodes of a tree.
  * A Knot store a tag and can have several children
  */
 template <typename T = char>
-class Knot {
+class Node {
 	
 	private:
 		/// letter stored into Knot, the tag
@@ -88,28 +88,28 @@ class Knot {
 	
 	public:
 		/** Copy constructor
-		 * @param[in] other Knot to copy
+		 * @param[in] other Node to copy
 		 */
-		Knot<T>(const Knot<T> &other) _tag(other._tag), _children(other._children)
+		Node<T>(const Node<T> &other) _tag(other._tag), _children(other._children)
 		/** Simple constructor
-		 * @param[in] data to store into the Knot
+		 * @param[in] data to store into the Node
 		 */
-		Knot<T>(T data){
+		Node<T>(T data){
 			// initialize the list
-			_children = list<Knot<T>>(Knot<T>, sizeof(Knot<T>>));
+			_children = list<Node<T>>(Node<T>, sizeof(Node<T>>));
 		}
-		/** Destructor for Knot
+		/** Destructor for Node
 		 */
-		~Knot<T>(){
+		~Node<T>(){
 			// usefull ?
 			delete _children;
 		}
 		
 		/** assignment operator overload
-		 * @param[in] other knot to assign
-		 * @param[out] assigned knot
+		 * @param[in] other node to assign
+		 * @param[out] assigned node
 		 */
-		Knot<T>& operator =(Knot<T> &other){
+		Node<T>& operator =(Node<T> &other){
 			// prevent objet copying itself
 			if(this != &other){
 				this->_tag = other._key;
@@ -119,31 +119,31 @@ class Knot {
 		}
 		
 		/** equality operator
-		 * @param[in] lhs left hand side, first knot to compare
-		 * @param[in] rhs right hand side, second knot to compare
-		 * @param[out] true if knots have the same memory adress, else false
+		 * @param[in] lhs left hand side, first node to compare
+		 * @param[in] rhs right hand side, second node to compare
+		 * @param[out] true if nodes have the same memory adress, else false
 		 */
-		operator ==(const Knot<T> &lhs, const Knot<T> &rhs){
+		operator ==(const Node<T> &lhs, const Node<T> &rhs){
 			// same adress -> same item
 			return &lhs == &rhs;
 		}
 		/** inequality operator
-		 * @param[in] lhs first knot to compare
-		 * @param[in] rhs second knot to compare
-		 * @param[out] true if knots have not the same memory adress, else false
+		 * @param[in] lhs first node to compare
+		 * @param[in] rhs second node to compare
+		 * @param[out] true if nodes have not the same memory adress, else false
 		 */
-		bool operator !=(const Knot<T> &lhs, const Knot<T> &rhs){
+		bool operator !=(const Node<T> &lhs, const Node<T> &rhs){
 			return &lhs != &rhs;
 			// return not(lhs == rhs);
 		}
-		/** Is the knot a leaf ?
+		/** Is the node a leaf ?
 		 * @param[out] true, if no child, else false
 		 */
 		bool isLeaf(){
 			return 0 == _children.size();
 		}
-		/** The height of the knot
-		 * @param[out] height of the knot
+		/** The height of the node
+		 * @param[out] height of the node
 		 */
 		int height(){
 			if(isLeaf()){
@@ -155,7 +155,7 @@ class Knot {
 				int heights[2] = {0,0};
 				// for each child, using C++11 syntax
 				//for(_children::iterator it=_children.begin(); it!=_children.end(); ++it){
-				for(Knot<T> child : _children){
+				for(Node<T> child : _children){
 					// compute child height and store it
 					heights[1] = child.height();
 					// if computed height is greater then the old one
@@ -167,15 +167,15 @@ class Knot {
 				return heights[0];
 			}
 		}
-		/** Hook up a new child to the knot
-		 * @param[in] n_data new data to store as a child of the knot
+		/** Hook up a new child to the node
+		 * @param[in] n_data new data to store as a child of the node
 		 */
 		void append(<T> n_data){
-			// add the value in chilmdren list as a new knot
-			_children.push_front(new Knot<T>(n_data));
+			// add the value in chilmdren list as a new node
+			_children.push_front(new Node<T>(n_data));
 		}
-		/** Remove a leaf from the knot
-		 * @param[in] data data of the knot's tag to remove
+		/** Remove a leaf from the node
+		 * @param[in] data data of the node's tag to remove
 		 */
 		void remove(<T> data){
 			// remove child with the right tag
@@ -189,19 +189,19 @@ class Knot {
 				++it;
 			}
 		}
-		/// \brief get a representation of the knot
+		/// \brief get a representation of the node
 		string toString();
 };
 
-/** \brief class for the tree, uses Knot
+/** \brief Tree is a recursive structure uses nodes.
  * 
- * Tree is a recursive structure uses knots.
+ * A root value and subtrees of children, represented as a set of linked nodes.
  */
 template <typename T = string>
 class Tree {
 	
 	private:
-		Knot<T> _root;
+		Node<T> _root;
 	
 	public:
 		/// \brief copy constructor
