@@ -330,8 +330,8 @@ class Hashtable {
 			while(undone and END != cur){
 				std::cout << cur->toString() << std::endl; // debug line
 				if(key == cur->getKey()){
-					assert(END == cur->getNext());
 					bef->setNext(cur->getNext());
+					assert(bef->getNext() == cur->getNext());
 					undone = false;
 					delete cur;
 				}

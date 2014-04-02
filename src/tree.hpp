@@ -37,10 +37,13 @@
 
 #include <cassert>
 #include <string>
-#include <list>
+//#include <list> // less efficiant
+#include <forward_list>
 
 using std::sting;
-using std::list;
+using std::forward_list;
+
+#define 
 
 /** \brief exception class for trees
  * 
@@ -76,28 +79,32 @@ class TreeException : std::exception {
 /** \brief Defines tree nodes.
  * 
  * Class for nodes of a tree.
- * A Knot store a tag and can have several children
+ * A Node store a tag and can have several children
  */
 template <typename T = char>
 class Node {
 	
 	private:
-		/// letter stored into Knot, the tag
+		/// letter stored into Node, the tag
 		T _tag;
-		/// children of the Knot
-		list<Knot<T>> _children;
+		/// children of the Node
+		forward_list<Node<T>> _children;
 	
 	public:
 		/** Copy constructor
 		 * @param[in] other Node to copy
 		 */
-		Node<T>(const Node<T> &other) _tag(other._tag), _children(other._children)
+		Node<T>(const Node<T> &other):
+			_tag(other._tag),
+			_children(other._children)
+			{}
+			
 		/** Simple constructor
 		 * @param[in] data to store into the Node
 		 */
 		Node<T>(T data){
-			// initialize the list
-			_children = list<Node<T>>(Node<T>, sizeof(Node<T>>));
+			// initialize the simply-linked list
+			_children = forward_list<Node<T>>(Node<T>, sizeof(Node<T>>));
 		}
 		/** Destructor for Node
 		 */
@@ -114,7 +121,7 @@ class Node {
 			// prevent objet copying itself
 			if(this != &other){
 				this->_tag = other._key;
-				this.->_children = other._children;
+				this->_children = other._children;
 			}
 			return (*this); // allow a = b = c
 		}
@@ -125,7 +132,7 @@ class Node {
 		 * @param[out] bool true if nodes have the same memory adress, else false
 		 */
 		operator ==(const Node<T> &lhs, const Node<T> &rhs){
-			// same adress -> same item
+			// same adress ⇒ same item
 			return &lhs == &rhs;
 		}
 		/** inequality operator
@@ -170,18 +177,35 @@ class Node {
 		}
 		/** Hook up a new child to the node
 		 * @param[in] n_data new data to store as a child of the node
+		 * @exception TreeException Threw if Element is already here
 		 */
+		// !!! TODO !!! //
+		/// /todo : fucked code
 		void append(<T> n_data){
+			if(isLeaf()){
+				if(n_data == _tag){
+					throw TreeException("Element is already here!");
+				}
+				else {
+					child.append(n_data);
+				}
+			}
+			for(Node<T> child : _children){
 			// add the value in chilmdren list as a new node
-			_children.push_front(new Node<T>(n_data));
+					_children.push_front(new Node<T>(n_data));
+			}
+			else {
+					
+				}
+			}
 		}
 		/** Remove a leaf from the node
 		 * @param[in] data data of the node's tag to remove
 		 */
 		void remove(<T> data){
 			// remove child with the right tag
-			list<int>::iterator it=_children.begin();
 			bool removed = false;
+			forward_list<T>::iterator it=_children.begin();
 			while(it != it.end() and not removed){
 				if(it->_tag == data and it->isLeaf()){
 					removed = true;
@@ -190,8 +214,43 @@ class Node {
 				++it;
 			}
 		}
-		/// \brief get a representation of the node
-		string toString();
+		
+		/** What is the tag of the Node ?
+		 * @param[out] tag The tag of the node
+		 */
+		T getTag(){ return _tag; }
+		
+		/** Do the tag is element or one of his children ?
+		 * @param[in] element Element to look for
+		 * @param[out] bool True if node or one of his child has the right tag,
+		 * else false.
+		 */
+		bool contains(T element){
+			if(isLeaf()){
+				return element == _tag;
+			}
+			else {
+				// browse children
+				bool here = false;
+				forward_list<T>::iterator it = _children.begin();
+				while(not absent and not it.end){
+					absent = it.contains(element);
+					++it;
+				}
+				return here;
+			}
+		}
+		/** Get a string representation of the node and his child
+		 * @param[out] desc Description of the node (and his child)
+		 */
+		string toString(){
+			isLeaf()?return string(_tag);
+			string desc = string(_tag);
+			for(Node<T> child: _children){
+				desc += "\n|_" + child.toString();
+			}
+			return desc;
+		}
 };
 
 /** \brief Tree is a recursive structure using nodes.
@@ -202,29 +261,51 @@ template <typename T = string>
 class Tree {
 	
 	private:
-		Node<T> _root;
+		Node<T> _root; /** First node of the tree */
 	
 	public:
-		/// \brief copy constructor
-		Tree(const Tree<T>&);
-		/// \brief common constructor
-		Tree();
-		/// \brief destructor
-		~Tree();
-		/// \brief assignment operator
-		Tree<T>& operator =(Tree<T>);
-		/// \brief equal operator
-		bool operator ==(const Tree<T>&, const Tree<T>&);
-		/// \brief ne operator
-		bool operator !=(const Tree<T>&, const Tree<T>&);
-		/// \brief Is the element in the tree ?
-		bool contains(T);
-		/// \brief count among of appearances of a particular element
-		int count(T);
-		/// \brief the height of the tree
-		int height();
-		/// \brief add an element in the tree
-		void add(T);
+		/** Copy constructor
+		 */
+		Tree(const Tree<T> &other);
+			_root(other._root)
+			{}
+		
+		/** Common constructor,
+		 * create an tree
+		 * @param[in] element Root of the tree
+		 */
+		Tree(T element):
+			_root(element)
+			{}
+		
+		/** Destructor, destroy the whole tree
+		 */
+		~Tree(){
+			delete &_root;
+		}
+		
+		/** Is the element in the tree ?
+		 * @param[in] element Search the element in the Tree
+		 * @param[out] bool True if element is here, else false.
+		 */
+		bool contains(T element){
+			return _root.contains(element);
+		}
+		
+		/** The height of the tree
+		 * @param[out] hgt Height of the tree
+		 */
+		int height(){
+			return _root.height();
+		}
+		
+		/** Put an element in the tree
+		 * @param[in] element New element to put into the tree
+		 * @exception TreeException Trew if element is already there
+		 */
+		void put(T element){
+			
+		}
 		/// \brief remove an element from the tree
 		void remove(T);
 		/// \brief get the whole list of elements in the tree
