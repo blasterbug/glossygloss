@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['what',['what',['../class_hash_exception.html#a542711eb0045dcec64d7a8596b2450ff',1,'HashException::what()'],['../class_tree_exception.html#ab899a6ec0f82bf770b88ba4982e3d696',1,'TreeException::what()']]]
+  ['what',['what',['../class_hash_exception.html#a542711eb0045dcec64d7a8596b2450ff',1,'HashException::what()'],['../tree_8hpp.html#aff06f49065b54a8a86e02e9a2441a8ba',1,'what():&#160;tree.hpp']]]
 ];

@@ -286,8 +286,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;            <span class="keywordflow">while</span>(undone and <a class="code" href="hashtable_8hpp.html#a29fd18bed01c4d836c7ebfe73a125c3f">END</a> != cur){</div>
 <div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160;                std::cout &lt;&lt; cur-&gt;<a class="code" href="class_alveole.html#a504981011163116c40d710a0e1d26a81">toString</a>() &lt;&lt; std::endl; <span class="comment">// debug line</span></div>
 <div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160;                <span class="keywordflow">if</span>(key == cur-&gt;<a class="code" href="class_alveole.html#add57358f630300978cfd314a9a392c8b">getKey</a>()){</div>
-<div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160;                    assert(<a class="code" href="hashtable_8hpp.html#a29fd18bed01c4d836c7ebfe73a125c3f">END</a> == cur-&gt;<a class="code" href="class_alveole.html#ae540dba4d60c74ff17e2abc03deb33c8">getNext</a>());</div>
-<div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160;                    bef-&gt;<a class="code" href="class_alveole.html#ad756cdf41a7ab00c93c2264c0a1da26c">setNext</a>(cur-&gt;<a class="code" href="class_alveole.html#ae540dba4d60c74ff17e2abc03deb33c8">getNext</a>());</div>
+<div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160;                    bef-&gt;<a class="code" href="class_alveole.html#ad756cdf41a7ab00c93c2264c0a1da26c">setNext</a>(cur-&gt;<a class="code" href="class_alveole.html#ae540dba4d60c74ff17e2abc03deb33c8">getNext</a>());</div>
+<div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160;                    assert(bef-&gt;<a class="code" href="class_alveole.html#ae540dba4d60c74ff17e2abc03deb33c8">getNext</a>() == cur-&gt;<a class="code" href="class_alveole.html#ae540dba4d60c74ff17e2abc03deb33c8">getNext</a>());</div>
 <div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160;                    undone = <span class="keyword">false</span>;</div>
 <div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160;                    <span class="keyword">delete</span> cur;</div>
 <div class="line"><a name="l00337"></a><span class="lineno">  337</span>&#160;                }</div>
@@ -347,7 +347,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Apr 1 2014 20:40:21 for Glossygloss by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed Apr 2 2014 20:48:13 for Glossygloss by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

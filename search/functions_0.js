@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['_5fchildren',['_children',['../class_node.html#ad94a3261a95cdf38d1eb62bc54ddd7e0',1,'Node']]]
+  ['_5froot',['_root',['../class_tree.html#a011d3a891f6dd1d5098d6e7452c7ee55',1,'Tree']]]
 ];

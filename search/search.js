@@ -11,8 +11,8 @@ var indexSectionsWithContent =
   1: "ahnt",
   2: "hrt",
   3: "_aceghinoprstw~",
-  4: "_",
-  5: "ae"
+  4: "_r",
+  5: "ace"
 };
 
 var indexSectionNames =
