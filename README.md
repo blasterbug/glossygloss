@@ -1,13 +1,15 @@
 ![logo](logo.png "Glossygloss logo") Glossygloss
 ===========
 
-  Glossygloss is set of classes to use several data structures as Tree and Hashtable.  
+  Glossygloss is set of classes to use several data structures as Tree and Hashtable.   
   More might come soon.
 
 ### Documentation
 
-  All documented things are [here](http://blasterbug.github.io/glossygloss/ "Glossygloss Main Page").  
-  A PDF file (refman.pdf) is also available for offline doc.  
+  All documented things are [here](http://blasterbug.github.io/glossygloss/ "Glossygloss Main Page").   
+  
+  A PDF file (refman.pdf) is also available for offline doc.   
+  
   You can generate the doc using [doxygen](http://www.stack.nl/~dimitri/doxygen/ "Doxygen Main Page") and the config file doxygen_config
   
   Usefull links :
