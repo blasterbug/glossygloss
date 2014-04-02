@@ -187,15 +187,22 @@ class Node {
 					throw TreeException("Element is already here!");
 				}
 				else {
-					child.append(n_data);
+					// add the value in children list as a new node
+					_children.push_front(new Node<T>(n_data));
 				}
 			}
-			for(Node<T> child : _children){
-			// add the value in chilmdren list as a new node
-					_children.push_front(new Node<T>(n_data));
-			}
 			else {
-					
+				bool undone = true;
+				forward_list<T>::iterator it = _children.begin();
+				while(not it.end() and undone){
+					if(child._tag<n_data){
+						child.append(n_data);
+						undone = false;
+					}
+					else{
+						// ?
+					}
+					++it;
 				}
 			}
 		}
