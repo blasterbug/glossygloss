@@ -8,9 +8,9 @@
 
   All documented things are [here](http://blasterbug.github.io/glossygloss/ "Glossygloss Main Page").   
   
-  A PDF file (refman.pdf) is also available for offline doc.   
+  A PDF file *refman.pdf* is also available for offline doc.   
   
-  You can generate the doc using [doxygen](http://www.stack.nl/~dimitri/doxygen/ "Doxygen Main Page") and the config file doxygen_config
+  You can generate the doc using [doxygen](http://www.stack.nl/~dimitri/doxygen/ "Doxygen Main Page") and the config file *doxygen_config*
   
   Usefull links :
   - [C++ programming on wikibooks](http://en.wikibooks.org/wiki/C%2B%2B_Programming "C++ programming on wikibooks")
