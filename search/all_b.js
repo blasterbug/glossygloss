@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['setnext',['setNext',['../class_alveole.html#ad756cdf41a7ab00c93c2264c0a1da26c',1,'Alveole']]],
-  ['setvalue',['setValue',['../class_alveole.html#a52932b33fef397328eea9ab139d1621e',1,'Alveole']]]
+  ['operator_21_3d',['operator!=',['../class_node.html#acb50abe854f383e0d624e85505697b4f',1,'Node']]],
+  ['operator_3d',['operator=',['../class_node.html#aa9d37ee4133ae9774c5cf2ca5a6da8af',1,'Node']]],
+  ['operator_3d_3d',['operator==',['../class_node.html#ac6af63bbc9a1eef28615c5c0c5acb83c',1,'Node']]]
 ];

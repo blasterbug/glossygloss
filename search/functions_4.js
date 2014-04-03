@@ -1,8 +1,6 @@
 var searchData=
 [
-  ['get',['get',['../class_hashtable.html#a06702992ba59e62b443e1c2d380625dc',1,'Hashtable']]],
-  ['getkey',['getKey',['../class_alveole.html#add57358f630300978cfd314a9a392c8b',1,'Alveole']]],
-  ['getnext',['getNext',['../class_alveole.html#ae540dba4d60c74ff17e2abc03deb33c8',1,'Alveole']]],
-  ['gettag',['getTag',['../tree_8hpp.html#a3555d69bfbf5a34a1731fbb1f60af08e',1,'tree.hpp']]],
-  ['getvalue',['getValue',['../class_alveole.html#a63378af984be5bb63fb755010c61002f',1,'Alveole']]]
+  ['hashexception',['HashException',['../class_hash_exception.html#a2edb18910c12faf0bfd2ae3f1e782b60',1,'HashException']]],
+  ['hashtable',['Hashtable',['../class_hashtable.html#a2f77d0c6d61286bf8d66552b5ade3f27',1,'Hashtable']]],
+  ['height',['height',['../class_node.html#a0da7f6a2356d1e7f047f8bfda1edd8d8',1,'Node::height()'],['../class_tree.html#a9300caf575a5a89292e620e8b73112c7',1,'Tree::height()']]]
 ];

@@ -21,7 +21,6 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr style="height: 56px;">
-  <td id="projectlogo"><img alt="Logo" src="logo.png"/></td>
   <td style="padding-left: 0.5em;">
    <div id="projectname">Glossygloss
    &#160;<span id="projectnumber">0.2</span>
@@ -99,220 +98,242 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="comment">//#include &lt;list&gt; // less efficiant</span></div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="preprocessor">#include &lt;forward_list&gt;</span></div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="keyword">using</span> std::sting;</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="keyword">using</span> std::string;</div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="keyword">using</span> std::forward_list;</div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="preprocessor">#define </span></div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="preprocessor"></span></div>
-<div class="line"><a name="l00052"></a><span class="lineno"><a class="line" href="tree_8hpp.html#a5198534de6768d36f570e0b656ad34d6">   52</a></span>&#160;<span class="keyword">class </span><a class="code" href="tree_8hpp.html#ab74911f7626f303cd046fbdef4769974">TreeException</a> : std::exception {</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00054"></a><span class="lineno"><a class="line" href="tree_8hpp.html#aad5ea6b478976725c6c8f9e2e9255177">   54</a></span>&#160;        <span class="keywordtype">char</span>* <a class="code" href="tree_8hpp.html#aad5ea6b478976725c6c8f9e2e9255177">_cause</a>; </div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00060"></a><span class="lineno"><a class="line" href="tree_8hpp.html#ab74911f7626f303cd046fbdef4769974">   60</a></span>&#160;        <a class="code" href="tree_8hpp.html#ab74911f7626f303cd046fbdef4769974">TreeException</a>(<span class="keywordtype">char</span>* cause):</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;            <a class="code" href="tree_8hpp.html#aad5ea6b478976725c6c8f9e2e9255177">_cause</a>(cause)</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;            {}</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        </div>
-<div class="line"><a name="l00067"></a><span class="lineno"><a class="line" href="tree_8hpp.html#a241cb679a4420f09104b976a5658368f">   67</a></span>&#160;        <span class="keyword">virtual</span> <a class="code" href="tree_8hpp.html#a241cb679a4420f09104b976a5658368f">~BagException</a>() throw(){</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;            <span class="comment">// do nothing</span></div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;        }</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        </div>
-<div class="line"><a name="l00074"></a><span class="lineno"><a class="line" href="tree_8hpp.html#aff06f49065b54a8a86e02e9a2441a8ba">   74</a></span>&#160;        <span class="keyword">virtual</span> <span class="keyword">const</span> <span class="keywordtype">char</span>* <a class="code" href="tree_8hpp.html#aff06f49065b54a8a86e02e9a2441a8ba">what</a>()<span class="keyword">const</span> throw(){</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;            <span class="keywordflow">return</span> <a class="code" href="tree_8hpp.html#aad5ea6b478976725c6c8f9e2e9255177">_cause</a>;</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;        }</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;};</div>
-<div class="line"><a name="l00078"></a><span class="lineno"><a class="line" href="tree_8hpp.html#aed579f6ec06894b74459c2bc888f1979">   78</a></span>&#160;</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> T = <span class="keywordtype">char</span>&gt;</div>
-<div class="line"><a name="l00085"></a><span class="lineno"><a class="line" href="class_node.html">   85</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_node.html">Node</a> {</div>
-<div class="line"><a name="l00086"></a><span class="lineno"><a class="line" href="tree_8hpp.html#a6cb12b1fe7fcd17e39eb191ff4d7b3e7">   86</a></span>&#160;    </div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00089"></a><span class="lineno"><a class="line" href="class_node.html#a82089b860871012bc159c510408be29c">   89</a></span>&#160;        T <a class="code" href="class_node.html#a82089b860871012bc159c510408be29c">_tag</a>;</div>
-<div class="line"><a name="l00091"></a><span class="lineno"><a class="line" href="class_node.html#a845317829093b3d4665ba7e0055b4599">   91</a></span>&#160;        forward_list&lt;Node&lt;T&gt;&gt; <a class="code" href="class_node.html#a845317829093b3d4665ba7e0055b4599">_children</a>;</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    </div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00097"></a><span class="lineno"><a class="line" href="class_node.html#ad70e3545b2df020088a0e26bec128632">   97</a></span>&#160;        <a class="code" href="class_node.html">Node&lt;T&gt;</a>(<span class="keyword">const</span> <a class="code" href="class_node.html">Node&lt;T&gt;</a> &amp;other):</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;            <a class="code" href="class_node.html#a82089b860871012bc159c510408be29c">_tag</a>(other._tag),</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;            <a class="code" href="class_node.html#a845317829093b3d4665ba7e0055b4599">_children</a>(other._children)</div>
-<div class="line"><a name="l00100"></a><span class="lineno"><a class="line" href="tree_8hpp.html#a7ca53913560f68df1cb4627aab9d5190">  100</a></span>&#160;            {}</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;            </div>
-<div class="line"><a name="l00105"></a><span class="lineno"><a class="line" href="class_node.html#a0692b16d246460bf94c18d49592facdd">  105</a></span>&#160;        <a class="code" href="class_node.html">Node&lt;T&gt;</a>(T data){</div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;            <span class="comment">// initialize the simply-linked list</span></div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;            <a class="code" href="class_node.html#a845317829093b3d4665ba7e0055b4599">_children</a> = forward_list&lt;Node&lt;T&gt;&gt;(<a class="code" href="class_node.html">Node&lt;T&gt;</a>, <span class="keyword">sizeof</span>(Node&lt;T&gt;&gt;));</div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;        }</div>
-<div class="line"><a name="l00111"></a><span class="lineno"><a class="line" href="class_node.html#ae923d0417581dd19784d55b901f0f7f0">  111</a></span>&#160;        ~<a class="code" href="class_node.html">Node&lt;T&gt;</a>(){</div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;            <span class="comment">// usefull ?</span></div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;            <span class="keyword">delete</span> <a class="code" href="class_node.html#a845317829093b3d4665ba7e0055b4599">_children</a>;</div>
+<div class="line"><a name="l00050"></a><span class="lineno"><a class="line" href="class_tree_exception.html">   50</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_tree_exception.html">TreeException</a> : std::exception {</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00052"></a><span class="lineno"><a class="line" href="class_tree_exception.html#a90175b0c5a1e2a7ebb77cadc92b0388b">   52</a></span>&#160;        <span class="keywordtype">char</span>* <a class="code" href="class_tree_exception.html#a90175b0c5a1e2a7ebb77cadc92b0388b">_cause</a>; </div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00058"></a><span class="lineno"><a class="line" href="class_tree_exception.html#aa75b34acf02d0e86fb70a63242894311">   58</a></span>&#160;        <a class="code" href="class_tree_exception.html#aa75b34acf02d0e86fb70a63242894311">TreeException</a>(<span class="keywordtype">char</span>* cause):</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;            <a class="code" href="class_tree_exception.html#a90175b0c5a1e2a7ebb77cadc92b0388b">_cause</a>(cause)</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;            {}</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        </div>
+<div class="line"><a name="l00065"></a><span class="lineno"><a class="line" href="class_tree_exception.html#a68dfe698f22aabd8d51b0c533f818263">   65</a></span>&#160;        <span class="keyword">virtual</span> <a class="code" href="class_tree_exception.html#a68dfe698f22aabd8d51b0c533f818263">~TreeException</a>() throw(){</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;            <span class="comment">// do nothing</span></div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        }</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        </div>
+<div class="line"><a name="l00072"></a><span class="lineno"><a class="line" href="class_tree_exception.html#ab899a6ec0f82bf770b88ba4982e3d696">   72</a></span>&#160;        <span class="keyword">virtual</span> <span class="keyword">const</span> <span class="keywordtype">char</span>* <a class="code" href="class_tree_exception.html#ab899a6ec0f82bf770b88ba4982e3d696">what</a>()<span class="keyword">const</span> throw(){</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;            <span class="keywordflow">return</span> <a class="code" href="class_tree_exception.html#a90175b0c5a1e2a7ebb77cadc92b0388b">_cause</a>;</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        }</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;};</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> T = <span class="keywordtype">char</span>&gt;</div>
+<div class="line"><a name="l00083"></a><span class="lineno"><a class="line" href="class_node.html">   83</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_node.html">Node</a> {</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    </div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00087"></a><span class="lineno"><a class="line" href="class_node.html#a82089b860871012bc159c510408be29c">   87</a></span>&#160;        T <a class="code" href="class_node.html#a82089b860871012bc159c510408be29c">_tag</a>;</div>
+<div class="line"><a name="l00089"></a><span class="lineno"><a class="line" href="class_node.html#a845317829093b3d4665ba7e0055b4599">   89</a></span>&#160;        forward_list&lt;Node&lt;T&gt;&gt; <a class="code" href="class_node.html#a845317829093b3d4665ba7e0055b4599">_children</a>;</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    </div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00095"></a><span class="lineno"><a class="line" href="class_node.html#ad70e3545b2df020088a0e26bec128632">   95</a></span>&#160;        <a class="code" href="class_node.html#ad70e3545b2df020088a0e26bec128632">Node</a>(<span class="keyword">const</span> <a class="code" href="class_node.html">Node&lt;T&gt;</a> &amp;other):</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;            <a class="code" href="class_node.html#a82089b860871012bc159c510408be29c">_tag</a>(other.<a class="code" href="class_node.html#a82089b860871012bc159c510408be29c">_tag</a>),</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;            <a class="code" href="class_node.html#a845317829093b3d4665ba7e0055b4599">_children</a>(other.<a class="code" href="class_node.html#a845317829093b3d4665ba7e0055b4599">_children</a>)</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;            {}</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;            </div>
+<div class="line"><a name="l00103"></a><span class="lineno"><a class="line" href="class_node.html#a0692b16d246460bf94c18d49592facdd">  103</a></span>&#160;        <a class="code" href="class_node.html#a0692b16d246460bf94c18d49592facdd">Node</a>(T data){</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;            <span class="comment">// initialize the simply-linked list</span></div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;            <a class="code" href="class_node.html#a845317829093b3d4665ba7e0055b4599">_children</a> = <span class="keyword">new</span> forward_list&lt;Node&lt;T&gt;&gt;();</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;        }</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;        </div>
+<div class="line"><a name="l00110"></a><span class="lineno"><a class="line" href="class_node.html#ae923d0417581dd19784d55b901f0f7f0">  110</a></span>&#160;        <a class="code" href="class_node.html#ae923d0417581dd19784d55b901f0f7f0">~Node</a>(){</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;            <span class="comment">// usefull ?</span></div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;            <span class="keyword">delete</span> &amp;<a class="code" href="class_node.html#a845317829093b3d4665ba7e0055b4599">_children</a>;</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;            <span class="keyword">delete</span> &amp;<a class="code" href="class_node.html#a82089b860871012bc159c510408be29c">_tag</a>;</div>
 <div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;        }</div>
 <div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;        </div>
-<div class="line"><a name="l00120"></a><span class="lineno"><a class="line" href="class_node.html#aa9d37ee4133ae9774c5cf2ca5a6da8af">  120</a></span>&#160;        <a class="code" href="class_node.html">Node&lt;T&gt;</a>&amp; <a class="code" href="class_node.html#aa9d37ee4133ae9774c5cf2ca5a6da8af">operator =</a>(<a class="code" href="class_node.html">Node&lt;T&gt;</a> &amp;other){</div>
+<div class="line"><a name="l00120"></a><span class="lineno"><a class="line" href="class_node.html#aa9d37ee4133ae9774c5cf2ca5a6da8af">  120</a></span>&#160;        <a class="code" href="class_node.html">Node&lt;T&gt;</a>&amp; <a class="code" href="class_node.html#aa9d37ee4133ae9774c5cf2ca5a6da8af">operator=</a>(<a class="code" href="class_node.html">Node&lt;T&gt;</a> &amp;other){</div>
 <div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;            <span class="comment">// prevent objet copying itself</span></div>
 <div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;            <span class="keywordflow">if</span>(<span class="keyword">this</span> != &amp;other){</div>
-<div class="line"><a name="l00123"></a><span class="lineno"><a class="line" href="tree_8hpp.html#a662bcb075dd6a75ea704997f879e6898">  123</a></span>&#160;                this-&gt;<a class="code" href="class_node.html#a82089b860871012bc159c510408be29c">_tag</a> = other._key;</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;                this-&gt;<a class="code" href="class_node.html#a82089b860871012bc159c510408be29c">_tag</a> = other._key;</div>
 <div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;                this-&gt;<a class="code" href="class_node.html#a845317829093b3d4665ba7e0055b4599">_children</a> = other.<a class="code" href="class_node.html#a845317829093b3d4665ba7e0055b4599">_children</a>;</div>
 <div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;            }</div>
 <div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;            <span class="keywordflow">return</span> (*<span class="keyword">this</span>); <span class="comment">// allow a = b = c</span></div>
 <div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;        }</div>
 <div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;        </div>
-<div class="line"><a name="l00134"></a><span class="lineno"><a class="line" href="class_node.html#ad8f5643e23bbe29a7d84ea0cd4b06994">  134</a></span>&#160;        <a class="code" href="class_node.html#ad8f5643e23bbe29a7d84ea0cd4b06994">operator ==</a>(<span class="keyword">const</span> <a class="code" href="class_node.html">Node&lt;T&gt;</a> &amp;lhs, <span class="keyword">const</span> <a class="code" href="class_node.html">Node&lt;T&gt;</a> &amp;rhs){</div>
+<div class="line"><a name="l00134"></a><span class="lineno"><a class="line" href="class_node.html#ac6af63bbc9a1eef28615c5c0c5acb83c">  134</a></span>&#160;        <span class="keywordtype">bool</span> <a class="code" href="class_node.html#ac6af63bbc9a1eef28615c5c0c5acb83c">operator==</a>(<span class="keyword">const</span> <a class="code" href="class_node.html">Node&lt;T&gt;</a>&amp; rhs){</div>
 <div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;            <span class="comment">// same adress ⇒ same item</span></div>
-<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;            <span class="keywordflow">return</span> &amp;lhs == &amp;rhs;</div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;            <span class="keywordflow">return</span> &amp;<span class="keyword">this</span> == &amp;rhs;</div>
 <div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;        }</div>
-<div class="line"><a name="l00143"></a><span class="lineno"><a class="line" href="class_node.html#a13365c1cf381d8b749b4be95263b58bb">  143</a></span>&#160;        <span class="keywordtype">bool</span> <a class="code" href="class_node.html#a13365c1cf381d8b749b4be95263b58bb">operator !=</a>(<span class="keyword">const</span> <a class="code" href="class_node.html">Node&lt;T&gt;</a> &amp;lhs, <span class="keyword">const</span> <a class="code" href="class_node.html">Node&lt;T&gt;</a> &amp;rhs){</div>
-<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;            <span class="keywordflow">return</span> &amp;lhs != &amp;rhs;</div>
-<div class="line"><a name="l00145"></a><span class="lineno"><a class="line" href="tree_8hpp.html#a765571c84b5dd53f24888767f8703e9a">  145</a></span>&#160;            <span class="comment">// return not(lhs == rhs);</span></div>
-<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;        }</div>
-<div class="line"><a name="l00150"></a><span class="lineno"><a class="line" href="class_node.html#a26f91ff0b0d5ea8940c7fde220aca742">  150</a></span>&#160;        <span class="keywordtype">bool</span> <a class="code" href="class_node.html#a26f91ff0b0d5ea8940c7fde220aca742">isLeaf</a>(){</div>
-<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;            <span class="keywordflow">return</span> 0 == <a class="code" href="class_node.html#a845317829093b3d4665ba7e0055b4599">_children</a>.size();</div>
-<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;        }</div>
-<div class="line"><a name="l00156"></a><span class="lineno"><a class="line" href="class_node.html#a0da7f6a2356d1e7f047f8bfda1edd8d8">  156</a></span>&#160;        <span class="keywordtype">int</span> <a class="code" href="class_node.html#a0da7f6a2356d1e7f047f8bfda1edd8d8">height</a>(){</div>
-<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;            <span class="keywordflow">if</span>(<a class="code" href="class_node.html#a26f91ff0b0d5ea8940c7fde220aca742">isLeaf</a>()){</div>
-<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;                <span class="keywordflow">return</span> 0;</div>
-<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;            }</div>
-<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;            <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;                <span class="comment">// start heights at zero</span></div>
-<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;                <span class="comment">// heights[0] : greatest height, heights[1] : computed height in the loop</span></div>
-<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;                <span class="keywordtype">int</span> heights[2] = {0,0};</div>
-<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;                <span class="comment">// for each child, using C++11 syntax</span></div>
-<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;                <span class="comment">//for(_children::iterator it=_children.begin(); it!=_children.end(); ++it){</span></div>
-<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;                <span class="keywordflow">for</span>(<a class="code" href="class_node.html">Node&lt;T&gt;</a> child : <a class="code" href="class_node.html#a845317829093b3d4665ba7e0055b4599">_children</a>){</div>
-<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;                    <span class="comment">// compute child height and store it</span></div>
-<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;                    heights[1] = child.height();</div>
-<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;                    <span class="comment">// if computed height is greater then the old one</span></div>
-<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;                    <span class="keywordflow">if</span>(heights[0] &lt; heights[1]){</div>
-<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;                        <span class="comment">// store it as the new greate one</span></div>
-<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;                        heights[0] = heights[1];</div>
-<div class="line"><a name="l00173"></a><span class="lineno"><a class="line" href="tree_8hpp.html#a96e39bd56ba073b52a474fd6c94247f2">  173</a></span>&#160;                    } <span class="comment">// else, nothing</span></div>
-<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;                }</div>
-<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;                <span class="keywordflow">return</span> heights[0];</div>
-<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;            }</div>
-<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;        }</div>
-<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;        <span class="comment">// !!! TODO !!! //</span></div>
-<div class="line"><a name="l00184"></a><span class="lineno"><a class="line" href="class_node.html#aceee8556fee530a610039f9a6479d7cd">  184</a></span>&#160;<span class="comment"></span>        <span class="keywordtype">void</span> <a class="code" href="class_node.html#aceee8556fee530a610039f9a6479d7cd">append</a>(&lt;T&gt; n_data){</div>
-<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;            <span class="keywordflow">if</span>(<a class="code" href="class_node.html#a26f91ff0b0d5ea8940c7fde220aca742">isLeaf</a>()){</div>
-<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;                <span class="keywordflow">if</span>(n_data == <a class="code" href="class_node.html#a82089b860871012bc159c510408be29c">_tag</a>){</div>
-<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;                    <span class="keywordflow">throw</span> <a class="code" href="tree_8hpp.html#ab74911f7626f303cd046fbdef4769974">TreeException</a>(<span class="stringliteral">&quot;Element is already here!&quot;</span>);</div>
-<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;                }</div>
-<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;                <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;                    child.append(n_data);</div>
-<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;                }</div>
-<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;            }</div>
-<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;            <span class="keywordflow">for</span>(<a class="code" href="class_node.html">Node&lt;T&gt;</a> child : <a class="code" href="class_node.html#a845317829093b3d4665ba7e0055b4599">_children</a>){</div>
-<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;            <span class="comment">// add the value in chilmdren list as a new node</span></div>
-<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;                    _children.push_front(<span class="keyword">new</span> <a class="code" href="class_node.html">Node&lt;T&gt;</a>(n_data));</div>
-<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;            }</div>
-<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;            <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;                    </div>
-<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;                }</div>
-<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;            }</div>
-<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;        }</div>
-<div class="line"><a name="l00205"></a><span class="lineno"><a class="line" href="tree_8hpp.html#a608a86b61d9888bac0fd9100b408c60d">  205</a></span>&#160;        <span class="keywordtype">void</span> <span class="keyword">remove</span>(&lt;T&gt; data){</div>
-<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;            <span class="comment">// remove child with the right tag</span></div>
-<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;            <span class="keywordtype">bool</span> removed = <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;            forward_list&lt;T&gt;::iterator it=<a class="code" href="tree_8hpp.html#a80dd1caaf9add2cc2cb432afa0d17817">_children</a>.begin();</div>
-<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;            <span class="keywordflow">while</span>(it != it.end() and not removed){</div>
-<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;                <span class="keywordflow">if</span>(it-&gt;_tag == data and it-&gt;isLeaf()){</div>
-<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;                    removed = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;                    <span class="keyword">delete</span> it;</div>
-<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;                }</div>
-<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;                ++it;</div>
-<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;            }</div>
-<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;        }</div>
-<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;        </div>
-<div class="line"><a name="l00221"></a><span class="lineno"><a class="line" href="tree_8hpp.html#a3555d69bfbf5a34a1731fbb1f60af08e">  221</a></span>&#160;        T <a class="code" href="tree_8hpp.html#a3555d69bfbf5a34a1731fbb1f60af08e">getTag</a>(){ <span class="keywordflow">return</span> <a class="code" href="tree_8hpp.html#aed579f6ec06894b74459c2bc888f1979">_tag</a>; }</div>
-<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;        </div>
-<div class="line"><a name="l00228"></a><span class="lineno"><a class="line" href="tree_8hpp.html#adbfd34fa687b367969d9d415aadcb060">  228</a></span>&#160;        <span class="keywordtype">bool</span> <a class="code" href="tree_8hpp.html#adbfd34fa687b367969d9d415aadcb060">contains</a>(T element){</div>
-<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;            <span class="keywordflow">if</span>(<a class="code" href="tree_8hpp.html#acfd39d65c04faa2cb62b37241d0afa9a">isLeaf</a>()){</div>
-<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;                <span class="keywordflow">return</span> element == <a class="code" href="tree_8hpp.html#aed579f6ec06894b74459c2bc888f1979">_tag</a>;</div>
-<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;            }</div>
-<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;            <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;                <span class="comment">// browse children</span></div>
-<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;                <span class="keywordtype">bool</span> here = <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;                forward_list&lt;T&gt;::iterator it = <a class="code" href="tree_8hpp.html#a80dd1caaf9add2cc2cb432afa0d17817">_children</a>.begin();</div>
-<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;                <span class="keywordflow">while</span>(not absent and not it.end){</div>
-<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;                    absent = it.contains(element);</div>
-<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;                    ++it;</div>
-<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;                }</div>
-<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;                <span class="keywordflow">return</span> here;</div>
-<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;            }</div>
-<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;        }</div>
-<div class="line"><a name="l00246"></a><span class="lineno"><a class="line" href="tree_8hpp.html#a2a35b0d68ef09ad99a22fa8563e1797f">  246</a></span>&#160;        <span class="keywordtype">string</span> <a class="code" href="tree_8hpp.html#a2a35b0d68ef09ad99a22fa8563e1797f">toString</a>(){</div>
-<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;            <a class="code" href="tree_8hpp.html#acfd39d65c04faa2cb62b37241d0afa9a">isLeaf</a>()?<span class="keywordflow">return</span> string(<a class="code" href="tree_8hpp.html#aed579f6ec06894b74459c2bc888f1979">_tag</a>);</div>
-<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;            <span class="keywordtype">string</span> desc = string(<a class="code" href="tree_8hpp.html#aed579f6ec06894b74459c2bc888f1979">_tag</a>);</div>
-<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;            <span class="keywordflow">for</span>(<a class="code" href="class_node.html">Node&lt;T&gt;</a> child: <a class="code" href="tree_8hpp.html#a80dd1caaf9add2cc2cb432afa0d17817">_children</a>){</div>
-<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;                desc += <span class="stringliteral">&quot;\n|_&quot;</span> + child.toString();</div>
-<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;            }</div>
-<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;            <span class="keywordflow">return</span> desc;</div>
-<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;        }</div>
-<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;};</div>
-<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;</div>
-<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> T = <span class="keywordtype">string</span>&gt;</div>
-<div class="line"><a name="l00261"></a><span class="lineno"><a class="line" href="class_tree.html">  261</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_tree.html">Tree</a> {</div>
-<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;    </div>
-<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;    <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00264"></a><span class="lineno"><a class="line" href="class_tree.html#a4f23e98860f95126711a63822b7d0a4c">  264</a></span>&#160;        <a class="code" href="class_node.html">Node&lt;T&gt;</a> <a class="code" href="class_tree.html#a4f23e98860f95126711a63822b7d0a4c">_root</a>; </div>
-<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;    <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;        <a class="code" href="class_tree.html#aaefcdf4990c48b9bc90e2c2c3fe74a67">Tree</a>(<span class="keyword">const</span> <a class="code" href="class_tree.html">Tree&lt;T&gt;</a> &amp;other);</div>
-<div class="line"><a name="l00270"></a><span class="lineno"><a class="line" href="class_tree.html#a011d3a891f6dd1d5098d6e7452c7ee55">  270</a></span>&#160;            <a class="code" href="class_tree.html#a011d3a891f6dd1d5098d6e7452c7ee55">_root</a>(other._root)</div>
-<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;            {}</div>
-<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;        </div>
-<div class="line"><a name="l00277"></a><span class="lineno"><a class="line" href="class_tree.html#acf08fade73658f5ea3df0d2794d95277">  277</a></span>&#160;        <a class="code" href="class_tree.html#acf08fade73658f5ea3df0d2794d95277">Tree</a>(T element):</div>
-<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;            <a class="code" href="class_tree.html#a4f23e98860f95126711a63822b7d0a4c">_root</a>(element)</div>
-<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;            {}</div>
-<div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;        </div>
-<div class="line"><a name="l00283"></a><span class="lineno"><a class="line" href="class_tree.html#a04affc46d89a0ef5d517ab685c9c346e">  283</a></span>&#160;        <a class="code" href="class_tree.html#a04affc46d89a0ef5d517ab685c9c346e">~Tree</a>(){</div>
-<div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;            <span class="keyword">delete</span> &amp;<a class="code" href="class_tree.html#a4f23e98860f95126711a63822b7d0a4c">_root</a>;</div>
-<div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;        }</div>
-<div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;        </div>
-<div class="line"><a name="l00291"></a><span class="lineno"><a class="line" href="class_tree.html#a6de8e50615c6a644025b2f1af8684f9c">  291</a></span>&#160;        <span class="keywordtype">bool</span> <a class="code" href="class_tree.html#a6de8e50615c6a644025b2f1af8684f9c">contains</a>(T element){</div>
-<div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;            <span class="keywordflow">return</span> <a class="code" href="class_tree.html#a4f23e98860f95126711a63822b7d0a4c">_root</a>.contains(element);</div>
-<div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;        }</div>
-<div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;        </div>
-<div class="line"><a name="l00298"></a><span class="lineno"><a class="line" href="class_tree.html#a9300caf575a5a89292e620e8b73112c7">  298</a></span>&#160;        <span class="keywordtype">int</span> <a class="code" href="class_tree.html#a9300caf575a5a89292e620e8b73112c7">height</a>(){</div>
-<div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;            <span class="keywordflow">return</span> <a class="code" href="class_tree.html#a4f23e98860f95126711a63822b7d0a4c">_root</a>.height();</div>
-<div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;        }</div>
-<div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;        </div>
-<div class="line"><a name="l00306"></a><span class="lineno"><a class="line" href="class_tree.html#a8f0fd8ff56ed1f4a5d1e86f404d364ea">  306</a></span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_tree.html#a8f0fd8ff56ed1f4a5d1e86f404d364ea">put</a>(T element){</div>
-<div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;            </div>
-<div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;        }</div>
-<div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;        <span class="keywordtype">void</span> <span class="keyword">remove</span>(T);</div>
-<div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;        T[] <a class="code" href="class_tree.html#acda757d5fda0ac97a6c099d00f0fa760">elements</a>();</div>
-<div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160;};</div>
-<div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160;</div>
-<div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160;</div>
-<div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160;</div>
-<div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;<span class="preprocessor">#endif // HASHWORK_HPP</span></div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;        </div>
+<div class="line"><a name="l00144"></a><span class="lineno"><a class="line" href="class_node.html#acb50abe854f383e0d624e85505697b4f">  144</a></span>&#160;        <span class="keywordtype">bool</span> <a class="code" href="class_node.html#acb50abe854f383e0d624e85505697b4f">operator!=</a>(<span class="keyword">const</span> <a class="code" href="class_node.html">Node&lt;T&gt;</a>&amp; rhs){</div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;            <span class="keywordflow">return</span> &amp;<span class="keyword">this</span> != &amp;rhs;</div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;            <span class="comment">// return not(lhs == rhs);</span></div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;        }</div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;        </div>
+<div class="line"><a name="l00152"></a><span class="lineno"><a class="line" href="class_node.html#a26f91ff0b0d5ea8940c7fde220aca742">  152</a></span>&#160;        <span class="keywordtype">bool</span> <a class="code" href="class_node.html#a26f91ff0b0d5ea8940c7fde220aca742">isLeaf</a>(){</div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;            <span class="keywordflow">return</span> 0 == <a class="code" href="class_node.html#a845317829093b3d4665ba7e0055b4599">_children</a>.size();</div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;        }</div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;        </div>
+<div class="line"><a name="l00159"></a><span class="lineno"><a class="line" href="class_node.html#a0da7f6a2356d1e7f047f8bfda1edd8d8">  159</a></span>&#160;        <span class="keywordtype">int</span> <a class="code" href="class_node.html#a0da7f6a2356d1e7f047f8bfda1edd8d8">height</a>(){</div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;            <span class="keywordflow">if</span>(<a class="code" href="class_node.html#a26f91ff0b0d5ea8940c7fde220aca742">isLeaf</a>()){</div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;                <span class="keywordflow">return</span> 0;</div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;            }</div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;            <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;                <span class="comment">// start heights at zero</span></div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;                <span class="comment">// heights[0] : greatest height, heights[1] : computed height in the loop</span></div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;                <span class="keywordtype">int</span> heights[2] = {0,0};</div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;                <span class="comment">// for each child, using C++11 syntax</span></div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;                <span class="comment">//for(_children::iterator it=_children.begin(); it!=_children.end(); ++it){</span></div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;                <span class="keywordflow">for</span>(<a class="code" href="class_node.html">Node&lt;T&gt;</a> child : <a class="code" href="class_node.html#a845317829093b3d4665ba7e0055b4599">_children</a>){</div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;                    <span class="comment">// compute child height and store it</span></div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;                    heights[1] = child.height();</div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;                    <span class="comment">// if computed height is greater then the old one</span></div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;                    <span class="keywordflow">if</span>(heights[0] &lt; heights[1]){</div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;                        <span class="comment">// store it as the new greate one</span></div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;                        heights[0] = heights[1];</div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;                    } <span class="comment">// else, nothing</span></div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;                }</div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;                <span class="keywordflow">return</span> heights[0];</div>
+<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;            }</div>
+<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;        }</div>
+<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;        </div>
+<div class="line"><a name="l00185"></a><span class="lineno"><a class="line" href="class_node.html#a141b357c5d9a30cd9b3062337ef67edb">  185</a></span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_node.html#a141b357c5d9a30cd9b3062337ef67edb">append</a>(T n_data){</div>
+<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;            <span class="keywordflow">if</span>(<a class="code" href="class_node.html#a26f91ff0b0d5ea8940c7fde220aca742">isLeaf</a>()){</div>
+<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;                <span class="comment">// add the value in children list as a new node</span></div>
+<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;                <a class="code" href="class_node.html#a845317829093b3d4665ba7e0055b4599">_children</a>.push_front(<span class="keyword">new</span> <a class="code" href="class_node.html">Node&lt;T&gt;</a>(n_data));</div>
+<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;            }</div>
+<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;            <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;                <span class="keywordtype">bool</span> undone = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;                <span class="keyword">auto</span> it = <a class="code" href="class_node.html#a845317829093b3d4665ba7e0055b4599">_children</a>.begin();</div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;                <span class="keywordflow">while</span>(not it.end() and undone){</div>
+<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;                    <span class="keywordflow">if</span>(it._tag&lt;n_data){</div>
+<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;                        it.append(n_data);</div>
+<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;                        undone = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;                    }</div>
+<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;                    <span class="keywordflow">else</span>{</div>
+<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;                        ++it;</div>
+<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;                    }</div>
+<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;                }</div>
+<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;            }</div>
+<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;        }</div>
+<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;        </div>
+<div class="line"><a name="l00209"></a><span class="lineno"><a class="line" href="class_node.html#a33901811ec542883fdfc68022dd59920">  209</a></span>&#160;        <span class="keywordtype">void</span> <span class="keyword">remove</span>(T data){</div>
+<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;            <span class="comment">// remove child with the right tag</span></div>
+<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;            <span class="keywordtype">bool</span> undone = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;            <span class="keyword">auto</span> it=<a class="code" href="class_node.html#a845317829093b3d4665ba7e0055b4599">_children</a>.begin();</div>
+<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;            <span class="keywordflow">while</span>(it != it.end() and undone){</div>
+<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;                <span class="keywordflow">if</span>(it-&gt;_tag == data and it-&gt;isLeaf()){</div>
+<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;                    undone = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;                    <span class="keyword">delete</span> it;</div>
+<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;                }</div>
+<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;                ++it;</div>
+<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;            }</div>
+<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;            <span class="keywordflow">if</span>(undone){</div>
+<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;                <span class="keywordflow">throw</span> <a class="code" href="class_tree_exception.html">TreeException</a>(<span class="stringliteral">&quot;Element was not removed&quot;</span>);</div>
+<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;            }</div>
+<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;        }</div>
+<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;        </div>
+<div class="line"><a name="l00228"></a><span class="lineno"><a class="line" href="class_node.html#a3b188b785e394924c11f2f68369c0cdf">  228</a></span>&#160;        T <a class="code" href="class_node.html#a3b188b785e394924c11f2f68369c0cdf">getTag</a>(){ <span class="keywordflow">return</span> <a class="code" href="class_node.html#a82089b860871012bc159c510408be29c">_tag</a>; }</div>
+<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;        </div>
+<div class="line"><a name="l00235"></a><span class="lineno"><a class="line" href="class_node.html#ad319e53c90ce8bced6ffc42b67d8e759">  235</a></span>&#160;        <span class="keywordtype">bool</span> <a class="code" href="class_node.html#ad319e53c90ce8bced6ffc42b67d8e759">contains</a>(T element){</div>
+<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;            <span class="keywordflow">if</span>(<a class="code" href="class_node.html#a26f91ff0b0d5ea8940c7fde220aca742">isLeaf</a>()){</div>
+<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;                <span class="keywordflow">return</span> element == <a class="code" href="class_node.html#a82089b860871012bc159c510408be29c">_tag</a>;</div>
+<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;            }</div>
+<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;            <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;                <span class="comment">// browse children</span></div>
+<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;                <span class="keywordtype">bool</span> here = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;                <span class="keyword">auto</span> it = <a class="code" href="class_node.html#a845317829093b3d4665ba7e0055b4599">_children</a>.begin();</div>
+<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;                <span class="keywordflow">while</span>(not here and not it.end()){</div>
+<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;                    here = it.contains(element);</div>
+<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;                    ++it;</div>
+<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;                }</div>
+<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;                <span class="keywordflow">return</span> here;</div>
+<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;            }</div>
+<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;        }</div>
+<div class="line"><a name="l00253"></a><span class="lineno"><a class="line" href="class_node.html#abb91d745a01f97fe51a35811e0d42801">  253</a></span>&#160;        <span class="keywordtype">string</span> <a class="code" href="class_node.html#abb91d745a01f97fe51a35811e0d42801">toString</a>(){</div>
+<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;            <span class="keywordflow">if</span>(<a class="code" href="class_node.html#a26f91ff0b0d5ea8940c7fde220aca742">isLeaf</a>()){</div>
+<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;                <span class="keywordflow">return</span> string(<a class="code" href="class_node.html#a82089b860871012bc159c510408be29c">_tag</a>);</div>
+<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;            }</div>
+<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;            <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;                <span class="keywordtype">string</span> desc = string(<a class="code" href="class_node.html#a82089b860871012bc159c510408be29c">_tag</a>);</div>
+<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;                <span class="keywordflow">for</span>(<a class="code" href="class_node.html">Node&lt;T&gt;</a> child: <a class="code" href="class_node.html#a845317829093b3d4665ba7e0055b4599">_children</a>){</div>
+<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;                    desc += <span class="stringliteral">&quot;\n|_&quot;</span> + child.toString();</div>
+<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;                }</div>
+<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;                <span class="keywordflow">return</span> desc;</div>
+<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;            }</div>
+<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;        }</div>
+<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;};</div>
+<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;</div>
+<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> T = <span class="keywordtype">string</span>&gt;</div>
+<div class="line"><a name="l00272"></a><span class="lineno"><a class="line" href="class_tree.html">  272</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_tree.html">Tree</a> {</div>
+<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;    </div>
+<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;    <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00275"></a><span class="lineno"><a class="line" href="class_tree.html#a4f23e98860f95126711a63822b7d0a4c">  275</a></span>&#160;        <a class="code" href="class_node.html">Node&lt;T&gt;</a> <a class="code" href="class_tree.html#a4f23e98860f95126711a63822b7d0a4c">_root</a>; </div>
+<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;    <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00280"></a><span class="lineno"><a class="line" href="class_tree.html#a30ebe31999547d31fea5b40cc805f6a2">  280</a></span>&#160;        <a class="code" href="class_tree.html#a30ebe31999547d31fea5b40cc805f6a2">Tree</a>():</div>
+<div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;            <a class="code" href="class_tree.html#a4f23e98860f95126711a63822b7d0a4c">_root</a>(nullptr)</div>
+<div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;            {}</div>
+<div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;            </div>
+<div class="line"><a name="l00286"></a><span class="lineno"><a class="line" href="class_tree.html#aaefcdf4990c48b9bc90e2c2c3fe74a67">  286</a></span>&#160;        <a class="code" href="class_tree.html#aaefcdf4990c48b9bc90e2c2c3fe74a67">Tree</a>(<span class="keyword">const</span> <a class="code" href="class_tree.html">Tree&lt;T&gt;</a> &amp;other):</div>
+<div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;            <a class="code" href="class_tree.html#a4f23e98860f95126711a63822b7d0a4c">_root</a>(other.<a class="code" href="class_tree.html#a4f23e98860f95126711a63822b7d0a4c">_root</a>)</div>
+<div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;            {}</div>
+<div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;        </div>
+<div class="line"><a name="l00294"></a><span class="lineno"><a class="line" href="class_tree.html#acf08fade73658f5ea3df0d2794d95277">  294</a></span>&#160;        <a class="code" href="class_tree.html#acf08fade73658f5ea3df0d2794d95277">Tree</a>(T element):</div>
+<div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;            <a class="code" href="class_tree.html#a4f23e98860f95126711a63822b7d0a4c">_root</a>(element)</div>
+<div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;            {}</div>
+<div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;        </div>
+<div class="line"><a name="l00300"></a><span class="lineno"><a class="line" href="class_tree.html#a04affc46d89a0ef5d517ab685c9c346e">  300</a></span>&#160;        <a class="code" href="class_tree.html#a04affc46d89a0ef5d517ab685c9c346e">~Tree</a>(){</div>
+<div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;            <span class="keyword">delete</span> &amp;<a class="code" href="class_tree.html#a4f23e98860f95126711a63822b7d0a4c">_root</a>;</div>
+<div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;        }</div>
+<div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;        </div>
+<div class="line"><a name="l00308"></a><span class="lineno"><a class="line" href="class_tree.html#a6de8e50615c6a644025b2f1af8684f9c">  308</a></span>&#160;        <span class="keywordtype">bool</span> <a class="code" href="class_tree.html#a6de8e50615c6a644025b2f1af8684f9c">contains</a>(T element){</div>
+<div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;            <span class="keywordflow">return</span> <a class="code" href="class_tree.html#a4f23e98860f95126711a63822b7d0a4c">_root</a>.contains(element);</div>
+<div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;        }</div>
+<div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;        </div>
+<div class="line"><a name="l00315"></a><span class="lineno"><a class="line" href="class_tree.html#a9300caf575a5a89292e620e8b73112c7">  315</a></span>&#160;        <span class="keywordtype">int</span> <a class="code" href="class_tree.html#a9300caf575a5a89292e620e8b73112c7">height</a>(){</div>
+<div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160;            <span class="keywordflow">return</span> <a class="code" href="class_tree.html#a4f23e98860f95126711a63822b7d0a4c">_root</a>.height();</div>
+<div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;        }</div>
+<div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160;        </div>
+<div class="line"><a name="l00322"></a><span class="lineno"><a class="line" href="class_tree.html#a8f0fd8ff56ed1f4a5d1e86f404d364ea">  322</a></span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_tree.html#a8f0fd8ff56ed1f4a5d1e86f404d364ea">put</a>(T element){</div>
+<div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160;            <a class="code" href="class_tree.html#a4f23e98860f95126711a63822b7d0a4c">_root</a>.append(element);</div>
+<div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;        }</div>
+<div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;        </div>
+<div class="line"><a name="l00329"></a><span class="lineno"><a class="line" href="class_tree.html#a21d50a1c43b311b6ed5ce90717fad4c8">  329</a></span>&#160;        <span class="keywordtype">void</span> <span class="keyword">remove</span>(T element){</div>
+<div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;            <span class="keywordflow">try</span>{</div>
+<div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160;                <a class="code" href="class_tree.html#a4f23e98860f95126711a63822b7d0a4c">_root</a>.remove(element);</div>
+<div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160;            } <span class="keywordflow">catch</span>(<a class="code" href="class_tree_exception.html">TreeException</a> ex){</div>
+<div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160;                <span class="comment">// ?</span></div>
+<div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160;            }</div>
+<div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160;        }</div>
+<div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160;};</div>
+<div class="line"><a name="l00337"></a><span class="lineno">  337</span>&#160;</div>
+<div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160;</div>
+<div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160;</div>
+<div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160;<span class="preprocessor">#endif // HASHWORK_HPP</span></div>
 <div class="ttc" id="class_node_html_aa9d37ee4133ae9774c5cf2ca5a6da8af"><div class="ttname"><a href="class_node.html#aa9d37ee4133ae9774c5cf2ca5a6da8af">Node::operator=</a></div><div class="ttdeci">Node&lt; T &gt; &amp; operator=(Node&lt; T &gt; &amp;other)</div><div class="ttdef"><b>Definition:</b> tree.hpp:120</div></div>
-<div class="ttc" id="tree_8hpp_html_adbfd34fa687b367969d9d415aadcb060"><div class="ttname"><a href="tree_8hpp.html#adbfd34fa687b367969d9d415aadcb060">contains</a></div><div class="ttdeci">bool contains(T element)</div><div class="ttdef"><b>Definition:</b> tree.hpp:228</div></div>
-<div class="ttc" id="class_tree_html_a8f0fd8ff56ed1f4a5d1e86f404d364ea"><div class="ttname"><a href="class_tree.html#a8f0fd8ff56ed1f4a5d1e86f404d364ea">Tree::put</a></div><div class="ttdeci">void put(T element)</div><div class="ttdef"><b>Definition:</b> tree.hpp:306</div></div>
-<div class="ttc" id="tree_8hpp_html_aed579f6ec06894b74459c2bc888f1979"><div class="ttname"><a href="tree_8hpp.html#aed579f6ec06894b74459c2bc888f1979">_tag</a></div><div class="ttdeci">T _tag</div><div class="ttdoc">letter stored into Node, the tag </div><div class="ttdef"><b>Definition:</b> tree.hpp:78</div></div>
-<div class="ttc" id="class_tree_html_acda757d5fda0ac97a6c099d00f0fa760"><div class="ttname"><a href="class_tree.html#acda757d5fda0ac97a6c099d00f0fa760">Tree::elements</a></div><div class="ttdeci">T[] elements()</div><div class="ttdoc">get the whole list of elements in the tree </div></div>
-<div class="ttc" id="tree_8hpp_html_aff06f49065b54a8a86e02e9a2441a8ba"><div class="ttname"><a href="tree_8hpp.html#aff06f49065b54a8a86e02e9a2441a8ba">what</a></div><div class="ttdeci">virtual const char * what() const </div><div class="ttdef"><b>Definition:</b> tree.hpp:74</div></div>
-<div class="ttc" id="class_node_html"><div class="ttname"><a href="class_node.html">Node</a></div><div class="ttdoc">Defines tree nodes. </div><div class="ttdef"><b>Definition:</b> tree.hpp:85</div></div>
-<div class="ttc" id="class_node_html_a0da7f6a2356d1e7f047f8bfda1edd8d8"><div class="ttname"><a href="class_node.html#a0da7f6a2356d1e7f047f8bfda1edd8d8">Node::height</a></div><div class="ttdeci">int height()</div><div class="ttdef"><b>Definition:</b> tree.hpp:156</div></div>
-<div class="ttc" id="class_node_html_a845317829093b3d4665ba7e0055b4599"><div class="ttname"><a href="class_node.html#a845317829093b3d4665ba7e0055b4599">Node::_children</a></div><div class="ttdeci">forward_list&lt; Node&lt; T &gt; &gt; _children</div><div class="ttdoc">children of the Node </div><div class="ttdef"><b>Definition:</b> tree.hpp:91</div></div>
-<div class="ttc" id="class_tree_html_a04affc46d89a0ef5d517ab685c9c346e"><div class="ttname"><a href="class_tree.html#a04affc46d89a0ef5d517ab685c9c346e">Tree::~Tree</a></div><div class="ttdeci">~Tree()</div><div class="ttdef"><b>Definition:</b> tree.hpp:283</div></div>
-<div class="ttc" id="tree_8hpp_html_aad5ea6b478976725c6c8f9e2e9255177"><div class="ttname"><a href="tree_8hpp.html#aad5ea6b478976725c6c8f9e2e9255177">_cause</a></div><div class="ttdeci">char * _cause</div><div class="ttdef"><b>Definition:</b> tree.hpp:54</div></div>
-<div class="ttc" id="class_tree_html_acf08fade73658f5ea3df0d2794d95277"><div class="ttname"><a href="class_tree.html#acf08fade73658f5ea3df0d2794d95277">Tree::Tree</a></div><div class="ttdeci">Tree(T element)</div><div class="ttdef"><b>Definition:</b> tree.hpp:277</div></div>
-<div class="ttc" id="class_node_html_ad8f5643e23bbe29a7d84ea0cd4b06994"><div class="ttname"><a href="class_node.html#ad8f5643e23bbe29a7d84ea0cd4b06994">Node::operator==</a></div><div class="ttdeci">operator==(const Node&lt; T &gt; &amp;lhs, const Node&lt; T &gt; &amp;rhs)</div><div class="ttdef"><b>Definition:</b> tree.hpp:134</div></div>
-<div class="ttc" id="tree_8hpp_html_a80dd1caaf9add2cc2cb432afa0d17817"><div class="ttname"><a href="tree_8hpp.html#a80dd1caaf9add2cc2cb432afa0d17817">_children</a></div><div class="ttdeci">forward_list&lt; Node&lt; T &gt; &gt; _children</div><div class="ttdoc">children of the Node </div><div class="ttdef"><b>Definition:</b> tree.hpp:80</div></div>
-<div class="ttc" id="class_node_html_a82089b860871012bc159c510408be29c"><div class="ttname"><a href="class_node.html#a82089b860871012bc159c510408be29c">Node::_tag</a></div><div class="ttdeci">T _tag</div><div class="ttdoc">letter stored into Node, the tag </div><div class="ttdef"><b>Definition:</b> tree.hpp:89</div></div>
-<div class="ttc" id="class_tree_html_a011d3a891f6dd1d5098d6e7452c7ee55"><div class="ttname"><a href="class_tree.html#a011d3a891f6dd1d5098d6e7452c7ee55">Tree::_root</a></div><div class="ttdeci">_root(other._root)</div><div class="ttdef"><b>Definition:</b> tree.hpp:270</div></div>
-<div class="ttc" id="class_tree_html"><div class="ttname"><a href="class_tree.html">Tree</a></div><div class="ttdoc">Tree is a recursive structure using nodes. </div><div class="ttdef"><b>Definition:</b> tree.hpp:261</div></div>
-<div class="ttc" id="class_node_html_a26f91ff0b0d5ea8940c7fde220aca742"><div class="ttname"><a href="class_node.html#a26f91ff0b0d5ea8940c7fde220aca742">Node::isLeaf</a></div><div class="ttdeci">bool isLeaf()</div><div class="ttdef"><b>Definition:</b> tree.hpp:150</div></div>
-<div class="ttc" id="class_node_html_aceee8556fee530a610039f9a6479d7cd"><div class="ttname"><a href="class_node.html#aceee8556fee530a610039f9a6479d7cd">Node::append</a></div><div class="ttdeci">void append(&lt; T &gt; n_data)</div><div class="ttdoc">/todo : fucked code </div><div class="ttdef"><b>Definition:</b> tree.hpp:184</div></div>
-<div class="ttc" id="tree_8hpp_html_a241cb679a4420f09104b976a5658368f"><div class="ttname"><a href="tree_8hpp.html#a241cb679a4420f09104b976a5658368f">~BagException</a></div><div class="ttdeci">virtual ~BagException()</div><div class="ttdef"><b>Definition:</b> tree.hpp:67</div></div>
-<div class="ttc" id="tree_8hpp_html_ab74911f7626f303cd046fbdef4769974"><div class="ttname"><a href="tree_8hpp.html#ab74911f7626f303cd046fbdef4769974">TreeException</a></div><div class="ttdeci">TreeException(char *cause)</div><div class="ttdef"><b>Definition:</b> tree.hpp:60</div></div>
-<div class="ttc" id="class_node_html_a13365c1cf381d8b749b4be95263b58bb"><div class="ttname"><a href="class_node.html#a13365c1cf381d8b749b4be95263b58bb">Node::operator!=</a></div><div class="ttdeci">bool operator!=(const Node&lt; T &gt; &amp;lhs, const Node&lt; T &gt; &amp;rhs)</div><div class="ttdef"><b>Definition:</b> tree.hpp:143</div></div>
-<div class="ttc" id="tree_8hpp_html_acfd39d65c04faa2cb62b37241d0afa9a"><div class="ttname"><a href="tree_8hpp.html#acfd39d65c04faa2cb62b37241d0afa9a">isLeaf</a></div><div class="ttdeci">bool isLeaf()</div><div class="ttdef"><b>Definition:</b> tree.hpp:139</div></div>
-<div class="ttc" id="class_tree_html_a9300caf575a5a89292e620e8b73112c7"><div class="ttname"><a href="class_tree.html#a9300caf575a5a89292e620e8b73112c7">Tree::height</a></div><div class="ttdeci">int height()</div><div class="ttdef"><b>Definition:</b> tree.hpp:298</div></div>
-<div class="ttc" id="class_tree_html_a6de8e50615c6a644025b2f1af8684f9c"><div class="ttname"><a href="class_tree.html#a6de8e50615c6a644025b2f1af8684f9c">Tree::contains</a></div><div class="ttdeci">bool contains(T element)</div><div class="ttdef"><b>Definition:</b> tree.hpp:291</div></div>
-<div class="ttc" id="class_tree_html_a4f23e98860f95126711a63822b7d0a4c"><div class="ttname"><a href="class_tree.html#a4f23e98860f95126711a63822b7d0a4c">Tree::_root</a></div><div class="ttdeci">Node&lt; T &gt; _root</div><div class="ttdef"><b>Definition:</b> tree.hpp:264</div></div>
-<div class="ttc" id="tree_8hpp_html_a3555d69bfbf5a34a1731fbb1f60af08e"><div class="ttname"><a href="tree_8hpp.html#a3555d69bfbf5a34a1731fbb1f60af08e">getTag</a></div><div class="ttdeci">T getTag()</div><div class="ttdef"><b>Definition:</b> tree.hpp:221</div></div>
-<div class="ttc" id="tree_8hpp_html_a2a35b0d68ef09ad99a22fa8563e1797f"><div class="ttname"><a href="tree_8hpp.html#a2a35b0d68ef09ad99a22fa8563e1797f">toString</a></div><div class="ttdeci">string toString()</div><div class="ttdef"><b>Definition:</b> tree.hpp:246</div></div>
-<div class="ttc" id="class_tree_html_aaefcdf4990c48b9bc90e2c2c3fe74a67"><div class="ttname"><a href="class_tree.html#aaefcdf4990c48b9bc90e2c2c3fe74a67">Tree::Tree</a></div><div class="ttdeci">Tree(const Tree&lt; T &gt; &amp;other)</div></div>
+<div class="ttc" id="class_tree_html_a8f0fd8ff56ed1f4a5d1e86f404d364ea"><div class="ttname"><a href="class_tree.html#a8f0fd8ff56ed1f4a5d1e86f404d364ea">Tree::put</a></div><div class="ttdeci">void put(T element)</div><div class="ttdef"><b>Definition:</b> tree.hpp:322</div></div>
+<div class="ttc" id="class_node_html_a141b357c5d9a30cd9b3062337ef67edb"><div class="ttname"><a href="class_node.html#a141b357c5d9a30cd9b3062337ef67edb">Node::append</a></div><div class="ttdeci">void append(T n_data)</div><div class="ttdef"><b>Definition:</b> tree.hpp:185</div></div>
+<div class="ttc" id="class_node_html"><div class="ttname"><a href="class_node.html">Node</a></div><div class="ttdoc">Defines tree nodes. </div><div class="ttdef"><b>Definition:</b> tree.hpp:83</div></div>
+<div class="ttc" id="class_node_html_a0da7f6a2356d1e7f047f8bfda1edd8d8"><div class="ttname"><a href="class_node.html#a0da7f6a2356d1e7f047f8bfda1edd8d8">Node::height</a></div><div class="ttdeci">int height()</div><div class="ttdef"><b>Definition:</b> tree.hpp:159</div></div>
+<div class="ttc" id="class_node_html_a845317829093b3d4665ba7e0055b4599"><div class="ttname"><a href="class_node.html#a845317829093b3d4665ba7e0055b4599">Node::_children</a></div><div class="ttdeci">forward_list&lt; Node&lt; T &gt; &gt; _children</div><div class="ttdoc">children of the Node </div><div class="ttdef"><b>Definition:</b> tree.hpp:89</div></div>
+<div class="ttc" id="class_tree_html_a04affc46d89a0ef5d517ab685c9c346e"><div class="ttname"><a href="class_tree.html#a04affc46d89a0ef5d517ab685c9c346e">Tree::~Tree</a></div><div class="ttdeci">~Tree()</div><div class="ttdef"><b>Definition:</b> tree.hpp:300</div></div>
+<div class="ttc" id="class_tree_html_acf08fade73658f5ea3df0d2794d95277"><div class="ttname"><a href="class_tree.html#acf08fade73658f5ea3df0d2794d95277">Tree::Tree</a></div><div class="ttdeci">Tree(T element)</div><div class="ttdef"><b>Definition:</b> tree.hpp:294</div></div>
+<div class="ttc" id="class_node_html_acb50abe854f383e0d624e85505697b4f"><div class="ttname"><a href="class_node.html#acb50abe854f383e0d624e85505697b4f">Node::operator!=</a></div><div class="ttdeci">bool operator!=(const Node&lt; T &gt; &amp;rhs)</div><div class="ttdef"><b>Definition:</b> tree.hpp:144</div></div>
+<div class="ttc" id="class_node_html_abb91d745a01f97fe51a35811e0d42801"><div class="ttname"><a href="class_node.html#abb91d745a01f97fe51a35811e0d42801">Node::toString</a></div><div class="ttdeci">string toString()</div><div class="ttdef"><b>Definition:</b> tree.hpp:253</div></div>
+<div class="ttc" id="class_tree_exception_html_a90175b0c5a1e2a7ebb77cadc92b0388b"><div class="ttname"><a href="class_tree_exception.html#a90175b0c5a1e2a7ebb77cadc92b0388b">TreeException::_cause</a></div><div class="ttdeci">char * _cause</div><div class="ttdef"><b>Definition:</b> tree.hpp:52</div></div>
+<div class="ttc" id="class_tree_exception_html"><div class="ttname"><a href="class_tree_exception.html">TreeException</a></div><div class="ttdoc">exception class for trees </div><div class="ttdef"><b>Definition:</b> tree.hpp:50</div></div>
+<div class="ttc" id="class_tree_html_a30ebe31999547d31fea5b40cc805f6a2"><div class="ttname"><a href="class_tree.html#a30ebe31999547d31fea5b40cc805f6a2">Tree::Tree</a></div><div class="ttdeci">Tree()</div><div class="ttdef"><b>Definition:</b> tree.hpp:280</div></div>
+<div class="ttc" id="class_node_html_a82089b860871012bc159c510408be29c"><div class="ttname"><a href="class_node.html#a82089b860871012bc159c510408be29c">Node::_tag</a></div><div class="ttdeci">T _tag</div><div class="ttdoc">letter stored into Node, the tag </div><div class="ttdef"><b>Definition:</b> tree.hpp:87</div></div>
+<div class="ttc" id="class_node_html_ad319e53c90ce8bced6ffc42b67d8e759"><div class="ttname"><a href="class_node.html#ad319e53c90ce8bced6ffc42b67d8e759">Node::contains</a></div><div class="ttdeci">bool contains(T element)</div><div class="ttdef"><b>Definition:</b> tree.hpp:235</div></div>
+<div class="ttc" id="class_tree_html"><div class="ttname"><a href="class_tree.html">Tree</a></div><div class="ttdoc">Tree is a recursive structure using nodes. </div><div class="ttdef"><b>Definition:</b> tree.hpp:272</div></div>
+<div class="ttc" id="class_node_html_ac6af63bbc9a1eef28615c5c0c5acb83c"><div class="ttname"><a href="class_node.html#ac6af63bbc9a1eef28615c5c0c5acb83c">Node::operator==</a></div><div class="ttdeci">bool operator==(const Node&lt; T &gt; &amp;rhs)</div><div class="ttdef"><b>Definition:</b> tree.hpp:134</div></div>
+<div class="ttc" id="class_tree_exception_html_ab899a6ec0f82bf770b88ba4982e3d696"><div class="ttname"><a href="class_tree_exception.html#ab899a6ec0f82bf770b88ba4982e3d696">TreeException::what</a></div><div class="ttdeci">virtual const char * what() const </div><div class="ttdef"><b>Definition:</b> tree.hpp:72</div></div>
+<div class="ttc" id="class_node_html_a0692b16d246460bf94c18d49592facdd"><div class="ttname"><a href="class_node.html#a0692b16d246460bf94c18d49592facdd">Node::Node</a></div><div class="ttdeci">Node(T data)</div><div class="ttdef"><b>Definition:</b> tree.hpp:103</div></div>
+<div class="ttc" id="class_node_html_a26f91ff0b0d5ea8940c7fde220aca742"><div class="ttname"><a href="class_node.html#a26f91ff0b0d5ea8940c7fde220aca742">Node::isLeaf</a></div><div class="ttdeci">bool isLeaf()</div><div class="ttdef"><b>Definition:</b> tree.hpp:152</div></div>
+<div class="ttc" id="class_tree_exception_html_a68dfe698f22aabd8d51b0c533f818263"><div class="ttname"><a href="class_tree_exception.html#a68dfe698f22aabd8d51b0c533f818263">TreeException::~TreeException</a></div><div class="ttdeci">virtual ~TreeException()</div><div class="ttdef"><b>Definition:</b> tree.hpp:65</div></div>
+<div class="ttc" id="class_node_html_ad70e3545b2df020088a0e26bec128632"><div class="ttname"><a href="class_node.html#ad70e3545b2df020088a0e26bec128632">Node::Node</a></div><div class="ttdeci">Node(const Node&lt; T &gt; &amp;other)</div><div class="ttdef"><b>Definition:</b> tree.hpp:95</div></div>
+<div class="ttc" id="class_node_html_ae923d0417581dd19784d55b901f0f7f0"><div class="ttname"><a href="class_node.html#ae923d0417581dd19784d55b901f0f7f0">Node::~Node</a></div><div class="ttdeci">~Node()</div><div class="ttdef"><b>Definition:</b> tree.hpp:110</div></div>
+<div class="ttc" id="class_tree_html_a9300caf575a5a89292e620e8b73112c7"><div class="ttname"><a href="class_tree.html#a9300caf575a5a89292e620e8b73112c7">Tree::height</a></div><div class="ttdeci">int height()</div><div class="ttdef"><b>Definition:</b> tree.hpp:315</div></div>
+<div class="ttc" id="class_node_html_a3b188b785e394924c11f2f68369c0cdf"><div class="ttname"><a href="class_node.html#a3b188b785e394924c11f2f68369c0cdf">Node::getTag</a></div><div class="ttdeci">T getTag()</div><div class="ttdef"><b>Definition:</b> tree.hpp:228</div></div>
+<div class="ttc" id="class_tree_html_a6de8e50615c6a644025b2f1af8684f9c"><div class="ttname"><a href="class_tree.html#a6de8e50615c6a644025b2f1af8684f9c">Tree::contains</a></div><div class="ttdeci">bool contains(T element)</div><div class="ttdef"><b>Definition:</b> tree.hpp:308</div></div>
+<div class="ttc" id="class_tree_html_a4f23e98860f95126711a63822b7d0a4c"><div class="ttname"><a href="class_tree.html#a4f23e98860f95126711a63822b7d0a4c">Tree::_root</a></div><div class="ttdeci">Node&lt; T &gt; _root</div><div class="ttdef"><b>Definition:</b> tree.hpp:275</div></div>
+<div class="ttc" id="class_tree_exception_html_aa75b34acf02d0e86fb70a63242894311"><div class="ttname"><a href="class_tree_exception.html#aa75b34acf02d0e86fb70a63242894311">TreeException::TreeException</a></div><div class="ttdeci">TreeException(char *cause)</div><div class="ttdef"><b>Definition:</b> tree.hpp:58</div></div>
+<div class="ttc" id="class_tree_html_aaefcdf4990c48b9bc90e2c2c3fe74a67"><div class="ttname"><a href="class_tree.html#aaefcdf4990c48b9bc90e2c2c3fe74a67">Tree::Tree</a></div><div class="ttdeci">Tree(const Tree&lt; T &gt; &amp;other)</div><div class="ttdef"><b>Definition:</b> tree.hpp:286</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Apr 2 2014 20:48:13 for Glossygloss by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu Apr 3 2014 19:37:14 for Glossygloss by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

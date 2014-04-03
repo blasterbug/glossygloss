@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['remove',['remove',['../tree_8hpp.html#a7ba592beb78cdec3b944e79d469044c2',1,'tree.hpp']]]
+  ['dico',['dico',['../class_dictionnaire.html#a15de60d6c918893933e6553127612a75',1,'Dictionnaire']]]
 ];

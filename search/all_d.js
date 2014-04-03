@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['what',['what',['../class_hash_exception.html#a542711eb0045dcec64d7a8596b2450ff',1,'HashException::what()'],['../tree_8hpp.html#aff06f49065b54a8a86e02e9a2441a8ba',1,'what():&#160;tree.hpp']]]
+  ['readme_2emd',['README.md',['../_r_e_a_d_m_e_8md.html',1,'']]],
+  ['remove',['remove',['../class_hashtable.html#a5ff7eaa859387421be734f9573dc0ebe',1,'Hashtable::remove()'],['../class_node.html#a33901811ec542883fdfc68022dd59920',1,'Node::remove()'],['../class_tree.html#a21d50a1c43b311b6ed5ce90717fad4c8',1,'Tree::remove()']]]
 ];
