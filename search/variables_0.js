@@ -1,6 +1,7 @@
 var searchData=
 [
   ['_5fcause',['_cause',['../class_hash_exception.html#a81aab9b1aff52871fc2e39b5374b1831',1,'HashException::_cause()'],['../class_tree_exception.html#a90175b0c5a1e2a7ebb77cadc92b0388b',1,'TreeException::_cause()']]],
+  ['_5fchildnbr',['_childNbr',['../class_node.html#a4b3606724f7302e3df96ff87d623312d',1,'Node']]],
   ['_5fchildren',['_children',['../class_node.html#a845317829093b3d4665ba7e0055b4599',1,'Node']]],
   ['_5fkey',['_key',['../class_alveole.html#aebb26347bcaaaf2c0cbe96903b63bc70',1,'Alveole']]],
   ['_5fnext',['_next',['../class_alveole.html#aa566b7335f9ef0dc83ad2a596e659f90',1,'Alveole']]],
