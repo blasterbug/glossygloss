@@ -40,10 +40,8 @@
 //#include <list> // less efficiant
 #include <forward_list>
 
-using std::sting;
+using std::string;
 using std::forward_list;
-
-#define 
 
 /** \brief exception class for trees
  * 
@@ -64,7 +62,7 @@ class TreeException : std::exception {
 		/** destructor
 		 * currently, do anything special
 		 */
-		virtual ~BagException() throw(){
+		virtual ~TreeException() throw(){
 			// do nothing
 		}
 		
@@ -94,7 +92,7 @@ class Node {
 		/** Copy constructor
 		 * @param[in] other Node to copy
 		 */
-		Node<T>(const Node<T> &other):
+		Node(const Node<T> &other):
 			_tag(other._tag),
 			_children(other._children)
 			{}
@@ -102,22 +100,24 @@ class Node {
 		/** Simple constructor
 		 * @param[in] data to store into the Node
 		 */
-		Node<T>(T data){
+		Node(T data){
 			// initialize the simply-linked list
-			_children = forward_list<Node<T>>(Node<T>, sizeof(Node<T>>));
+			_children = new forward_list<Node<T>>();
 		}
+		
 		/** Destructor for Node
 		 */
-		~Node<T>(){
+		~Node(){
 			// usefull ?
-			delete _children;
+			delete &_children;
+			delete &_tag;
 		}
 		
 		/** assignment operator overload
 		 * @param[in] other node to assign
 		 * @param[out] note assigned node
 		 */
-		Node<T>& operator =(Node<T> &other){
+		Node<T>& operator=(Node<T> &other){
 			// prevent objet copying itself
 			if(this != &other){
 				this->_tag = other._key;
@@ -131,25 +131,28 @@ class Node {
 		 * @param[in] rhs right hand side, second node to compare
 		 * @param[out] bool true if nodes have the same memory adress, else false
 		 */
-		operator ==(const Node<T> &lhs, const Node<T> &rhs){
+		bool operator==(const Node<T>& rhs){
 			// same adress ⇒ same item
-			return &lhs == &rhs;
+			return &this == &rhs;
 		}
+		
 		/** inequality operator
 		 * @param[in] lhs first node to compare
 		 * @param[in] rhs second node to compare
 		 * @param[out] bool true if nodes have not the same memory adress, else false
 		 */
-		bool operator !=(const Node<T> &lhs, const Node<T> &rhs){
-			return &lhs != &rhs;
+		bool operator!=(const Node<T>& rhs){
+			return &this != &rhs;
 			// return not(lhs == rhs);
 		}
+		
 		/** Is the node a leaf ?
 		 * @param[out] bool true, if no child, else false
 		 */
 		bool isLeaf(){
 			return 0 == _children.size();
 		}
+		
 		/** The height of the node
 		 * @param[out] hgt height of the node
 		 */
@@ -175,50 +178,47 @@ class Node {
 				return heights[0];
 			}
 		}
+		
 		/** Hook up a new child to the node
 		 * @param[in] n_data new data to store as a child of the node
-		 * @exception TreeException Threw if Element is already here
 		 */
-		// !!! TODO !!! //
-		/// /todo : fucked code
-		void append(<T> n_data){
+		void append(T n_data){
 			if(isLeaf()){
-				if(n_data == _tag){
-					throw TreeException("Element is already here!");
-				}
-				else {
-					// add the value in children list as a new node
-					_children.push_front(new Node<T>(n_data));
-				}
+				// add the value in children list as a new node
+				_children.push_front(new Node<T>(n_data));
 			}
 			else {
 				bool undone = true;
-				forward_list<T>::iterator it = _children.begin();
+				auto it = _children.begin();
 				while(not it.end() and undone){
-					if(child._tag<n_data){
-						child.append(n_data);
+					if(it._tag<n_data){
+						it.append(n_data);
 						undone = false;
 					}
 					else{
-						// ?
+						++it;
 					}
-					++it;
 				}
 			}
 		}
+		
 		/** Remove a leaf from the node
 		 * @param[in] data data of the node's tag to remove
+		 * @exception TreeException Threw if data is not removed
 		 */
-		void remove(<T> data){
+		void remove(T data){
 			// remove child with the right tag
-			bool removed = false;
-			forward_list<T>::iterator it=_children.begin();
-			while(it != it.end() and not removed){
+			bool undone = true;
+			auto it=_children.begin();
+			while(it != it.end() and undone){
 				if(it->_tag == data and it->isLeaf()){
-					removed = true;
+					undone = false;
 					delete it;
 				}
 				++it;
+			}
+			if(undone){
+				throw TreeException("Element was not removed");
 			}
 		}
 		
@@ -239,9 +239,9 @@ class Node {
 			else {
 				// browse children
 				bool here = false;
-				forward_list<T>::iterator it = _children.begin();
-				while(not absent and not it.end){
-					absent = it.contains(element);
+				auto it = _children.begin();
+				while(not here and not it.end()){
+					here = it.contains(element);
 					++it;
 				}
 				return here;
@@ -251,12 +251,16 @@ class Node {
 		 * @param[out] desc Description of the node (and his child)
 		 */
 		string toString(){
-			isLeaf()?return string(_tag);
-			string desc = string(_tag);
-			for(Node<T> child: _children){
-				desc += "\n|_" + child.toString();
+			if(isLeaf()){
+				return string(_tag);
 			}
-			return desc;
+			else {
+				string desc = string(_tag);
+				for(Node<T> child: _children){
+					desc += "\n|_" + child.toString();
+				}
+				return desc;
+			}
 		}
 };
 
@@ -271,9 +275,15 @@ class Tree {
 		Node<T> _root; /** First node of the tree */
 	
 	public:
+		/** Default constructor
+		 */
+		Tree():
+			_root(nullptr)
+			{}
+			
 		/** Copy constructor
 		 */
-		Tree(const Tree<T> &other);
+		Tree(const Tree<T> &other):
 			_root(other._root)
 			{}
 		
@@ -308,15 +318,21 @@ class Tree {
 		
 		/** Put an element in the tree
 		 * @param[in] element New element to put into the tree
-		 * @exception TreeException Trew if element is already there
 		 */
 		void put(T element){
-			
+			_root.append(element);
 		}
-		/// \brief remove an element from the tree
-		void remove(T);
-		/// \brief get the whole list of elements in the tree
-		T[] elements();
+		
+		/** Remove an element from the tree
+		 * @param[in] data Element to remove
+		 */
+		void remove(T element){
+			try{
+				_root.remove(element);
+			} catch(TreeException ex){
+				// ?
+			}
+		}
 };
 
 
