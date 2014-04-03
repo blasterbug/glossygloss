@@ -16,6 +16,11 @@ Glossygloss
   - [C++ programming on wikibooks](http://en.wikibooks.org/wiki/C%2B%2B_Programming "C++ programming on wikibooks")
   - what else ?
   
+### Compilation
+
+  We use C++11, so to compile using our classes:
+  * g++ -std=c++0x -g -Wall -pedantic -o program.bin program.cpp
+  
 ### Copyright
 
   This source code is protected by the French intellectual property law.
