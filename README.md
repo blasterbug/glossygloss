@@ -1,7 +1,7 @@
 Glossygloss
 ===========
 
-  Glossygloss is set of classes to use several data structures as Tree and Hashtable.   
+  Glossygloss is set of classes to use several data structures, C++ containers.   
   More might come soon.
 
 ### Documentation
