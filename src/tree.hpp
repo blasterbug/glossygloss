@@ -83,6 +83,8 @@ template <typename T = char>
 class Node {
 	
 	private:
+		/// Number of children
+		int _childNbr;
 		/// letter stored into Node, the tag
 		T _tag;
 		/// children of the Node
@@ -93,6 +95,7 @@ class Node {
 		 * @param[in] other Node to copy
 		 */
 		Node(const Node<T> &other):
+			_childNbr(other._childNbr),
 			_tag(other._tag),
 			_children(other._children)
 			{}
@@ -100,9 +103,11 @@ class Node {
 		/** Simple constructor
 		 * @param[in] data to store into the Node
 		 */
-		Node(T data){
+		Node(T data):
+		_childNbr(0)
+		{
 			// initialize the simply-linked list
-			_children = new forward_list<Node<T>>();
+			_children = forward_list<Node<T>>();
 		}
 		
 		/** Destructor for Node
@@ -120,6 +125,7 @@ class Node {
 		Node<T>& operator=(Node<T> &other){
 			// prevent objet copying itself
 			if(this != &other){
+				this->_childNbr = other._childNbr;
 				this->_tag = other._key;
 				this->_children = other._children;
 			}
@@ -150,7 +156,7 @@ class Node {
 		 * @param[out] bool true, if no child, else false
 		 */
 		bool isLeaf(){
-			return 0 == _children.size();
+			return 0 == _childNbr;
 		}
 		
 		/** The height of the node
@@ -185,14 +191,15 @@ class Node {
 		void append(T n_data){
 			if(isLeaf()){
 				// add the value in children list as a new node
-				_children.push_front(new Node<T>(n_data));
+				_children.push_front(Node<T>(n_data));
+				_childNbr++;
 			}
 			else {
 				bool undone = true;
 				auto it = _children.begin();
-				while(not it.end() and undone){
-					if(it._tag<n_data){
-						it.append(n_data);
+				while(it != _children.end() and undone){
+					if(it->_tag<n_data){
+						it->append(n_data);
 						undone = false;
 					}
 					else{
@@ -307,7 +314,7 @@ class Tree {
 		 * @param[out] bool True if element is here, else false.
 		 */
 		bool contains(T element){
-			return _root.contains(element);
+			return _root->contains(element);
 		}
 		
 		/** The height of the tree
