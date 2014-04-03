@@ -39,6 +39,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
       <li><a href="annotated.html"><span>Classes</span></a></li>
       <li class="current"><a href="files.html"><span>Files</span></a></li>
       <li>
@@ -70,7 +71,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Macros</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Macros</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -90,8 +91,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!--header-->
 <div class="contents">
 <a href="tree_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="preprocessor">#ifndef HASHWORK_HPP</span></div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define HASHWORK_HPP</span></div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="preprocessor">#ifndef TREE_HPP</span></div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define TREE_HPP</span></div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="preprocessor"></span></div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="preprocessor">#include &lt;cassert&gt;</span></div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="preprocessor">#include &lt;string&gt;</span></div>
@@ -269,45 +270,48 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;            <a class="code" href="class_tree.html#a4f23e98860f95126711a63822b7d0a4c">_root</a>(other.<a class="code" href="class_tree.html#a4f23e98860f95126711a63822b7d0a4c">_root</a>)</div>
 <div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;            {}</div>
 <div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;        </div>
-<div class="line"><a name="l00294"></a><span class="lineno"><a class="line" href="class_tree.html#acf08fade73658f5ea3df0d2794d95277">  294</a></span>&#160;        <a class="code" href="class_tree.html#acf08fade73658f5ea3df0d2794d95277">Tree</a>(T element):</div>
-<div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;            <a class="code" href="class_tree.html#a4f23e98860f95126711a63822b7d0a4c">_root</a>(element)</div>
+<div class="line"><a name="l00294"></a><span class="lineno"><a class="line" href="class_tree.html#acf08fade73658f5ea3df0d2794d95277">  294</a></span>&#160;        <a class="code" href="class_tree.html#acf08fade73658f5ea3df0d2794d95277">Tree</a>(T element): </div>
+<div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;            <a class="code" href="class_tree.html#a4f23e98860f95126711a63822b7d0a4c">_root</a>(<a class="code" href="class_node.html">Node</a>&lt;T&gt;(element))</div>
 <div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;            {}</div>
-<div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;        </div>
-<div class="line"><a name="l00300"></a><span class="lineno"><a class="line" href="class_tree.html#a04affc46d89a0ef5d517ab685c9c346e">  300</a></span>&#160;        <a class="code" href="class_tree.html#a04affc46d89a0ef5d517ab685c9c346e">~Tree</a>(){</div>
-<div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;            <span class="keyword">delete</span> &amp;<a class="code" href="class_tree.html#a4f23e98860f95126711a63822b7d0a4c">_root</a>;</div>
-<div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;        }</div>
-<div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;        </div>
-<div class="line"><a name="l00308"></a><span class="lineno"><a class="line" href="class_tree.html#a6de8e50615c6a644025b2f1af8684f9c">  308</a></span>&#160;        <span class="keywordtype">bool</span> <a class="code" href="class_tree.html#a6de8e50615c6a644025b2f1af8684f9c">contains</a>(T element){</div>
-<div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;            <span class="keywordflow">return</span> <a class="code" href="class_tree.html#a4f23e98860f95126711a63822b7d0a4c">_root</a>.contains(element);</div>
-<div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;        }</div>
-<div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;        </div>
-<div class="line"><a name="l00315"></a><span class="lineno"><a class="line" href="class_tree.html#a9300caf575a5a89292e620e8b73112c7">  315</a></span>&#160;        <span class="keywordtype">int</span> <a class="code" href="class_tree.html#a9300caf575a5a89292e620e8b73112c7">height</a>(){</div>
-<div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160;            <span class="keywordflow">return</span> <a class="code" href="class_tree.html#a4f23e98860f95126711a63822b7d0a4c">_root</a>.height();</div>
-<div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;        }</div>
-<div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160;        </div>
-<div class="line"><a name="l00322"></a><span class="lineno"><a class="line" href="class_tree.html#a8f0fd8ff56ed1f4a5d1e86f404d364ea">  322</a></span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_tree.html#a8f0fd8ff56ed1f4a5d1e86f404d364ea">put</a>(T element){</div>
-<div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160;            <a class="code" href="class_tree.html#a4f23e98860f95126711a63822b7d0a4c">_root</a>.append(element);</div>
-<div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;        }</div>
-<div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;        </div>
-<div class="line"><a name="l00329"></a><span class="lineno"><a class="line" href="class_tree.html#a21d50a1c43b311b6ed5ce90717fad4c8">  329</a></span>&#160;        <span class="keywordtype">void</span> <span class="keyword">remove</span>(T element){</div>
-<div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;            <span class="keywordflow">try</span>{</div>
-<div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160;                <a class="code" href="class_tree.html#a4f23e98860f95126711a63822b7d0a4c">_root</a>.remove(element);</div>
-<div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160;            } <span class="keywordflow">catch</span>(<a class="code" href="class_tree_exception.html">TreeException</a> ex){</div>
-<div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160;                <span class="comment">// ?</span></div>
-<div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160;            }</div>
-<div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160;        }</div>
-<div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160;};</div>
-<div class="line"><a name="l00337"></a><span class="lineno">  337</span>&#160;</div>
-<div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160;</div>
-<div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160;</div>
-<div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160;<span class="preprocessor">#endif // HASHWORK_HPP</span></div>
+<div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;            <span class="comment">//_root = Node&lt;T&gt;(element);</span></div>
+<div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;        </div>
+<div class="line"><a name="l00301"></a><span class="lineno"><a class="line" href="class_tree.html#a04affc46d89a0ef5d517ab685c9c346e">  301</a></span>&#160;        <a class="code" href="class_tree.html#a04affc46d89a0ef5d517ab685c9c346e">~Tree</a>(){</div>
+<div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;            <span class="keyword">delete</span> &amp;<a class="code" href="class_tree.html#a4f23e98860f95126711a63822b7d0a4c">_root</a>;</div>
+<div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;        }</div>
+<div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;        </div>
+<div class="line"><a name="l00309"></a><span class="lineno"><a class="line" href="class_tree.html#a6de8e50615c6a644025b2f1af8684f9c">  309</a></span>&#160;        <span class="keywordtype">bool</span> <a class="code" href="class_tree.html#a6de8e50615c6a644025b2f1af8684f9c">contains</a>(T element){</div>
+<div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;            <span class="keywordflow">return</span> <a class="code" href="class_tree.html#a4f23e98860f95126711a63822b7d0a4c">_root</a>.contains(element);</div>
+<div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;        }</div>
+<div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;        </div>
+<div class="line"><a name="l00316"></a><span class="lineno"><a class="line" href="class_tree.html#a9300caf575a5a89292e620e8b73112c7">  316</a></span>&#160;        <span class="keywordtype">int</span> <a class="code" href="class_tree.html#a9300caf575a5a89292e620e8b73112c7">height</a>(){</div>
+<div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;            <span class="keywordflow">return</span> <a class="code" href="class_tree.html#a4f23e98860f95126711a63822b7d0a4c">_root</a>.height();</div>
+<div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160;        }</div>
+<div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160;        </div>
+<div class="line"><a name="l00323"></a><span class="lineno"><a class="line" href="class_tree.html#a8f0fd8ff56ed1f4a5d1e86f404d364ea">  323</a></span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_tree.html#a8f0fd8ff56ed1f4a5d1e86f404d364ea">put</a>(T element){</div>
+<div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;            <a class="code" href="class_tree.html#a4f23e98860f95126711a63822b7d0a4c">_root</a>.append(element);</div>
+<div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;        }</div>
+<div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160;        </div>
+<div class="line"><a name="l00330"></a><span class="lineno"><a class="line" href="class_tree.html#a21d50a1c43b311b6ed5ce90717fad4c8">  330</a></span>&#160;        <span class="keywordtype">void</span> <span class="keyword">remove</span>(T element){</div>
+<div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160;            <span class="keywordflow">try</span>{</div>
+<div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160;                <a class="code" href="class_tree.html#a4f23e98860f95126711a63822b7d0a4c">_root</a>.remove(element);</div>
+<div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160;            } <span class="keywordflow">catch</span>(<a class="code" href="class_tree_exception.html">TreeException</a> ex){</div>
+<div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160;                <span class="comment">// ?</span></div>
+<div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160;            }</div>
+<div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160;        }</div>
+<div class="line"><a name="l00337"></a><span class="lineno">  337</span>&#160;        </div>
+<div class="line"><a name="l00341"></a><span class="lineno"><a class="line" href="class_tree.html#aabd6868e9e02fbe9affb1f7eed04d51c">  341</a></span>&#160;        <span class="keywordtype">string</span> <a class="code" href="class_tree.html#aabd6868e9e02fbe9affb1f7eed04d51c">toString</a>(){</div>
+<div class="line"><a name="l00342"></a><span class="lineno">  342</span>&#160;            <span class="keywordflow">return</span> <a class="code" href="class_tree.html#a4f23e98860f95126711a63822b7d0a4c">_root</a>.toString();</div>
+<div class="line"><a name="l00343"></a><span class="lineno">  343</span>&#160;        }</div>
+<div class="line"><a name="l00344"></a><span class="lineno">  344</span>&#160;};</div>
+<div class="line"><a name="l00345"></a><span class="lineno">  345</span>&#160;</div>
+<div class="line"><a name="l00346"></a><span class="lineno">  346</span>&#160;<span class="preprocessor">#endif // TREE_HPP</span></div>
 <div class="ttc" id="class_node_html_aa9d37ee4133ae9774c5cf2ca5a6da8af"><div class="ttname"><a href="class_node.html#aa9d37ee4133ae9774c5cf2ca5a6da8af">Node::operator=</a></div><div class="ttdeci">Node&lt; T &gt; &amp; operator=(Node&lt; T &gt; &amp;other)</div><div class="ttdef"><b>Definition:</b> tree.hpp:120</div></div>
-<div class="ttc" id="class_tree_html_a8f0fd8ff56ed1f4a5d1e86f404d364ea"><div class="ttname"><a href="class_tree.html#a8f0fd8ff56ed1f4a5d1e86f404d364ea">Tree::put</a></div><div class="ttdeci">void put(T element)</div><div class="ttdef"><b>Definition:</b> tree.hpp:322</div></div>
+<div class="ttc" id="class_tree_html_a8f0fd8ff56ed1f4a5d1e86f404d364ea"><div class="ttname"><a href="class_tree.html#a8f0fd8ff56ed1f4a5d1e86f404d364ea">Tree::put</a></div><div class="ttdeci">void put(T element)</div><div class="ttdef"><b>Definition:</b> tree.hpp:323</div></div>
 <div class="ttc" id="class_node_html_a141b357c5d9a30cd9b3062337ef67edb"><div class="ttname"><a href="class_node.html#a141b357c5d9a30cd9b3062337ef67edb">Node::append</a></div><div class="ttdeci">void append(T n_data)</div><div class="ttdef"><b>Definition:</b> tree.hpp:185</div></div>
 <div class="ttc" id="class_node_html"><div class="ttname"><a href="class_node.html">Node</a></div><div class="ttdoc">Defines tree nodes. </div><div class="ttdef"><b>Definition:</b> tree.hpp:83</div></div>
 <div class="ttc" id="class_node_html_a0da7f6a2356d1e7f047f8bfda1edd8d8"><div class="ttname"><a href="class_node.html#a0da7f6a2356d1e7f047f8bfda1edd8d8">Node::height</a></div><div class="ttdeci">int height()</div><div class="ttdef"><b>Definition:</b> tree.hpp:159</div></div>
 <div class="ttc" id="class_node_html_a845317829093b3d4665ba7e0055b4599"><div class="ttname"><a href="class_node.html#a845317829093b3d4665ba7e0055b4599">Node::_children</a></div><div class="ttdeci">forward_list&lt; Node&lt; T &gt; &gt; _children</div><div class="ttdoc">children of the Node </div><div class="ttdef"><b>Definition:</b> tree.hpp:89</div></div>
-<div class="ttc" id="class_tree_html_a04affc46d89a0ef5d517ab685c9c346e"><div class="ttname"><a href="class_tree.html#a04affc46d89a0ef5d517ab685c9c346e">Tree::~Tree</a></div><div class="ttdeci">~Tree()</div><div class="ttdef"><b>Definition:</b> tree.hpp:300</div></div>
+<div class="ttc" id="class_tree_html_a04affc46d89a0ef5d517ab685c9c346e"><div class="ttname"><a href="class_tree.html#a04affc46d89a0ef5d517ab685c9c346e">Tree::~Tree</a></div><div class="ttdeci">~Tree()</div><div class="ttdef"><b>Definition:</b> tree.hpp:301</div></div>
 <div class="ttc" id="class_tree_html_acf08fade73658f5ea3df0d2794d95277"><div class="ttname"><a href="class_tree.html#acf08fade73658f5ea3df0d2794d95277">Tree::Tree</a></div><div class="ttdeci">Tree(T element)</div><div class="ttdef"><b>Definition:</b> tree.hpp:294</div></div>
 <div class="ttc" id="class_node_html_acb50abe854f383e0d624e85505697b4f"><div class="ttname"><a href="class_node.html#acb50abe854f383e0d624e85505697b4f">Node::operator!=</a></div><div class="ttdeci">bool operator!=(const Node&lt; T &gt; &amp;rhs)</div><div class="ttdef"><b>Definition:</b> tree.hpp:144</div></div>
 <div class="ttc" id="class_node_html_abb91d745a01f97fe51a35811e0d42801"><div class="ttname"><a href="class_node.html#abb91d745a01f97fe51a35811e0d42801">Node::toString</a></div><div class="ttdeci">string toString()</div><div class="ttdef"><b>Definition:</b> tree.hpp:253</div></div>
@@ -317,6 +321,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="ttc" id="class_node_html_a82089b860871012bc159c510408be29c"><div class="ttname"><a href="class_node.html#a82089b860871012bc159c510408be29c">Node::_tag</a></div><div class="ttdeci">T _tag</div><div class="ttdoc">letter stored into Node, the tag </div><div class="ttdef"><b>Definition:</b> tree.hpp:87</div></div>
 <div class="ttc" id="class_node_html_ad319e53c90ce8bced6ffc42b67d8e759"><div class="ttname"><a href="class_node.html#ad319e53c90ce8bced6ffc42b67d8e759">Node::contains</a></div><div class="ttdeci">bool contains(T element)</div><div class="ttdef"><b>Definition:</b> tree.hpp:235</div></div>
 <div class="ttc" id="class_tree_html"><div class="ttname"><a href="class_tree.html">Tree</a></div><div class="ttdoc">Tree is a recursive structure using nodes. </div><div class="ttdef"><b>Definition:</b> tree.hpp:272</div></div>
+<div class="ttc" id="class_tree_html_aabd6868e9e02fbe9affb1f7eed04d51c"><div class="ttname"><a href="class_tree.html#aabd6868e9e02fbe9affb1f7eed04d51c">Tree::toString</a></div><div class="ttdeci">string toString()</div><div class="ttdef"><b>Definition:</b> tree.hpp:341</div></div>
 <div class="ttc" id="class_node_html_ac6af63bbc9a1eef28615c5c0c5acb83c"><div class="ttname"><a href="class_node.html#ac6af63bbc9a1eef28615c5c0c5acb83c">Node::operator==</a></div><div class="ttdeci">bool operator==(const Node&lt; T &gt; &amp;rhs)</div><div class="ttdef"><b>Definition:</b> tree.hpp:134</div></div>
 <div class="ttc" id="class_tree_exception_html_ab899a6ec0f82bf770b88ba4982e3d696"><div class="ttname"><a href="class_tree_exception.html#ab899a6ec0f82bf770b88ba4982e3d696">TreeException::what</a></div><div class="ttdeci">virtual const char * what() const </div><div class="ttdef"><b>Definition:</b> tree.hpp:72</div></div>
 <div class="ttc" id="class_node_html_a0692b16d246460bf94c18d49592facdd"><div class="ttname"><a href="class_node.html#a0692b16d246460bf94c18d49592facdd">Node::Node</a></div><div class="ttdeci">Node(T data)</div><div class="ttdef"><b>Definition:</b> tree.hpp:103</div></div>
@@ -324,16 +329,16 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="ttc" id="class_tree_exception_html_a68dfe698f22aabd8d51b0c533f818263"><div class="ttname"><a href="class_tree_exception.html#a68dfe698f22aabd8d51b0c533f818263">TreeException::~TreeException</a></div><div class="ttdeci">virtual ~TreeException()</div><div class="ttdef"><b>Definition:</b> tree.hpp:65</div></div>
 <div class="ttc" id="class_node_html_ad70e3545b2df020088a0e26bec128632"><div class="ttname"><a href="class_node.html#ad70e3545b2df020088a0e26bec128632">Node::Node</a></div><div class="ttdeci">Node(const Node&lt; T &gt; &amp;other)</div><div class="ttdef"><b>Definition:</b> tree.hpp:95</div></div>
 <div class="ttc" id="class_node_html_ae923d0417581dd19784d55b901f0f7f0"><div class="ttname"><a href="class_node.html#ae923d0417581dd19784d55b901f0f7f0">Node::~Node</a></div><div class="ttdeci">~Node()</div><div class="ttdef"><b>Definition:</b> tree.hpp:110</div></div>
-<div class="ttc" id="class_tree_html_a9300caf575a5a89292e620e8b73112c7"><div class="ttname"><a href="class_tree.html#a9300caf575a5a89292e620e8b73112c7">Tree::height</a></div><div class="ttdeci">int height()</div><div class="ttdef"><b>Definition:</b> tree.hpp:315</div></div>
+<div class="ttc" id="class_tree_html_a9300caf575a5a89292e620e8b73112c7"><div class="ttname"><a href="class_tree.html#a9300caf575a5a89292e620e8b73112c7">Tree::height</a></div><div class="ttdeci">int height()</div><div class="ttdef"><b>Definition:</b> tree.hpp:316</div></div>
 <div class="ttc" id="class_node_html_a3b188b785e394924c11f2f68369c0cdf"><div class="ttname"><a href="class_node.html#a3b188b785e394924c11f2f68369c0cdf">Node::getTag</a></div><div class="ttdeci">T getTag()</div><div class="ttdef"><b>Definition:</b> tree.hpp:228</div></div>
-<div class="ttc" id="class_tree_html_a6de8e50615c6a644025b2f1af8684f9c"><div class="ttname"><a href="class_tree.html#a6de8e50615c6a644025b2f1af8684f9c">Tree::contains</a></div><div class="ttdeci">bool contains(T element)</div><div class="ttdef"><b>Definition:</b> tree.hpp:308</div></div>
+<div class="ttc" id="class_tree_html_a6de8e50615c6a644025b2f1af8684f9c"><div class="ttname"><a href="class_tree.html#a6de8e50615c6a644025b2f1af8684f9c">Tree::contains</a></div><div class="ttdeci">bool contains(T element)</div><div class="ttdef"><b>Definition:</b> tree.hpp:309</div></div>
 <div class="ttc" id="class_tree_html_a4f23e98860f95126711a63822b7d0a4c"><div class="ttname"><a href="class_tree.html#a4f23e98860f95126711a63822b7d0a4c">Tree::_root</a></div><div class="ttdeci">Node&lt; T &gt; _root</div><div class="ttdef"><b>Definition:</b> tree.hpp:275</div></div>
 <div class="ttc" id="class_tree_exception_html_aa75b34acf02d0e86fb70a63242894311"><div class="ttname"><a href="class_tree_exception.html#aa75b34acf02d0e86fb70a63242894311">TreeException::TreeException</a></div><div class="ttdeci">TreeException(char *cause)</div><div class="ttdef"><b>Definition:</b> tree.hpp:58</div></div>
 <div class="ttc" id="class_tree_html_aaefcdf4990c48b9bc90e2c2c3fe74a67"><div class="ttname"><a href="class_tree.html#aaefcdf4990c48b9bc90e2c2c3fe74a67">Tree::Tree</a></div><div class="ttdeci">Tree(const Tree&lt; T &gt; &amp;other)</div><div class="ttdef"><b>Definition:</b> tree.hpp:286</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Apr 3 2014 19:37:14 for Glossygloss by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu Apr 3 2014 20:13:52 for Glossygloss by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

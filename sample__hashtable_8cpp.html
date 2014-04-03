@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.6"/>
-<title>Glossygloss: src/application.cpp File Reference</title>
+<title>Glossygloss: src/sample_hashtable.cpp File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -87,35 +87,82 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!-- top -->
 <div class="header">
   <div class="summary">
+<a href="#define-members">Macros</a> &#124;
 <a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
-<div class="title">application.cpp File Reference</div>  </div>
+<div class="title">sample_hashtable.cpp File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><code>#include &lt;functional&gt;</code><br/>
 <code>#include &lt;iostream&gt;</code><br/>
+<code>#include &lt;cstdlib&gt;</code><br/>
 <code>#include &lt;fstream&gt;</code><br/>
-<code>#include &quot;<a class="el" href="dictionnaire_8hpp_source.html">dictionnaire/dictionnaire.hpp</a>&quot;</code><br/>
+<code>#include &quot;<a class="el" href="hashtable_8hpp_source.html">hashtable.hpp</a>&quot;</code><br/>
 </div><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
+Macros</h2></td></tr>
+<tr class="memitem:a97d832ae23af4f215e801e37e4f94254"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sample__hashtable_8cpp.html#a97d832ae23af4f215e801e37e4f94254">K</a>&#160;&#160;&#160;string</td></tr>
+<tr class="separator:a97d832ae23af4f215e801e37e4f94254"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af40a326b23c68a27cebe60f16634a2cb"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sample__hashtable_8cpp.html#af40a326b23c68a27cebe60f16634a2cb">V</a>&#160;&#160;&#160;string</td></tr>
+<tr class="separator:af40a326b23c68a27cebe60f16634a2cb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a9f9fe4e9cebe86142ae9312c8ea4d458"><td class="memTemplParams" colspan="2">template&lt;&gt; </td></tr>
-<tr class="memitem:a9f9fe4e9cebe86142ae9312c8ea4d458"><td class="memTemplItemLeft" align="right" valign="top">unsigned&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="application_8cpp.html#a9f9fe4e9cebe86142ae9312c8ea4d458">computehash&lt; string &gt;</a> (string element)</td></tr>
-<tr class="separator:a9f9fe4e9cebe86142ae9312c8ea4d458"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae66f6b31b5ad750f1fe042a706a4e3d4"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="application_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4">main</a> ()</td></tr>
-<tr class="separator:ae66f6b31b5ad750f1fe042a706a4e3d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae31ffa0e4fbbbcb53f4e30048ba55b66"><td class="memTemplParams" colspan="2">template&lt;&gt; </td></tr>
+<tr class="memitem:ae31ffa0e4fbbbcb53f4e30048ba55b66"><td class="memTemplItemLeft" align="right" valign="top">unsigned&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="sample__hashtable_8cpp.html#ae31ffa0e4fbbbcb53f4e30048ba55b66">computehash&lt; K &gt;</a> (<a class="el" href="sample__tree_8cpp.html#a97d832ae23af4f215e801e37e4f94254">K</a> element)</td></tr>
+<tr class="separator:ae31ffa0e4fbbbcb53f4e30048ba55b66"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a217dbf8b442f20279ea00b898af96f52"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sample__hashtable_8cpp.html#a217dbf8b442f20279ea00b898af96f52">main</a> (int argc, const char **argv)</td></tr>
+<tr class="separator:a217dbf8b442f20279ea00b898af96f52"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><h1><a class="anchor" id="desc"></a>
+File description</h1>
+<p>a sample of hashtable usages.</p>
+<h1><a class="anchor" id="copyright"></a>
+Copyright</h1>
+<p>This source code is protected by the French intellectual property law.</p>
+<p>This program is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation; version 2 of the License.</p>
+<p>This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.</p>
+<p>You should have received a copy of the GNU General Public License along with this program; if not, write to the Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.</p>
+<h1><a class="anchor" id="infos"></a>
+File informations</h1>
+<p>$Date$ 2014/03/28 $Rev$ 0.1 $Author$ Benjamin Sientzoff $URL$ <a href="http://www.github.com/blasterbug">http://www.github.com/blasterbug</a> </p>
+</div><h2 class="groupheader">Macro Definition Documentation</h2>
+<a class="anchor" id="a97d832ae23af4f215e801e37e4f94254"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define K&#160;&#160;&#160;string</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="af40a326b23c68a27cebe60f16634a2cb"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define V&#160;&#160;&#160;string</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <h2 class="groupheader">Function Documentation</h2>
-<a class="anchor" id="a9f9fe4e9cebe86142ae9312c8ea4d458"></a>
+<a class="anchor" id="ae31ffa0e4fbbbcb53f4e30048ba55b66"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
 template&lt;&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">unsigned <a class="el" href="hashtable_8hpp.html#a0884e6a3e2395d8a9cec36a7c651820b">computehash</a>&lt; string &gt; </td>
+          <td class="memname">unsigned <a class="el" href="hashtable_8hpp.html#a0884e6a3e2395d8a9cec36a7c651820b">computehash</a>&lt; <a class="el" href="sample__tree_8cpp.html#a97d832ae23af4f215e801e37e4f94254">K</a> &gt; </td>
           <td>(</td>
-          <td class="paramtype">string&#160;</td>
+          <td class="paramtype"><a class="el" href="sample__tree_8cpp.html#a97d832ae23af4f215e801e37e4f94254">K</a>&#160;</td>
           <td class="paramname"><em>element</em></td><td>)</td>
           <td></td>
         </tr>
@@ -124,15 +171,26 @@ template&lt;&gt; </div>
 
 </div>
 </div>
-<a class="anchor" id="ae66f6b31b5ad750f1fe042a706a4e3d4"></a>
+<a class="anchor" id="a217dbf8b442f20279ea00b898af96f52"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
           <td class="memname">int main </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>argc</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">const char **&#160;</td>
+          <td class="paramname"><em>argv</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
 </div><div class="memdoc">

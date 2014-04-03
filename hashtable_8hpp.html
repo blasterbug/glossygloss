@@ -39,6 +39,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
       <li><a href="annotated.html"><span>Classes</span></a></li>
       <li class="current"><a href="files.html"><span>Files</span></a></li>
       <li>
@@ -70,7 +71,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Macros</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Macros</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -112,7 +113,7 @@ Classes</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
 Macros</h2></td></tr>
-<tr class="memitem:a29fd18bed01c4d836c7ebfe73a125c3f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="hashtable_8hpp.html#a29fd18bed01c4d836c7ebfe73a125c3f">END</a>&#160;&#160;&#160;0</td></tr>
+<tr class="memitem:a29fd18bed01c4d836c7ebfe73a125c3f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="hashtable_8hpp.html#a29fd18bed01c4d836c7ebfe73a125c3f">END</a>&#160;&#160;&#160;nullptr</td></tr>
 <tr class="memdesc:a29fd18bed01c4d836c7ebfe73a125c3f"><td class="mdescLeft">&#160;</td><td class="mdescRight">macro to define end of alveole chains  <a href="#a29fd18bed01c4d836c7ebfe73a125c3f">More...</a><br/></td></tr>
 <tr class="separator:a29fd18bed01c4d836c7ebfe73a125c3f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a78d344caabde729a4559393a0552bf1c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="hashtable_8hpp.html#a78d344caabde729a4559393a0552bf1c">ARRAYSIZE</a>&#160;&#160;&#160;10</td></tr>
@@ -122,7 +123,7 @@ Macros</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:a0884e6a3e2395d8a9cec36a7c651820b"><td class="memTemplParams" colspan="2">template&lt;typename K &gt; </td></tr>
-<tr class="memitem:a0884e6a3e2395d8a9cec36a7c651820b"><td class="memTemplItemLeft" align="right" valign="top">unsigned&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="hashtable_8hpp.html#a0884e6a3e2395d8a9cec36a7c651820b">computehash</a> (<a class="el" href="test__tree_8cpp.html#a97d832ae23af4f215e801e37e4f94254">K</a> element)</td></tr>
+<tr class="memitem:a0884e6a3e2395d8a9cec36a7c651820b"><td class="memTemplItemLeft" align="right" valign="top">unsigned&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="hashtable_8hpp.html#a0884e6a3e2395d8a9cec36a7c651820b">computehash</a> (<a class="el" href="sample__tree_8cpp.html#a97d832ae23af4f215e801e37e4f94254">K</a> element)</td></tr>
 <tr class="separator:a0884e6a3e2395d8a9cec36a7c651820b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
@@ -138,7 +139,8 @@ Copyright</h1>
 <p>You should have received a copy of the GNU General Public License along with this program; if not, write to the Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.</p>
 <h1><a class="anchor" id="infos"></a>
 File informations</h1>
-<p>$Date$ 2014/03/27 $Rev$ 0.2 $Author$ Benjamin Sientzoff $URL$ <a href="http://www.github.com/blasterbug">http://www.github.com/blasterbug</a> </p>
+<p>$Date$ 2014/03/27 $Rev$ 0.2 $Author$ Benjamin Sientzoff $URL$ <a href="http://www.github.com/blasterbug">http://www.github.com/blasterbug</a></p>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000001">Todo:</a></b></dt><dd>: removing the last element of a alveoles chain makes trouble (seg fault) </dd></dl>
 </div><h2 class="groupheader">Macro Definition Documentation</h2>
 <a class="anchor" id="a78d344caabde729a4559393a0552bf1c"></a>
 <div class="memitem">
@@ -159,7 +161,7 @@ File informations</h1>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define END&#160;&#160;&#160;0</td>
+          <td class="memname">#define END&#160;&#160;&#160;nullptr</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -178,13 +180,13 @@ template&lt;typename K &gt; </div>
         <tr>
           <td class="memname">unsigned computehash </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="test__tree_8cpp.html#a97d832ae23af4f215e801e37e4f94254">K</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="sample__tree_8cpp.html#a97d832ae23af4f215e801e37e4f94254">K</a>&#160;</td>
           <td class="paramname"><em>element</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Fonction you must define </p>
+<p>Fonction you must define when you're using Hashable An exemple is given in the sample file </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">element</td><td>element to compute hashcode from </td></tr>
@@ -192,14 +194,14 @@ template&lt;typename K &gt; </div>
   </table>
   </dd>
 </dl>
-<p>template&lt;&gt; unisgned <a class="el" href="application_8cpp.html#a9f9fe4e9cebe86142ae9312c8ea4d458">computehash&lt;string&gt;(string element)</a> { your implementation of hashcode function } } </p>
+<p>template&lt;&gt; unisgned <a class="el" href="application_8cpp.html#a9f9fe4e9cebe86142ae9312c8ea4d458">computehash&lt;string&gt;(string element)</a> { your implementation of hashcode function } </p>
 
 </div>
 </div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Apr 3 2014 19:37:14 for Glossygloss by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu Apr 3 2014 20:13:52 for Glossygloss by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>
