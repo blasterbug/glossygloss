@@ -1,9 +1,9 @@
 /**
- * @file test_tree.cpp
+ * @file sample_hashtable.cpp
  *
  * @section desc File description
  *
- * File to test tree.cpp classes
+ * a sample of hashtable usages.
  *
  * @section copyright Copyright
  *
@@ -25,7 +25,7 @@
  *
  * @section infos File informations
  *
- * $Date$ 2014/04/03
+ * $Date$ 2014/03/28
  * $Rev$ 0.1
  * $Author$ Benjamin Sientzoff
  * $URL$ http://www.github.com/blasterbug
@@ -35,38 +35,53 @@
 #include <iostream>
 #include <cstdlib> // nécessaire pour utilisation atoi
 #include <fstream> // Permet de lire et enregistrer des données dans un fichier
-#include "tree.hpp"
+#include "hashtable.hpp"
 
 #define K string
+#define V string
 
 using namespace std;
 
+
+template<> unsigned computehash<K>(K element){
+	// calcul de la clé de hachage en utilisant fonction fournie par API
+	hash<K> hashcalculator;
+	return hashcalculator(element);
+}
+
+
 int main(int argc,const char** argv){
 	
-	if(3 != argc){
+	if(argc != 4){
 		perror("Bad arguments!");
 		exit(1);
 	}
 	
-	fstream file;
+	Hashtable<K, V> storage = Hashtable<K, V>();
+	fstream key_file;
+	fstream value_file;
 	
-	string tag;
+	string key;
+	string value;
 	
-	file.open(argv[1], ios::in);
-	file >> tag;
+	key_file.open(argv[1], ios::in);
+	key_file >> key;
 	
-	Tree<K> storage = Tree<K>(tag);
+	value_file.open(argv[2], ios::in);
+	value_file >> value;
 	
-	int max = atoi(argv[2]);
+	int max = atoi(argv[3]);
 	int i = 0;
 	
-	while(not file.eof() and i<max){
-		file >> tag;
-		storage.put(tag);
+	while(not key_file.eof() and not value_file.eof() and i<max){
+		storage.put(key, value);
+		key_file >> key;
+		key_file >> value;
 		++i;
 	}
 	
-	file.close();
+	key_file.close();
+	value_file.close();
 	
 	cout << storage.toString() << endl;
 	string reader ;
@@ -87,4 +102,3 @@ int main(int argc,const char** argv){
 	}
 	return 0;
 }
-

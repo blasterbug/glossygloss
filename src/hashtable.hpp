@@ -32,6 +32,8 @@
  * $Rev$ 0.2
  * $Author$ Benjamin Sientzoff
  * $URL$ http://www.github.com/blasterbug
+ * 
+ * \todo : removing the last element of a alveoles chain makes trouble (seg fault)
  */
  
 #ifndef HASHTABLE_HPP
@@ -39,7 +41,7 @@
 
 /// macro to define end of alveole chains
 #ifndef END
-#define END 0
+#define END nullptr
 #endif
 
 /// macro to define size of hash arrays
@@ -55,7 +57,8 @@
 //#define NDEBUG 
 
 /**
- * Fonction you must define
+ * Fonction you must define when you're using Hashable
+ * An exemple is given in the sample file
  * @param[in] element element to compute hashcode from
  * @param[out] hashcode the hashcode of element, an unsigned integer
  * 
@@ -63,7 +66,6 @@
  * {
  * 		your implementation of hashcode function
  * }
-}
  */
 template <typename K> unsigned computehash(K element);
 

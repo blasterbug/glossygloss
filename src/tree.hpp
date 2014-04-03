@@ -3,8 +3,8 @@
  *
  * @section desc File description
  *
- * Implémentation d'un arbre pour stocker des mots.
- * Chaque noeud stocke une lettre.
+ * Tree is a recursive structure using nodes.
+ * Node stores a value (tag) and has several children
  *
  * @section copyright Copyright
  *
@@ -27,13 +27,13 @@
  * @section infos File informations
  *
  * $Date$ 2014/03/27
- * $Rev$ 0.1
+ * $Rev$ 0.3
  * $Author$ Benjamin Sientzoff
  * $URL$ http://www.github.com/blasterbug
  */
 
-#ifndef HASHWORK_HPP
-#define HASHWORK_HPP
+#ifndef TREE_HPP
+#define TREE_HPP
 
 #include <cassert>
 #include <string>
@@ -291,9 +291,10 @@ class Tree {
 		 * create an tree
 		 * @param[in] element Root of the tree
 		 */
-		Tree(T element):
-			_root(element)
+		Tree(T element): 
+			_root(Node<T>(element))
 			{}
+			//_root = Node<T>(element);
 		
 		/** Destructor, destroy the whole tree
 		 */
@@ -333,8 +334,13 @@ class Tree {
 				// ?
 			}
 		}
+		
+		/** Get a string representation of the Tree
+		 * @param[out] desc String representation of the tree
+		 */
+		string toString(){
+			return _root.toString();
+		}
 };
 
-
-
-#endif // HASHWORK_HPP
+#endif // TREE_HPP
