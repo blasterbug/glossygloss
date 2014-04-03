@@ -34,7 +34,7 @@
  * $URL$ http://www.github.com/blasterbug
  */
  
- #include "hashtable.hpp"
+ #include "../hashtable.hpp"
  
 #ifndef DICTIONNAIRE_HPP
 #define DICTIONNAIRE_HPP

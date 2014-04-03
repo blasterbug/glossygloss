@@ -36,16 +36,15 @@
  
 #include <functional>
 #include <iostream>
-#include <cstdlib> // nécessaire pour utilisation atoi
 #include <fstream> // Permet de lire et enregistrer des données dans un fichier
  
  using namespace std;
  
- #include "hash/dictionnaire.hpp" //dictionnaire utilisant la hashtable
+ #include "dictionnaire/dictionnaire.hpp" //dictionnaire utilisant la hashtable
  
- template<typename V> unsigned computehash<V>(V element){
+template<> unsigned computehash<string>(string element){
 	// calcul de la clé de hachage en utilisant fonction fournie par API
-	hash<K> hashcalculator;
+	hash<string> hashcalculator;
 	return hashcalculator(element);
 }
  
