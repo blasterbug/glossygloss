@@ -5,8 +5,6 @@
  *
  * Dictionnaire utilisant une hashtable
  * 
- * 
- * 
  *
  * @section copyright Copyright
  *
@@ -81,25 +79,29 @@ class Dictionnaire{
 		 * Fonction qui modifie la valeur d'un mot présent dans le dictionnaire
 		 * @param[in] mot, le mot à modifier
 		 * @param[in] v, la valeur à modifier
-		 * @exception lève une exception si le mot n'est pas présent
+		 * @param[out] bool Renvoyer faux si le mot n'est pas présent, sinon vrai
 		 */
-		void associerMot(string mot, V v){
-			if(dico.contains(mot))
+		bool associerMot(string mot, V v){
+			if(dico.contains(mot)){
 				dico.put(mot,v);
-			else
-				throw HashException("Le mot spécifié n'existe pas dans le dictionnaire");
+				return true;
+			}
+			else {
+				return false;
+			}
 		}	
 
 		/**
 		 * Fonction qui supprime un mot présent dans le dictionnaire
 		 * @param[in] mot, le mot à supprimer
-		 * @exception lève une exception si le mot n'est pas présent
+		 * @param[out] bool Renvoie vrai si le mot a été supprimé, sinon faux
 		 */
 		void supprimerMot(string mot){
 			try{
 				dico.remove(mot);
-			}catch(exception& e){
-				throw HashException("Le mot spécifié n'existe pas dans le dictionnaire");
+				return true;
+			}catch(HashException e){
+				return false;
 			}
 		}	
 		
@@ -114,7 +116,7 @@ class Dictionnaire{
 			try{
 				valeur = dico.get(mot);
 				return valeur;
-			}catch(exception& e){
+			}catch(HashException e){
 				throw HashException("Le mot spécifié n'existe pas dans le dictionnaire");
 			}
 		}		

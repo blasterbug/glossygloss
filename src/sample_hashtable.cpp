@@ -44,8 +44,8 @@ using namespace std;
 
 
 template<> unsigned computehash<K>(K element){
-// calcul de la clé de hachage en utilisant fonction fournie par API
-hash<K> hashcalculator;
+	// calcul de la clé de hachage en utilisant fonction fournie par API
+	hash<K> hashcalculator;
 	return hashcalculator(element);
 }
 
