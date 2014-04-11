@@ -22,18 +22,18 @@ Glossygloss
   
   We use C++11, so to compile using our classes:
   
-	g++ -std=c++0x -g -Wall -pedantic -o sample_hashtable.bin sample_hashtable.cpp
+	$ g++ -std=c++0x -g -Wall -pedantic -o sample_hashtable.bin sample_hashtable.cpp
   
 ### Testing and usage
   Once you compiled sample_hashtable.cpp, you can run the code using,
   assuming you are using an 
   UNIX system.
   
-	chmod +x sample_hashtable.bin
+	$ chmod +x sample_hashtable.bin
   
   First give execution permission to the compiled code.
   
-	./sample_hashtable.bin lorem quod 50
+	$ ./sample_hashtable.bin lorem quod 50
   
   And then, run the program.  
   
