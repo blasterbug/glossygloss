@@ -22,7 +22,7 @@ Glossygloss
   
   We use C++11, so to compile using our classes:
   
-	$ g++ -std=c++0x -g -Wall -pedantic -o sample_hashtable.bin sample_hashtable.cpp
+	$ g++ -std=c++0x -Wall -pedantic -o sample_hashtable.bin sample_hashtable.cpp
   
 ### Testing and usage
   Once you compiled sample_hashtable.cpp, you can run the code using,
