@@ -36,8 +36,7 @@ Glossygloss
 	$ ./sample_hashtable.bin lorem quod 50
   
   And then, run the program.  
-  
-  All the words in the first file (lorem) will be maped to the wrd in quod.
+  Words in the first file (lorem) will be maped to the words in quod.
   The last argument stands for the words number you want to put in the hashtable.
   
 ### Copyright
