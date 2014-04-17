@@ -199,9 +199,9 @@ class Node {
 				bool undone = true;
 				auto it = _children.begin();
 				while(it != _children.end() and undone){
-					if(it->_tag<n_data){
+					if(it->_tag>n_data){
 						it->append(n_data);
-						undone = false;
+						undone = !undone;
 					}
 					else{
 						++it;
@@ -220,7 +220,7 @@ class Node {
 			auto it=_children.begin();
 			while(it != it.end() and undone){
 				if(it->_tag == data and it->isLeaf()){
-					undone = false;
+					undone = !undone;
 					delete it;
 				}
 				++it;

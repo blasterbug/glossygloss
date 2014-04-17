@@ -62,7 +62,9 @@ int main(int argc,const char** argv){
 	
 	while(not file.eof() and i<max){
 		file >> tag;
-		storage.put(tag);
+		if(" " != tag){
+			storage.put(tag);
+		}
 		++i;
 	}
 	

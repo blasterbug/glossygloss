@@ -62,9 +62,9 @@
  * @param[out] hashcode the hashcode of element, an unsigned integer
  *
  * template<> unisgned computehash<string>(string element)
- * {
+ *
  * your implementation of hashcode function
- * }
+ *
 */
 template <typename K> unsigned computehash(K element);
 
