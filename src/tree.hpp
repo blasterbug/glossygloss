@@ -104,7 +104,8 @@ class Node {
 		 * @param[in] data to store into the Node
 		 */
 		Node(T data):
-		_childNbr(0)
+		_childNbr(0),
+		_tag(data)
 		{
 			// initialize the simply-linked list
 			_children = forward_list<Node<T>>();
@@ -114,8 +115,8 @@ class Node {
 		 */
 		~Node(){
 			// usefull ?
-			delete &_children;
-			delete &_tag;
+			//delete &_children;
+			//delete &_tag;
 		}
 		
 		/** assignment operator overload
@@ -264,7 +265,7 @@ class Node {
 			else {
 				string desc = string(_tag);
 				for(Node<T> child: _children){
-					desc += "\n|_" + child.toString();
+					desc += ", " + child.toString();
 				}
 				return desc;
 			}
@@ -306,7 +307,7 @@ class Tree {
 		/** Destructor, destroy the whole tree
 		 */
 		~Tree(){
-			delete &_root;
+			//delete &_root;
 		}
 		
 		/** Is the element in the tree ?

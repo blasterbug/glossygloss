@@ -67,24 +67,7 @@ int main(int argc,const char** argv){
 	}
 	
 	file.close();
-	
 	cout << storage.toString() << endl;
-	//~ string reader ;
-	//~ cout << "Give the key to remove:" << endl;
-	//~ cin >> reader;
-	//~ try{
-		//~ //storage.remove(reader);
-	//~ } catch(TreeException ex) {
-		//~ cout << ex.what() << endl;
-	//~ }
-	//~ cout << storage.toString() << endl;
-	//~ cout << "Give a key to get the maped value" << endl;
-	//~ cin >> reader;
-	//~ try{
-		//~ //cout << reader << " maped to " << storage.get(reader) << endl;
-	//~ } catch (TreeException ex) {
-		//~ cout << ex.what() << endl;
-	//~ }
 	return 0;
 }
 
