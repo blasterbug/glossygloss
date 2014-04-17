@@ -263,7 +263,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;            <span class="keywordtype">bool</span> undone = <span class="keyword">true</span>;</div>
 <div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;            <span class="keywordflow">while</span>(undone and <a class="code" href="hashtable_8hpp.html#a29fd18bed01c4d836c7ebfe73a125c3f">END</a> != browser){</div>
 <div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;                <span class="keywordflow">if</span>(key == browser-&gt;<a class="code" href="class_alveole.html#add57358f630300978cfd314a9a392c8b">getKey</a>()){</div>
-<div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;                    std::cout &lt;&lt; <span class="stringliteral">&quot;Updating (&quot;</span> &lt;&lt; key &lt;&lt; <span class="stringliteral">&quot;, &quot;</span> &lt;&lt; value &lt;&lt;<span class="stringliteral">&quot;) at &quot;</span> &lt;&lt; index &lt;&lt; std::endl; <span class="comment">// debug line</span></div>
+<div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;                    <span class="comment">//std::cout &lt;&lt; &quot;Updating (&quot; &lt;&lt; key &lt;&lt; &quot;, &quot; &lt;&lt; value &lt;&lt;&quot;) at &quot; &lt;&lt; index &lt;&lt; std::endl; // debug line</span></div>
 <div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;                    browser-&gt;<a class="code" href="class_alveole.html#a52932b33fef397328eea9ab139d1621e">setValue</a>(value);</div>
 <div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;                    undone = <span class="keyword">false</span>;</div>
 <div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;                }</div>
@@ -271,7 +271,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;            }</div>
 <div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;            <span class="keywordflow">if</span>(undone){</div>
 <div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;                <a class="code" href="class_hashtable.html#a741b7872f368f468f3b49d687830368a">_table</a>[index] = <span class="keyword">new</span> <a class="code" href="class_alveole.html">Alveole&lt;K,V&gt;</a>(key, value, <a class="code" href="class_hashtable.html#a741b7872f368f468f3b49d687830368a">_table</a>[index]);</div>
-<div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;                std::cout &lt;&lt; <span class="stringliteral">&quot;Adding (&quot;</span> &lt;&lt; key &lt;&lt; <span class="stringliteral">&quot;, &quot;</span> &lt;&lt; value &lt;&lt;<span class="stringliteral">&quot;) at &quot;</span> &lt;&lt; index &lt;&lt; std::endl; <span class="comment">// debug line</span></div>
+<div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;                <span class="comment">//std::cout &lt;&lt; &quot;Adding (&quot; &lt;&lt; key &lt;&lt; &quot;, &quot; &lt;&lt; value &lt;&lt;&quot;) at &quot; &lt;&lt; index &lt;&lt; std::endl; // debug line</span></div>
 <div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;            }</div>
 <div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;        }</div>
 <div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160;</div>
@@ -284,7 +284,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;            <a class="code" href="class_alveole.html">Alveole&lt;K,V&gt;</a>* cur = <a class="code" href="class_hashtable.html#a741b7872f368f468f3b49d687830368a">_table</a>[index];</div>
 <div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160;            <span class="keywordtype">bool</span> undone = <span class="keyword">true</span>;</div>
 <div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160;            <span class="keywordflow">while</span>(undone and <a class="code" href="hashtable_8hpp.html#a29fd18bed01c4d836c7ebfe73a125c3f">END</a> != cur){</div>
-<div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;                std::cout &lt;&lt; cur-&gt;<a class="code" href="class_alveole.html#a504981011163116c40d710a0e1d26a81">toString</a>() &lt;&lt; std::endl; <span class="comment">// debug line</span></div>
+<div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;                <span class="comment">//std::cout &lt;&lt; cur-&gt;toString() &lt;&lt; std::endl; // debug line</span></div>
 <div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160;                <span class="keywordflow">if</span>(key == cur-&gt;<a class="code" href="class_alveole.html#add57358f630300978cfd314a9a392c8b">getKey</a>()){</div>
 <div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;                    bef-&gt;<a class="code" href="class_alveole.html#ad756cdf41a7ab00c93c2264c0a1da26c">setNext</a>(cur-&gt;<a class="code" href="class_alveole.html#ae540dba4d60c74ff17e2abc03deb33c8">getNext</a>());</div>
 <div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160;                    assert(bef-&gt;<a class="code" href="class_alveole.html#ae540dba4d60c74ff17e2abc03deb33c8">getNext</a>() == cur-&gt;<a class="code" href="class_alveole.html#ae540dba4d60c74ff17e2abc03deb33c8">getNext</a>());</div>
@@ -350,7 +350,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Apr 17 2014 18:37:03 for Glossygloss by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu Apr 17 2014 18:53:46 for Glossygloss by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>
