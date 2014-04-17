@@ -62,9 +62,8 @@ int main(int argc,const char** argv){
 	
 	while(not file.eof() and i<max){
 		file >> tag;
-		if(" " != tag){
-			storage.put(tag);
-		}
+		cout << tag << endl;
+		storage.put(tag);
 		++i;
 	}
 	
