@@ -199,7 +199,7 @@ class Node {
 				bool undone = true;
 				auto it = _children.begin();
 				while(it != _children.end() and undone){
-					if(it->_tag>n_data){
+					if(it->_tag != n_data){
 						it->append(n_data);
 						undone = !undone;
 					}
@@ -255,6 +255,7 @@ class Node {
 				return here;
 			}
 		}
+		
 		/** Get a string representation of the node and his child
 		 * @param[out] desc Description of the node (and his child)
 		 */
@@ -270,6 +271,7 @@ class Node {
 				return desc;
 			}
 		}
+
 };
 
 /** \brief Tree is a recursive structure using nodes.
@@ -344,11 +346,13 @@ class Tree {
 		}
 		
 		/** Get a string representation of the Tree
+		 * Each node tags is separated with a comma
 		 * @param[out] desc String representation of the tree
 		 */
 		string toString(){
 			return _root.toString();
 		}
+
 };
 
 #endif // TREE_HPP

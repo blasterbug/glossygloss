@@ -59,7 +59,6 @@ int main(int argc,const char** argv){
 	
 	int max = atoi(argv[2]);
 	int i = 0;
-	
 	while(not file.eof() and i<max){
 		file >> tag;
 		cout << tag << endl;
