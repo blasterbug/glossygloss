@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['tree_2ehpp',['tree.hpp',['../tree_8hpp.html',1,'']]]
+  ['sample_5fhashtable_2ecpp',['sample_hashtable.cpp',['../sample__hashtable_8cpp.html',1,'']]],
+  ['sample_5ftree_2ecpp',['sample_tree.cpp',['../sample__tree_8cpp.html',1,'']]]
 ];
