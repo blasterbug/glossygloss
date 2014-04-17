@@ -299,7 +299,7 @@ class Hashtable {
 			bool undone = true;
 			while(undone and END != browser){
 				if(key == browser->getKey()){
-					std::cout << "Updating (" << key << ", " << value <<") at " << index << std::endl; // debug line
+					//std::cout << "Updating (" << key << ", " << value <<") at " << index << std::endl; // debug line
 					browser->setValue(value);
 					undone = false;
 				}
@@ -307,7 +307,7 @@ class Hashtable {
 			}
 			if(undone){
 				_table[index] = new Alveole<K,V>(key, value, _table[index]);
-				std::cout << "Adding (" << key << ", " << value <<") at " << index << std::endl; // debug line
+				//std::cout << "Adding (" << key << ", " << value <<") at " << index << std::endl; // debug line
 			}
 		}
 
@@ -325,7 +325,7 @@ class Hashtable {
 			Alveole<K,V>* cur = _table[index];
 			bool undone = true;
 			while(undone and END != cur){
-				std::cout << cur->toString() << std::endl; // debug line
+				//std::cout << cur->toString() << std::endl; // debug line
 				if(key == cur->getKey()){
 					bef->setNext(cur->getNext());
 					assert(bef->getNext() == cur->getNext());
