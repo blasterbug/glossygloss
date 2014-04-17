@@ -47,7 +47,9 @@ template<> unsigned computehash<string>(string element){
  int main(){
 
 	Dictionnaire<int> dico = Dictionnaire<int>();	
-	dico.ajouterMot("mot",1);
+	dico.ajouterMot("mot");
+	dico.ajouterMot("test");
+	dico.associerMot("test");
 	//cout << dico.toString() << endl;
 	return 0;
 }

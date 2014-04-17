@@ -71,8 +71,8 @@ class Dictionnaire{
 		 * @param[in] mot, le mot à ajouter
 		 * @param[in] v, la valeur associée
 		 */
-		void ajouterMot(string mot, V v){
-			dico.put(mot,v);
+		void ajouterMot(string mot){
+			dico.put(mot,1);
 		}	
 
 		/**
@@ -81,9 +81,9 @@ class Dictionnaire{
 		 * @param[in] v, la valeur à modifier
 		 * @param[out] bool Renvoyer faux si le mot n'est pas présent, sinon vrai
 		 */
-		bool associerMot(string mot, V v){
+		bool associerMot(string mot){
 			if(dico.contains(mot)){
-				dico.put(mot,v);
+				dico.put(mot,dico.get(mot)+1);
 				return true;
 			}
 			else {
@@ -96,7 +96,7 @@ class Dictionnaire{
 		 * @param[in] mot, le mot à supprimer
 		 * @param[out] bool Renvoie vrai si le mot a été supprimé, sinon faux
 		 */
-		void supprimerMot(string mot){
+		bool supprimerMot(string mot){
 			try{
 				dico.remove(mot);
 				return true;
