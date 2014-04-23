@@ -180,7 +180,7 @@ class Node {
 				// for each child - using C++11 syntax
 				for(Node* child : _children){
 					// compute child height and store it
-					heights[1] = child->height();
+					heights[1] = 1 + child->height();
 					// if computed height is greater then the old one
 					if(heights[0] < heights[1]){
 						// store it as the new greate one
