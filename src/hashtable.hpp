@@ -356,7 +356,7 @@ class Hashtable {
 			return desc + "]";
 		}
 		
-				/** Do table contains key ?
+		/** Which keys maped values ?
 		 * @param[in] key key to find
 		 * @param[out] bool True if the key is here, else false
 		*/
