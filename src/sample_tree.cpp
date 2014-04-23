@@ -37,7 +37,6 @@
 #include <fstream> // Permet de lire et enregistrer des données dans un fichier
 #include "tree.hpp"
 
-#define K string
 
 using namespace std;
 
@@ -50,12 +49,13 @@ int main(int argc,const char** argv){
 	
 	fstream file;
 	
-	string tag;
-	
-	file.open(argv[1], ios::in);
+	char** tag=new char*[5];
+	Tree<char*> storage = Tree<char*>();
+	storage.put(tag);
+	/*file.open(argv[1], ios::in);
 	file >> tag;
 	
-	Tree<K> storage = Tree<K>(tag);
+	
 	
 	int max = atoi(argv[2]);
 	int i = 0;
@@ -66,7 +66,7 @@ int main(int argc,const char** argv){
 		++i;
 	}
 	
-	file.close();
+	file.close();*/
 	cout << "height : " << storage.height() << endl;
 	cout << storage.toString() << endl;
 	return 0;

@@ -46,7 +46,7 @@ template<> unsigned computehash<string>(string element){
  
  int main(){
 
-	Dictionnaire<int> dico = Dictionnaire<int>();	
+	Dictionnaire dico = Dictionnaire();	
 	dico.ajouterMot("mot");
 	dico.ajouterMot("test");
 	dico.associerMot("test");

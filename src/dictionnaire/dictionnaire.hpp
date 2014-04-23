@@ -33,16 +33,41 @@
  */
  
  #include "../hashtable.hpp"
+ #include "../pair.hpp"
  
 #ifndef DICTIONNAIRE_HPP
 #define DICTIONNAIRE_HPP
 
 
-template <typename V>
 class Dictionnaire{
 	
 	private :
-		Hashtable<string,V> dico;
+		Hashtable<string,int> dico;
+		
+		void ajoutTrie(pair<string,int>** freq,pair<string,int> *valeur,int* nb ){
+			if(nb == 0){
+				freq[0]=valeur;
+			}
+			else{
+				int i=0;
+				while(valeur->getRight()<freq[i]->getRight() && i<nb){
+					++i;
+				}
+				if(i==&nb){
+					freq[i] = valeur;
+					++nb;
+				}
+				else if(valeur->getRight()>freq[i]->getRight()){
+					pair<string,int> *tmp = freq[i];
+					freq[i] = valeur;
+					for(int j = i+1;j<10;++j){
+						pair<string,int> *tmp2=freq[j];
+						freq[j]=tmp;
+						tmp=tmp2;	
+					}
+				}
+			}
+		}
 	
 	public :
 	
@@ -111,17 +136,30 @@ class Dictionnaire{
 		 * @param[out] valeur, la valeur associée
 		 * @exception lève une exception si le mot n'est pas présent dans le dictionnaire
 		 */
-		V valeurAssociee(string mot){
-			V valeur;
+		int valeurAssociee(string mot){
+			int valeur;
 			try{
 				valeur = dico.get(mot);
 				return valeur;
 			}catch(HashException e){
 				throw HashException("Le mot spécifié n'existe pas dans le dictionnaire");
 			}
-		}		
-
-	
+		}
+				
+		/**
+		 * Fonction qui retourne les 10 mots les plus fréquents
+		 * @param[out] frequences, tableau des paires<mots,occurences> les plus fréquents
+		 */
+		**pair<string,int> plusFrequentes(){
+			int min = 0;
+			int nb = 0;
+			pair<string,int> **frequences = new pair<string,int>*[10];
+			std::vector<string> mots = dico.getAllKeys();
+			for(string mot : mots){
+				ajoutTrie(frequences,new pair<string,int>(mot,dico.get(mot)),*nb); 
+			}
+			return frequences;
+		}	
 };
 
 #endif // DICTIONNAIRE_HPP

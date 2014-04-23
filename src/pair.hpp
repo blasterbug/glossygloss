@@ -72,7 +72,7 @@ class pair{
 	 */
 	~pair(){
 		delete &_left;
-		delete é_right;
+		delete &_right;
 	}
 
 	/** Get the first value

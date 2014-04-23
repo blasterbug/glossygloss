@@ -51,6 +51,7 @@
 // included files section
 #include <string>
 #include <cassert>
+#include <vector> 
 
 // will desactive cassert
 //#define NDEBUG
@@ -353,6 +354,20 @@ class Hashtable {
 				}
 			}
 			return desc + "]";
+		}
+		
+				/** Do table contains key ?
+		 * @param[in] key key to find
+		 * @param[out] bool True if the key is here, else false
+		*/
+		std::vector<K> getAllKeys(){
+			std::vector<K> keys(0);
+			Alveole<K,V>* browser;
+			for(int i = 0; i<ARRAYSIZE; ++i){
+				browser = _table[i];
+				keys.push_back(browser->getKey());
+			}
+			return keys;
 		}
 
 };
