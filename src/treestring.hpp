@@ -1,10 +1,10 @@
 /**
- * @file tree.hpp
+ * @file treestring.hpp
  *
  * @section desc File description
  *
- * Tree is a recursive structure using nodes.
- * Node stores a value (tag) and has several children
+ * TreeString is a recursive structure using nodes.
+ * a Node stores a letter and has several children
  *
  * @section copyright Copyright
  *
@@ -26,18 +26,17 @@
  *
  * @section infos File informations
  *
- * $Date$ 2014/03/27
- * $Rev$ 0.3
+ * $Date$ 2014/04/5
+ * $Rev$ 0.1
  * $Author$ Benjamin Sientzoff
  * $URL$ http://www.github.com/blasterbug
  */
 
-#ifndef TREE_HPP
-#define TREE_HPP
+#ifndef TREESTRING_HPP
+#define TREESTRING_HPP
 
 #include <cassert>
 #include <string>
-//#include <list> // less efficiant
 #include <forward_list>
 
 using std::string;
@@ -47,7 +46,7 @@ using std::forward_list;
  * 
  * Usefull to manage errors and the unforeseen
  */
-class TreeException : std::exception {
+class TreeStringException : std::exception {
 	private:
 		char* _cause; /** store exception description */
 	public:
@@ -55,14 +54,14 @@ class TreeException : std::exception {
 		 * called then TreeExceptions are threw
 		 * @param[in] cause description of exception origin
 		 */
-		TreeException(char* cause):
+		TreeStringException(char* cause):
 			_cause(cause)
 			{}
 		
 		/** destructor
 		 * currently, do anything special
 		 */
-		virtual ~TreeException() throw(){
+		virtual ~TreeStringException() throw(){
 			// do nothing
 		}
 		
@@ -76,39 +75,44 @@ class TreeException : std::exception {
 
 /** \brief Defines tree nodes.
  * 
- * Class for nodes of a tree.
- * A Node store a tag and can have several children
+ * Class for nodes of a TreeString.
+ * A Node store a letter and can have several children.
  */
-template <typename T = char>
 class Node {
 	
 	private:
 		/// Number of children
 		int _childNbr;
+		/// the end of a word and his frequency
+		/// if _wordFrequency > 0, it's a word end
+		int _wordFrequency;
 		/// letter stored into Node, the tag
-		T _tag;
+		char _tag;
 		/// children of the Node
-		forward_list<Node<T>> _children;
+		forward_list<Node*> _children;
 	
 	public:
 		/** Copy constructor
 		 * @param[in] other Node to copy
 		 */
-		Node(const Node<T> &other):
+		Node(const Node &other):
 			_childNbr(other._childNbr),
 			_tag(other._tag),
+			_wordFrequency(other._wordFrequency),
 			_children(other._children)
 			{}
 			
 		/** Simple constructor
 		 * @param[in] data to store into the Node
+		 * @param[in] end is it the last letter of a word ?
 		 */
-		Node(T data):
+		Node(char data, int frequency):
 		_childNbr(0),
-		_tag(data)
+		_tag(data),
+		_wordFrequency(frequency)
 		{
 			// initialize the simply-linked list
-			_children = forward_list<Node<T>>();
+			_children = forward_list<Node*>();
 		}
 		
 		/** Destructor for Node
@@ -123,11 +127,12 @@ class Node {
 		 * @param[in] other node to assign
 		 * @param[out] note assigned node
 		 */
-		Node<T>& operator=(Node<T> &other){
+		Node& operator=(const Node &other){
 			// prevent objet copying itself
 			if(this != &other){
 				this->_childNbr = other._childNbr;
-				this->_tag = other._key;
+				this->_tag = other._tag;
+				this->_wordFrequency = other._wordFrequency;
 				this->_children = other._children;
 			}
 			return (*this); // allow a = b = c
@@ -138,9 +143,9 @@ class Node {
 		 * @param[in] rhs right hand side, second node to compare
 		 * @param[out] bool true if nodes have the same memory adress, else false
 		 */
-		bool operator==(const Node<T>& rhs){
+		bool operator==(const Node& rhs){
 			// same adress ⇒ same item
-			return &this == &rhs;
+			return this == &rhs;
 		}
 		
 		/** inequality operator
@@ -148,8 +153,8 @@ class Node {
 		 * @param[in] rhs second node to compare
 		 * @param[out] bool true if nodes have not the same memory adress, else false
 		 */
-		bool operator!=(const Node<T>& rhs){
-			return &this != &rhs;
+		bool operator!=(const Node &rhs){
+			return this != &rhs;
 			// return not(lhs == rhs);
 		}
 		
@@ -158,6 +163,7 @@ class Node {
 		 */
 		bool isLeaf(){
 			return 0 == _childNbr;
+			//return frenquency > 0;
 		}
 		
 		/** The height of the node
@@ -172,9 +178,9 @@ class Node {
 				// heights[0] : greatest height, heights[1] : computed height in the loop
 				int heights[2] = {0,0};
 				// for each child - using C++11 syntax
-				for(Node<T> child : _children){
+				for(Node* child : _children){
 					// compute child height and store it
-					heights[1] = child.height();
+					heights[1] = child->height();
 					// if computed height is greater then the old one
 					if(heights[0] < heights[1]){
 						// store it as the new greate one
@@ -187,86 +193,47 @@ class Node {
 		
 		/** Hook up a new child to the node
 		 * @param[in] n_data new data to store as a child of the node
+		 * @param[in] frequency if greater than 0, end of a word.
+		 * @param[out] newchild return the adress of the new child created
 		 */
-		void append(T n_data){
-			if(isLeaf()){
-				// add the value in children list as a new node
-				_children.push_front(Node<T>(n_data));
-				_childNbr++;
-			}
-			else {
-				std::cout << _tag << std::endl;
-				bool undone = true;
-				auto it = _children.begin();
-				while(it != _children.end() and undone){
-					if(it->_tag != n_data){
-						it->append(n_data);
-						undone = !undone;
-					}
-					else{
-						++it;
-					}
-				}
-			}
-		}  
-		
-		/** Remove a leaf from the node
-		 * @param[in] data data of the node's tag to remove
-		 * @exception TreeException Threw if data is not removed
-		 */
-		void remove(T data){
-			// remove child with the right tag
+		Node* append(const char n_data, int frequency){
+			Node* tmp;
 			bool undone = true;
-			auto it=_children.begin();
-			while(it != it.end() and undone){
-				if(it->_tag == data and it->isLeaf()){
-					undone = !undone;
-					delete it;
+			auto it = _children.begin();
+			while(undone and it != _children.end()){
+				if(n_data == (*it)->_tag){
+					(*it)->_wordFrequency = frequency; // update word frenquency
+					tmp = (*it);
+					undone = !undone; // job is now done
 				}
 				++it;
 			}
+			// if letter is not present, add it
 			if(undone){
-				throw TreeException("Element was not removed");
+				 tmp = new Node(n_data, frequency);
+				_children.push_front(tmp);
+				_childNbr++;
 			}
-		}
+			return tmp;
+		}  
 		
 		/** What is the tag of the Node ?
 		 * @param[out] tag The tag of the node
 		 */
-		T getTag(){ return _tag; }
+		char getTag(){ return _tag; }
 		
-		/** Do the tag is element or one of his children ?
-		 * @param[in] element Element to look for
-		 * @param[out] bool True if node or one of his child has the right tag,
-		 * else false.
-		 */
-		bool contains(T element){
-			if(isLeaf()){
-				return element == _tag;
-			}
-			else {
-				// browse children
-				bool here = false;
-				auto it = _children.begin();
-				while(not here and not it.end()){
-					here = it.contains(element);
-					++it;
-				}
-				return here;
-			}
-		}
 		
 		/** Get a string representation of the node and his child
 		 * @param[out] desc Description of the node (and his child)
 		 */
 		string toString(){
 			if(isLeaf()){
-				return string(_tag);
+				return string(&_tag);
 			}
 			else {
-				string desc = string(_tag);
-				for(Node<T> child: _children){
-					desc += ", " + child.toString();
+				string desc = string(&_tag);
+				for(Node* child: _children){
+					desc += ", " + child->toString();
 				}
 				return desc;
 			}
@@ -278,46 +245,28 @@ class Node {
  * 
  * A root value and subtrees of children, represented as a set of linked nodes.
  */
-template <typename T = string>
-class Tree {
+class TreeString {
 	
 	private:
-		Node<T> _root; /** First node of the tree */
+		Node _root; /** First node of the tree */
 	
 	public:
 		/** Default constructor
 		 */
-		Tree():
-			_root(nullptr)
+		TreeString():
+			_root(Node('@', 0))
 			{}
 			
 		/** Copy constructor
 		 */
-		Tree(const Tree<T> &other):
+		TreeString(const TreeString &other):
 			_root(other._root)
 			{}
 		
-		/** Common constructor,
-		 * create an tree
-		 * @param[in] element Root of the tree
-		 */
-		Tree(T element): 
-			_root(Node<T>(element))
-			{}
-			//_root = Node<T>(element);
-		
 		/** Destructor, destroy the whole tree
 		 */
-		~Tree(){
+		~TreeString(){
 			//delete &_root;
-		}
-		
-		/** Is the element in the tree ?
-		 * @param[in] element Search the element in the Tree
-		 * @param[out] bool True if element is here, else false.
-		 */
-		bool contains(T element){
-			return _root->contains(element);
 		}
 		
 		/** The height of the tree
@@ -327,22 +276,16 @@ class Tree {
 			return _root.height();
 		}
 		
-		/** Put an element in the tree
-		 * @param[in] element New element to put into the tree
+		/** Put a word in the tree
+		 * @param[in] word New element to put into the tree
 		 */
-		void put(T element){
-			_root.append(element);
-		}
-		
-		/** Remove an element from the tree
-		 * @param[in] data Element to remove
-		 */
-		void remove(T element){
-			try{
-				_root.remove(element);
-			} catch(TreeException ex){
-				// ?
+		void put(const string &word){
+			Node* lastInserted = &_root;
+			int i;
+			for(i=0; i<(word.size()-1); ++i){
+				lastInserted = lastInserted->append(word[i], 0);
 			}
+			lastInserted->append(word[i], 1); // end of the word
 		}
 		
 		/** Get a string representation of the Tree
@@ -352,7 +295,6 @@ class Tree {
 		string toString(){
 			return _root.toString();
 		}
-
 };
 
-#endif // TREE_HPP
+#endif // TREESTRING_HPP
