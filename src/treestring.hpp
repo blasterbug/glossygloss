@@ -97,8 +97,8 @@ class Node {
 		 */
 		Node(const Node &other):
 			_childNbr(other._childNbr),
-			_tag(other._tag),
 			_wordFrequency(other._wordFrequency),
+			_tag(other._tag),
 			_children(other._children)
 			{}
 			
@@ -108,8 +108,19 @@ class Node {
 		 */
 		Node(char data, int frequency):
 		_childNbr(0),
-		_tag(data),
-		_wordFrequency(frequency)
+		_wordFrequency(frequency),
+		_tag(data)
+		{
+			// initialize the simply-linked list
+			_children = forward_list<Node*>();
+		}
+		
+		/** Empty constructor
+		 */
+		Node():
+		_childNbr(0),
+		_wordFrequency(0),
+		_tag('@')
 		{
 			// initialize the simply-linked list
 			_children = forward_list<Node*>();
@@ -254,7 +265,7 @@ class TreeString {
 		/** Default constructor
 		 */
 		TreeString():
-			_root(Node('@', 0))
+			_root(Node())
 			{}
 			
 		/** Copy constructor
@@ -282,7 +293,8 @@ class TreeString {
 		void put(const string &word){
 			Node* lastInserted = &_root;
 			int i;
-			for(i=0; i<(word.size()-1); ++i){
+			int i_end = word.size()-1;
+			for(i=0; i<i_end; ++i){
 				lastInserted = lastInserted->append(word[i], 0);
 			}
 			lastInserted->append(word[i], 1); // end of the word
