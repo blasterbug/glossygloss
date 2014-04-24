@@ -45,7 +45,7 @@
 
 /// macro to define size of hash arrays
 #ifndef ARRAYSIZE
-#define ARRAYSIZE 10
+#define ARRAYSIZE 25
 #endif
 
 // included files section
@@ -360,14 +360,14 @@ class Hashtable {
 		 * @param[in] key key to find
 		 * @param[out] bool True if the key is here, else false
 		*/
-		std::vector<K> getAllKeys(){
-			std::vector<K> keys(0);
-			Alveole<K,V>* browser;
+		 void getAllKeys(std::vector<K> *keys){
 			for(int i = 0; i<ARRAYSIZE; ++i){
-				browser = _table[i];
-				keys.push_back(browser->getKey());
+				Alveole<K,V>* browser = _table[i];
+				while(END != browser){
+					keys->push_back(browser->getKey());					
+					browser = browser->getNext();
+				}
 			}
-			return keys;
 		}
 
 };

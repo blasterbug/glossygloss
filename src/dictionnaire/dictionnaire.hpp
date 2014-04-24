@@ -33,7 +33,7 @@
  */
  
  #include "../hashtable.hpp"
- #include "../pair.hpp"
+ #include <utility>
  
 #ifndef DICTIONNAIRE_HPP
 #define DICTIONNAIRE_HPP
@@ -44,31 +44,68 @@ class Dictionnaire{
 	private :
 		Hashtable<string,int> dico;
 		
-		void ajoutTrie(pair<string,int>** freq,pair<string,int> *valeur,int* nb ){
-			if(nb == 0){
-				freq[0]=valeur;
+		
+		/**
+		 * Fonction basique d'échange
+		 */
+		void echanger(std::pair<string,int>* freq, int i){			
+			std::pair<string,int> tmp = freq[i];
+			freq[i]=freq[i+1];
+			freq[i+1]=tmp;
+		}
+		
+		/**
+		 * Fonction basique de tri à bulle
+		 */
+		void triABulle(std::pair<string,int>* tableau, int longueur)
+		{
+		   int i;
+		   bool permutation;
+		   do{
+			  permutation = false;
+			  for(i=0; i<longueur-1; i++){
+				 if(tableau[i].second<tableau[i+1].second){
+					echanger(tableau, i);
+					permutation = true;
+				 }
+			  }
+			  longueur--;
+		   }
+		   while(permutation);
+		}
+		
+		
+		/**
+		 * Fonction privée qui ajoute si nécessaire un mot dans la table des occurences
+		 * @param[in] freq le tableau d'occurences
+		 * @param[in] valeur la valeur à ajouter
+		 * @param[in] nb le nombre de mots déjà présent dans le tableau
+		 */
+		void ajoutTrie(std::pair<string,int>* freq,std::pair<string,int> valeur,int* nb ){						
+			if(*nb<9){//si il y a moins de 9 occurences dans le tableau
+				freq[*nb] = valeur;//on ajoute le mot sans soucier de l'ordre
+				++(*nb);
+			}else if(*nb==9){//si il y a 9 occurences
+				freq[*nb] = valeur;//on ajoute le mot
+				++(*nb);
+				triABulle(freq,*nb);//puis on tri le tableau
 			}
-			else{
+			else{//sinon
 				int i=0;
-				while(valeur->getRight()<freq[i]->getRight() && i<*nb){
-					++i;
+				while(valeur.second<freq[i].second && i<10){//on parcours le tableau jusqu'à trouver une occurence inférieur 
+					++i;									//au mot que l'on souhaite ajouter
 				}
-				if(i==*nb){
-					freq[i] = valeur;
-					++nb;
-				}
-				else if(valeur->getRight()>freq[i]->getRight()){
-					pair<string,int> *tmp = freq[i];
-					freq[i] = valeur;
-					for(int j = i+1;j<10;++j){
-						pair<string,int> *tmp2=freq[j];
+				if(valeur.second>freq[i].second){//si il en existe une
+					std::pair<string,int> tmp = freq[i];
+					freq[i] = valeur;//on ajoute le mot
+					for(int j = i+1;j<9;++j){//puis on décale toutes les valeurs
+						std::pair<string,int> tmp2=freq[j];
 						freq[j]=tmp;
 						tmp=tmp2;
-					}
 				}
 			}
 		}
-	
+	}
 	public :
 	
 		/**
@@ -150,14 +187,15 @@ class Dictionnaire{
 		 * Fonction qui retourne les 10 mots les plus fréquents
 		 * @param[out] frequences, tableau des paires<mots,occurences> les plus fréquents
 		 */
-		void plusFrequentes(pair<string,int>** frequences){
+		void plusFrequentes(std::pair<string,int>* frequences){
 			int nb = 0;
-			frequences = new pair<string,int>*[10];
-			std::vector<string> mots = dico.getAllKeys();
-			for(string mot : mots){
-				ajoutTrie(frequences, new pair<string,int>(mot,dico.get(mot)), &nb); 
+			std::vector<string> mots(0);
+			dico.getAllKeys(&mots);//on stocke toutes les clés de la table
+			for(string mot : mots){//puis on les ajoutes si nécessaire.
+				ajoutTrie(frequences,std::pair<string,int>(mot,dico.get(mot)), &nb); 
 			}
 		}	
+				
 };
 
 #endif // DICTIONNAIRE_HPP
