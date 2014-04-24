@@ -34,14 +34,17 @@
 
 #ifndef TREESTRING_HPP
 #define TREESTRING_HPP
+
 #include <cassert>
 #include <string>
 #include <forward_list>
+#include <utility>
 #include <sstream>
 
 using std::string;
 using std::forward_list;
 using std::stringstream;
+using std::pair;
 
 /** \brief exception class for trees
  * 
@@ -212,9 +215,9 @@ class Node {
 			Node* tmp;
 			bool undone = true;
 			auto it = _children.begin();
+			// while n_data is not added
 			while(undone and it != _children.end()){
 				if(n_data == (*it)->_tag){
-					std::cout << "n_data : " << n_data << " _tag : " << _tag << " freq : " << frequency << std::endl;
 					(*it)->_wordFrequency += frequency; // update word frenquency
 					tmp = (*it);
 					undone = !undone; // job is now done
@@ -258,14 +261,36 @@ class Node {
 		 */
 		void toList(forward_list<string> &words, string word){
 			'@' != _tag?word += _tag:word; // if it's not the root, add tag
-			if(isLeaf()){
-				stringstream sstm; // faster and easier way
-				sstm << _wordFrequency; // to convert int to string
-				words.push_front(word + " " + sstm.str());
+			if(0 < _wordFrequency){
+				words.push_front(word);
 			}
-			else{
+			if(not isLeaf()){
 				for(Node* child : _children){
 					child->toList(words, word);
+				}
+			}
+		}
+
+		/** Put each word in a list
+		 * @param[in] words List containing all words and his frequency in pairs
+		 * @param[in] string wordCom Word which is currently reconvene
+		 */
+		void toFrequencedList(forward_list<pair<string,int>> &words, string word){
+			// if it's not the root, add tag
+			// avoid to prefix words with '@', the root char
+			'@' != _tag?word += _tag:word;
+			// if it's a word end
+			if(0 < _wordFrequency){
+				// add the word and his frequency in a pair and
+				// add it to the list
+				words.push_front(pair<string,int>(word, _wordFrequency));
+			}
+			// if it's not a leaf
+			if(not isLeaf()){
+				// for each child
+				for(Node* child : _children){
+					// get words in the subtree
+					child->toFrequencedList(words, word);
 				}
 			}
 		}
@@ -311,32 +336,46 @@ class TreeString {
 		 * @param[in] word New element to put into the tree
 		 */
 		void put(const string &word){
+			// adress of the last added Node
 			Node* lastInserted = &_root;
 			int i;
 			int i_end = word.size()-1;
+			// from the first to the last-but-one char
 			for(i=0; i<i_end; ++i){
+				// add it to the tree
 				lastInserted = lastInserted->append(word[i], 0);
 			}
+			// add the last char and the frequence of the word
 			lastInserted->append(word[i], 1); // end of the word
 		}
 
 		/** Get a string representation of the Tree
-		 * Each node tags is separated with a comma
+		 * @param[out] desc A string reprensation of the Tree where
+		 * each Node tag is separated by a comma
 		 */
 		string toString(){
 			return _root.toString();
 		}
 		
-		/** Get a list of all words stored in Tree
-		 * @param[out] desc Each word is separated with a comma
+		/** Get a list of all words stored in Tree and
+		 * their frequencies, i.e. how times a word was added
+		 * @param[out] desc Each word is separated by a comma
 		 */
 		string getWords(){
-			forward_list<string> words;
-			_root.toList(words, string());
-			string toReturn = words.front();
+			stringstream sstm; // faster and easier way to convert int to char
+			// get the list of all words stored
+			forward_list<pair<string,int>> words;
+			_root.toFrequencedList(words, string());
+			sstm << words.front().second;
+			// start the result string with the first one
+			string toReturn = words.front().first + " : " + sstm.str();
 			words.pop_front();
-			for(string word : words){
-				toReturn += ", " + word;
+			// for each word in the list
+			for(pair<string, int> word : words){
+				sstm.str(""); // clear stringstream
+				sstm << words.front().second;
+				// add it and a comma to the result string
+				toReturn += ", " + word.first + " : " + sstm.str();
 			}
 			return toReturn;
 		}
