@@ -50,6 +50,28 @@ template<> unsigned computehash<string>(string element){
 	dico.ajouterMot("mot");
 	dico.ajouterMot("test");
 	dico.associerMot("test");
-	//cout << dico.toString() << endl;
+	dico.ajouterMot("bla");
+	dico.ajouterMot("truc");
+	dico.ajouterMot("chien");
+	dico.ajouterMot("chat");
+	dico.ajouterMot("banane");
+	dico.ajouterMot("sac");
+	dico.ajouterMot("swag");
+	dico.ajouterMot("mortel");
+	dico.ajouterMot("lapin");
+	dico.associerMot("banane");
+	dico.associerMot("chien");
+	dico.associerMot("chien");
+	dico.associerMot("chien");
+	dico.associerMot("chat");
+	dico.associerMot("mot");
+	dico.associerMot("mortel");
+	pair<string,int>* freq = new std::pair<string,int>[10];
+	dico.plusFrequentes(freq);
+	cout<<freq<<endl<<&dico<<endl;
+	
+	for(int i=0;i<10;++i){
+		cout<<freq[i].first<<" : "<<freq[i].second<<endl;
+	}git 
 	return 0;
 }
