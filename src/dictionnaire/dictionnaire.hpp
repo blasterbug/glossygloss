@@ -50,10 +50,10 @@ class Dictionnaire{
 			}
 			else{
 				int i=0;
-				while(valeur->getRight()<freq[i]->getRight() && i<nb){
+				while(valeur->getRight()<freq[i]->getRight() && i<*nb){
 					++i;
 				}
-				if(i==&nb){
+				if(i==*nb){
 					freq[i] = valeur;
 					++nb;
 				}
@@ -63,7 +63,7 @@ class Dictionnaire{
 					for(int j = i+1;j<10;++j){
 						pair<string,int> *tmp2=freq[j];
 						freq[j]=tmp;
-						tmp=tmp2;	
+						tmp=tmp2;
 					}
 				}
 			}
@@ -132,8 +132,8 @@ class Dictionnaire{
 		
 		/**
 		 * Fonction qui récupère la valeur associée au mot
-		 * @param[in] mot, le mot dont on souhaite savoir la valeur associée
-		 * @param[out] valeur, la valeur associée
+		 * @param[in] mot le mot dont on souhaite savoir la valeur associée
+		 * @param[out] valeur la valeur associée
 		 * @exception lève une exception si le mot n'est pas présent dans le dictionnaire
 		 */
 		int valeurAssociee(string mot){
@@ -150,15 +150,13 @@ class Dictionnaire{
 		 * Fonction qui retourne les 10 mots les plus fréquents
 		 * @param[out] frequences, tableau des paires<mots,occurences> les plus fréquents
 		 */
-		**pair<string,int> plusFrequentes(){
-			int min = 0;
+		void plusFrequentes(pair<string,int>** frequences){
 			int nb = 0;
-			pair<string,int> **frequences = new pair<string,int>*[10];
+			frequences = new pair<string,int>*[10];
 			std::vector<string> mots = dico.getAllKeys();
 			for(string mot : mots){
-				ajoutTrie(frequences,new pair<string,int>(mot,dico.get(mot)),*nb); 
+				ajoutTrie(frequences, new pair<string,int>(mot,dico.get(mot)), &nb); 
 			}
-			return frequences;
 		}	
 };
 
