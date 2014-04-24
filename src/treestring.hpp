@@ -34,13 +34,14 @@
 
 #ifndef TREESTRING_HPP
 #define TREESTRING_HPP
-
 #include <cassert>
 #include <string>
 #include <forward_list>
+#include <sstream>
 
 using std::string;
 using std::forward_list;
+using std::stringstream;
 
 /** \brief exception class for trees
  * 
@@ -213,7 +214,8 @@ class Node {
 			auto it = _children.begin();
 			while(undone and it != _children.end()){
 				if(n_data == (*it)->_tag){
-					(*it)->_wordFrequency = frequency; // update word frenquency
+					std::cout << "n_data : " << n_data << " _tag : " << _tag << " freq : " << frequency << std::endl;
+					(*it)->_wordFrequency += frequency; // update word frenquency
 					tmp = (*it);
 					undone = !undone; // job is now done
 				}
@@ -247,6 +249,24 @@ class Node {
 					desc += ", " + child->toString();
 				}
 				return desc;
+			}
+		}
+
+		/** Put each words in a list
+		 * @param[in] words List containing all words
+		 * @param[in] string wordCom Word which is currently reconvene
+		 */
+		void toList(forward_list<string> &words, string word){
+			'@' != _tag?word += _tag:word; // if it's not the root, add tag
+			if(isLeaf()){
+				stringstream sstm; // faster and easier way
+				sstm << _wordFrequency; // to convert int to string
+				words.push_front(word + " " + sstm.str());
+			}
+			else{
+				for(Node* child : _children){
+					child->toList(words, word);
+				}
 			}
 		}
 
@@ -299,13 +319,26 @@ class TreeString {
 			}
 			lastInserted->append(word[i], 1); // end of the word
 		}
-		
+
 		/** Get a string representation of the Tree
 		 * Each node tags is separated with a comma
-		 * @param[out] desc String representation of the tree
 		 */
 		string toString(){
 			return _root.toString();
+		}
+		
+		/** Get a list of all words stored in Tree
+		 * @param[out] desc Each word is separated with a comma
+		 */
+		string getWords(){
+			forward_list<string> words;
+			_root.toList(words, string());
+			string toReturn = words.front();
+			words.pop_front();
+			for(string word : words){
+				toReturn += ", " + word;
+			}
+			return toReturn;
 		}
 };
 
