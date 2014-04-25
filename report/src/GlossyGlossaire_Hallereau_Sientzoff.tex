@@ -8,7 +8,7 @@
 \usepackage{tikz}
 
 \author{François \textsc{Hallereau} \\ Benjamin \textsc{Sientzoff}}
-\title{GlossyGlossaire}
+\title{Dictionnaire}
 
 \makeindex
 
@@ -24,20 +24,57 @@
 
 \section*{Introduction}
 \addcontentsline{toc}{section}{\protect\numberline{}Introduction}
+\paragraph{}{
 Ce projet consiste à implémenter un dictionnaire (structure de données non ordonnée avec unicité). Cette implémentation a été réalisé de deux manières différentes. 
 
 L'une utilise une table de hachage dans laquelle on stocke les mots. L'autre est un arbre où sont stocké un à un les caractères des mots à sauvegarder.
 
-\section{Le \emph{dictionnache}}
-Cette version reprend la table de hachage du précédent tp.
+Le projet devra aussi contenir un code permettant de tester le bon fonctionnement des deux implémentations.
 
-Pour cette implémentation, les fonctions d'ajout et de suppression reprennent les fonctions déjà existantes.
- 
+Pour compiler notre projet, la commande suivante est à utiliser :
+\begin{verbatim}
+ $ g++ -std=c++0x src/application.cpp application
+\end{verbatim}
+
+Puis pour l'exécution :
+\begin{verbatim}
+ $ ./src/application lenomdufichieralire
+\end{verbatim}
+}
+
+
+\newpage
+
+\section{Le \emph{dictionnache}}
+\paragraph{}{
+Cette version reprend la table de hachage du précédent tp tout en précisant les types de données qui sont ici : une chaine de caractères pour la clé et un entier pour la valeur associée au mot.
+Pour cette implémentation, les fonctions d'ajout, de modification reprennent les fonctions déjà existantes de la table de hachage.
+
+La fonction qui renvoie les 10 mots les plus fréquents tri les mots de la table de hachage puis récupère les 10 premier.
+}
+\newpage 
 
 
 \section{L'\emph{Arbramots}}
+\paragraph{}{
+Le dictionnaire utilise la version de l'arbre implémenté dans la classe TreeString.
+Les fonctions d'ajout et de modification sont construite de la même manière puisque l'arbre gère nativement la modification de la valeur associée au mot.
+La fonction valeurAssociee fonctionne de la manière suivante : elle récupère tous les couples <mot,occurences> contenu dans l'arbre puis renvoie la valeur associée du mot passé en paramètre.
 
+Lors des tests, nous avons put remarquer que le temps d’exécution était nettement plus supérieur comparé à la version utilisant la table de hachage. 
+
+Et pour cause, la fonction contientMot() de l'arbre utilise plus de ressource que celle de la table de hachage. De plus, l'arbre a été conçu pour qu'il n'y est pas besoin d'utiliser cette fonction à chaque ajout. 
+
+On aurait donc très bien put n'utiliser que la fonction ajouterMot() même dans le cas ou le mot est déjà présent. Mais nous avons décider de garder les fonctions ajouterMot et associerMot() dans un soucis du respect du cahier des charges.
+
+Pour la fonction qui récupère les 10 mots les plus fréquents, elle est semblable à celle de la table de hachage. La seule différence étant la fonctions qui permet de récupérer tous les mots contenus dans la structure.
+}
+\newpage
+  
 \section*{Conclusion}
+\paragraph{}{
+Dans ce projet, on remarque que la table de hachage à un temps d'exécution inférieur à celui de l'arbre. en effet la table de hachage manipule directement des mots or l'arbre utilise des caractères qui nécessite d'être concaténé pour formé une chaine. 
+}
 \addcontentsline{toc}{section}{\protect\numberline{}Conclusion}
 
 
