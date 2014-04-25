@@ -75,7 +75,7 @@ int main(int argc,const char** argv){
 		cout << ", " << word;
 	}
 	cout << endl;
-	forward_list<pair<string, int>> freq;
+	forward_list<pair<string, int>> freq = forward_list<pair<string, int>>();
 	storage.getWordsFrequencies(freq);
 	cout << "Frequencies words : " << endl;
 	cout << "	" << freq.front().first << " : " << freq.front().second << endl;
