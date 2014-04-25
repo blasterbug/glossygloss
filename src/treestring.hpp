@@ -365,28 +365,15 @@ class TreeString {
 			_root.toList(list, string());
 		}
 		
-		//~ /** Get a list of all words stored in Tree and
-		 //~ * their frequencies, i.e. how times a word was added
-		 //~ * @param[out] desc Each word is separated by a comma
-		 //~ */
-		//~ getWords(){
-			//~ stringstream sstm; // faster and easier way to convert int to char
-			//~ // get the list of all words stored
-			//~ forward_list<pair<string,int>> words;
-			//~ _root.toFrequencedList(words, string());
-			//~ sstm << words.front().second;
-			//~ // start the result string with the first one
-			//~ string toReturn = words.front().first + " : " + sstm.str();
-			//~ words.pop_front();
-			//~ // for each word in the list
-			//~ for(pair<string, int> word : words){
-				//~ sstm.str(""); // clear stringstream
-				//~ sstm << words.front().second;
-				//~ // add it and a comma to the result string
-				//~ toReturn += ", " + word.first + " : " + sstm.str();
-			//~ }
-			//~ return toReturn;
-		//~ }
+		/** Get a list of all words stored in Tree and
+		 * their frequencies, i.e. how times a word was added
+		 * @param[int] list List of pair containing for each word in Tree
+		 * his frequency
+		 */
+		getWordsFrequencies(forward_list<pair<string,int>> words){
+			// get the list of all words stored
+			_root.toFrequencedList(words, string());
+		}
 };
 
 #endif // TREESTRING_HPP
