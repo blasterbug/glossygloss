@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['dictionnaire',['Dictionnaire',['../class_dictionnaire.html#a33989badb9ab2f0112c3e3e2c008285f',1,'Dictionnaire']]]
+  ['dictionnaire',['Dictionnaire',['../class_dictionnaire.html#a269116344596a7441062906bd8857b0a',1,'Dictionnaire::Dictionnaire()'],['../class_dictionnaire.html#a269116344596a7441062906bd8857b0a',1,'Dictionnaire::Dictionnaire()']]]
 ];

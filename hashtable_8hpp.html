@@ -23,7 +23,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">Glossygloss
-   &#160;<span id="projectnumber">0.3</span>
+   &#160;<span id="projectnumber">0.2</span>
    </div>
    <div id="projectbrief">Glossygloss is set of classes to use several data structure as Tree or hash table.</div>
   </td>
@@ -96,13 +96,15 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="contents">
 <div class="textblock"><code>#include &lt;string&gt;</code><br/>
 <code>#include &lt;cassert&gt;</code><br/>
+<code>#include &lt;utility&gt;</code><br/>
+<code>#include &lt;forward_list&gt;</code><br/>
 </div>
 <p><a href="hashtable_8hpp_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Classes</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_hash_exception.html">HashException</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Exception class to manage <a class="el" href="class_hashtable.html" title="Maps a key to a value. ">Hashtable</a> errors.  <a href="class_hash_exception.html#details">More...</a><br/></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_hashtable_exception.html">HashtableException</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Exception class to manage <a class="el" href="class_hashtable.html" title="Maps a key to a value. ">Hashtable</a> errors.  <a href="class_hashtable_exception.html#details">More...</a><br/></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_alveole.html">Alveole&lt; K, V &gt;</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Class to define <a class="el" href="class_hashtable.html" title="Maps a key to a value. ">Hashtable</a> alveoles.  <a href="class_alveole.html#details">More...</a><br/></td></tr>
@@ -116,14 +118,16 @@ Macros</h2></td></tr>
 <tr class="memitem:a29fd18bed01c4d836c7ebfe73a125c3f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="hashtable_8hpp.html#a29fd18bed01c4d836c7ebfe73a125c3f">END</a>&#160;&#160;&#160;nullptr</td></tr>
 <tr class="memdesc:a29fd18bed01c4d836c7ebfe73a125c3f"><td class="mdescLeft">&#160;</td><td class="mdescRight">macro to define end of alveole chains  <a href="#a29fd18bed01c4d836c7ebfe73a125c3f">More...</a><br/></td></tr>
 <tr class="separator:a29fd18bed01c4d836c7ebfe73a125c3f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a78d344caabde729a4559393a0552bf1c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="hashtable_8hpp.html#a78d344caabde729a4559393a0552bf1c">ARRAYSIZE</a>&#160;&#160;&#160;10</td></tr>
+<tr class="memitem:a78d344caabde729a4559393a0552bf1c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="hashtable_8hpp.html#a78d344caabde729a4559393a0552bf1c">ARRAYSIZE</a>&#160;&#160;&#160;25</td></tr>
 <tr class="memdesc:a78d344caabde729a4559393a0552bf1c"><td class="mdescLeft">&#160;</td><td class="mdescRight">macro to define size of hash arrays  <a href="#a78d344caabde729a4559393a0552bf1c">More...</a><br/></td></tr>
 <tr class="separator:a78d344caabde729a4559393a0552bf1c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8de3ed741dadc9c979a4ff17c0a9116e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="hashtable_8hpp.html#a8de3ed741dadc9c979a4ff17c0a9116e">NDEBUG</a></td></tr>
+<tr class="separator:a8de3ed741dadc9c979a4ff17c0a9116e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:a0884e6a3e2395d8a9cec36a7c651820b"><td class="memTemplParams" colspan="2">template&lt;typename K &gt; </td></tr>
-<tr class="memitem:a0884e6a3e2395d8a9cec36a7c651820b"><td class="memTemplItemLeft" align="right" valign="top">unsigned&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="hashtable_8hpp.html#a0884e6a3e2395d8a9cec36a7c651820b">computehash</a> (<a class="el" href="sample__tree_8cpp.html#a97d832ae23af4f215e801e37e4f94254">K</a> element)</td></tr>
+<tr class="memitem:a0884e6a3e2395d8a9cec36a7c651820b"><td class="memTemplItemLeft" align="right" valign="top">unsigned&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="hashtable_8hpp.html#a0884e6a3e2395d8a9cec36a7c651820b">computehash</a> (<a class="el" href="sample__hashtable_8cpp.html#a97d832ae23af4f215e801e37e4f94254">K</a> element)</td></tr>
 <tr class="separator:a0884e6a3e2395d8a9cec36a7c651820b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
@@ -147,7 +151,7 @@ File informations</h1>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define ARRAYSIZE&#160;&#160;&#160;10</td>
+          <td class="memname">#define ARRAYSIZE&#160;&#160;&#160;25</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -170,6 +174,18 @@ File informations</h1>
 
 </div>
 </div>
+<a class="anchor" id="a8de3ed741dadc9c979a4ff17c0a9116e"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define NDEBUG</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <h2 class="groupheader">Function Documentation</h2>
 <a class="anchor" id="a0884e6a3e2395d8a9cec36a7c651820b"></a>
 <div class="memitem">
@@ -180,7 +196,7 @@ template&lt;typename K &gt; </div>
         <tr>
           <td class="memname">unsigned computehash </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="sample__tree_8cpp.html#a97d832ae23af4f215e801e37e4f94254">K</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="sample__hashtable_8cpp.html#a97d832ae23af4f215e801e37e4f94254">K</a>&#160;</td>
           <td class="paramname"><em>element</em></td><td>)</td>
           <td></td>
         </tr>
@@ -194,7 +210,7 @@ template&lt;typename K &gt; </div>
   </table>
   </dd>
 </dl>
-<p>template&lt;&gt; unisgned <a class="el" href="application_8cpp.html#a9f9fe4e9cebe86142ae9312c8ea4d458">computehash&lt;string&gt;(string element)</a></p>
+<p>template&lt;&gt; unisgned <a class="el" href="dictionnaire__hash_8hpp.html#a9f9fe4e9cebe86142ae9312c8ea4d458">computehash&lt;string&gt;(string element)</a></p>
 <p>your implementation of hashcode function </p>
 
 </div>
@@ -202,7 +218,7 @@ template&lt;typename K &gt; </div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Apr 17 2014 18:53:46 for Glossygloss by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Apr 25 2014 22:24:40 for Glossygloss by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

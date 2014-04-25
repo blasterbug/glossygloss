@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['pair',['pair',['../classpair.html',1,'pair&lt; L, R &gt;'],['../classpair.html#a046ec85f94eb8c19cb44a76520260bd5',1,'pair::pair(L value1, R value2)'],['../classpair.html#ad4237d4483a810dd8e2cb6517cd989fc',1,'pair::pair(const pair&lt; L, R &gt; &amp;other)']]],
-  ['pair_2ehpp',['pair.hpp',['../pair_8hpp.html',1,'']]],
-  ['put',['put',['../class_hashtable.html#af6f9a4e3d5c74f0d5d5f966eece2fc2b',1,'Hashtable::put()'],['../class_tree.html#a8f0fd8ff56ed1f4a5d1e86f404d364ea',1,'Tree::put()']]]
+  ['plusfrequentes',['plusFrequentes',['../class_dictionnaire.html#a087c9d8cf97ab57e9672d2648aeba80f',1,'Dictionnaire::plusFrequentes(pair&lt; string, int &gt; *frequences)'],['../class_dictionnaire.html#a087c9d8cf97ab57e9672d2648aeba80f',1,'Dictionnaire::plusFrequentes(pair&lt; string, int &gt; *frequences)']]],
+  ['put',['put',['../class_hashtable.html#af6f9a4e3d5c74f0d5d5f966eece2fc2b',1,'Hashtable::put()'],['../class_tree.html#a8f0fd8ff56ed1f4a5d1e86f404d364ea',1,'Tree::put()'],['../class_tree_string.html#ab61ae2b5bdba5d2d7d3a7f170a1d78e5',1,'TreeString::put()']]]
 ];

@@ -23,7 +23,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">Glossygloss
-   &#160;<span id="projectnumber">0.3</span>
+   &#160;<span id="projectnumber">0.2</span>
    </div>
    <div id="projectbrief">Glossygloss is set of classes to use several data structure as Tree or hash table.</div>
   </td>
@@ -115,8 +115,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 <h3><a class="anchor" id="index__"></a>- _ -</h3><ul>
 <li>_cause
-: <a class="el" href="class_hash_exception.html#a81aab9b1aff52871fc2e39b5374b1831">HashException</a>
+: <a class="el" href="class_hashtable_exception.html#a242dcd5048ce89c2aadd0ca97f5c6d9a">HashtableException</a>
 , <a class="el" href="class_tree_exception.html#a90175b0c5a1e2a7ebb77cadc92b0388b">TreeException</a>
+, <a class="el" href="class_tree_string_exception.html#a4de00ce12f252d1d159211338b999164">TreeStringException</a>
 </li>
 <li>_childNbr
 : <a class="el" href="class_node.html#a4b3606724f7302e3df96ff87d623312d">Node&lt; T &gt;</a>
@@ -127,17 +128,12 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <li>_key
 : <a class="el" href="class_alveole.html#aebb26347bcaaaf2c0cbe96903b63bc70">Alveole&lt; K, V &gt;</a>
 </li>
-<li>_left
-: <a class="el" href="classpair.html#a29f041eb7a74c38e18131308e8bd0df5">pair&lt; L, R &gt;</a>
-</li>
 <li>_next
 : <a class="el" href="class_alveole.html#aa566b7335f9ef0dc83ad2a596e659f90">Alveole&lt; K, V &gt;</a>
 </li>
-<li>_right
-: <a class="el" href="classpair.html#a658ae3d8fada56ae70b0b2576c120dfb">pair&lt; L, R &gt;</a>
-</li>
 <li>_root
 : <a class="el" href="class_tree.html#a4f23e98860f95126711a63822b7d0a4c">Tree&lt; T &gt;</a>
+, <a class="el" href="class_tree_string.html#a370851bf8faefb8655a188994715ed31">TreeString</a>
 </li>
 <li>_table
 : <a class="el" href="class_hashtable.html#a741b7872f368f468f3b49d687830368a">Hashtable&lt; K, V &gt;</a>
@@ -148,21 +144,24 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <li>_value
 : <a class="el" href="class_alveole.html#a50952a1693019a7ca857df267c047c84">Alveole&lt; K, V &gt;</a>
 </li>
+<li>_wordFrequency
+: <a class="el" href="class_node.html#add728cb28da68ec5ef2d9cac31c9a08d">Node&lt; T &gt;</a>
+</li>
 </ul>
 
 
 <h3><a class="anchor" id="index_a"></a>- a -</h3><ul>
 <li>ajouterMot()
-: <a class="el" href="class_dictionnaire.html#a8f143d42237b62b2eaf1201fc9c23579">Dictionnaire&lt; V &gt;</a>
+: <a class="el" href="class_dictionnaire.html#add484040376d8e35b086df1222f5dc03">Dictionnaire</a>
 </li>
 <li>Alveole()
-: <a class="el" href="class_alveole.html#a66a49658c41430d186827c8926f64900">Alveole&lt; K, V &gt;</a>
+: <a class="el" href="class_alveole.html#a24ac02d39a6eca02630f6f2a11d86575">Alveole&lt; K, V &gt;</a>
 </li>
 <li>append()
 : <a class="el" href="class_node.html#a141b357c5d9a30cd9b3062337ef67edb">Node&lt; T &gt;</a>
 </li>
 <li>associerMot()
-: <a class="el" href="class_dictionnaire.html#ac7daf8f11f54d7b3b94e11594934b3b5">Dictionnaire&lt; V &gt;</a>
+: <a class="el" href="class_dictionnaire.html#a8d1de380d1b5776234c94a313f0f521e">Dictionnaire</a>
 </li>
 </ul>
 
@@ -174,17 +173,17 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 , <a class="el" href="class_tree.html#a6de8e50615c6a644025b2f1af8684f9c">Tree&lt; T &gt;</a>
 </li>
 <li>contientMot()
-: <a class="el" href="class_dictionnaire.html#a29c8a7f5a46917ca7f9c9d2d5dd2194e">Dictionnaire&lt; V &gt;</a>
+: <a class="el" href="class_dictionnaire.html#a7821613d5c6e03b481d678bb982d29c9">Dictionnaire</a>
 </li>
 </ul>
 
 
 <h3><a class="anchor" id="index_d"></a>- d -</h3><ul>
 <li>dico
-: <a class="el" href="class_dictionnaire.html#a15de60d6c918893933e6553127612a75">Dictionnaire&lt; V &gt;</a>
+: <a class="el" href="class_dictionnaire.html#af199a172c623826621b6df871ecb5aed">Dictionnaire</a>
 </li>
 <li>Dictionnaire()
-: <a class="el" href="class_dictionnaire.html#a33989badb9ab2f0112c3e3e2c008285f">Dictionnaire&lt; V &gt;</a>
+: <a class="el" href="class_dictionnaire.html#a269116344596a7441062906bd8857b0a">Dictionnaire</a>
 </li>
 </ul>
 
@@ -196,14 +195,11 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <li>getKey()
 : <a class="el" href="class_alveole.html#add57358f630300978cfd314a9a392c8b">Alveole&lt; K, V &gt;</a>
 </li>
-<li>getLeft()
-: <a class="el" href="classpair.html#a37d9c8e3fe98a340bb9a83de04d896a0">pair&lt; L, R &gt;</a>
-</li>
 <li>getNext()
 : <a class="el" href="class_alveole.html#ae540dba4d60c74ff17e2abc03deb33c8">Alveole&lt; K, V &gt;</a>
 </li>
-<li>getRight()
-: <a class="el" href="classpair.html#a5d2ae248a7474b33ef61db51475e0b8e">pair&lt; L, R &gt;</a>
+<li>getPairs()
+: <a class="el" href="class_hashtable.html#a75e0588845c907821b884af8a0afe1b7">Hashtable&lt; K, V &gt;</a>
 </li>
 <li>getTag()
 : <a class="el" href="class_node.html#a3b188b785e394924c11f2f68369c0cdf">Node&lt; T &gt;</a>
@@ -211,19 +207,26 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <li>getValue()
 : <a class="el" href="class_alveole.html#a63378af984be5bb63fb755010c61002f">Alveole&lt; K, V &gt;</a>
 </li>
+<li>getWords()
+: <a class="el" href="class_tree_string.html#a51187eb2f3f6ec062a6709ce40b0234f">TreeString</a>
+</li>
+<li>getWordsFrequencies()
+: <a class="el" href="class_tree_string.html#abbea8323b70edd4ac271de19317ac140">TreeString</a>
+</li>
 </ul>
 
 
 <h3><a class="anchor" id="index_h"></a>- h -</h3><ul>
-<li>HashException()
-: <a class="el" href="class_hash_exception.html#a2edb18910c12faf0bfd2ae3f1e782b60">HashException</a>
-</li>
 <li>Hashtable()
 : <a class="el" href="class_hashtable.html#a2f77d0c6d61286bf8d66552b5ade3f27">Hashtable&lt; K, V &gt;</a>
+</li>
+<li>HashtableException()
+: <a class="el" href="class_hashtable_exception.html#a1a3ae95bd655064144b485f0938fddca">HashtableException</a>
 </li>
 <li>height()
 : <a class="el" href="class_node.html#a0da7f6a2356d1e7f047f8bfda1edd8d8">Node&lt; T &gt;</a>
 , <a class="el" href="class_tree.html#a9300caf575a5a89292e620e8b73112c7">Tree&lt; T &gt;</a>
+, <a class="el" href="class_tree_string.html#ac9ce25eae04196336cd8ac83ec5cb9b6">TreeString</a>
 </li>
 </ul>
 
@@ -259,12 +262,13 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 
 <h3><a class="anchor" id="index_p"></a>- p -</h3><ul>
-<li>pair()
-: <a class="el" href="classpair.html#a046ec85f94eb8c19cb44a76520260bd5">pair&lt; L, R &gt;</a>
+<li>plusFrequentes()
+: <a class="el" href="class_dictionnaire.html#a087c9d8cf97ab57e9672d2648aeba80f">Dictionnaire</a>
 </li>
 <li>put()
 : <a class="el" href="class_hashtable.html#af6f9a4e3d5c74f0d5d5f966eece2fc2b">Hashtable&lt; K, V &gt;</a>
 , <a class="el" href="class_tree.html#a8f0fd8ff56ed1f4a5d1e86f404d364ea">Tree&lt; T &gt;</a>
+, <a class="el" href="class_tree_string.html#ab61ae2b5bdba5d2d7d3a7f170a1d78e5">TreeString</a>
 </li>
 </ul>
 
@@ -285,18 +289,22 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <li>setValue()
 : <a class="el" href="class_alveole.html#a52932b33fef397328eea9ab139d1621e">Alveole&lt; K, V &gt;</a>
 </li>
-<li>supprimerMot()
-: <a class="el" href="class_dictionnaire.html#ae46054258f9fad3ffe5943199600c632">Dictionnaire&lt; V &gt;</a>
-</li>
 </ul>
 
 
 <h3><a class="anchor" id="index_t"></a>- t -</h3><ul>
+<li>toFrequencedList()
+: <a class="el" href="class_node.html#ae8592b9ab27d013cf6acc6efacb39d1a">Node&lt; T &gt;</a>
+</li>
+<li>toList()
+: <a class="el" href="class_node.html#acca1581b1ffc18b14ac92073d932c099">Node&lt; T &gt;</a>
+</li>
 <li>toString()
 : <a class="el" href="class_alveole.html#a504981011163116c40d710a0e1d26a81">Alveole&lt; K, V &gt;</a>
 , <a class="el" href="class_hashtable.html#ad3141029cd09f8e5e2026af5156c1e0e">Hashtable&lt; K, V &gt;</a>
 , <a class="el" href="class_node.html#abb91d745a01f97fe51a35811e0d42801">Node&lt; T &gt;</a>
 , <a class="el" href="class_tree.html#aabd6868e9e02fbe9affb1f7eed04d51c">Tree&lt; T &gt;</a>
+, <a class="el" href="class_tree_string.html#aed814ffed425fac5893e5a74f641977b">TreeString</a>
 </li>
 <li>Tree()
 : <a class="el" href="class_tree.html#a30ebe31999547d31fea5b40cc805f6a2">Tree&lt; T &gt;</a>
@@ -304,20 +312,27 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <li>TreeException()
 : <a class="el" href="class_tree_exception.html#aa75b34acf02d0e86fb70a63242894311">TreeException</a>
 </li>
+<li>TreeString()
+: <a class="el" href="class_tree_string.html#a13117ec068109c174402c8f60597f243">TreeString</a>
+</li>
+<li>TreeStringException()
+: <a class="el" href="class_tree_string_exception.html#a14c9647a77ce331faddb82724325419a">TreeStringException</a>
+</li>
 </ul>
 
 
 <h3><a class="anchor" id="index_v"></a>- v -</h3><ul>
 <li>valeurAssociee()
-: <a class="el" href="class_dictionnaire.html#a73ff9ec739d7e8a6a73ec55dc8c84688">Dictionnaire&lt; V &gt;</a>
+: <a class="el" href="class_dictionnaire.html#a9eb8f3eec4f1b666dca15db7142d8d35">Dictionnaire</a>
 </li>
 </ul>
 
 
 <h3><a class="anchor" id="index_w"></a>- w -</h3><ul>
 <li>what()
-: <a class="el" href="class_hash_exception.html#a542711eb0045dcec64d7a8596b2450ff">HashException</a>
+: <a class="el" href="class_hashtable_exception.html#a980d0861fe744622043fcdd654ea5e07">HashtableException</a>
 , <a class="el" href="class_tree_exception.html#ab899a6ec0f82bf770b88ba4982e3d696">TreeException</a>
+, <a class="el" href="class_tree_string_exception.html#a80013d6d7031026ea7ab0be964c41713">TreeStringException</a>
 </li>
 </ul>
 
@@ -327,19 +342,16 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 : <a class="el" href="class_alveole.html#ac5b90a69dc1458b981a742e80499aca0">Alveole&lt; K, V &gt;</a>
 </li>
 <li>~Dictionnaire()
-: <a class="el" href="class_dictionnaire.html#a926bbbe62a6150a932c7ac832e13015c">Dictionnaire&lt; V &gt;</a>
-</li>
-<li>~HashException()
-: <a class="el" href="class_hash_exception.html#a44832370e4c1914bafe002a27bf2d3a4">HashException</a>
+: <a class="el" href="class_dictionnaire.html#a1421a1ff914425472e7ddc41bf536775">Dictionnaire</a>
 </li>
 <li>~Hashtable()
 : <a class="el" href="class_hashtable.html#a3f4057afda4ad0f6b805f900e43b53f6">Hashtable&lt; K, V &gt;</a>
 </li>
+<li>~HashtableException()
+: <a class="el" href="class_hashtable_exception.html#a9668a272e0470e9d4a16f0f5307e6153">HashtableException</a>
+</li>
 <li>~Node()
 : <a class="el" href="class_node.html#ae923d0417581dd19784d55b901f0f7f0">Node&lt; T &gt;</a>
-</li>
-<li>~pair()
-: <a class="el" href="classpair.html#a0425a137897f8437672fe83f2d785c38">pair&lt; L, R &gt;</a>
 </li>
 <li>~Tree()
 : <a class="el" href="class_tree.html#a04affc46d89a0ef5d517ab685c9c346e">Tree&lt; T &gt;</a>
@@ -347,11 +359,17 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <li>~TreeException()
 : <a class="el" href="class_tree_exception.html#a68dfe698f22aabd8d51b0c533f818263">TreeException</a>
 </li>
+<li>~TreeString()
+: <a class="el" href="class_tree_string.html#ad4672cc528918926c95098738924f3d2">TreeString</a>
+</li>
+<li>~TreeStringException()
+: <a class="el" href="class_tree_string_exception.html#a4740cacfe385483aa466be7a7399ba82">TreeStringException</a>
+</li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Apr 17 2014 18:53:46 for Glossygloss by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Apr 25 2014 22:24:41 for Glossygloss by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>
