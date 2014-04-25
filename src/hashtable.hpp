@@ -360,11 +360,11 @@ class Hashtable {
 		 * @param[in] key key to find
 		 * @param[out] bool True if the key is here, else false
 		*/
-		 void getAllKeys(std::vector<K> *keys){
+		 void getAllKeys(std::vector<K> &keys){
 			for(int i = 0; i<ARRAYSIZE; ++i){
 				Alveole<K,V>* browser = _table[i];
 				while(END != browser){
-					keys->push_back(browser->getKey());					
+					keys.push_back(browser->getKey());					
 					browser = browser->getNext();
 				}
 			}

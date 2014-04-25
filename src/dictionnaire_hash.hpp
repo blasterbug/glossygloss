@@ -81,24 +81,36 @@ class Dictionnaire{
 		 * @param[in] valeur la valeur à ajouter
 		 * @param[in] nb le nombre de mots déjà présent dans le tableau
 		 */
-		void ajoutTrie(std::pair<string,int>* freq,std::pair<string,int> valeur,int* nb ){						
-			if(*nb<9){//si il y a moins de 9 occurences dans le tableau
-				freq[*nb] = valeur;//on ajoute le mot sans soucier de l'ordre
+		void ajoutTrie(std::pair<string,int>* freq,std::pair<string,int> valeur,int* nb ){
+			//si il y a moins de 9 occurences dans le tableau
+			if(*nb<9){
+				//on ajoute le mot sans soucier de l'ordre
+				freq[*nb] = valeur;
 				++(*nb);
-			}else if(*nb==9){//si il y a 9 occurences
-				freq[*nb] = valeur;//on ajoute le mot
-				++(*nb);
-				triABulle(freq,*nb);//puis on tri le tableau
 			}
-			else{//sinon
+			//si il y a 9 occurences
+			else if(*nb==9){
+				//on ajoute le mot
+				freq[*nb] = valeur;
+				++(*nb);
+				//puis on tri le tableau
+				triABulle(freq,*nb);
+			}
+			//sinon
+			else{
 				int i=0;
-				while(valeur.second<freq[i].second && i<10){//on parcours le tableau jusqu'à trouver une occurence inférieur 
-					++i;									//au mot que l'on souhaite ajouter
+				//on parcours le tableau jusqu'à trouver une occurence inférieur
+				//au mot que l'on souhaite ajouter
+				while(valeur.second<freq[i].second && i<10){ 
+					++i;
 				}
-				if(valeur.second>freq[i].second){//si il en existe une
+				//si il en existe une
+				if(valeur.second>freq[i].second){
 					std::pair<string,int> tmp = freq[i];
-					freq[i] = valeur;//on ajoute le mot
-					for(int j = i+1;j<9;++j){//puis on décale toutes les valeurs
+					//on ajoute le mot
+					freq[i] = valeur;
+					//puis on décale toutes les valeurs
+					for(int j = i+1;j<9;++j){
 						std::pair<string,int> tmp2=freq[j];
 						freq[j]=tmp;
 						tmp=tmp2;
@@ -174,8 +186,10 @@ class Dictionnaire{
 		void plusFrequentes(std::pair<string,int>* frequences){
 			int nb = 0;
 			std::vector<string> mots(0);
-			dico.getAllKeys(&mots);//on stocke toutes les clés de la table
-			for(string mot : mots){//puis on les ajoutes si nécessaire.
+			//puis on décale toutes les valeurs
+			dico.getAllKeys(mots);
+			//puis on les ajoutes si nécessaire.
+			for(string mot : mots){
 				ajoutTrie(frequences,std::pair<string,int>(mot,dico.get(mot)), &nb); 
 			}
 		}	
