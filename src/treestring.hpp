@@ -47,7 +47,7 @@ using std::stringstream;
 using std::pair;
 
 /** \brief exception class for trees
- * 
+ * useless
  * Usefull to manage errors and the unforeseen
  */
 class TreeStringException : std::exception {
