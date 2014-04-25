@@ -65,7 +65,12 @@ int main(int argc,const char** argv){
 	
 	file.close();
 	cout << "height : " << storage.height() << endl;
-	cout << storage.getWords() << endl;
+	forward_list<string> words;
+	storage.getWords(words);
+	cout << "Word in tree :" << endl;
+	for(string word : words){
+		cout << word << endl;
+	}
 	cout << storage.toString() << endl;
 	return 0;
 }
