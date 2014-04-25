@@ -357,7 +357,7 @@ class Hashtable {
 		}
 		
 		/** Which keys maped values ?
-		 * @param[in] key key to find
+		 * @param[in] keys Vector which contains keys to find
 		 * @param[out] bool True if the key is here, else false
 		*/
 		 void getAllKeys(std::vector<K> &keys){

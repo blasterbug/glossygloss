@@ -81,17 +81,11 @@ class Dictionnaire{
 		 * @param[in] valeur la valeur à ajouter
 		 * @param[in] nb le nombre de mots déjà présent dans le tableau
 		 */
-<<<<<<< HEAD
-		void ajoutTrie(std::pair<string,int> *freq,std::pair<string,int> valeur,int* nb ){						
-			if(*nb<9){//si il y a moins de 9 occurences dans le tableau
-				freq[*nb] = valeur;//on ajoute le mot sans soucier de l'ordre
-=======
 		void ajoutTrie(std::pair<string,int>* freq,std::pair<string,int> valeur,int* nb ){
 			//si il y a moins de 9 occurences dans le tableau
 			if(*nb<9){
 				//on ajoute le mot sans soucier de l'ordre
 				freq[*nb] = valeur;
->>>>>>> a82529e773b7f650569c69ff0da40d0ea49e21de
 				++(*nb);
 			}
 			//si il y a 9 occurences
