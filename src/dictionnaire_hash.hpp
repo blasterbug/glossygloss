@@ -102,16 +102,13 @@ class Dictionnaire{
 		/**
 		 * Fonction qui récupère la valeur associée au mot
 		 * @param[in] mot le mot dont on souhaite savoir la valeur associée
-		 * @param[out] valeur la valeur associée
-		 * @exception lève une exception si le mot n'est pas présent dans le dictionnaire
+		 * @param[out] valeur la valeur associée, 0 peut indiquer l'absence du mot
 		 */
 		int valeurAssociee(string mot){
-			int valeur;
 			try{
-				valeur = dico.get(mot);
-				return valeur;
+				return dico.get(mot);;
 			}catch(HashtableException e){
-				throw HashtableException("Le mot spécifié n'existe pas dans le dictionnaire");
+				return 0;
 			}
 		}
 				

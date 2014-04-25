@@ -46,17 +46,24 @@ Puis pour l'exécution :
 \newpage
 
 \section{Le \emph{dictionnache}}
-\paragraph{}{
-Cette version reprend la table de hachage du précédent tp tout en précisant les types de données qui sont ici : une chaine de caractères pour la clé et un entier pour la valeur associée au mot.
-Pour cette implémentation, les fonctions d'ajout, de modification reprennent les fonctions déjà existantes de la table de hachage.
 
-La fonction qui renvoie les 10 mots les plus fréquents tri les mots de la table de hachage puis récupère les 10 premier.
-}
+		\begin{figure}[!h]
+			\hspace{-2cm}
+			\input{class_hashtable.tex}
+			\caption{Diagramme UML des classes pour le chaînage simple.}
+			\label{chaine_1_uml}
+		\end{figure}
+		
+	\paragraph{}{Cette version reprend la table de hachage du précédent tp tout en précisant les types de données qui sont ici : une chaine de caractères pour la clé et un entier pour la valeur associée au mot. \\
+Pour cette implémentation, les fonctions d'ajout, de modification reprennent les fonctions déjà existantes de la table de hachage.}
+	\paragraph{}{La fonction qui renvoie les 10 mots les plus fréquents tri les mots de la table de hachage puis récupère les 10 premier.}
+	
+	
 \newpage 
 
-
 \section{L'\emph{Arbramots}}
-\paragraph{}{
+
+	\paragraph{}{
 Le dictionnaire utilise la version de l'arbre implémenté dans la classe TreeString.
 Les fonctions d'ajout et de modification sont construite de la même manière puisque l'arbre gère nativement la modification de la valeur associée au mot.
 La fonction valeurAssociee fonctionne de la manière suivante : elle récupère tous les couples <mot,occurences> contenu dans l'arbre puis renvoie la valeur associée du mot passé en paramètre.
