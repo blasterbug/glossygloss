@@ -40,68 +40,22 @@
 #include "treestring.hpp"
 #include <utility>
 
+/**
+ * Fonction qui permet de trier un container de pairs construit
+ * avec des strings et des entiers. Le critère de tri est l'ordre naturel
+ * sur les entiers appliqué à l'entier de la pair.
+ * @param[in] first la première pair à comparer
+ * @param[in] second la seconde pair à comparer
+ * @param[out] bool vrai si first>seconde sinon faux
+ */
+bool triPair(const pair<string, int> &first, const pair<string, int> &second){
+	return first.second > second.second;
+}
+
 class Dictionnaire{
 	
 	private :
 		TreeString dico;
-
-		/**
-		 * Fonction basique d'échange
-		 */
-		void echanger(std::pair<string,int>* freq, int i){			
-			std::pair<string,int> tmp = freq[i];
-			freq[i]=freq[i+1];
-			freq[i+1]=tmp;
-		}
-		
-		/**
-		 * Fonction basique de tri à bulle
-		 */
-		void triABulle(std::pair<string,int>* tableau, int longueur)
-		{
-		   int i;
-		   bool permutation;
-		   do{
-			  permutation = false;
-			  for(i=0; i<longueur-1; i++){
-				 if(tableau[i].second<tableau[i+1].second){
-					echanger(tableau, i);
-					permutation = true;
-				 }
-			  }
-			  longueur--;
-		   }
-		   while(permutation);
-		}
-		
-		
-		/**
-		 * Fonction privée qui ajoute si nécessaire un mot dans la table des occurences
-		 * @param[in] freq le tableau d'occurences
-		 * @param[in] valeur la valeur à ajouter
-		 * @param[in] nb le nombre de mots déjà présent dans le tableau
-		 */
-		void ajoutTrie(std::pair<string,int>* freq,std::pair<string,int> valeur){						
-			int i=0;
-			int j=10;
-			while(valeur.second<freq[i].second and i<10){//on parcours le tableau jusqu'à trouver une occurence inférieur 
-				++i;									//au mot que l'on souhaite ajouter
-			}
-			if(valeur.second>=freq[i].second){//si il en existe une
-				//std::pair<string,int> tmp = freq[i];
-			
-				//~ for(int j = i+1;j<=9;++j){//puis on décale toutes les valeurs
-					//~ std::pair<string,int> tmp2=freq[j];
-					//~ freq[j]=tmp;
-					//~ tmp=tmp2;
-				//~ }
-				while(j<i){
-					freq[--j] = freq[j];
-				}
-				freq[i] = valeur;	//on ajoute le mot
-			}
-		}
-
 
 	public :
 	
@@ -109,7 +63,6 @@ class Dictionnaire{
 		 * Constructeur de la classe Dictionnaire
 		 */
 		Dictionnaire(){}
-		
 		
 		/**
 		 * Destructeur de la classe Dictionnaire
@@ -147,7 +100,7 @@ class Dictionnaire{
 		 * @param[in] mot, le mot à modifier
 		 * @param[out] bool Renvoyer faux si le mot n'est pas présent, sinon vrai
 		 */
-		bool associerMot(string mot){
+		void associerMot(string mot){
 			dico.put(mot);
 		}	
 			
@@ -170,19 +123,23 @@ class Dictionnaire{
 		}
 				
 		/**
-		 * Fonction qui retourne les 10 mots les plus fréquents
-		 * @param[out] frequences, tableau des paires<mots,occurences> les plus fréquents
+		 * Fonction qui retourne les dix mots les plus fréquents dans un tableau
+		 * @param[int] frequences tableau des paires<mots,occurences> les plus fréquents
 		 */
-		void plusFrequentes(std::pair<string,int>* frequences){
-			forward_list<pair<string,int>> words;
-			dico.getWordsFrequencies(words);
-			auto it = words.begin();
-			while(it!=words.end()){
-				ajoutTrie(frequences,*it); 
-				++it;
+		void plusFrequentes(pair<string,int> *frequences){
+			forward_list<pair<string, int>> pairs;
+			// on récupère les mots avec leurs fréquences
+			dico.getWordsFrequencies(pairs);
+			// on tri la liste
+			pairs.sort(&triPair); // complexité : n(log(n))
+			auto it_pairs = pairs.begin();
+			int i = 0;
+			// on met les dix premières pairs dans le tableau
+			while(i<10 and pairs.end() != it_pairs){
+				frequences[i++] = *it_pairs;
+				++it_pairs;
 			}
-		}	
-				
+		}
 };
 
 #endif // DICTIONNAIRE_HPP

@@ -1,10 +1,10 @@
 /**
- * @file dictionnaire.cpp
+ * @file application.cpp
  *
  * @section desc File description
  * 
- * Programme permettant de construire un dictionnaire en utilisant une 
- * structure de données de la librairie
+ * Programme permettant de lire des mots dans un fichier texte passé
+ * en paramètre et qui calcule leurs fréquence.
  *
  * @section copyright Copyright
  *
@@ -28,7 +28,7 @@
  *
  * $Date$ 2014/04/02
  * $Rev$ 0.2
- * $Author$ François Hallereau
+ * $Author$ François Hallereau & Benjamin Sientzoff
  * $URL$ http://www.github.com/blasterbug/glossygloss
 */
 #include <functional>
@@ -66,13 +66,12 @@ using namespace std;
 		++j;
 	}
 	file.close();
-	cout<<"Lecture terminé "<<j<<" mots ont été ajoutés"<<endl;
+	cout<<"Lecture terminée, "<<j<<" mots ont été ajouté"<<endl;
 
-	pair<string,int>* freq = new pair<string,int>[10];
+	pair<string,int> freq[10];
 
 	cout<<"Récupération des mots les plus fréquents : "<<endl;
 	dico.plusFrequentes(freq);
-	cout<<"Test"<<endl;
 	for(int i=0;i<10;++i){
 		cout<<freq[i].first<<" : "<<freq[i].second<<endl;
 	}

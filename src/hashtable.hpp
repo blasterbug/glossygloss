@@ -51,10 +51,15 @@
 // included files section
 #include <string>
 #include <cassert>
-#include <vector> 
+#include <utility>
+#include <forward_list>
 
 // will desactive cassert
 #define NDEBUG
+
+using std::string;
+using std::pair;
+using std::forward_list;
 
 /**
  * Fonction you must define when you're using Hashable
@@ -68,8 +73,6 @@
  *
 */
 template <typename K> unsigned computehash(K element);
-
-using std::string;
 
 /**
  * \brief Exception class to manage Hashtable errors
@@ -345,7 +348,7 @@ class Hashtable {
 		/** Return a description of the hashtable, enclosed in braces as
 		 * well as {key, value}.
 		 * @param[out] desc a string representation of this hashtable.
-		*/
+		 */
 		string toString(){
 			string desc = "[";
 			for(int i = 0; i<ARRAYSIZE; ++i){
@@ -356,15 +359,18 @@ class Hashtable {
 			return desc + "]";
 		}
 		
-		/** Which keys maped values ?
-		 * @param[in] keys Vector which contains keys to find
-		 * @param[out] bool True if the key is here, else false
-		*/
-		 void getAllKeys(std::vector<K> &keys){
-			for(int i = 0; i<ARRAYSIZE; ++i){
-				Alveole<K,V>* browser = _table[i];
+		/** Get a list of all kay and their value in pairs
+		 * @param[in] pairs Vector which contains keys to find
+		 */
+		 void getPairs(forward_list<pair<string, int>> &pairs){
+			// we can browse Alveole with it
+			Alveole<K, V>* browser;
+			// For each cell in _table
+			for(int i=0; i<ARRAYSIZE; ++i){
+				// browse alveoli here
+				browser = _table[i];
 				while(END != browser){
-					keys.push_back(browser->getKey());					
+					pairs.push_front(pair<string, int>(browser->getKey(), browser->getValue()));
 					browser = browser->getNext();
 				}
 			}
