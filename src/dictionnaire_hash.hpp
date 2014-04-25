@@ -162,8 +162,8 @@ class Dictionnaire{
 			try{
 				valeur = dico.get(mot);
 				return valeur;
-			}catch(HashException e){
-				throw HashException("Le mot spécifié n'existe pas dans le dictionnaire");
+			}catch(HashtableException e){
+				throw HashtableException("Le mot spécifié n'existe pas dans le dictionnaire");
 			}
 		}
 				

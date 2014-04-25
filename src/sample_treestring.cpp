@@ -58,7 +58,7 @@ int main(int argc,const char** argv){
 	int i = 0;
 	while(not file.eof() and i<max){
 		file >> word;
-		cout << word << endl;
+		//cout << word << endl;
 		storage.put(word);
 		++i;
 	}
@@ -78,11 +78,12 @@ int main(int argc,const char** argv){
 	forward_list<pair<string, int>> freq = forward_list<pair<string, int>>();
 	storage.getWordsFrequencies(freq);
 	cout << "Frequencies words : " << endl;
-	cout << "	" << freq.front().first << " : " << freq.front().second << endl;
+	cout << freq.front().first << " : " << freq.front().second << endl;
 	freq.pop_front();
 	for(pair<string, int> freqWord : freq){
-		cout << "	" << freqWord.first << " : " << freqWord.second << endl;
+		cout << ", " << freqWord.first << " : " << freqWord.second;
 	}
+	cout << endl;
 	return 0;
 }
 

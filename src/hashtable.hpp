@@ -74,22 +74,22 @@ using std::string;
 /**
  * \brief Exception class to manage Hashtable errors
 */
-class HashException : std::exception {
+class HashtableException : std::exception {
 	private:
 		const char* _cause; /** store exception description */
 	public:
 		/** constructor
-		 * called then HashExceptions are threw
+		 * called then HashtableExceptions are threw
 		 * @param[in] cause description of exception origin
 		*/
-		HashException(const char* cause):
+		HashtableException(const char* cause):
 		_cause(cause)
 		{}
 
 		/** destructor
 		 * currently, do anything special
 		*/
-		virtual ~HashException() throw(){
+		virtual ~HashtableException() throw(){
 			// do nothing
 		}
 
@@ -249,7 +249,7 @@ class Hashtable {
 		/** Return the value maped to the specified key
 		 * @param[in] key a key in the hashtable
 		 * @param[out] value value associated with the key
-		 * @exception HashException threw if key is not in the hashtable
+		 * @exception HashtableException threw if key is not in the hashtable
 		*/
 		V get(const K &key){
 			int index = computehash<K>(key)%ARRAYSIZE;
@@ -266,7 +266,7 @@ class Hashtable {
 				}
 			}
 			if(undone){
-				throw HashException("Key not found!");
+				throw HashtableException("Key not found!");
 			} else {
 				return browser->getValue();
 			}
@@ -314,7 +314,7 @@ class Hashtable {
 
 		/** Remove the key (and its corresponding value) from this hashtable.
 		 * @param[in] key Key of the pair to delete
-		 * @exception HashException threw if table does not contain key
+		 * @exception HashtableException threw if table does not contain key
 		*/
 		/// FIXME : remove last element of a list lead to a seg. fault
 		void remove(const K &key){
@@ -339,7 +339,7 @@ class Hashtable {
 					cur = cur->getNext();
 				}
 			}
-			if(undone) throw HashException("Key is not here!");
+			if(undone) throw HashtableException("Key is not here!");
 		}
 
 		/** Return a description of the hashtable, enclosed in braces as

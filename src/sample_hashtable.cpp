@@ -89,7 +89,7 @@ int main(int argc,const char** argv){
 	cin >> reader;
 	try{
 		storage.remove(reader);
-	} catch(HashException ex) {
+	} catch(HashtableException ex) {
 		cout << ex.what() << endl;
 	}
 	cout << storage.toString() << endl;
@@ -97,7 +97,7 @@ int main(int argc,const char** argv){
 	cin >> reader;
 	try{
 		cout << reader << " maped to " << storage.get(reader) << endl;
-	} catch (HashException ex) {
+	} catch (HashtableException ex) {
 		cout << ex.what() << endl;
 	}
 	return 0;
