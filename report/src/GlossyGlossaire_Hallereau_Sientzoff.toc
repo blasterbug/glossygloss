@@ -1,5 +1,0 @@
-\select@language {french}
-\contentsline {section}{\numberline {}Introduction}{2}
-\contentsline {section}{\numberline {1}Le \emph {dictionnache}}{2}
-\contentsline {section}{\numberline {2}L'\emph {Arbramots}}{2}
-\contentsline {section}{\numberline {}Conclusion}{2}
