@@ -1,0 +1,56 @@
+\hypertarget{dictionnaire__hash_8hpp}{\section{src/dictionnaire\-\_\-hash.hpp File Reference}
+\label{dictionnaire__hash_8hpp}\index{src/dictionnaire\-\_\-hash.\-hpp@{src/dictionnaire\-\_\-hash.\-hpp}}
+}
+{\ttfamily \#include \char`\"{}hashtable.\-hpp\char`\"{}}\\*
+{\ttfamily \#include $<$utility$>$}\\*
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{class_dictionnaire}{Dictionnaire}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \hyperlink{dictionnaire__hash_8hpp_a7335ea62aecc32d159584bba8bb1fbd2}{tri\-Pair} (const pair$<$ string, int $>$ \&first, const pair$<$ string, int $>$ \&second)
+\item 
+{\footnotesize template$<$$>$ }\\unsigned \hyperlink{dictionnaire__hash_8hpp_a9f9fe4e9cebe86142ae9312c8ea4d458}{computehash$<$ string $>$} (string element)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\hypertarget{treestring_8hpp_desc}{}\subsection{File description}\label{treestring_8hpp_desc}
+\hyperlink{class_dictionnaire}{Dictionnaire} utilisant une \hyperlink{class_hashtable}{Hashtable}\hypertarget{treestring_8hpp_copyright}{}\subsection{Copyright}\label{treestring_8hpp_copyright}
+This source code is protected by the French intellectual property law.
+
+This program is free software; you can redistribute it and/or modify it under the terms of the G\-N\-U General Public License as published by the Free Software Foundation; version 2 of the License.
+
+This program is distributed in the hope that it will be useful, but W\-I\-T\-H\-O\-U\-T A\-N\-Y W\-A\-R\-R\-A\-N\-T\-Y; without even the implied warranty of M\-E\-R\-C\-H\-A\-N\-T\-A\-B\-I\-L\-I\-T\-Y or F\-I\-T\-N\-E\-S\-S F\-O\-R A P\-A\-R\-T\-I\-C\-U\-L\-A\-R P\-U\-R\-P\-O\-S\-E. See the G\-N\-U General Public License for more details.
+
+You should have received a copy of the G\-N\-U General Public License along with this program; if not, write to the Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, M\-A 02110-\/1301, U\-S\-A.\hypertarget{treestring_8hpp_infos}{}\subsection{File informations}\label{treestring_8hpp_infos}
+\$\-Date\$ 2014/03/27 \$\-Rev\$ 0.\-2 \$\-Author\$ Benjamin Sientzoff \& François Hallereau \$\-U\-R\-L\$ \href{http://www.github.com/blasterbug}{\tt http\-://www.\-github.\-com/blasterbug} 
+
+\subsection{Function Documentation}
+\hypertarget{dictionnaire__hash_8hpp_a9f9fe4e9cebe86142ae9312c8ea4d458}{\index{dictionnaire\-\_\-hash.\-hpp@{dictionnaire\-\_\-hash.\-hpp}!computehash$<$ string $>$@{computehash$<$ string $>$}}
+\index{computehash$<$ string $>$@{computehash$<$ string $>$}!dictionnaire_hash.hpp@{dictionnaire\-\_\-hash.\-hpp}}
+\subsubsection[{computehash$<$ string $>$}]{\setlength{\rightskip}{0pt plus 5cm}template$<$$>$ unsigned {\bf computehash}$<$ string $>$ (
+\begin{DoxyParamCaption}
+\item[{string}]{element}
+\end{DoxyParamCaption}
+)}}\label{dictionnaire__hash_8hpp_a9f9fe4e9cebe86142ae9312c8ea4d458}
+Fonction pour calculer les clés de hashage de string \hypertarget{dictionnaire__hash_8hpp_a7335ea62aecc32d159584bba8bb1fbd2}{\index{dictionnaire\-\_\-hash.\-hpp@{dictionnaire\-\_\-hash.\-hpp}!tri\-Pair@{tri\-Pair}}
+\index{tri\-Pair@{tri\-Pair}!dictionnaire_hash.hpp@{dictionnaire\-\_\-hash.\-hpp}}
+\subsubsection[{tri\-Pair}]{\setlength{\rightskip}{0pt plus 5cm}bool tri\-Pair (
+\begin{DoxyParamCaption}
+\item[{const pair$<$ string, int $>$ \&}]{first, }
+\item[{const pair$<$ string, int $>$ \&}]{second}
+\end{DoxyParamCaption}
+)}}\label{dictionnaire__hash_8hpp_a7335ea62aecc32d159584bba8bb1fbd2}
+Fonction qui permet de trier un container de pairs construit avec des strings et des entiers. Le critère de tri est l'ordre naturel sur les entiers appliqué à l'entier de la pair. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em first} & la première pair à comparer \\
+\hline
+\mbox{\tt in}  & {\em second} & la seconde pair à comparer \\
+\hline
+\mbox{\tt out}  & {\em bool} & vrai si first$>$seconde sinon faux \\
+\hline
+\end{DoxyParams}

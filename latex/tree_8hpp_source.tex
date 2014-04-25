@@ -1,0 +1,230 @@
+\hypertarget{tree_8hpp}{\section{tree.\-hpp}
+\label{tree_8hpp}\index{src/tree.\-hpp@{src/tree.\-hpp}}
+}
+
+\begin{DoxyCode}
+00001 
+00035 \textcolor{preprocessor}{#ifndef TREE\_HPP}
+00036 \textcolor{preprocessor}{}\textcolor{preprocessor}{#define TREE\_HPP}
+00037 \textcolor{preprocessor}{}
+00038 \textcolor{preprocessor}{#include <string>}
+00039 \textcolor{comment}{//#include <list> // less efficiant}
+00040 \textcolor{preprocessor}{#include <forward\_list>}
+00041 
+00042 \textcolor{keyword}{using} std::string;
+00043 \textcolor{keyword}{using} std::forward\_list;
+00044 
+\hypertarget{tree_8hpp_source_l00049}{}\hyperlink{class_tree_exception}{00049} \textcolor{keyword}{class }\hyperlink{class_tree_exception}{TreeException} : std::exception \{
+00050     \textcolor{keyword}{private}:
+\hypertarget{tree_8hpp_source_l00051}{}\hyperlink{class_tree_exception_a90175b0c5a1e2a7ebb77cadc92b0388b}{00051}         \textcolor{keywordtype}{char}* \hyperlink{class_tree_exception_a90175b0c5a1e2a7ebb77cadc92b0388b}{\_cause}; 
+00052     \textcolor{keyword}{public}:
+\hypertarget{tree_8hpp_source_l00057}{}\hyperlink{class_tree_exception_aa75b34acf02d0e86fb70a63242894311}{00057}         \hyperlink{class_tree_exception_aa75b34acf02d0e86fb70a63242894311}{TreeException}(\textcolor{keywordtype}{char}* cause):
+00058             \hyperlink{class_tree_exception_a90175b0c5a1e2a7ebb77cadc92b0388b}{\_cause}(cause)
+00059             \{\}
+00060         
+\hypertarget{tree_8hpp_source_l00064}{}\hyperlink{class_tree_exception_a68dfe698f22aabd8d51b0c533f818263}{00064}         \textcolor{keyword}{virtual} \hyperlink{class_tree_exception_a68dfe698f22aabd8d51b0c533f818263}{~TreeException}() throw()\{
+00065             \textcolor{comment}{// do nothing}
+00066         \}
+00067         
+\hypertarget{tree_8hpp_source_l00071}{}\hyperlink{class_tree_exception_ab899a6ec0f82bf770b88ba4982e3d696}{00071}         \textcolor{keyword}{virtual} \textcolor{keyword}{const} \textcolor{keywordtype}{char}* \hyperlink{class_tree_exception_ab899a6ec0f82bf770b88ba4982e3d696}{what}()\textcolor{keyword}{const} throw()\{
+00072             \textcolor{keywordflow}{return} \hyperlink{class_tree_exception_a90175b0c5a1e2a7ebb77cadc92b0388b}{\_cause};
+00073         \}
+00074 \};
+00075 
+00081 \textcolor{keyword}{template} <\textcolor{keyword}{typename} T = \textcolor{keywordtype}{char}>
+\hypertarget{tree_8hpp_source_l00082}{}\hyperlink{class_node}{00082} \textcolor{keyword}{class }\hyperlink{class_node}{Node} \{
+00083     
+00084     \textcolor{keyword}{private}:
+\hypertarget{tree_8hpp_source_l00086}{}\hyperlink{class_node_a4b3606724f7302e3df96ff87d623312d}{00086}         \textcolor{keywordtype}{int} \hyperlink{class_node_a4b3606724f7302e3df96ff87d623312d}{\_childNbr};
+\hypertarget{tree_8hpp_source_l00088}{}\hyperlink{class_node_a82089b860871012bc159c510408be29c}{00088}         T \hyperlink{class_node_a82089b860871012bc159c510408be29c}{\_tag};
+\hypertarget{tree_8hpp_source_l00090}{}\hyperlink{class_node_a845317829093b3d4665ba7e0055b4599}{00090}         forward\_list<Node<T>> \hyperlink{class_node_a845317829093b3d4665ba7e0055b4599}{\_children};
+00091     
+00092     \textcolor{keyword}{public}:
+\hypertarget{tree_8hpp_source_l00096}{}\hyperlink{class_node_ad70e3545b2df020088a0e26bec128632}{00096}         \hyperlink{class_node_ad70e3545b2df020088a0e26bec128632}{Node}(\textcolor{keyword}{const} \hyperlink{class_node}{Node<T>} &other):
+00097             \hyperlink{class_node_a4b3606724f7302e3df96ff87d623312d}{\_childNbr}(other.\hyperlink{class_node_a4b3606724f7302e3df96ff87d623312d}{\_childNbr}),
+00098             \hyperlink{class_node_a82089b860871012bc159c510408be29c}{\_tag}(other.\hyperlink{class_node_a82089b860871012bc159c510408be29c}{\_tag}),
+00099             \hyperlink{class_node_a845317829093b3d4665ba7e0055b4599}{\_children}(other.\hyperlink{class_node_a845317829093b3d4665ba7e0055b4599}{\_children})
+00100             \{\}
+00101             
+\hypertarget{tree_8hpp_source_l00105}{}\hyperlink{class_node_a0692b16d246460bf94c18d49592facdd}{00105}         \hyperlink{class_node_a0692b16d246460bf94c18d49592facdd}{Node}(T data):
+00106         \hyperlink{class_node_a4b3606724f7302e3df96ff87d623312d}{\_childNbr}(0),
+00107         \hyperlink{class_node_a82089b860871012bc159c510408be29c}{\_tag}(data)
+00108         \{
+00109             \textcolor{comment}{// initialize the simply-linked list}
+00110             \hyperlink{class_node_a845317829093b3d4665ba7e0055b4599}{\_children} = forward\_list<Node<T>>();
+00111         \}
+00112         
+\hypertarget{tree_8hpp_source_l00115}{}\hyperlink{class_node_ae923d0417581dd19784d55b901f0f7f0}{00115}         \hyperlink{class_node_ae923d0417581dd19784d55b901f0f7f0}{~Node}()\{
+00116             \textcolor{comment}{// usefull ?}
+00117             \textcolor{comment}{//delete &\_children;}
+00118             \textcolor{comment}{//delete &\_tag;}
+00119         \}
+00120         
+\hypertarget{tree_8hpp_source_l00125}{}\hyperlink{class_node_aa9d37ee4133ae9774c5cf2ca5a6da8af}{00125}         \hyperlink{class_node}{Node<T>}& \hyperlink{class_node_aa9d37ee4133ae9774c5cf2ca5a6da8af}{operator=}(\hyperlink{class_node}{Node<T>} &other)\{
+00126             \textcolor{comment}{// prevent objet copying itself}
+00127             \textcolor{keywordflow}{if}(\textcolor{keyword}{this} != &other)\{
+00128                 this->\hyperlink{class_node_a4b3606724f7302e3df96ff87d623312d}{\_childNbr} = other.\hyperlink{class_node_a4b3606724f7302e3df96ff87d623312d}{\_childNbr};
+00129                 this->\hyperlink{class_node_a82089b860871012bc159c510408be29c}{\_tag} = other.\_key;
+00130                 this->\hyperlink{class_node_a845317829093b3d4665ba7e0055b4599}{\_children} = other.\hyperlink{class_node_a845317829093b3d4665ba7e0055b4599}{\_children};
+00131             \}
+00132             \textcolor{keywordflow}{return} (*\textcolor{keyword}{this}); \textcolor{comment}{// allow a = b = c}
+00133         \}
+00134         
+\hypertarget{tree_8hpp_source_l00140}{}\hyperlink{class_node_ac6af63bbc9a1eef28615c5c0c5acb83c}{00140}         \textcolor{keywordtype}{bool} \hyperlink{class_node_ac6af63bbc9a1eef28615c5c0c5acb83c}{operator==}(\textcolor{keyword}{const} \hyperlink{class_node}{Node<T>}& rhs)\{
+00141             \textcolor{comment}{// same adress ⇒ same item}
+00142             \textcolor{keywordflow}{return} &\textcolor{keyword}{this} == &rhs;
+00143         \}
+00144         
+\hypertarget{tree_8hpp_source_l00150}{}\hyperlink{class_node_acb50abe854f383e0d624e85505697b4f}{00150}         \textcolor{keywordtype}{bool} \hyperlink{class_node_acb50abe854f383e0d624e85505697b4f}{operator!=}(\textcolor{keyword}{const} \hyperlink{class_node}{Node<T>}& rhs)\{
+00151             \textcolor{keywordflow}{return} &\textcolor{keyword}{this} != &rhs;
+00152             \textcolor{comment}{// return not(lhs == rhs);}
+00153         \}
+00154         
+\hypertarget{tree_8hpp_source_l00158}{}\hyperlink{class_node_a26f91ff0b0d5ea8940c7fde220aca742}{00158}         \textcolor{keywordtype}{bool} \hyperlink{class_node_a26f91ff0b0d5ea8940c7fde220aca742}{isLeaf}()\{
+00159             \textcolor{keywordflow}{return} 0 == \hyperlink{class_node_a4b3606724f7302e3df96ff87d623312d}{\_childNbr};
+00160         \}
+00161         
+\hypertarget{tree_8hpp_source_l00165}{}\hyperlink{class_node_a0da7f6a2356d1e7f047f8bfda1edd8d8}{00165}         \textcolor{keywordtype}{int} \hyperlink{class_node_a0da7f6a2356d1e7f047f8bfda1edd8d8}{height}()\{
+00166             \textcolor{keywordflow}{if}(\hyperlink{class_node_a26f91ff0b0d5ea8940c7fde220aca742}{isLeaf}())\{
+00167                 \textcolor{keywordflow}{return} 0;
+00168             \}
+00169             \textcolor{keywordflow}{else} \{
+00170                 \textcolor{comment}{// start heights at zero}
+00171                 \textcolor{comment}{// heights[0] : greatest height, heights[1] : computed height in the loop}
+00172                 \textcolor{keywordtype}{int} heights[2] = \{0,0\};
+00173                 \textcolor{comment}{// for each child - using C++11 syntax}
+00174                 \textcolor{keywordflow}{for}(\hyperlink{class_node}{Node<T>} child : \hyperlink{class_node_a845317829093b3d4665ba7e0055b4599}{\_children})\{
+00175                     \textcolor{comment}{// compute child height and store it}
+00176                     heights[1] = 1 + child.height();
+00177                     \textcolor{comment}{// if computed height is greater then the old one}
+00178                     \textcolor{keywordflow}{if}(heights[0] < heights[1])\{
+00179                         \textcolor{comment}{// store it as the new greate one}
+00180                         heights[0] = heights[1];
+00181                     \} \textcolor{comment}{// else, nothing}
+00182                 \}
+00183                 \textcolor{keywordflow}{return} heights[0];
+00184             \}
+00185         \}
+00186         
+\hypertarget{tree_8hpp_source_l00190}{}\hyperlink{class_node_a141b357c5d9a30cd9b3062337ef67edb}{00190}         \textcolor{keywordtype}{void} \hyperlink{class_node_a141b357c5d9a30cd9b3062337ef67edb}{append}(T n\_data)\{
+00191             \textcolor{keywordflow}{if}(\hyperlink{class_node_a26f91ff0b0d5ea8940c7fde220aca742}{isLeaf}())\{
+00192                 \textcolor{comment}{// add the value in children list as a new node}
+00193                 \hyperlink{class_node_a845317829093b3d4665ba7e0055b4599}{\_children}.push\_front(\hyperlink{class_node}{Node<T>}(n\_data));
+00194                 \hyperlink{class_node_a4b3606724f7302e3df96ff87d623312d}{\_childNbr}++;
+00195             \}
+00196             \textcolor{keywordflow}{else} \{
+00197                 std::cout << \hyperlink{class_node_a82089b860871012bc159c510408be29c}{\_tag} << std::endl;
+00198                 \textcolor{keywordtype}{bool} undone = \textcolor{keyword}{true};
+00199                 \textcolor{keyword}{auto} it = \hyperlink{class_node_a845317829093b3d4665ba7e0055b4599}{\_children}.begin();
+00200                 \textcolor{keywordflow}{while}(it != \hyperlink{class_node_a845317829093b3d4665ba7e0055b4599}{\_children}.end() and undone)\{
+00201                     \textcolor{keywordflow}{if}(it->\_tag != n\_data)\{
+00202                         it->append(n\_data);
+00203                         undone = !undone;
+00204                     \}
+00205                     \textcolor{keywordflow}{else}\{
+00206                         ++it;
+00207                     \}
+00208                 \}
+00209             \}
+00210         \}  
+00211         
+\hypertarget{tree_8hpp_source_l00216}{}\hyperlink{class_node_a33901811ec542883fdfc68022dd59920}{00216}         \textcolor{keywordtype}{void} \textcolor{keyword}{remove}(T data)\{
+00217             \textcolor{comment}{// remove child with the right tag}
+00218             \textcolor{keywordtype}{bool} undone = \textcolor{keyword}{true};
+00219             \textcolor{keyword}{auto} it=\hyperlink{class_node_a845317829093b3d4665ba7e0055b4599}{\_children}.begin();
+00220             \textcolor{keywordflow}{while}(it != it.end() and undone)\{
+00221                 \textcolor{keywordflow}{if}(it->\_tag == data and it->isLeaf())\{
+00222                     undone = !undone;
+00223                     \textcolor{keyword}{delete} it;
+00224                 \}
+00225                 ++it;
+00226             \}
+00227             \textcolor{keywordflow}{if}(undone)\{
+00228                 \textcolor{keywordflow}{throw} \hyperlink{class_tree_exception}{TreeException}(\textcolor{stringliteral}{"Element was not removed"});
+00229             \}
+00230         \}
+00231         
+\hypertarget{tree_8hpp_source_l00235}{}\hyperlink{class_node_a3b188b785e394924c11f2f68369c0cdf}{00235}         T \hyperlink{class_node_a3b188b785e394924c11f2f68369c0cdf}{getTag}()\{ \textcolor{keywordflow}{return} \hyperlink{class_node_a82089b860871012bc159c510408be29c}{\_tag}; \}
+00236         
+\hypertarget{tree_8hpp_source_l00242}{}\hyperlink{class_node_ad319e53c90ce8bced6ffc42b67d8e759}{00242}         \textcolor{keywordtype}{bool} \hyperlink{class_node_ad319e53c90ce8bced6ffc42b67d8e759}{contains}(T element)\{
+00243             \textcolor{keywordflow}{if}(\hyperlink{class_node_a26f91ff0b0d5ea8940c7fde220aca742}{isLeaf}())\{
+00244                 \textcolor{keywordflow}{return} element == \hyperlink{class_node_a82089b860871012bc159c510408be29c}{\_tag};
+00245             \}
+00246             \textcolor{keywordflow}{else} \{
+00247                 \textcolor{comment}{// browse children}
+00248                 \textcolor{keywordtype}{bool} here = \textcolor{keyword}{false};
+00249                 \textcolor{keyword}{auto} it = \hyperlink{class_node_a845317829093b3d4665ba7e0055b4599}{\_children}.begin();
+00250                 \textcolor{keywordflow}{while}(not here and not it.end())\{
+00251                     here = it.contains(element);
+00252                     ++it;
+00253                 \}
+00254                 \textcolor{keywordflow}{return} here;
+00255             \}
+00256         \}
+00257         
+\hypertarget{tree_8hpp_source_l00261}{}\hyperlink{class_node_abb91d745a01f97fe51a35811e0d42801}{00261}         \textcolor{keywordtype}{string} \hyperlink{class_node_abb91d745a01f97fe51a35811e0d42801}{toString}()\{
+00262             \textcolor{keywordflow}{if}(\hyperlink{class_node_a26f91ff0b0d5ea8940c7fde220aca742}{isLeaf}())\{
+00263                 \textcolor{keywordflow}{return} string(\hyperlink{class_node_a82089b860871012bc159c510408be29c}{\_tag});
+00264             \}
+00265             \textcolor{keywordflow}{else} \{
+00266                 \textcolor{keywordtype}{string} desc = string(\hyperlink{class_node_a82089b860871012bc159c510408be29c}{\_tag});
+00267                 \textcolor{keywordflow}{for}(\hyperlink{class_node}{Node<T>} child: \hyperlink{class_node_a845317829093b3d4665ba7e0055b4599}{\_children})\{
+00268                     desc += \textcolor{stringliteral}{", "} + child.toString();
+00269                 \}
+00270                 \textcolor{keywordflow}{return} desc;
+00271             \}
+00272         \}
+00273 
+00274 \};
+00275 
+00280 \textcolor{keyword}{template} <\textcolor{keyword}{typename} T = \textcolor{keywordtype}{string}>
+\hypertarget{tree_8hpp_source_l00281}{}\hyperlink{class_tree}{00281} \textcolor{keyword}{class }\hyperlink{class_tree}{Tree} \{
+00282     
+00283     \textcolor{keyword}{private}:
+\hypertarget{tree_8hpp_source_l00284}{}\hyperlink{class_tree_a4f23e98860f95126711a63822b7d0a4c}{00284}         \hyperlink{class_node}{Node<T>} \hyperlink{class_tree_a4f23e98860f95126711a63822b7d0a4c}{\_root}; 
+00286     \textcolor{keyword}{public}:
+\hypertarget{tree_8hpp_source_l00289}{}\hyperlink{class_tree_a30ebe31999547d31fea5b40cc805f6a2}{00289}         \hyperlink{class_tree_a30ebe31999547d31fea5b40cc805f6a2}{Tree}():
+00290             \hyperlink{class_tree_a4f23e98860f95126711a63822b7d0a4c}{\_root}(nullptr)
+00291             \{\}
+00292             
+\hypertarget{tree_8hpp_source_l00295}{}\hyperlink{class_tree_aaefcdf4990c48b9bc90e2c2c3fe74a67}{00295}         \hyperlink{class_tree_aaefcdf4990c48b9bc90e2c2c3fe74a67}{Tree}(\textcolor{keyword}{const} \hyperlink{class_tree}{Tree<T>} &other):
+00296             \hyperlink{class_tree_a4f23e98860f95126711a63822b7d0a4c}{\_root}(other.\hyperlink{class_tree_a4f23e98860f95126711a63822b7d0a4c}{\_root})
+00297             \{\}
+00298         
+\hypertarget{tree_8hpp_source_l00303}{}\hyperlink{class_tree_acf08fade73658f5ea3df0d2794d95277}{00303}         \hyperlink{class_tree_acf08fade73658f5ea3df0d2794d95277}{Tree}(T element): 
+00304             \hyperlink{class_tree_a4f23e98860f95126711a63822b7d0a4c}{\_root}(\hyperlink{class_node}{Node}<T>(element))
+00305             \{\}
+00306             \textcolor{comment}{//\_root = Node<T>(element);}
+00307         
+\hypertarget{tree_8hpp_source_l00310}{}\hyperlink{class_tree_a04affc46d89a0ef5d517ab685c9c346e}{00310}         \hyperlink{class_tree_a04affc46d89a0ef5d517ab685c9c346e}{~Tree}()\{
+00311             \textcolor{comment}{//delete &\_root;}
+00312         \}
+00313         
+\hypertarget{tree_8hpp_source_l00318}{}\hyperlink{class_tree_a6de8e50615c6a644025b2f1af8684f9c}{00318}         \textcolor{keywordtype}{bool} \hyperlink{class_tree_a6de8e50615c6a644025b2f1af8684f9c}{contains}(T element)\{
+00319             \textcolor{keywordflow}{return} \hyperlink{class_tree_a4f23e98860f95126711a63822b7d0a4c}{\_root}->contains(element);
+00320         \}
+00321         
+\hypertarget{tree_8hpp_source_l00325}{}\hyperlink{class_tree_a9300caf575a5a89292e620e8b73112c7}{00325}         \textcolor{keywordtype}{int} \hyperlink{class_tree_a9300caf575a5a89292e620e8b73112c7}{height}()\{
+00326             \textcolor{keywordflow}{return} \hyperlink{class_tree_a4f23e98860f95126711a63822b7d0a4c}{\_root}.height();
+00327         \}
+00328         
+\hypertarget{tree_8hpp_source_l00332}{}\hyperlink{class_tree_a8f0fd8ff56ed1f4a5d1e86f404d364ea}{00332}         \textcolor{keywordtype}{void} \hyperlink{class_tree_a8f0fd8ff56ed1f4a5d1e86f404d364ea}{put}(T element)\{
+00333             \hyperlink{class_tree_a4f23e98860f95126711a63822b7d0a4c}{\_root}.append(element);
+00334         \}
+00335         
+\hypertarget{tree_8hpp_source_l00339}{}\hyperlink{class_tree_a21d50a1c43b311b6ed5ce90717fad4c8}{00339}         \textcolor{keywordtype}{void} \textcolor{keyword}{remove}(T element)\{
+00340             \textcolor{keywordflow}{try}\{
+00341                 \hyperlink{class_tree_a4f23e98860f95126711a63822b7d0a4c}{\_root}.remove(element);
+00342             \} \textcolor{keywordflow}{catch}(\hyperlink{class_tree_exception}{TreeException} ex)\{
+00343                 \textcolor{comment}{// ?}
+00344             \}
+00345         \}
+00346         
+\hypertarget{tree_8hpp_source_l00351}{}\hyperlink{class_tree_aabd6868e9e02fbe9affb1f7eed04d51c}{00351}         \textcolor{keywordtype}{string} \hyperlink{class_tree_aabd6868e9e02fbe9affb1f7eed04d51c}{toString}()\{
+00352             \textcolor{keywordflow}{return} \hyperlink{class_tree_a4f23e98860f95126711a63822b7d0a4c}{\_root}.toString();
+00353         \}
+00354 
+00355 \};
+00356 
+00357 \textcolor{preprocessor}{#endif // TREE\_HPP}
+\end{DoxyCode}

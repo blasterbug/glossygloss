@@ -1,0 +1,43 @@
+Glossygloss is set of classes to use several data structures, C++ containers. More might come soon.
+
+\subsubsection*{Documentation}
+
+All documented things are \href{http://blasterbug.github.io/glossygloss/}{\tt here}.
+
+A P\-D\-F file {\itshape refman.\-pdf} is also available for offline doc.
+
+You can generate the doc using \href{http://www.stack.nl/~dimitri/doxygen/}{\tt doxygen} and the config file {\itshape doxygen\-\_\-config}
+
+Usefull links \-:
+\begin{DoxyItemize}
+\item \href{http://en.wikibooks.org/wiki/C%2B%2B_Programming}{\tt C++ programming on wikibooks}
+\item what else ?
+\end{DoxyItemize}
+
+\subsubsection*{Compilation}
+
+Here is a sort intance showing how to compile and 'use' \hyperlink{hashtable_8hpp}{hashtable.\-hpp}. It works as well for others files.
+
+We use C++11, so to compile using our classes\-:
+
+\$ g++ -\/std=c++0x -\/\-Wall -\/pedantic -\/o sample\-\_\-hashtable.\-bin \hyperlink{sample__hashtable_8cpp}{sample\-\_\-hashtable.\-cpp}
+
+\subsubsection*{Testing and usage}
+
+Once you compiled \hyperlink{sample__hashtable_8cpp}{sample\-\_\-hashtable.\-cpp}, you can run the code using, assuming you are using an U\-N\-I\-X system.
+
+\$ chmod +x sample\-\_\-hashtable.\-bin
+
+First give execution permission to the compiled code.
+
+\$ ./sample\-\_\-hashtable.bin lorem quod 50
+
+And then, run the program. Words in the first file (lorem) will be maped to the words in quod. The last argument stands for the words number you want to put in the hashtable.
+
+\subsubsection*{Copyright}
+
+This source code is protected by the French intellectual property law.
+
+This program is free software; you can redistribute it and/or modify it under the terms of the G\-N\-U General Public License as published by the Free Software Foundation; version 2 of the License.
+
+This program is distributed in the hope that it will be useful, but W\-I\-T\-H\-O\-U\-T A\-N\-Y W\-A\-R\-R\-A\-N\-T\-Y; without even the implied warranty of M\-E\-R\-C\-H\-A\-N\-T\-A\-B\-I\-L\-I\-T\-Y or F\-I\-T\-N\-E\-S\-S F\-O\-R A P\-A\-R\-T\-I\-C\-U\-L\-A\-R P\-U\-R\-P\-O\-S\-E. See the G\-N\-U General Public License for more details. 

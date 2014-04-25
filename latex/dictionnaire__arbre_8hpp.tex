@@ -1,0 +1,35 @@
+\hypertarget{dictionnaire__arbre_8hpp}{\section{src/dictionnaire\-\_\-arbre.hpp File Reference}
+\label{dictionnaire__arbre_8hpp}\index{src/dictionnaire\-\_\-arbre.\-hpp@{src/dictionnaire\-\_\-arbre.\-hpp}}
+}
+{\ttfamily \#include \char`\"{}treestring.\-hpp\char`\"{}}\\*
+{\ttfamily \#include $<$utility$>$}\\*
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{class_dictionnaire}{Dictionnaire}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \hyperlink{dictionnaire__arbre_8hpp_a7335ea62aecc32d159584bba8bb1fbd2}{tri\-Pair} (const pair$<$ string, int $>$ \&first, const pair$<$ string, int $>$ \&second)
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\hypertarget{dictionnaire__arbre_8hpp_a7335ea62aecc32d159584bba8bb1fbd2}{\index{dictionnaire\-\_\-arbre.\-hpp@{dictionnaire\-\_\-arbre.\-hpp}!tri\-Pair@{tri\-Pair}}
+\index{tri\-Pair@{tri\-Pair}!dictionnaire_arbre.hpp@{dictionnaire\-\_\-arbre.\-hpp}}
+\subsubsection[{tri\-Pair}]{\setlength{\rightskip}{0pt plus 5cm}bool tri\-Pair (
+\begin{DoxyParamCaption}
+\item[{const pair$<$ string, int $>$ \&}]{first, }
+\item[{const pair$<$ string, int $>$ \&}]{second}
+\end{DoxyParamCaption}
+)}}\label{dictionnaire__arbre_8hpp_a7335ea62aecc32d159584bba8bb1fbd2}
+Fonction qui permet de trier un container de pairs construit avec des strings et des entiers. Le critère de tri est l'ordre naturel sur les entiers appliqué à l'entier de la pair. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em first} & la première pair à comparer \\
+\hline
+\mbox{\tt in}  & {\em second} & la seconde pair à comparer \\
+\hline
+\mbox{\tt out}  & {\em bool} & vrai si first$>$seconde sinon faux \\
+\hline
+\end{DoxyParams}

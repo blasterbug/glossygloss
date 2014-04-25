@@ -1,0 +1,248 @@
+\hypertarget{treestring_8hpp}{\section{treestring.\-hpp}
+\label{treestring_8hpp}\index{src/treestring.\-hpp@{src/treestring.\-hpp}}
+}
+
+\begin{DoxyCode}
+00001 
+00035 \textcolor{preprocessor}{#ifndef TREESTRING\_HPP}
+00036 \textcolor{preprocessor}{}\textcolor{preprocessor}{#define TREESTRING\_HPP}
+00037 \textcolor{preprocessor}{}
+00038 \textcolor{preprocessor}{#include <cassert>}
+00039 \textcolor{preprocessor}{#include <string>}
+00040 \textcolor{preprocessor}{#include <forward\_list>}
+00041 \textcolor{preprocessor}{#include <utility>}
+00042 \textcolor{preprocessor}{#include <sstream>}
+00043 
+00044 \textcolor{keyword}{using} std::string;
+00045 \textcolor{keyword}{using} std::forward\_list;
+00046 \textcolor{keyword}{using} std::stringstream;
+00047 \textcolor{keyword}{using} std::pair;
+00048 
+\hypertarget{treestring_8hpp_source_l00053}{}\hyperlink{class_tree_string_exception}{00053} \textcolor{keyword}{class }\hyperlink{class_tree_string_exception}{TreeStringException} : std::exception \{
+00054     \textcolor{keyword}{private}:
+\hypertarget{treestring_8hpp_source_l00055}{}\hyperlink{class_tree_string_exception_a4de00ce12f252d1d159211338b999164}{00055}         \textcolor{keywordtype}{char}* \hyperlink{class_tree_string_exception_a4de00ce12f252d1d159211338b999164}{\_cause}; 
+00056     \textcolor{keyword}{public}:
+\hypertarget{treestring_8hpp_source_l00061}{}\hyperlink{class_tree_string_exception_a14c9647a77ce331faddb82724325419a}{00061}         \hyperlink{class_tree_string_exception_a14c9647a77ce331faddb82724325419a}{TreeStringException}(\textcolor{keywordtype}{char}* cause):
+00062             \hyperlink{class_tree_string_exception_a4de00ce12f252d1d159211338b999164}{\_cause}(cause)
+00063             \{\}
+00064         
+\hypertarget{treestring_8hpp_source_l00068}{}\hyperlink{class_tree_string_exception_a4740cacfe385483aa466be7a7399ba82}{00068}         \textcolor{keyword}{virtual} \hyperlink{class_tree_string_exception_a4740cacfe385483aa466be7a7399ba82}{~TreeStringException}() throw()\{
+00069             \textcolor{comment}{// do nothing}
+00070         \}
+00071         
+\hypertarget{treestring_8hpp_source_l00075}{}\hyperlink{class_tree_string_exception_a80013d6d7031026ea7ab0be964c41713}{00075}         \textcolor{keyword}{virtual} \textcolor{keyword}{const} \textcolor{keywordtype}{char}* \hyperlink{class_tree_string_exception_a80013d6d7031026ea7ab0be964c41713}{what}()\textcolor{keyword}{const} throw()\{
+00076             \textcolor{keywordflow}{return} \hyperlink{class_tree_string_exception_a4de00ce12f252d1d159211338b999164}{\_cause};
+00077         \}
+00078 \};
+00079 
+00085 \textcolor{keyword}{class }\hyperlink{class_node}{Node} \{
+00086     
+00087     \textcolor{keyword}{private}:
+00089         \textcolor{keywordtype}{int} \hyperlink{class_node_a4b3606724f7302e3df96ff87d623312d}{\_childNbr};
+\hypertarget{treestring_8hpp_source_l00092}{}\hyperlink{class_node_add728cb28da68ec5ef2d9cac31c9a08d}{00092}         \textcolor{keywordtype}{int} \hyperlink{class_node_add728cb28da68ec5ef2d9cac31c9a08d}{\_wordFrequency};
+\hypertarget{treestring_8hpp_source_l00094}{}\hyperlink{class_node_a24a667af4a37caad6e15b94fb76885b1}{00094}         \textcolor{keywordtype}{char} \hyperlink{class_node_a24a667af4a37caad6e15b94fb76885b1}{\_tag};
+\hypertarget{treestring_8hpp_source_l00096}{}\hyperlink{class_node_ac4c86c8bbc999016827248dbe8b7cc96}{00096}         forward\_list<Node*> \hyperlink{class_node_ac4c86c8bbc999016827248dbe8b7cc96}{\_children};
+00097     
+00098     \textcolor{keyword}{public}:
+\hypertarget{treestring_8hpp_source_l00102}{}\hyperlink{class_node_a95419c19d47e2521d437b81768c3896e}{00102}         \hyperlink{class_node_a95419c19d47e2521d437b81768c3896e}{Node}(\textcolor{keyword}{const} \hyperlink{class_node}{Node} &other):
+00103             \hyperlink{class_node_a4b3606724f7302e3df96ff87d623312d}{\_childNbr}(other.\hyperlink{class_node_a4b3606724f7302e3df96ff87d623312d}{\_childNbr}),
+00104             \hyperlink{class_node_add728cb28da68ec5ef2d9cac31c9a08d}{\_wordFrequency}(other.\hyperlink{class_node_add728cb28da68ec5ef2d9cac31c9a08d}{\_wordFrequency}),
+00105             \hyperlink{class_node_a82089b860871012bc159c510408be29c}{\_tag}(other.\hyperlink{class_node_a82089b860871012bc159c510408be29c}{\_tag}),
+00106             \hyperlink{class_node_a845317829093b3d4665ba7e0055b4599}{\_children}(other.\hyperlink{class_node_a845317829093b3d4665ba7e0055b4599}{\_children})
+00107             \{\}
+00108             
+\hypertarget{treestring_8hpp_source_l00113}{}\hyperlink{class_node_a42c85c1e6abbc2999f85cf19dd8bc7c2}{00113}         \hyperlink{class_node_a42c85c1e6abbc2999f85cf19dd8bc7c2}{Node}(\textcolor{keywordtype}{char} data, \textcolor{keywordtype}{int} frequency):
+00114         \hyperlink{class_node_a4b3606724f7302e3df96ff87d623312d}{\_childNbr}(0),
+00115         \hyperlink{class_node_add728cb28da68ec5ef2d9cac31c9a08d}{\_wordFrequency}(frequency),
+00116         \hyperlink{class_node_a82089b860871012bc159c510408be29c}{\_tag}(data)
+00117         \{
+00118             \textcolor{comment}{// initialize the simply-linked list}
+00119             \hyperlink{class_node_a845317829093b3d4665ba7e0055b4599}{\_children} = forward\_list<Node*>();
+00120         \}
+00121         
+\hypertarget{treestring_8hpp_source_l00124}{}\hyperlink{class_node_a0ac1d44cfe588be564acf25485029bd8}{00124}         \hyperlink{class_node_a0ac1d44cfe588be564acf25485029bd8}{Node}():
+00125         \hyperlink{class_node_a4b3606724f7302e3df96ff87d623312d}{\_childNbr}(0),
+00126         \hyperlink{class_node_add728cb28da68ec5ef2d9cac31c9a08d}{\_wordFrequency}(0),
+00127         \hyperlink{class_node_a82089b860871012bc159c510408be29c}{\_tag}(\textcolor{stringliteral}{'@'})
+00128         \{
+00129             \textcolor{comment}{// initialize the simply-linked list}
+00130             \hyperlink{class_node_a845317829093b3d4665ba7e0055b4599}{\_children} = forward\_list<Node*>();
+00131         \}
+00132         
+\hypertarget{treestring_8hpp_source_l00135}{}\hyperlink{class_node_ae923d0417581dd19784d55b901f0f7f0}{00135}         \hyperlink{class_node_ae923d0417581dd19784d55b901f0f7f0}{~Node}()\{
+00136             \textcolor{comment}{// usefull ?}
+00137             \textcolor{comment}{//delete &\_children;}
+00138             \textcolor{comment}{//delete &\_tag;}
+00139         \}
+00140         
+\hypertarget{treestring_8hpp_source_l00145}{}\hyperlink{class_node_aeacd56499cfe37836344a2eb679490f4}{00145}         \hyperlink{class_node}{Node}& \hyperlink{class_node_aeacd56499cfe37836344a2eb679490f4}{operator=}(\textcolor{keyword}{const} \hyperlink{class_node}{Node} &other)\{
+00146             \textcolor{comment}{// prevent objet copying itself}
+00147             \textcolor{keywordflow}{if}(\textcolor{keyword}{this} != &other)\{
+00148                 this->\hyperlink{class_node_a4b3606724f7302e3df96ff87d623312d}{\_childNbr} = other.\hyperlink{class_node_a4b3606724f7302e3df96ff87d623312d}{\_childNbr};
+00149                 this->\hyperlink{class_node_a82089b860871012bc159c510408be29c}{\_tag} = other.\hyperlink{class_node_a82089b860871012bc159c510408be29c}{\_tag};
+00150                 this->\hyperlink{class_node_add728cb28da68ec5ef2d9cac31c9a08d}{\_wordFrequency} = other.\hyperlink{class_node_add728cb28da68ec5ef2d9cac31c9a08d}{\_wordFrequency};
+00151                 this->\hyperlink{class_node_a845317829093b3d4665ba7e0055b4599}{\_children} = other.\hyperlink{class_node_a845317829093b3d4665ba7e0055b4599}{\_children};
+00152             \}
+00153             \textcolor{keywordflow}{return} (*\textcolor{keyword}{this}); \textcolor{comment}{// allow a = b = c}
+00154         \}
+00155         
+\hypertarget{treestring_8hpp_source_l00161}{}\hyperlink{class_node_adcebaf614477737c439128517415f799}{00161}         \textcolor{keywordtype}{bool} \hyperlink{class_node_adcebaf614477737c439128517415f799}{operator==}(\textcolor{keyword}{const} \hyperlink{class_node}{Node}& rhs)\{
+00162             \textcolor{comment}{// same adress ⇒ same item}
+00163             \textcolor{keywordflow}{return} \textcolor{keyword}{this} == &rhs;
+00164         \}
+00165         
+\hypertarget{treestring_8hpp_source_l00171}{}\hyperlink{class_node_a9ae22944b815b5f95bc5f31f9f6b41ab}{00171}         \textcolor{keywordtype}{bool} \hyperlink{class_node_a9ae22944b815b5f95bc5f31f9f6b41ab}{operator!=}(\textcolor{keyword}{const} \hyperlink{class_node}{Node} &rhs)\{
+00172             \textcolor{keywordflow}{return} \textcolor{keyword}{this} != &rhs;
+00173             \textcolor{comment}{// return not(lhs == rhs);}
+00174         \}
+00175         
+\hypertarget{treestring_8hpp_source_l00179}{}\hyperlink{class_node_a26f91ff0b0d5ea8940c7fde220aca742}{00179}         \textcolor{keywordtype}{bool} \hyperlink{class_node_a26f91ff0b0d5ea8940c7fde220aca742}{isLeaf}()\{
+00180             \textcolor{keywordflow}{return} 0 == \hyperlink{class_node_a4b3606724f7302e3df96ff87d623312d}{\_childNbr};
+00181             \textcolor{comment}{//return frenquency > 0;}
+00182         \}
+00183         
+\hypertarget{treestring_8hpp_source_l00187}{}\hyperlink{class_node_a0da7f6a2356d1e7f047f8bfda1edd8d8}{00187}         \textcolor{keywordtype}{int} \hyperlink{class_node_a0da7f6a2356d1e7f047f8bfda1edd8d8}{height}()\{
+00188             \textcolor{keywordflow}{if}(\hyperlink{class_node_a26f91ff0b0d5ea8940c7fde220aca742}{isLeaf}())\{
+00189                 \textcolor{keywordflow}{return} 0;
+00190             \}
+00191             \textcolor{keywordflow}{else} \{
+00192                 \textcolor{comment}{// start heights at zero}
+00193                 \textcolor{comment}{// heights[0] : greatest height, heights[1] : computed height in the loop}
+00194                 \textcolor{keywordtype}{int} heights[2] = \{0,0\};
+00195                 \textcolor{comment}{// for each child - using C++11 syntax}
+00196                 \textcolor{keywordflow}{for}(\hyperlink{class_node}{Node}* child : \hyperlink{class_node_a845317829093b3d4665ba7e0055b4599}{\_children})\{
+00197                     \textcolor{comment}{// compute child height and store it}
+00198                     heights[1] = 1 + child->height();
+00199                     \textcolor{comment}{// if computed height is greater then the old one}
+00200                     \textcolor{keywordflow}{if}(heights[0] < heights[1])\{
+00201                         \textcolor{comment}{// store it as the new greate one}
+00202                         heights[0] = heights[1];
+00203                     \} \textcolor{comment}{// else, nothing}
+00204                 \}
+00205                 \textcolor{keywordflow}{return} heights[0];
+00206             \}
+00207         \}
+00208         
+\hypertarget{treestring_8hpp_source_l00214}{}\hyperlink{class_node_ac175219981b8633f47f6a93f6271cd91}{00214}         \hyperlink{class_node}{Node}* \hyperlink{class_node_ac175219981b8633f47f6a93f6271cd91}{append}(\textcolor{keyword}{const} \textcolor{keywordtype}{char} n\_data, \textcolor{keywordtype}{int} frequency)\{
+00215             \hyperlink{class_node}{Node}* tmp;
+00216             \textcolor{keywordtype}{bool} undone = \textcolor{keyword}{true};
+00217             \textcolor{keyword}{auto} it = \hyperlink{class_node_a845317829093b3d4665ba7e0055b4599}{\_children}.begin();
+00218             \textcolor{comment}{// while n\_data is not added}
+00219             \textcolor{keywordflow}{while}(undone and it != \hyperlink{class_node_a845317829093b3d4665ba7e0055b4599}{\_children}.end())\{
+00220                 \textcolor{keywordflow}{if}(n\_data == (*it)->\_tag)\{
+00221                     (*it)->\_wordFrequency += frequency; \textcolor{comment}{// update word frenquency}
+00222                     tmp = (*it);
+00223                     undone = !undone; \textcolor{comment}{// job is now done}
+00224                 \}
+00225                 ++it;
+00226             \}
+00227             \textcolor{comment}{// if letter is not present, add it}
+00228             \textcolor{keywordflow}{if}(undone)\{
+00229                  tmp = \textcolor{keyword}{new} \hyperlink{class_node_a0ac1d44cfe588be564acf25485029bd8}{Node}(n\_data, frequency);
+00230                 \hyperlink{class_node_a845317829093b3d4665ba7e0055b4599}{\_children}.push\_front(tmp);
+00231                 \hyperlink{class_node_a4b3606724f7302e3df96ff87d623312d}{\_childNbr}++;
+00232             \}
+00233             \textcolor{keywordflow}{return} tmp;
+00234         \}  
+00235         
+\hypertarget{treestring_8hpp_source_l00239}{}\hyperlink{class_node_affb5abc8a7422a40c44deba0a79a10cf}{00239}         \textcolor{keywordtype}{char} \hyperlink{class_node_affb5abc8a7422a40c44deba0a79a10cf}{getTag}()\{ \textcolor{keywordflow}{return} \hyperlink{class_node_a82089b860871012bc159c510408be29c}{\_tag}; \}
+00240         
+00241         
+\hypertarget{treestring_8hpp_source_l00245}{}\hyperlink{class_node_abb91d745a01f97fe51a35811e0d42801}{00245}         \textcolor{keywordtype}{string} \hyperlink{class_node_abb91d745a01f97fe51a35811e0d42801}{toString}()\{
+00246             \textcolor{keywordflow}{if}(\hyperlink{class_node_a26f91ff0b0d5ea8940c7fde220aca742}{isLeaf}())\{
+00247                 \textcolor{keywordflow}{return} string(&\hyperlink{class_node_a82089b860871012bc159c510408be29c}{\_tag});
+00248             \}
+00249             \textcolor{keywordflow}{else} \{
+00250                 \textcolor{keywordtype}{string} desc = string(&\hyperlink{class_node_a82089b860871012bc159c510408be29c}{\_tag});
+00251                 \textcolor{keywordflow}{for}(\hyperlink{class_node}{Node}* child: \hyperlink{class_node_a845317829093b3d4665ba7e0055b4599}{\_children})\{
+00252                     desc += \textcolor{stringliteral}{", "} + child->toString();
+00253                 \}
+00254                 \textcolor{keywordflow}{return} desc;
+00255             \}
+00256         \}
+00257 
+\hypertarget{treestring_8hpp_source_l00262}{}\hyperlink{class_node_acca1581b1ffc18b14ac92073d932c099}{00262}         \textcolor{keywordtype}{void} \hyperlink{class_node_acca1581b1ffc18b14ac92073d932c099}{toList}(forward\_list<string> &words, \textcolor{keywordtype}{string} word)\{
+00263             \textcolor{charliteral}{'@'} != \hyperlink{class_node_a82089b860871012bc159c510408be29c}{\_tag}?word += \hyperlink{class_node_a82089b860871012bc159c510408be29c}{\_tag}:word; \textcolor{comment}{// if it's not the root, add tag}
+00264             \textcolor{keywordflow}{if}(0 < \hyperlink{class_node_add728cb28da68ec5ef2d9cac31c9a08d}{\_wordFrequency})\{
+00265                 words.push\_front(word);
+00266             \}
+00267             \textcolor{keywordflow}{if}(not \hyperlink{class_node_a26f91ff0b0d5ea8940c7fde220aca742}{isLeaf}())\{
+00268                 \textcolor{keywordflow}{for}(\hyperlink{class_node}{Node}* child : \hyperlink{class_node_a845317829093b3d4665ba7e0055b4599}{\_children})\{
+00269                     child->toList(words, word);
+00270                 \}
+00271             \}
+00272         \}
+00273 
+\hypertarget{treestring_8hpp_source_l00278}{}\hyperlink{class_node_ae8592b9ab27d013cf6acc6efacb39d1a}{00278}         \textcolor{keywordtype}{void} \hyperlink{class_node_ae8592b9ab27d013cf6acc6efacb39d1a}{toFrequencedList}(forward\_list<pair<string,int>> &words, \textcolor{keywordtype}{string} word)\{
+00279             \textcolor{comment}{// if it's not the root, add tag}
+00280             \textcolor{comment}{// avoid to prefix words with '@', the root char}
+00281             \textcolor{charliteral}{'@'} != \hyperlink{class_node_a82089b860871012bc159c510408be29c}{\_tag}?word += \hyperlink{class_node_a82089b860871012bc159c510408be29c}{\_tag}:word;
+00282             \textcolor{comment}{// if it's a word end}
+00283             \textcolor{keywordflow}{if}(0 < \hyperlink{class_node_add728cb28da68ec5ef2d9cac31c9a08d}{\_wordFrequency})\{
+00284                 \textcolor{comment}{// add the word and his frequency in a pair and}
+00285                 \textcolor{comment}{// add it to the list}
+00286                 words.push\_front(pair<string,int>(word, \hyperlink{class_node_add728cb28da68ec5ef2d9cac31c9a08d}{\_wordFrequency}));
+00287             \}
+00288             \textcolor{comment}{// if it's not a leaf}
+00289             \textcolor{keywordflow}{if}(not \hyperlink{class_node_a26f91ff0b0d5ea8940c7fde220aca742}{isLeaf}())\{
+00290                 \textcolor{comment}{// for each child}
+00291                 \textcolor{keywordflow}{for}(\hyperlink{class_node}{Node}* child : \hyperlink{class_node_a845317829093b3d4665ba7e0055b4599}{\_children})\{
+00292                     \textcolor{comment}{// get words in the subtree}
+00293                     child->toFrequencedList(words, word);
+00294                 \}
+00295             \}
+00296         \}
+00297 
+00298 \};
+00299 
+\hypertarget{treestring_8hpp_source_l00304}{}\hyperlink{class_tree_string}{00304} \textcolor{keyword}{class }\hyperlink{class_tree_string}{TreeString} \{
+00305     
+00306     \textcolor{keyword}{private}:
+\hypertarget{treestring_8hpp_source_l00307}{}\hyperlink{class_tree_string_a370851bf8faefb8655a188994715ed31}{00307}         \hyperlink{class_node}{Node} \hyperlink{class_tree_string_a370851bf8faefb8655a188994715ed31}{\_root}; 
+00309     \textcolor{keyword}{public}:
+\hypertarget{treestring_8hpp_source_l00312}{}\hyperlink{class_tree_string_a13117ec068109c174402c8f60597f243}{00312}         \hyperlink{class_tree_string_a13117ec068109c174402c8f60597f243}{TreeString}():
+00313             \hyperlink{class_tree_string_a370851bf8faefb8655a188994715ed31}{\_root}(\hyperlink{class_node}{Node}())
+00314             \{\}
+00315             
+\hypertarget{treestring_8hpp_source_l00318}{}\hyperlink{class_tree_string_ae522f28db152cfe1376ca74f4d861fa7}{00318}         \hyperlink{class_tree_string_ae522f28db152cfe1376ca74f4d861fa7}{TreeString}(\textcolor{keyword}{const} \hyperlink{class_tree_string}{TreeString} &other):
+00319             \hyperlink{class_tree_string_a370851bf8faefb8655a188994715ed31}{\_root}(other.\hyperlink{class_tree_string_a370851bf8faefb8655a188994715ed31}{\_root})
+00320             \{\}
+00321         
+\hypertarget{treestring_8hpp_source_l00324}{}\hyperlink{class_tree_string_ad4672cc528918926c95098738924f3d2}{00324}         \hyperlink{class_tree_string_ad4672cc528918926c95098738924f3d2}{~TreeString}()\{
+00325             \textcolor{comment}{//delete &\_root;}
+00326         \}
+00327         
+\hypertarget{treestring_8hpp_source_l00331}{}\hyperlink{class_tree_string_ac9ce25eae04196336cd8ac83ec5cb9b6}{00331}         \textcolor{keywordtype}{int} \hyperlink{class_tree_string_ac9ce25eae04196336cd8ac83ec5cb9b6}{height}()\{
+00332             \textcolor{keywordflow}{return} \hyperlink{class_tree_string_a370851bf8faefb8655a188994715ed31}{\_root}.\hyperlink{class_node_a0da7f6a2356d1e7f047f8bfda1edd8d8}{height}();
+00333         \}
+00334         
+\hypertarget{treestring_8hpp_source_l00338}{}\hyperlink{class_tree_string_ab61ae2b5bdba5d2d7d3a7f170a1d78e5}{00338}         \textcolor{keywordtype}{void} \hyperlink{class_tree_string_ab61ae2b5bdba5d2d7d3a7f170a1d78e5}{put}(\textcolor{keyword}{const} \textcolor{keywordtype}{string} &word)\{
+00339             \textcolor{comment}{// adress of the last added Node}
+00340             \hyperlink{class_node}{Node}* lastInserted = &\hyperlink{class_tree_string_a370851bf8faefb8655a188994715ed31}{\_root};
+00341             \textcolor{keywordtype}{int} i;
+00342             \textcolor{keywordtype}{int} i\_end = word.size()-1;
+00343             \textcolor{comment}{// from the first to the last-but-one char}
+00344             \textcolor{keywordflow}{for}(i=0; i<i\_end; ++i)\{
+00345                 \textcolor{comment}{// add it to the tree}
+00346                 lastInserted = lastInserted->\hyperlink{class_node_a141b357c5d9a30cd9b3062337ef67edb}{append}(word[i], 0);
+00347             \}
+00348             \textcolor{comment}{// add the last char and the frequence of the word}
+00349             lastInserted->\hyperlink{class_node_a141b357c5d9a30cd9b3062337ef67edb}{append}(word[i], 1); \textcolor{comment}{// end of the word}
+00350         \}
+00351 
+\hypertarget{treestring_8hpp_source_l00356}{}\hyperlink{class_tree_string_aed814ffed425fac5893e5a74f641977b}{00356}         \textcolor{keywordtype}{string} \hyperlink{class_tree_string_aed814ffed425fac5893e5a74f641977b}{toString}()\{
+00357             \textcolor{keywordflow}{return} \hyperlink{class_tree_string_a370851bf8faefb8655a188994715ed31}{\_root}.\hyperlink{class_node_abb91d745a01f97fe51a35811e0d42801}{toString}();
+00358         \}
+00359 
+\hypertarget{treestring_8hpp_source_l00364}{}\hyperlink{class_tree_string_a51187eb2f3f6ec062a6709ce40b0234f}{00364}         \textcolor{keywordtype}{void} \hyperlink{class_tree_string_a51187eb2f3f6ec062a6709ce40b0234f}{getWords}(forward\_list<string> &list)\{
+00365             \hyperlink{class_tree_string_a370851bf8faefb8655a188994715ed31}{\_root}.\hyperlink{class_node_acca1581b1ffc18b14ac92073d932c099}{toList}(list, \textcolor{keywordtype}{string}());
+00366         \}
+00367         
+\hypertarget{treestring_8hpp_source_l00373}{}\hyperlink{class_tree_string_abbea8323b70edd4ac271de19317ac140}{00373}         \textcolor{keywordtype}{void} \hyperlink{class_tree_string_abbea8323b70edd4ac271de19317ac140}{getWordsFrequencies}(forward\_list<pair<string,int>> &words)\{
+00374             \textcolor{comment}{// get the list of all words stored}
+00375             \hyperlink{class_tree_string_a370851bf8faefb8655a188994715ed31}{\_root}.\hyperlink{class_node_ae8592b9ab27d013cf6acc6efacb39d1a}{toFrequencedList}(words, \textcolor{keywordtype}{string}());
+00376         \}
+00377 \};
+00378 
+00379 \textcolor{preprocessor}{#endif // TREESTRING\_HPP}
+\end{DoxyCode}

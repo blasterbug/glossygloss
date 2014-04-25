@@ -1,0 +1,88 @@
+\hypertarget{hashtable_8hpp}{\section{src/hashtable.hpp File Reference}
+\label{hashtable_8hpp}\index{src/hashtable.\-hpp@{src/hashtable.\-hpp}}
+}
+{\ttfamily \#include $<$string$>$}\\*
+{\ttfamily \#include $<$cassert$>$}\\*
+{\ttfamily \#include $<$utility$>$}\\*
+{\ttfamily \#include $<$forward\-\_\-list$>$}\\*
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{class_hashtable_exception}{Hashtable\-Exception}
+\begin{DoxyCompactList}\small\item\em Exception class to manage \hyperlink{class_hashtable}{Hashtable} errors. \end{DoxyCompactList}\item 
+class \hyperlink{class_alveole}{Alveole$<$ K, V $>$}
+\begin{DoxyCompactList}\small\item\em Class to define \hyperlink{class_hashtable}{Hashtable} alveoles. \end{DoxyCompactList}\item 
+class \hyperlink{class_hashtable}{Hashtable$<$ K, V $>$}
+\begin{DoxyCompactList}\small\item\em Maps a key to a value. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{hashtable_8hpp_a29fd18bed01c4d836c7ebfe73a125c3f}{E\-N\-D}~nullptr
+\begin{DoxyCompactList}\small\item\em macro to define end of alveole chains \end{DoxyCompactList}\item 
+\#define \hyperlink{hashtable_8hpp_a78d344caabde729a4559393a0552bf1c}{A\-R\-R\-A\-Y\-S\-I\-Z\-E}~25
+\begin{DoxyCompactList}\small\item\em macro to define size of hash arrays \end{DoxyCompactList}\item 
+\#define \hyperlink{hashtable_8hpp_a8de3ed741dadc9c979a4ff17c0a9116e}{N\-D\-E\-B\-U\-G}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename K $>$ }\\unsigned \hyperlink{hashtable_8hpp_a0884e6a3e2395d8a9cec36a7c651820b}{computehash} (\hyperlink{sample__hashtable_8cpp_a97d832ae23af4f215e801e37e4f94254}{K} element)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\hypertarget{treestring_8hpp_desc}{}\subsection{File description}\label{treestring_8hpp_desc}
+data structure to store pairs in a table a hashcode is compute with k to evaluate the suitable place to store the pair
+
+!! W\-A\-R\-N\-I\-N\-G\-: int hash\-Code(\-K key) must be implemented !!\hypertarget{treestring_8hpp_copyright}{}\subsection{Copyright}\label{treestring_8hpp_copyright}
+This source code is protected by the French intellectual property law.
+
+This program is free software; you can redistribute it and/or modify it under the terms of the G\-N\-U General Public License as published by the Free Software Foundation; version 2 of the License.
+
+This program is distributed in the hope that it will be useful, but W\-I\-T\-H\-O\-U\-T A\-N\-Y W\-A\-R\-R\-A\-N\-T\-Y; without even the implied warranty of M\-E\-R\-C\-H\-A\-N\-T\-A\-B\-I\-L\-I\-T\-Y or F\-I\-T\-N\-E\-S\-S F\-O\-R A P\-A\-R\-T\-I\-C\-U\-L\-A\-R P\-U\-R\-P\-O\-S\-E. See the G\-N\-U General Public License for more details.
+
+You should have received a copy of the G\-N\-U General Public License along with this program; if not, write to the Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, M\-A 02110-\/1301, U\-S\-A.\hypertarget{treestring_8hpp_infos}{}\subsection{File informations}\label{treestring_8hpp_infos}
+\$\-Date\$ 2014/03/27 \$\-Rev\$ 0.\-2 \$\-Author\$ Benjamin Sientzoff \$\-U\-R\-L\$ \href{http://www.github.com/blasterbug}{\tt http\-://www.\-github.\-com/blasterbug}
+
+\begin{DoxyRefDesc}{Todo}
+\item[\hyperlink{todo__todo000001}{Todo}]\-: removing the last element of a alveoles chain makes trouble (seg fault) \end{DoxyRefDesc}
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{hashtable_8hpp_a78d344caabde729a4559393a0552bf1c}{\index{hashtable.\-hpp@{hashtable.\-hpp}!A\-R\-R\-A\-Y\-S\-I\-Z\-E@{A\-R\-R\-A\-Y\-S\-I\-Z\-E}}
+\index{A\-R\-R\-A\-Y\-S\-I\-Z\-E@{A\-R\-R\-A\-Y\-S\-I\-Z\-E}!hashtable.hpp@{hashtable.\-hpp}}
+\subsubsection[{A\-R\-R\-A\-Y\-S\-I\-Z\-E}]{\setlength{\rightskip}{0pt plus 5cm}\#define A\-R\-R\-A\-Y\-S\-I\-Z\-E~25}}\label{hashtable_8hpp_a78d344caabde729a4559393a0552bf1c}
+
+
+macro to define size of hash arrays 
+
+\hypertarget{hashtable_8hpp_a29fd18bed01c4d836c7ebfe73a125c3f}{\index{hashtable.\-hpp@{hashtable.\-hpp}!E\-N\-D@{E\-N\-D}}
+\index{E\-N\-D@{E\-N\-D}!hashtable.hpp@{hashtable.\-hpp}}
+\subsubsection[{E\-N\-D}]{\setlength{\rightskip}{0pt plus 5cm}\#define E\-N\-D~nullptr}}\label{hashtable_8hpp_a29fd18bed01c4d836c7ebfe73a125c3f}
+
+
+macro to define end of alveole chains 
+
+\hypertarget{hashtable_8hpp_a8de3ed741dadc9c979a4ff17c0a9116e}{\index{hashtable.\-hpp@{hashtable.\-hpp}!N\-D\-E\-B\-U\-G@{N\-D\-E\-B\-U\-G}}
+\index{N\-D\-E\-B\-U\-G@{N\-D\-E\-B\-U\-G}!hashtable.hpp@{hashtable.\-hpp}}
+\subsubsection[{N\-D\-E\-B\-U\-G}]{\setlength{\rightskip}{0pt plus 5cm}\#define N\-D\-E\-B\-U\-G}}\label{hashtable_8hpp_a8de3ed741dadc9c979a4ff17c0a9116e}
+
+
+\subsection{Function Documentation}
+\hypertarget{hashtable_8hpp_a0884e6a3e2395d8a9cec36a7c651820b}{\index{hashtable.\-hpp@{hashtable.\-hpp}!computehash@{computehash}}
+\index{computehash@{computehash}!hashtable.hpp@{hashtable.\-hpp}}
+\subsubsection[{computehash}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename K $>$ unsigned computehash (
+\begin{DoxyParamCaption}
+\item[{{\bf K}}]{element}
+\end{DoxyParamCaption}
+)}}\label{hashtable_8hpp_a0884e6a3e2395d8a9cec36a7c651820b}
+Fonction you must define when you're using Hashable An exemple is given in the sample file 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em element} & element to compute hashcode from \\
+\hline
+\mbox{\tt out}  & {\em hashcode} & the hashcode of element, an unsigned integer\\
+\hline
+\end{DoxyParams}
+template$<$$>$ unisgned \hyperlink{dictionnaire__hash_8hpp_a9f9fe4e9cebe86142ae9312c8ea4d458}{computehash$<$string$>$(string element)}
+
+your implementation of hashcode function 

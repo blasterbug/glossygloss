@@ -1,0 +1,231 @@
+\hypertarget{class_dictionnaire}{\section{Dictionnaire Class Reference}
+\label{class_dictionnaire}\index{Dictionnaire@{Dictionnaire}}
+}
+
+
+{\ttfamily \#include $<$dictionnaire\-\_\-arbre.\-hpp$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_dictionnaire_a269116344596a7441062906bd8857b0a}{Dictionnaire} ()
+\item 
+\hyperlink{class_dictionnaire_a1421a1ff914425472e7ddc41bf536775}{$\sim$\-Dictionnaire} ()
+\item 
+bool \hyperlink{class_dictionnaire_a7821613d5c6e03b481d678bb982d29c9}{contient\-Mot} (string mot)
+\item 
+void \hyperlink{class_dictionnaire_add484040376d8e35b086df1222f5dc03}{ajouter\-Mot} (string mot)
+\item 
+void \hyperlink{class_dictionnaire_a8d1de380d1b5776234c94a313f0f521e}{associer\-Mot} (string mot)
+\item 
+int \hyperlink{class_dictionnaire_a9eb8f3eec4f1b666dca15db7142d8d35}{valeur\-Associee} (string mot)
+\item 
+void \hyperlink{class_dictionnaire_a087c9d8cf97ab57e9672d2648aeba80f}{plus\-Frequentes} (pair$<$ string, int $>$ $\ast$frequences)
+\item 
+\hyperlink{class_dictionnaire_a269116344596a7441062906bd8857b0a}{Dictionnaire} ()
+\item 
+\hyperlink{class_dictionnaire_a1421a1ff914425472e7ddc41bf536775}{$\sim$\-Dictionnaire} ()
+\item 
+bool \hyperlink{class_dictionnaire_a7821613d5c6e03b481d678bb982d29c9}{contient\-Mot} (string mot)
+\item 
+void \hyperlink{class_dictionnaire_add484040376d8e35b086df1222f5dc03}{ajouter\-Mot} (string mot)
+\item 
+void \hyperlink{class_dictionnaire_a8d1de380d1b5776234c94a313f0f521e}{associer\-Mot} (string mot)
+\item 
+int \hyperlink{class_dictionnaire_a9eb8f3eec4f1b666dca15db7142d8d35}{valeur\-Associee} (string mot)
+\item 
+void \hyperlink{class_dictionnaire_a087c9d8cf97ab57e9672d2648aeba80f}{plus\-Frequentes} (pair$<$ string, int $>$ $\ast$frequences)
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_tree_string}{Tree\-String} \hyperlink{class_dictionnaire_af199a172c623826621b6df871ecb5aed}{dico}
+\item 
+\hyperlink{class_hashtable}{Hashtable}$<$ string, int $>$ \hyperlink{class_dictionnaire_ae35aafc505cc69d3fd7f9c95609246a9}{dico}
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_dictionnaire_a269116344596a7441062906bd8857b0a}{\index{Dictionnaire@{Dictionnaire}!Dictionnaire@{Dictionnaire}}
+\index{Dictionnaire@{Dictionnaire}!Dictionnaire@{Dictionnaire}}
+\subsubsection[{Dictionnaire}]{\setlength{\rightskip}{0pt plus 5cm}Dictionnaire\-::\-Dictionnaire (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_dictionnaire_a269116344596a7441062906bd8857b0a}
+Constructeur de la classe \hyperlink{class_dictionnaire}{Dictionnaire} \hypertarget{class_dictionnaire_a1421a1ff914425472e7ddc41bf536775}{\index{Dictionnaire@{Dictionnaire}!$\sim$\-Dictionnaire@{$\sim$\-Dictionnaire}}
+\index{$\sim$\-Dictionnaire@{$\sim$\-Dictionnaire}!Dictionnaire@{Dictionnaire}}
+\subsubsection[{$\sim$\-Dictionnaire}]{\setlength{\rightskip}{0pt plus 5cm}Dictionnaire\-::$\sim$\-Dictionnaire (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_dictionnaire_a1421a1ff914425472e7ddc41bf536775}
+Destructeur de la classe \hyperlink{class_dictionnaire}{Dictionnaire} \hypertarget{class_dictionnaire_a269116344596a7441062906bd8857b0a}{\index{Dictionnaire@{Dictionnaire}!Dictionnaire@{Dictionnaire}}
+\index{Dictionnaire@{Dictionnaire}!Dictionnaire@{Dictionnaire}}
+\subsubsection[{Dictionnaire}]{\setlength{\rightskip}{0pt plus 5cm}Dictionnaire\-::\-Dictionnaire (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_dictionnaire_a269116344596a7441062906bd8857b0a}
+Constructeur de la classe \hyperlink{class_dictionnaire}{Dictionnaire} \hypertarget{class_dictionnaire_a1421a1ff914425472e7ddc41bf536775}{\index{Dictionnaire@{Dictionnaire}!$\sim$\-Dictionnaire@{$\sim$\-Dictionnaire}}
+\index{$\sim$\-Dictionnaire@{$\sim$\-Dictionnaire}!Dictionnaire@{Dictionnaire}}
+\subsubsection[{$\sim$\-Dictionnaire}]{\setlength{\rightskip}{0pt plus 5cm}Dictionnaire\-::$\sim$\-Dictionnaire (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_dictionnaire_a1421a1ff914425472e7ddc41bf536775}
+Destructeur de la classe \hyperlink{class_dictionnaire}{Dictionnaire} 
+
+\subsection{Member Function Documentation}
+\hypertarget{class_dictionnaire_add484040376d8e35b086df1222f5dc03}{\index{Dictionnaire@{Dictionnaire}!ajouter\-Mot@{ajouter\-Mot}}
+\index{ajouter\-Mot@{ajouter\-Mot}!Dictionnaire@{Dictionnaire}}
+\subsubsection[{ajouter\-Mot}]{\setlength{\rightskip}{0pt plus 5cm}void Dictionnaire\-::ajouter\-Mot (
+\begin{DoxyParamCaption}
+\item[{string}]{mot}
+\end{DoxyParamCaption}
+)}}\label{class_dictionnaire_add484040376d8e35b086df1222f5dc03}
+Fonction qui ajoute un mot non présent dans le dictionnaire 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em mot} & le mot à ajouter \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_dictionnaire_add484040376d8e35b086df1222f5dc03}{\index{Dictionnaire@{Dictionnaire}!ajouter\-Mot@{ajouter\-Mot}}
+\index{ajouter\-Mot@{ajouter\-Mot}!Dictionnaire@{Dictionnaire}}
+\subsubsection[{ajouter\-Mot}]{\setlength{\rightskip}{0pt plus 5cm}void Dictionnaire\-::ajouter\-Mot (
+\begin{DoxyParamCaption}
+\item[{string}]{mot}
+\end{DoxyParamCaption}
+)}}\label{class_dictionnaire_add484040376d8e35b086df1222f5dc03}
+Fonction qui ajoute un mot non présent dans le dictionnaire 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em mot,le} & mot à ajouter \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_dictionnaire_a8d1de380d1b5776234c94a313f0f521e}{\index{Dictionnaire@{Dictionnaire}!associer\-Mot@{associer\-Mot}}
+\index{associer\-Mot@{associer\-Mot}!Dictionnaire@{Dictionnaire}}
+\subsubsection[{associer\-Mot}]{\setlength{\rightskip}{0pt plus 5cm}void Dictionnaire\-::associer\-Mot (
+\begin{DoxyParamCaption}
+\item[{string}]{mot}
+\end{DoxyParamCaption}
+)}}\label{class_dictionnaire_a8d1de380d1b5776234c94a313f0f521e}
+Fonction qui modifie la valeur d'un mot présent dans le dictionnaire 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em mot} & le mot à modifier \\
+\hline
+\mbox{\tt out}  & {\em bool} & Renvoyer faux si le mot n'est pas présent, sinon vrai \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_dictionnaire_a8d1de380d1b5776234c94a313f0f521e}{\index{Dictionnaire@{Dictionnaire}!associer\-Mot@{associer\-Mot}}
+\index{associer\-Mot@{associer\-Mot}!Dictionnaire@{Dictionnaire}}
+\subsubsection[{associer\-Mot}]{\setlength{\rightskip}{0pt plus 5cm}void Dictionnaire\-::associer\-Mot (
+\begin{DoxyParamCaption}
+\item[{string}]{mot}
+\end{DoxyParamCaption}
+)}}\label{class_dictionnaire_a8d1de380d1b5776234c94a313f0f521e}
+Fonction qui modifie la valeur d'un mot présent dans le dictionnaire 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em mot,le} & mot à modifier \\
+\hline
+\mbox{\tt out}  & {\em bool} & Renvoyer faux si le mot n'est pas présent, sinon vrai \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_dictionnaire_a7821613d5c6e03b481d678bb982d29c9}{\index{Dictionnaire@{Dictionnaire}!contient\-Mot@{contient\-Mot}}
+\index{contient\-Mot@{contient\-Mot}!Dictionnaire@{Dictionnaire}}
+\subsubsection[{contient\-Mot}]{\setlength{\rightskip}{0pt plus 5cm}bool Dictionnaire\-::contient\-Mot (
+\begin{DoxyParamCaption}
+\item[{string}]{mot}
+\end{DoxyParamCaption}
+)}}\label{class_dictionnaire_a7821613d5c6e03b481d678bb982d29c9}
+Fonction qui renvoie vrai le mot est présent dans le \hyperlink{class_dictionnaire}{Dictionnaire} 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em mot,le} & mot à tester \\
+\hline
+\mbox{\tt out}  & {\em bool,vrai} & si présent, faux sinon. \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_dictionnaire_a7821613d5c6e03b481d678bb982d29c9}{\index{Dictionnaire@{Dictionnaire}!contient\-Mot@{contient\-Mot}}
+\index{contient\-Mot@{contient\-Mot}!Dictionnaire@{Dictionnaire}}
+\subsubsection[{contient\-Mot}]{\setlength{\rightskip}{0pt plus 5cm}bool Dictionnaire\-::contient\-Mot (
+\begin{DoxyParamCaption}
+\item[{string}]{mot}
+\end{DoxyParamCaption}
+)}}\label{class_dictionnaire_a7821613d5c6e03b481d678bb982d29c9}
+Fonction qui renvoie vrai le mot est présent dans le \hyperlink{class_dictionnaire}{Dictionnaire} 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em mot} & le mot à tester \\
+\hline
+\mbox{\tt out}  & {\em bool} & vrai si présent, faux sinon. \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_dictionnaire_a087c9d8cf97ab57e9672d2648aeba80f}{\index{Dictionnaire@{Dictionnaire}!plus\-Frequentes@{plus\-Frequentes}}
+\index{plus\-Frequentes@{plus\-Frequentes}!Dictionnaire@{Dictionnaire}}
+\subsubsection[{plus\-Frequentes}]{\setlength{\rightskip}{0pt plus 5cm}void Dictionnaire\-::plus\-Frequentes (
+\begin{DoxyParamCaption}
+\item[{pair$<$ string, int $>$ $\ast$}]{frequences}
+\end{DoxyParamCaption}
+)}}\label{class_dictionnaire_a087c9d8cf97ab57e9672d2648aeba80f}
+Fonction qui retourne les dix mots les plus fréquents dans un tableau 
+\begin{DoxyParams}{Parameters}
+{\em int\mbox{]}} & frequences tableau des paires$<$mots,occurences$>$ les plus fréquents \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_dictionnaire_a087c9d8cf97ab57e9672d2648aeba80f}{\index{Dictionnaire@{Dictionnaire}!plus\-Frequentes@{plus\-Frequentes}}
+\index{plus\-Frequentes@{plus\-Frequentes}!Dictionnaire@{Dictionnaire}}
+\subsubsection[{plus\-Frequentes}]{\setlength{\rightskip}{0pt plus 5cm}void Dictionnaire\-::plus\-Frequentes (
+\begin{DoxyParamCaption}
+\item[{pair$<$ string, int $>$ $\ast$}]{frequences}
+\end{DoxyParamCaption}
+)}}\label{class_dictionnaire_a087c9d8cf97ab57e9672d2648aeba80f}
+Fonction qui retourne les dix mots les plus fréquents dans un tableau 
+\begin{DoxyParams}{Parameters}
+{\em int\mbox{]}} & frequences tableau des paires$<$mots,occurences$>$ les plus fréquents \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_dictionnaire_a9eb8f3eec4f1b666dca15db7142d8d35}{\index{Dictionnaire@{Dictionnaire}!valeur\-Associee@{valeur\-Associee}}
+\index{valeur\-Associee@{valeur\-Associee}!Dictionnaire@{Dictionnaire}}
+\subsubsection[{valeur\-Associee}]{\setlength{\rightskip}{0pt plus 5cm}int Dictionnaire\-::valeur\-Associee (
+\begin{DoxyParamCaption}
+\item[{string}]{mot}
+\end{DoxyParamCaption}
+)}}\label{class_dictionnaire_a9eb8f3eec4f1b666dca15db7142d8d35}
+Fonction qui récupère la valeur associée au mot 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em mot} & le mot dont on souhaite savoir la valeur associée \\
+\hline
+\mbox{\tt out}  & {\em valeur} & la valeur associée, 0 peut indiquer l'absence du mot \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_dictionnaire_a9eb8f3eec4f1b666dca15db7142d8d35}{\index{Dictionnaire@{Dictionnaire}!valeur\-Associee@{valeur\-Associee}}
+\index{valeur\-Associee@{valeur\-Associee}!Dictionnaire@{Dictionnaire}}
+\subsubsection[{valeur\-Associee}]{\setlength{\rightskip}{0pt plus 5cm}int Dictionnaire\-::valeur\-Associee (
+\begin{DoxyParamCaption}
+\item[{string}]{mot}
+\end{DoxyParamCaption}
+)}}\label{class_dictionnaire_a9eb8f3eec4f1b666dca15db7142d8d35}
+Fonction qui récupère la valeur associée au mot 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em mot} & le mot dont on souhaite savoir la valeur associée \\
+\hline
+\mbox{\tt out}  & {\em valeur} & la valeur associée \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em lève} & une exception si le mot n'est pas présent dans le dictionnaire \\
+\hline
+\end{DoxyExceptions}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{class_dictionnaire_af199a172c623826621b6df871ecb5aed}{\index{Dictionnaire@{Dictionnaire}!dico@{dico}}
+\index{dico@{dico}!Dictionnaire@{Dictionnaire}}
+\subsubsection[{dico}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Tree\-String} Dictionnaire\-::dico\hspace{0.3cm}{\ttfamily [private]}}}\label{class_dictionnaire_af199a172c623826621b6df871ecb5aed}
+\hypertarget{class_dictionnaire_ae35aafc505cc69d3fd7f9c95609246a9}{\index{Dictionnaire@{Dictionnaire}!dico@{dico}}
+\index{dico@{dico}!Dictionnaire@{Dictionnaire}}
+\subsubsection[{dico}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Hashtable}$<$string,int$>$ Dictionnaire\-::dico\hspace{0.3cm}{\ttfamily [private]}}}\label{class_dictionnaire_ae35aafc505cc69d3fd7f9c95609246a9}
+stockage des mots dans une table de hashage 
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+src/\hyperlink{dictionnaire__arbre_8hpp}{dictionnaire\-\_\-arbre.\-hpp}\item 
+src/\hyperlink{dictionnaire__hash_8hpp}{dictionnaire\-\_\-hash.\-hpp}\end{DoxyCompactItemize}

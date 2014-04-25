@@ -1,0 +1,78 @@
+\hypertarget{dictionnaire__arbre_8hpp}{\section{dictionnaire\-\_\-arbre.\-hpp}
+\label{dictionnaire__arbre_8hpp}\index{src/dictionnaire\-\_\-arbre.\-hpp@{src/dictionnaire\-\_\-arbre.\-hpp}}
+}
+
+\begin{DoxyCode}
+00001 
+00037 \textcolor{preprocessor}{#ifndef DICTIONNAIRE\_HPP}
+00038 \textcolor{preprocessor}{}\textcolor{preprocessor}{#define DICTIONNAIRE\_HPP}
+00039 \textcolor{preprocessor}{}
+00040 \textcolor{preprocessor}{#include "\hyperlink{treestring_8hpp}{treestring.hpp}"}
+00041 \textcolor{preprocessor}{#include <utility>}
+00042 
+\hypertarget{dictionnaire__arbre_8hpp_source_l00051}{}\hyperlink{dictionnaire__arbre_8hpp_a7335ea62aecc32d159584bba8bb1fbd2}{00051} \textcolor{keywordtype}{bool} \hyperlink{dictionnaire__arbre_8hpp_a7335ea62aecc32d159584bba8bb1fbd2}{triPair}(\textcolor{keyword}{const} pair<string, int> &first, \textcolor{keyword}{const} pair<string, int> &second)\{
+00052     \textcolor{keywordflow}{return} first.second > second.second;
+00053 \}
+00054 
+\hypertarget{dictionnaire__arbre_8hpp_source_l00055}{}\hyperlink{class_dictionnaire}{00055} \textcolor{keyword}{class }\hyperlink{class_dictionnaire}{Dictionnaire}\{
+00056     
+00057     \textcolor{keyword}{private} :
+\hypertarget{dictionnaire__arbre_8hpp_source_l00058}{}\hyperlink{class_dictionnaire_af199a172c623826621b6df871ecb5aed}{00058}         \hyperlink{class_tree_string}{TreeString} \hyperlink{class_dictionnaire_af199a172c623826621b6df871ecb5aed}{dico};
+00059 
+00060     \textcolor{keyword}{public} :
+00061     
+\hypertarget{dictionnaire__arbre_8hpp_source_l00065}{}\hyperlink{class_dictionnaire_a269116344596a7441062906bd8857b0a}{00065}         \hyperlink{class_dictionnaire_a269116344596a7441062906bd8857b0a}{Dictionnaire}()\{\}
+00066         
+\hypertarget{dictionnaire__arbre_8hpp_source_l00070}{}\hyperlink{class_dictionnaire_a1421a1ff914425472e7ddc41bf536775}{00070}         \hyperlink{class_dictionnaire_a1421a1ff914425472e7ddc41bf536775}{~Dictionnaire}()\{\}
+00071     
+\hypertarget{dictionnaire__arbre_8hpp_source_l00077}{}\hyperlink{class_dictionnaire_a7821613d5c6e03b481d678bb982d29c9}{00077}         \textcolor{keywordtype}{bool} \hyperlink{class_dictionnaire_a7821613d5c6e03b481d678bb982d29c9}{contientMot}(\textcolor{keywordtype}{string} mot)\{
+00078             \textcolor{keywordtype}{bool} trouve=\textcolor{keyword}{false};
+00079             forward\_list<string> list;
+00080             \hyperlink{class_dictionnaire_af199a172c623826621b6df871ecb5aed}{dico}.\hyperlink{class_tree_string_a51187eb2f3f6ec062a6709ce40b0234f}{getWords}(list);
+00081             \textcolor{keyword}{auto} it = list.begin();
+00082             \textcolor{keywordflow}{while}(it!=list.end() and !trouve)\{
+00083                 trouve = (it->compare(mot)==0);
+00084                 ++it;
+00085             \}
+00086             \textcolor{keywordflow}{return} trouve;
+00087             
+00088         \}           
+00089         
+\hypertarget{dictionnaire__arbre_8hpp_source_l00094}{}\hyperlink{class_dictionnaire_add484040376d8e35b086df1222f5dc03}{00094}         \textcolor{keywordtype}{void} \hyperlink{class_dictionnaire_add484040376d8e35b086df1222f5dc03}{ajouterMot}(\textcolor{keywordtype}{string} mot)\{
+00095             \hyperlink{class_dictionnaire_af199a172c623826621b6df871ecb5aed}{dico}.\hyperlink{class_tree_string_ab61ae2b5bdba5d2d7d3a7f170a1d78e5}{put}(mot);
+00096         \}   
+00097 
+\hypertarget{dictionnaire__arbre_8hpp_source_l00103}{}\hyperlink{class_dictionnaire_a8d1de380d1b5776234c94a313f0f521e}{00103}         \textcolor{keywordtype}{void} \hyperlink{class_dictionnaire_a8d1de380d1b5776234c94a313f0f521e}{associerMot}(\textcolor{keywordtype}{string} mot)\{
+00104             \hyperlink{class_dictionnaire_af199a172c623826621b6df871ecb5aed}{dico}.\hyperlink{class_tree_string_ab61ae2b5bdba5d2d7d3a7f170a1d78e5}{put}(mot);
+00105         \}   
+00106             
+\hypertarget{dictionnaire__arbre_8hpp_source_l00113}{}\hyperlink{class_dictionnaire_a9eb8f3eec4f1b666dca15db7142d8d35}{00113}         \textcolor{keywordtype}{int} \hyperlink{class_dictionnaire_a9eb8f3eec4f1b666dca15db7142d8d35}{valeurAssociee}(\textcolor{keywordtype}{string} mot)\{
+00114             \textcolor{keywordtype}{bool} trouve=\textcolor{keyword}{false};
+00115             forward\_list<pair<string,int>> words;
+00116             \hyperlink{class_dictionnaire_af199a172c623826621b6df871ecb5aed}{dico}.\hyperlink{class_tree_string_abbea8323b70edd4ac271de19317ac140}{getWordsFrequencies}(words);
+00117             \textcolor{keyword}{auto} it = words.begin();
+00118             \textcolor{keywordflow}{while}(it!=words.end() and !trouve)\{
+00119                 trouve = ((it->first).compare(mot)==0);
+00120                 ++it;
+00121             \}
+00122             \textcolor{keywordflow}{return} it->second;
+00123         \}
+00124                 
+\hypertarget{dictionnaire__arbre_8hpp_source_l00129}{}\hyperlink{class_dictionnaire_a087c9d8cf97ab57e9672d2648aeba80f}{00129}         \textcolor{keywordtype}{void} \hyperlink{class_dictionnaire_a087c9d8cf97ab57e9672d2648aeba80f}{plusFrequentes}(pair<string,int> *frequences)\{
+00130             forward\_list<pair<string, int>> pairs;
+00131             \textcolor{comment}{// on récupère les mots avec leurs fréquences}
+00132             \hyperlink{class_dictionnaire_af199a172c623826621b6df871ecb5aed}{dico}.\hyperlink{class_tree_string_abbea8323b70edd4ac271de19317ac140}{getWordsFrequencies}(pairs);
+00133             \textcolor{comment}{// on tri la liste}
+00134             pairs.sort(&\hyperlink{dictionnaire__arbre_8hpp_a7335ea62aecc32d159584bba8bb1fbd2}{triPair}); \textcolor{comment}{// complexité : n(log(n))}
+00135             \textcolor{keyword}{auto} it\_pairs = pairs.begin();
+00136             \textcolor{keywordtype}{int} i = 0;
+00137             \textcolor{comment}{// on met les dix premières pairs dans le tableau}
+00138             \textcolor{keywordflow}{while}(i<10 and pairs.end() != it\_pairs)\{
+00139                 frequences[i++] = *it\_pairs;
+00140                 ++it\_pairs;
+00141             \}
+00142         \}
+00143 \};
+00144 
+00145 \textcolor{preprocessor}{#endif // DICTIONNAIRE\_HPP}
+\end{DoxyCode}

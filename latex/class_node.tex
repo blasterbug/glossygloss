@@ -1,0 +1,496 @@
+\hypertarget{class_node}{\section{Node$<$ T $>$ Class Template Reference}
+\label{class_node}\index{Node$<$ T $>$@{Node$<$ T $>$}}
+}
+
+
+Defines tree nodes.  
+
+
+
+
+{\ttfamily \#include $<$tree.\-hpp$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_node_ad70e3545b2df020088a0e26bec128632}{Node} (const \hyperlink{class_node}{Node}$<$ T $>$ \&other)
+\item 
+\hyperlink{class_node_a0692b16d246460bf94c18d49592facdd}{Node} (T data)
+\item 
+\hyperlink{class_node_ae923d0417581dd19784d55b901f0f7f0}{$\sim$\-Node} ()
+\item 
+\hyperlink{class_node}{Node}$<$ T $>$ \& \hyperlink{class_node_aa9d37ee4133ae9774c5cf2ca5a6da8af}{operator=} (\hyperlink{class_node}{Node}$<$ T $>$ \&other)
+\item 
+bool \hyperlink{class_node_ac6af63bbc9a1eef28615c5c0c5acb83c}{operator==} (const \hyperlink{class_node}{Node}$<$ T $>$ \&rhs)
+\item 
+bool \hyperlink{class_node_acb50abe854f383e0d624e85505697b4f}{operator!=} (const \hyperlink{class_node}{Node}$<$ T $>$ \&rhs)
+\item 
+bool \hyperlink{class_node_a26f91ff0b0d5ea8940c7fde220aca742}{is\-Leaf} ()
+\item 
+int \hyperlink{class_node_a0da7f6a2356d1e7f047f8bfda1edd8d8}{height} ()
+\item 
+void \hyperlink{class_node_a141b357c5d9a30cd9b3062337ef67edb}{append} (T n\-\_\-data)
+\item 
+void \hyperlink{class_node_a33901811ec542883fdfc68022dd59920}{remove} (T data)
+\item 
+T \hyperlink{class_node_a3b188b785e394924c11f2f68369c0cdf}{get\-Tag} ()
+\item 
+bool \hyperlink{class_node_ad319e53c90ce8bced6ffc42b67d8e759}{contains} (T element)
+\item 
+string \hyperlink{class_node_abb91d745a01f97fe51a35811e0d42801}{to\-String} ()
+\item 
+\hyperlink{class_node_a95419c19d47e2521d437b81768c3896e}{Node} (const \hyperlink{class_node}{Node} \&other)
+\item 
+\hyperlink{class_node_a42c85c1e6abbc2999f85cf19dd8bc7c2}{Node} (char data, int frequency)
+\item 
+\hyperlink{class_node_a0ac1d44cfe588be564acf25485029bd8}{Node} ()
+\item 
+\hyperlink{class_node_ae923d0417581dd19784d55b901f0f7f0}{$\sim$\-Node} ()
+\item 
+\hyperlink{class_node}{Node} \& \hyperlink{class_node_aeacd56499cfe37836344a2eb679490f4}{operator=} (const \hyperlink{class_node}{Node} \&other)
+\item 
+bool \hyperlink{class_node_adcebaf614477737c439128517415f799}{operator==} (const \hyperlink{class_node}{Node} \&rhs)
+\item 
+bool \hyperlink{class_node_a9ae22944b815b5f95bc5f31f9f6b41ab}{operator!=} (const \hyperlink{class_node}{Node} \&rhs)
+\item 
+bool \hyperlink{class_node_a26f91ff0b0d5ea8940c7fde220aca742}{is\-Leaf} ()
+\item 
+int \hyperlink{class_node_a0da7f6a2356d1e7f047f8bfda1edd8d8}{height} ()
+\item 
+\hyperlink{class_node}{Node} $\ast$ \hyperlink{class_node_ac175219981b8633f47f6a93f6271cd91}{append} (const char n\-\_\-data, int frequency)
+\item 
+char \hyperlink{class_node_affb5abc8a7422a40c44deba0a79a10cf}{get\-Tag} ()
+\item 
+string \hyperlink{class_node_abb91d745a01f97fe51a35811e0d42801}{to\-String} ()
+\item 
+void \hyperlink{class_node_acca1581b1ffc18b14ac92073d932c099}{to\-List} (forward\-\_\-list$<$ string $>$ \&words, string word)
+\item 
+void \hyperlink{class_node_ae8592b9ab27d013cf6acc6efacb39d1a}{to\-Frequenced\-List} (forward\-\_\-list$<$ pair$<$ string, int $>$$>$ \&words, string word)
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{class_node_a4b3606724f7302e3df96ff87d623312d}{\-\_\-child\-Nbr}
+\begin{DoxyCompactList}\small\item\em Number of children. \end{DoxyCompactList}\item 
+T \hyperlink{class_node_a82089b860871012bc159c510408be29c}{\-\_\-tag}
+\begin{DoxyCompactList}\small\item\em letter stored into \hyperlink{class_node}{Node}, the tag \end{DoxyCompactList}\item 
+forward\-\_\-list$<$ \hyperlink{class_node}{Node}$<$ T $>$ $>$ \hyperlink{class_node_a845317829093b3d4665ba7e0055b4599}{\-\_\-children}
+\begin{DoxyCompactList}\small\item\em children of the \hyperlink{class_node}{Node} \end{DoxyCompactList}\item 
+int \hyperlink{class_node_add728cb28da68ec5ef2d9cac31c9a08d}{\-\_\-word\-Frequency}
+\item 
+char \hyperlink{class_node_a24a667af4a37caad6e15b94fb76885b1}{\-\_\-tag}
+\begin{DoxyCompactList}\small\item\em letter stored into \hyperlink{class_node}{Node}, the tag \end{DoxyCompactList}\item 
+forward\-\_\-list$<$ \hyperlink{class_node}{Node} $\ast$ $>$ \hyperlink{class_node_ac4c86c8bbc999016827248dbe8b7cc96}{\-\_\-children}
+\begin{DoxyCompactList}\small\item\em children of the \hyperlink{class_node}{Node} \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$typename T = char$>$class Node$<$ T $>$}
+
+Defines tree nodes. 
+
+Class for nodes of a tree. A \hyperlink{class_node}{Node} store a tag and can have several children
+
+Class for nodes of a \hyperlink{class_tree_string}{Tree\-String}. A \hyperlink{class_node}{Node} store a letter and can have several children. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_node_ad70e3545b2df020088a0e26bec128632}{\index{Node@{Node}!Node@{Node}}
+\index{Node@{Node}!Node@{Node}}
+\subsubsection[{Node}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T = char$>$ {\bf Node}$<$ T $>$\-::{\bf Node} (
+\begin{DoxyParamCaption}
+\item[{const {\bf Node}$<$ T $>$ \&}]{other}
+\end{DoxyParamCaption}
+)}}\label{class_node_ad70e3545b2df020088a0e26bec128632}
+Copy constructor 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em other} & \hyperlink{class_node}{Node} to copy \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_node_a0692b16d246460bf94c18d49592facdd}{\index{Node@{Node}!Node@{Node}}
+\index{Node@{Node}!Node@{Node}}
+\subsubsection[{Node}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T = char$>$ {\bf Node}$<$ T $>$\-::{\bf Node} (
+\begin{DoxyParamCaption}
+\item[{T}]{data}
+\end{DoxyParamCaption}
+)}}\label{class_node_a0692b16d246460bf94c18d49592facdd}
+Simple constructor 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em data} & to store into the \hyperlink{class_node}{Node} \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_node_ae923d0417581dd19784d55b901f0f7f0}{\index{Node@{Node}!$\sim$\-Node@{$\sim$\-Node}}
+\index{$\sim$\-Node@{$\sim$\-Node}!Node@{Node}}
+\subsubsection[{$\sim$\-Node}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T = char$>$ {\bf Node}$<$ T $>$\-::$\sim${\bf Node} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_node_ae923d0417581dd19784d55b901f0f7f0}
+Destructor for \hyperlink{class_node}{Node} \hypertarget{class_node_a95419c19d47e2521d437b81768c3896e}{\index{Node@{Node}!Node@{Node}}
+\index{Node@{Node}!Node@{Node}}
+\subsubsection[{Node}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T = char$>$ {\bf Node}$<$ T $>$\-::{\bf Node} (
+\begin{DoxyParamCaption}
+\item[{const {\bf Node}$<$ T $>$ \&}]{other}
+\end{DoxyParamCaption}
+)}}\label{class_node_a95419c19d47e2521d437b81768c3896e}
+Copy constructor 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em other} & \hyperlink{class_node}{Node} to copy \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_node_a42c85c1e6abbc2999f85cf19dd8bc7c2}{\index{Node@{Node}!Node@{Node}}
+\index{Node@{Node}!Node@{Node}}
+\subsubsection[{Node}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T = char$>$ {\bf Node}$<$ T $>$\-::{\bf Node} (
+\begin{DoxyParamCaption}
+\item[{char}]{data, }
+\item[{int}]{frequency}
+\end{DoxyParamCaption}
+)}}\label{class_node_a42c85c1e6abbc2999f85cf19dd8bc7c2}
+Simple constructor 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em data} & to store into the \hyperlink{class_node}{Node} \\
+\hline
+\mbox{\tt in}  & {\em end} & is it the last letter of a word ? \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_node_a0ac1d44cfe588be564acf25485029bd8}{\index{Node@{Node}!Node@{Node}}
+\index{Node@{Node}!Node@{Node}}
+\subsubsection[{Node}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T = char$>$ {\bf Node}$<$ T $>$\-::{\bf Node} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_node_a0ac1d44cfe588be564acf25485029bd8}
+Empty constructor \hypertarget{class_node_ae923d0417581dd19784d55b901f0f7f0}{\index{Node@{Node}!$\sim$\-Node@{$\sim$\-Node}}
+\index{$\sim$\-Node@{$\sim$\-Node}!Node@{Node}}
+\subsubsection[{$\sim$\-Node}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T = char$>$ {\bf Node}$<$ T $>$\-::$\sim${\bf Node} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_node_ae923d0417581dd19784d55b901f0f7f0}
+Destructor for \hyperlink{class_node}{Node} 
+
+\subsection{Member Function Documentation}
+\hypertarget{class_node_a141b357c5d9a30cd9b3062337ef67edb}{\index{Node@{Node}!append@{append}}
+\index{append@{append}!Node@{Node}}
+\subsubsection[{append}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T = char$>$ void {\bf Node}$<$ T $>$\-::append (
+\begin{DoxyParamCaption}
+\item[{T}]{n\-\_\-data}
+\end{DoxyParamCaption}
+)}}\label{class_node_a141b357c5d9a30cd9b3062337ef67edb}
+Hook up a new child to the node 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em n\-\_\-data} & new data to store as a child of the node \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_node_ac175219981b8633f47f6a93f6271cd91}{\index{Node@{Node}!append@{append}}
+\index{append@{append}!Node@{Node}}
+\subsubsection[{append}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T = char$>$ {\bf Node}$\ast$ {\bf Node}$<$ T $>$\-::append (
+\begin{DoxyParamCaption}
+\item[{const char}]{n\-\_\-data, }
+\item[{int}]{frequency}
+\end{DoxyParamCaption}
+)}}\label{class_node_ac175219981b8633f47f6a93f6271cd91}
+Hook up a new child to the node 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em n\-\_\-data} & new data to store as a child of the node \\
+\hline
+\mbox{\tt in}  & {\em frequency} & if greater than 0, end of a word. \\
+\hline
+\mbox{\tt out}  & {\em newchild} & return the adress of the new child created \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_node_ad319e53c90ce8bced6ffc42b67d8e759}{\index{Node@{Node}!contains@{contains}}
+\index{contains@{contains}!Node@{Node}}
+\subsubsection[{contains}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T = char$>$ bool {\bf Node}$<$ T $>$\-::contains (
+\begin{DoxyParamCaption}
+\item[{T}]{element}
+\end{DoxyParamCaption}
+)}}\label{class_node_ad319e53c90ce8bced6ffc42b67d8e759}
+Do the tag is element or one of his children ? 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em element} & Element to look for \\
+\hline
+\mbox{\tt out}  & {\em bool} & True if node or one of his child has the right tag, else false. \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_node_a3b188b785e394924c11f2f68369c0cdf}{\index{Node@{Node}!get\-Tag@{get\-Tag}}
+\index{get\-Tag@{get\-Tag}!Node@{Node}}
+\subsubsection[{get\-Tag}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T = char$>$ T {\bf Node}$<$ T $>$\-::get\-Tag (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_node_a3b188b785e394924c11f2f68369c0cdf}
+What is the tag of the \hyperlink{class_node}{Node} ? 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt out}  & {\em tag} & The tag of the node \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_node_affb5abc8a7422a40c44deba0a79a10cf}{\index{Node@{Node}!get\-Tag@{get\-Tag}}
+\index{get\-Tag@{get\-Tag}!Node@{Node}}
+\subsubsection[{get\-Tag}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T = char$>$ char {\bf Node}$<$ T $>$\-::get\-Tag (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_node_affb5abc8a7422a40c44deba0a79a10cf}
+What is the tag of the \hyperlink{class_node}{Node} ? 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt out}  & {\em tag} & The tag of the node \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_node_a0da7f6a2356d1e7f047f8bfda1edd8d8}{\index{Node@{Node}!height@{height}}
+\index{height@{height}!Node@{Node}}
+\subsubsection[{height}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T = char$>$ int {\bf Node}$<$ T $>$\-::height (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_node_a0da7f6a2356d1e7f047f8bfda1edd8d8}
+The height of the node 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt out}  & {\em hgt} & height of the node \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_node_a0da7f6a2356d1e7f047f8bfda1edd8d8}{\index{Node@{Node}!height@{height}}
+\index{height@{height}!Node@{Node}}
+\subsubsection[{height}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T = char$>$ int {\bf Node}$<$ T $>$\-::height (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_node_a0da7f6a2356d1e7f047f8bfda1edd8d8}
+The height of the node 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt out}  & {\em hgt} & height of the node \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_node_a26f91ff0b0d5ea8940c7fde220aca742}{\index{Node@{Node}!is\-Leaf@{is\-Leaf}}
+\index{is\-Leaf@{is\-Leaf}!Node@{Node}}
+\subsubsection[{is\-Leaf}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T = char$>$ bool {\bf Node}$<$ T $>$\-::is\-Leaf (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_node_a26f91ff0b0d5ea8940c7fde220aca742}
+Is the node a leaf ? 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt out}  & {\em bool} & true, if no child, else false \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_node_a26f91ff0b0d5ea8940c7fde220aca742}{\index{Node@{Node}!is\-Leaf@{is\-Leaf}}
+\index{is\-Leaf@{is\-Leaf}!Node@{Node}}
+\subsubsection[{is\-Leaf}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T = char$>$ bool {\bf Node}$<$ T $>$\-::is\-Leaf (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_node_a26f91ff0b0d5ea8940c7fde220aca742}
+Is the node a leaf ? 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt out}  & {\em bool} & true, if no child, else false \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_node_acb50abe854f383e0d624e85505697b4f}{\index{Node@{Node}!operator!=@{operator!=}}
+\index{operator!=@{operator!=}!Node@{Node}}
+\subsubsection[{operator!=}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T = char$>$ bool {\bf Node}$<$ T $>$\-::operator!= (
+\begin{DoxyParamCaption}
+\item[{const {\bf Node}$<$ T $>$ \&}]{rhs}
+\end{DoxyParamCaption}
+)}}\label{class_node_acb50abe854f383e0d624e85505697b4f}
+inequality operator 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em lhs} & first node to compare \\
+\hline
+\mbox{\tt in}  & {\em rhs} & second node to compare \\
+\hline
+\mbox{\tt out}  & {\em bool} & true if nodes have not the same memory adress, else false \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_node_a9ae22944b815b5f95bc5f31f9f6b41ab}{\index{Node@{Node}!operator!=@{operator!=}}
+\index{operator!=@{operator!=}!Node@{Node}}
+\subsubsection[{operator!=}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T = char$>$ bool {\bf Node}$<$ T $>$\-::operator!= (
+\begin{DoxyParamCaption}
+\item[{const {\bf Node}$<$ T $>$ \&}]{rhs}
+\end{DoxyParamCaption}
+)}}\label{class_node_a9ae22944b815b5f95bc5f31f9f6b41ab}
+inequality operator 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em lhs} & first node to compare \\
+\hline
+\mbox{\tt in}  & {\em rhs} & second node to compare \\
+\hline
+\mbox{\tt out}  & {\em bool} & true if nodes have not the same memory adress, else false \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_node_aa9d37ee4133ae9774c5cf2ca5a6da8af}{\index{Node@{Node}!operator=@{operator=}}
+\index{operator=@{operator=}!Node@{Node}}
+\subsubsection[{operator=}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T = char$>$ {\bf Node}$<$T$>$\& {\bf Node}$<$ T $>$\-::operator= (
+\begin{DoxyParamCaption}
+\item[{{\bf Node}$<$ T $>$ \&}]{other}
+\end{DoxyParamCaption}
+)}}\label{class_node_aa9d37ee4133ae9774c5cf2ca5a6da8af}
+assignment operator overload 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em other} & node to assign \\
+\hline
+\mbox{\tt out}  & {\em note} & assigned node \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_node_aeacd56499cfe37836344a2eb679490f4}{\index{Node@{Node}!operator=@{operator=}}
+\index{operator=@{operator=}!Node@{Node}}
+\subsubsection[{operator=}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T = char$>$ {\bf Node}\& {\bf Node}$<$ T $>$\-::operator= (
+\begin{DoxyParamCaption}
+\item[{const {\bf Node}$<$ T $>$ \&}]{other}
+\end{DoxyParamCaption}
+)}}\label{class_node_aeacd56499cfe37836344a2eb679490f4}
+assignment operator overload 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em other} & node to assign \\
+\hline
+\mbox{\tt out}  & {\em note} & assigned node \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_node_ac6af63bbc9a1eef28615c5c0c5acb83c}{\index{Node@{Node}!operator==@{operator==}}
+\index{operator==@{operator==}!Node@{Node}}
+\subsubsection[{operator==}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T = char$>$ bool {\bf Node}$<$ T $>$\-::operator== (
+\begin{DoxyParamCaption}
+\item[{const {\bf Node}$<$ T $>$ \&}]{rhs}
+\end{DoxyParamCaption}
+)}}\label{class_node_ac6af63bbc9a1eef28615c5c0c5acb83c}
+equality operator 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em lhs} & left hand side, first node to compare \\
+\hline
+\mbox{\tt in}  & {\em rhs} & right hand side, second node to compare \\
+\hline
+\mbox{\tt out}  & {\em bool} & true if nodes have the same memory adress, else false \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_node_adcebaf614477737c439128517415f799}{\index{Node@{Node}!operator==@{operator==}}
+\index{operator==@{operator==}!Node@{Node}}
+\subsubsection[{operator==}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T = char$>$ bool {\bf Node}$<$ T $>$\-::operator== (
+\begin{DoxyParamCaption}
+\item[{const {\bf Node}$<$ T $>$ \&}]{rhs}
+\end{DoxyParamCaption}
+)}}\label{class_node_adcebaf614477737c439128517415f799}
+equality operator 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em lhs} & left hand side, first node to compare \\
+\hline
+\mbox{\tt in}  & {\em rhs} & right hand side, second node to compare \\
+\hline
+\mbox{\tt out}  & {\em bool} & true if nodes have the same memory adress, else false \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_node_a33901811ec542883fdfc68022dd59920}{\index{Node@{Node}!remove@{remove}}
+\index{remove@{remove}!Node@{Node}}
+\subsubsection[{remove}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T = char$>$ void {\bf Node}$<$ T $>$\-::remove (
+\begin{DoxyParamCaption}
+\item[{T}]{data}
+\end{DoxyParamCaption}
+)}}\label{class_node_a33901811ec542883fdfc68022dd59920}
+Remove a leaf from the node 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em data} & data of the node's tag to remove \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em \hyperlink{class_tree_exception}{Tree\-Exception}} & Threw if data is not removed \\
+\hline
+\end{DoxyExceptions}
+\hypertarget{class_node_ae8592b9ab27d013cf6acc6efacb39d1a}{\index{Node@{Node}!to\-Frequenced\-List@{to\-Frequenced\-List}}
+\index{to\-Frequenced\-List@{to\-Frequenced\-List}!Node@{Node}}
+\subsubsection[{to\-Frequenced\-List}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T = char$>$ void {\bf Node}$<$ T $>$\-::to\-Frequenced\-List (
+\begin{DoxyParamCaption}
+\item[{forward\-\_\-list$<$ pair$<$ string, int $>$$>$ \&}]{words, }
+\item[{string}]{word}
+\end{DoxyParamCaption}
+)}}\label{class_node_ae8592b9ab27d013cf6acc6efacb39d1a}
+Put each word in a list 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em words} & List containing all words and his frequency in pairs \\
+\hline
+\mbox{\tt in}  & {\em string} & word\-Com Word which is currently reconvene \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_node_acca1581b1ffc18b14ac92073d932c099}{\index{Node@{Node}!to\-List@{to\-List}}
+\index{to\-List@{to\-List}!Node@{Node}}
+\subsubsection[{to\-List}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T = char$>$ void {\bf Node}$<$ T $>$\-::to\-List (
+\begin{DoxyParamCaption}
+\item[{forward\-\_\-list$<$ string $>$ \&}]{words, }
+\item[{string}]{word}
+\end{DoxyParamCaption}
+)}}\label{class_node_acca1581b1ffc18b14ac92073d932c099}
+Put each words in a list 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em words} & List containing all words \\
+\hline
+\mbox{\tt in}  & {\em string} & word\-Com Word which is currently reconvene \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_node_abb91d745a01f97fe51a35811e0d42801}{\index{Node@{Node}!to\-String@{to\-String}}
+\index{to\-String@{to\-String}!Node@{Node}}
+\subsubsection[{to\-String}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T = char$>$ string {\bf Node}$<$ T $>$\-::to\-String (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_node_abb91d745a01f97fe51a35811e0d42801}
+Get a string representation of the node and his child 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt out}  & {\em desc} & Description of the node (and his child) \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_node_abb91d745a01f97fe51a35811e0d42801}{\index{Node@{Node}!to\-String@{to\-String}}
+\index{to\-String@{to\-String}!Node@{Node}}
+\subsubsection[{to\-String}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T = char$>$ string {\bf Node}$<$ T $>$\-::to\-String (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_node_abb91d745a01f97fe51a35811e0d42801}
+Get a string representation of the node and his child 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt out}  & {\em desc} & Description of the node (and his child) \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{class_node_a4b3606724f7302e3df96ff87d623312d}{\index{Node@{Node}!\-\_\-child\-Nbr@{\-\_\-child\-Nbr}}
+\index{\-\_\-child\-Nbr@{\-\_\-child\-Nbr}!Node@{Node}}
+\subsubsection[{\-\_\-child\-Nbr}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T = char$>$ int {\bf Node}$<$ T $>$\-::\-\_\-child\-Nbr\hspace{0.3cm}{\ttfamily [private]}}}\label{class_node_a4b3606724f7302e3df96ff87d623312d}
+
+
+Number of children. 
+
+\hypertarget{class_node_a845317829093b3d4665ba7e0055b4599}{\index{Node@{Node}!\-\_\-children@{\-\_\-children}}
+\index{\-\_\-children@{\-\_\-children}!Node@{Node}}
+\subsubsection[{\-\_\-children}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T = char$>$ forward\-\_\-list$<${\bf Node}$<$T$>$ $>$ {\bf Node}$<$ T $>$\-::\-\_\-children\hspace{0.3cm}{\ttfamily [private]}}}\label{class_node_a845317829093b3d4665ba7e0055b4599}
+
+
+children of the \hyperlink{class_node}{Node} 
+
+\hypertarget{class_node_ac4c86c8bbc999016827248dbe8b7cc96}{\index{Node@{Node}!\-\_\-children@{\-\_\-children}}
+\index{\-\_\-children@{\-\_\-children}!Node@{Node}}
+\subsubsection[{\-\_\-children}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T = char$>$ forward\-\_\-list$<${\bf Node}$\ast$$>$ {\bf Node}$<$ T $>$\-::\-\_\-children\hspace{0.3cm}{\ttfamily [private]}}}\label{class_node_ac4c86c8bbc999016827248dbe8b7cc96}
+
+
+children of the \hyperlink{class_node}{Node} 
+
+\hypertarget{class_node_a82089b860871012bc159c510408be29c}{\index{Node@{Node}!\-\_\-tag@{\-\_\-tag}}
+\index{\-\_\-tag@{\-\_\-tag}!Node@{Node}}
+\subsubsection[{\-\_\-tag}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T = char$>$ T {\bf Node}$<$ T $>$\-::\-\_\-tag\hspace{0.3cm}{\ttfamily [private]}}}\label{class_node_a82089b860871012bc159c510408be29c}
+
+
+letter stored into \hyperlink{class_node}{Node}, the tag 
+
+\hypertarget{class_node_a24a667af4a37caad6e15b94fb76885b1}{\index{Node@{Node}!\-\_\-tag@{\-\_\-tag}}
+\index{\-\_\-tag@{\-\_\-tag}!Node@{Node}}
+\subsubsection[{\-\_\-tag}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T = char$>$ char {\bf Node}$<$ T $>$\-::\-\_\-tag\hspace{0.3cm}{\ttfamily [private]}}}\label{class_node_a24a667af4a37caad6e15b94fb76885b1}
+
+
+letter stored into \hyperlink{class_node}{Node}, the tag 
+
+\hypertarget{class_node_add728cb28da68ec5ef2d9cac31c9a08d}{\index{Node@{Node}!\-\_\-word\-Frequency@{\-\_\-word\-Frequency}}
+\index{\-\_\-word\-Frequency@{\-\_\-word\-Frequency}!Node@{Node}}
+\subsubsection[{\-\_\-word\-Frequency}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T = char$>$ int {\bf Node}$<$ T $>$\-::\-\_\-word\-Frequency\hspace{0.3cm}{\ttfamily [private]}}}\label{class_node_add728cb28da68ec5ef2d9cac31c9a08d}
+the end of a word and his frequency if \-\_\-word\-Frequency $>$ 0, it's a word end 
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+src/\hyperlink{tree_8hpp}{tree.\-hpp}\item 
+src/\hyperlink{treestring_8hpp}{treestring.\-hpp}\end{DoxyCompactItemize}

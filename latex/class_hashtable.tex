@@ -1,0 +1,179 @@
+\hypertarget{class_hashtable}{\section{Hashtable$<$ K, V $>$ Class Template Reference}
+\label{class_hashtable}\index{Hashtable$<$ K, V $>$@{Hashtable$<$ K, V $>$}}
+}
+
+
+Maps a key to a value.  
+
+
+
+
+{\ttfamily \#include $<$hashtable.\-hpp$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_hashtable_a2f77d0c6d61286bf8d66552b5ade3f27}{Hashtable} ()
+\item 
+\hyperlink{class_hashtable_a3f4057afda4ad0f6b805f900e43b53f6}{$\sim$\-Hashtable} ()
+\item 
+bool \hyperlink{class_hashtable_a7521d8ed5476dcfef5ea1079f98acb7b}{contains} (const \hyperlink{sample__hashtable_8cpp_a97d832ae23af4f215e801e37e4f94254}{K} \&key)
+\item 
+\hyperlink{sample__hashtable_8cpp_af40a326b23c68a27cebe60f16634a2cb}{V} \hyperlink{class_hashtable_a06702992ba59e62b443e1c2d380625dc}{get} (const \hyperlink{sample__hashtable_8cpp_a97d832ae23af4f215e801e37e4f94254}{K} \&key)
+\item 
+bool \hyperlink{class_hashtable_a779816cba88876b2547600f930b293db}{is\-Empty} ()
+\item 
+void \hyperlink{class_hashtable_af6f9a4e3d5c74f0d5d5f966eece2fc2b}{put} (\hyperlink{sample__hashtable_8cpp_a97d832ae23af4f215e801e37e4f94254}{K} key, \hyperlink{sample__hashtable_8cpp_af40a326b23c68a27cebe60f16634a2cb}{V} value)
+\item 
+void \hyperlink{class_hashtable_a5ff7eaa859387421be734f9573dc0ebe}{remove} (const \hyperlink{sample__hashtable_8cpp_a97d832ae23af4f215e801e37e4f94254}{K} \&key)
+\begin{DoxyCompactList}\small\item\em F\-I\-X\-M\-E \-: remove last element of a list lead to a seg. fault. \end{DoxyCompactList}\item 
+string \hyperlink{class_hashtable_ad3141029cd09f8e5e2026af5156c1e0e}{to\-String} ()
+\item 
+void \hyperlink{class_hashtable_a75e0588845c907821b884af8a0afe1b7}{get\-Pairs} (forward\-\_\-list$<$ pair$<$ string, int $>$$>$ \&pairs)
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_alveole}{Alveole}$<$ \hyperlink{sample__hashtable_8cpp_a97d832ae23af4f215e801e37e4f94254}{K}, \hyperlink{sample__hashtable_8cpp_af40a326b23c68a27cebe60f16634a2cb}{V} $>$ $\ast$$\ast$ \hyperlink{class_hashtable_a741b7872f368f468f3b49d687830368a}{\-\_\-table}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$typename K, typename V$>$class Hashtable$<$ K, V $>$}
+
+Maps a key to a value. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_hashtable_a2f77d0c6d61286bf8d66552b5ade3f27}{\index{Hashtable@{Hashtable}!Hashtable@{Hashtable}}
+\index{Hashtable@{Hashtable}!Hashtable@{Hashtable}}
+\subsubsection[{Hashtable}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename K, typename V$>$ {\bf Hashtable}$<$ {\bf K}, {\bf V} $>$\-::{\bf Hashtable} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_hashtable_a2f77d0c6d61286bf8d66552b5ade3f27}
+array of alveoles Simple constructor \hypertarget{class_hashtable_a3f4057afda4ad0f6b805f900e43b53f6}{\index{Hashtable@{Hashtable}!$\sim$\-Hashtable@{$\sim$\-Hashtable}}
+\index{$\sim$\-Hashtable@{$\sim$\-Hashtable}!Hashtable@{Hashtable}}
+\subsubsection[{$\sim$\-Hashtable}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename K, typename V$>$ {\bf Hashtable}$<$ {\bf K}, {\bf V} $>$\-::$\sim${\bf Hashtable} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_hashtable_a3f4057afda4ad0f6b805f900e43b53f6}
+Destructor 
+
+\subsection{Member Function Documentation}
+\hypertarget{class_hashtable_a7521d8ed5476dcfef5ea1079f98acb7b}{\index{Hashtable@{Hashtable}!contains@{contains}}
+\index{contains@{contains}!Hashtable@{Hashtable}}
+\subsubsection[{contains}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename K, typename V$>$ bool {\bf Hashtable}$<$ {\bf K}, {\bf V} $>$\-::contains (
+\begin{DoxyParamCaption}
+\item[{const {\bf K} \&}]{key}
+\end{DoxyParamCaption}
+)}}\label{class_hashtable_a7521d8ed5476dcfef5ea1079f98acb7b}
+Do table contains key ? 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em key} & key to find \\
+\hline
+\mbox{\tt out}  & {\em bool} & True if the key is here, else false \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_hashtable_a06702992ba59e62b443e1c2d380625dc}{\index{Hashtable@{Hashtable}!get@{get}}
+\index{get@{get}!Hashtable@{Hashtable}}
+\subsubsection[{get}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename K, typename V$>$ {\bf V} {\bf Hashtable}$<$ {\bf K}, {\bf V} $>$\-::get (
+\begin{DoxyParamCaption}
+\item[{const {\bf K} \&}]{key}
+\end{DoxyParamCaption}
+)}}\label{class_hashtable_a06702992ba59e62b443e1c2d380625dc}
+Return the value maped to the specified key 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em key} & a key in the hashtable \\
+\hline
+\mbox{\tt out}  & {\em value} & value associated with the key \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em \hyperlink{class_hashtable_exception}{Hashtable\-Exception}} & threw if key is not in the hashtable \\
+\hline
+\end{DoxyExceptions}
+\hypertarget{class_hashtable_a75e0588845c907821b884af8a0afe1b7}{\index{Hashtable@{Hashtable}!get\-Pairs@{get\-Pairs}}
+\index{get\-Pairs@{get\-Pairs}!Hashtable@{Hashtable}}
+\subsubsection[{get\-Pairs}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename K, typename V$>$ void {\bf Hashtable}$<$ {\bf K}, {\bf V} $>$\-::get\-Pairs (
+\begin{DoxyParamCaption}
+\item[{forward\-\_\-list$<$ pair$<$ string, int $>$$>$ \&}]{pairs}
+\end{DoxyParamCaption}
+)}}\label{class_hashtable_a75e0588845c907821b884af8a0afe1b7}
+Get a list of all kay and their value in pairs 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em pairs} & Vector which contains keys to find \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_hashtable_a779816cba88876b2547600f930b293db}{\index{Hashtable@{Hashtable}!is\-Empty@{is\-Empty}}
+\index{is\-Empty@{is\-Empty}!Hashtable@{Hashtable}}
+\subsubsection[{is\-Empty}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename K, typename V$>$ bool {\bf Hashtable}$<$ {\bf K}, {\bf V} $>$\-::is\-Empty (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_hashtable_a779816cba88876b2547600f930b293db}
+Tests if this hashtable maps no keys to values. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt out}  & {\em bool} & true if no elements in the hashtable, else false; \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_hashtable_af6f9a4e3d5c74f0d5d5f966eece2fc2b}{\index{Hashtable@{Hashtable}!put@{put}}
+\index{put@{put}!Hashtable@{Hashtable}}
+\subsubsection[{put}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename K, typename V$>$ void {\bf Hashtable}$<$ {\bf K}, {\bf V} $>$\-::put (
+\begin{DoxyParamCaption}
+\item[{{\bf K}}]{key, }
+\item[{{\bf V}}]{value}
+\end{DoxyParamCaption}
+)}}\label{class_hashtable_af6f9a4e3d5c74f0d5d5f966eece2fc2b}
+Map the specified key to the specified value in this hashtable. or update the maped value to the key 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em key} & key of the pair \\
+\hline
+\mbox{\tt in}  & {\em value} & value of the pair \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_hashtable_a5ff7eaa859387421be734f9573dc0ebe}{\index{Hashtable@{Hashtable}!remove@{remove}}
+\index{remove@{remove}!Hashtable@{Hashtable}}
+\subsubsection[{remove}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename K, typename V$>$ void {\bf Hashtable}$<$ {\bf K}, {\bf V} $>$\-::remove (
+\begin{DoxyParamCaption}
+\item[{const {\bf K} \&}]{key}
+\end{DoxyParamCaption}
+)}}\label{class_hashtable_a5ff7eaa859387421be734f9573dc0ebe}
+
+
+F\-I\-X\-M\-E \-: remove last element of a list lead to a seg. fault. 
+
+Remove the key (and its corresponding value) from this hashtable. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em key} & Key of the pair to delete \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em \hyperlink{class_hashtable_exception}{Hashtable\-Exception}} & threw if table does not contain key \\
+\hline
+\end{DoxyExceptions}
+\hypertarget{class_hashtable_ad3141029cd09f8e5e2026af5156c1e0e}{\index{Hashtable@{Hashtable}!to\-String@{to\-String}}
+\index{to\-String@{to\-String}!Hashtable@{Hashtable}}
+\subsubsection[{to\-String}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename K, typename V$>$ string {\bf Hashtable}$<$ {\bf K}, {\bf V} $>$\-::to\-String (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_hashtable_ad3141029cd09f8e5e2026af5156c1e0e}
+Return a description of the hashtable, enclosed in braces as well as \{key, value\}. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt out}  & {\em desc} & a string representation of this hashtable. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{class_hashtable_a741b7872f368f468f3b49d687830368a}{\index{Hashtable@{Hashtable}!\-\_\-table@{\-\_\-table}}
+\index{\-\_\-table@{\-\_\-table}!Hashtable@{Hashtable}}
+\subsubsection[{\-\_\-table}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename K, typename V$>$ {\bf Alveole}$<${\bf K},{\bf V}$>$$\ast$$\ast$ {\bf Hashtable}$<$ {\bf K}, {\bf V} $>$\-::\-\_\-table\hspace{0.3cm}{\ttfamily [private]}}}\label{class_hashtable_a741b7872f368f468f3b49d687830368a}
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+src/\hyperlink{hashtable_8hpp}{hashtable.\-hpp}\end{DoxyCompactItemize}

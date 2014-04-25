@@ -1,0 +1,252 @@
+\hypertarget{hashtable_8hpp}{\section{hashtable.\-hpp}
+\label{hashtable_8hpp}\index{src/hashtable.\-hpp@{src/hashtable.\-hpp}}
+}
+
+\begin{DoxyCode}
+00001 
+00038 \textcolor{preprocessor}{#ifndef HASHTABLE\_HPP}
+00039 \textcolor{preprocessor}{}\textcolor{preprocessor}{#define HASHTABLE\_HPP}
+00040 \textcolor{preprocessor}{}
+00042 \textcolor{preprocessor}{#ifndef END}
+\hypertarget{hashtable_8hpp_source_l00043}{}\hyperlink{hashtable_8hpp_a29fd18bed01c4d836c7ebfe73a125c3f}{00043} \textcolor{preprocessor}{}\textcolor{preprocessor}{#define END nullptr}
+00044 \textcolor{preprocessor}{}\textcolor{preprocessor}{#endif}
+00045 \textcolor{preprocessor}{}
+00047 \textcolor{preprocessor}{#ifndef ARRAYSIZE}
+\hypertarget{hashtable_8hpp_source_l00048}{}\hyperlink{hashtable_8hpp_a78d344caabde729a4559393a0552bf1c}{00048} \textcolor{preprocessor}{}\textcolor{preprocessor}{#define ARRAYSIZE 25}
+00049 \textcolor{preprocessor}{}\textcolor{preprocessor}{#endif}
+00050 \textcolor{preprocessor}{}
+00051 \textcolor{comment}{// included files section}
+00052 \textcolor{preprocessor}{#include <string>}
+00053 \textcolor{preprocessor}{#include <cassert>}
+00054 \textcolor{preprocessor}{#include <utility>}
+00055 \textcolor{preprocessor}{#include <forward\_list>}
+00056 
+00057 \textcolor{comment}{// will desactive cassert}
+\hypertarget{hashtable_8hpp_source_l00058}{}\hyperlink{hashtable_8hpp_a8de3ed741dadc9c979a4ff17c0a9116e}{00058} \textcolor{preprocessor}{#define NDEBUG}
+00059 \textcolor{preprocessor}{}
+00060 \textcolor{keyword}{using} std::string;
+00061 \textcolor{keyword}{using} std::pair;
+00062 \textcolor{keyword}{using} std::forward\_list;
+00063 
+00075 \textcolor{keyword}{template} <\textcolor{keyword}{typename} K> \textcolor{keywordtype}{unsigned} \hyperlink{hashtable_8hpp_a0884e6a3e2395d8a9cec36a7c651820b}{computehash}(\hyperlink{sample__hashtable_8cpp_a97d832ae23af4f215e801e37e4f94254}{K} element);
+00076 
+\hypertarget{hashtable_8hpp_source_l00080}{}\hyperlink{class_hashtable_exception}{00080} \textcolor{keyword}{class }\hyperlink{class_hashtable_exception}{HashtableException} : std::exception \{
+00081     \textcolor{keyword}{private}:
+\hypertarget{hashtable_8hpp_source_l00082}{}\hyperlink{class_hashtable_exception_a242dcd5048ce89c2aadd0ca97f5c6d9a}{00082}         \textcolor{keyword}{const} \textcolor{keywordtype}{char}* \hyperlink{class_hashtable_exception_a242dcd5048ce89c2aadd0ca97f5c6d9a}{\_cause}; 
+00083     \textcolor{keyword}{public}:
+\hypertarget{hashtable_8hpp_source_l00088}{}\hyperlink{class_hashtable_exception_a1a3ae95bd655064144b485f0938fddca}{00088}         \hyperlink{class_hashtable_exception_a1a3ae95bd655064144b485f0938fddca}{HashtableException}(\textcolor{keyword}{const} \textcolor{keywordtype}{char}* cause):
+00089         \hyperlink{class_hashtable_exception_a242dcd5048ce89c2aadd0ca97f5c6d9a}{\_cause}(cause)
+00090         \{\}
+00091 
+\hypertarget{hashtable_8hpp_source_l00095}{}\hyperlink{class_hashtable_exception_a9668a272e0470e9d4a16f0f5307e6153}{00095}         \textcolor{keyword}{virtual} \hyperlink{class_hashtable_exception_a9668a272e0470e9d4a16f0f5307e6153}{~HashtableException}() throw()\{
+00096             \textcolor{comment}{// do nothing}
+00097         \}
+00098 
+\hypertarget{hashtable_8hpp_source_l00102}{}\hyperlink{class_hashtable_exception_a980d0861fe744622043fcdd654ea5e07}{00102}         \textcolor{keyword}{virtual} \textcolor{keyword}{const} \textcolor{keywordtype}{char}* \hyperlink{class_hashtable_exception_a980d0861fe744622043fcdd654ea5e07}{what}()\textcolor{keyword}{const} throw()\{
+00103             \textcolor{keywordflow}{return} \hyperlink{class_hashtable_exception_a242dcd5048ce89c2aadd0ca97f5c6d9a}{\_cause};
+00104         \}
+00105 \};
+00106 
+00112 \textcolor{comment}{// TODO: implement iterator to browse within alveoles very quickly and easely}
+00113 \textcolor{keyword}{template} <\textcolor{keyword}{typename} K, \textcolor{keyword}{typename} V>
+\hypertarget{hashtable_8hpp_source_l00114}{}\hyperlink{class_alveole}{00114} \textcolor{keyword}{class }\hyperlink{class_alveole}{Alveole}\{
+00115     \textcolor{keyword}{private}:
+\hypertarget{hashtable_8hpp_source_l00116}{}\hyperlink{class_alveole_aebb26347bcaaaf2c0cbe96903b63bc70}{00116}         \hyperlink{sample__hashtable_8cpp_a97d832ae23af4f215e801e37e4f94254}{K} \hyperlink{class_alveole_aebb26347bcaaaf2c0cbe96903b63bc70}{\_key}; 
+\hypertarget{hashtable_8hpp_source_l00117}{}\hyperlink{class_alveole_a50952a1693019a7ca857df267c047c84}{00117}         \hyperlink{sample__hashtable_8cpp_af40a326b23c68a27cebe60f16634a2cb}{V} \hyperlink{class_alveole_a50952a1693019a7ca857df267c047c84}{\_value}; 
+\hypertarget{hashtable_8hpp_source_l00118}{}\hyperlink{class_alveole_aa566b7335f9ef0dc83ad2a596e659f90}{00118}         \hyperlink{class_alveole}{Alveole<K,V>}* \hyperlink{class_alveole_aa566b7335f9ef0dc83ad2a596e659f90}{\_next}; 
+00120     \textcolor{keyword}{public}:
+\hypertarget{hashtable_8hpp_source_l00125}{}\hyperlink{class_alveole_a66a49658c41430d186827c8926f64900}{00125}         \hyperlink{class_alveole_a66a49658c41430d186827c8926f64900}{Alveole}(\textcolor{keyword}{const} \hyperlink{class_alveole}{Alveole<K,V>} &other):
+00126         \hyperlink{class_alveole_aebb26347bcaaaf2c0cbe96903b63bc70}{\_key}(other.\hyperlink{class_alveole_aebb26347bcaaaf2c0cbe96903b63bc70}{\_key}),
+00127         \hyperlink{class_alveole_a50952a1693019a7ca857df267c047c84}{\_value}(other.\hyperlink{class_alveole_a50952a1693019a7ca857df267c047c84}{\_value})
+00128         \{
+00129             \textcolor{comment}{// if there are elements coming next}
+00130             \textcolor{keywordflow}{if}(\hyperlink{hashtable_8hpp_a29fd18bed01c4d836c7ebfe73a125c3f}{END} != other.\hyperlink{class_alveole_aa566b7335f9ef0dc83ad2a596e659f90}{\_next})\{
+00131                 \hyperlink{class_alveole_aa566b7335f9ef0dc83ad2a596e659f90}{\_next} = \textcolor{keyword}{new} \hyperlink{class_alveole_aa935efb574de27fcf5171e1a631f40c9}{Alveole}(other.\hyperlink{class_alveole_aa566b7335f9ef0dc83ad2a596e659f90}{\_next});
+00132             \}
+00133             \textcolor{keywordflow}{else} \{
+00134                 \hyperlink{class_alveole_aa566b7335f9ef0dc83ad2a596e659f90}{\_next} = \hyperlink{hashtable_8hpp_a29fd18bed01c4d836c7ebfe73a125c3f}{END};
+00135             \}
+00136         \}
+00137 
+\hypertarget{hashtable_8hpp_source_l00142}{}\hyperlink{class_alveole_a24ac02d39a6eca02630f6f2a11d86575}{00142}         \hyperlink{class_alveole_a24ac02d39a6eca02630f6f2a11d86575}{Alveole}(\hyperlink{sample__hashtable_8cpp_a97d832ae23af4f215e801e37e4f94254}{K} key, \hyperlink{sample__hashtable_8cpp_af40a326b23c68a27cebe60f16634a2cb}{V} value) :
+00143         \hyperlink{class_alveole_aebb26347bcaaaf2c0cbe96903b63bc70}{\_key}(key), \hyperlink{class_alveole_a50952a1693019a7ca857df267c047c84}{\_value}(value),
+00144         \hyperlink{class_alveole_aa566b7335f9ef0dc83ad2a596e659f90}{\_next}(\hyperlink{hashtable_8hpp_a29fd18bed01c4d836c7ebfe73a125c3f}{END})
+00145         \{\}
+00146 
+\hypertarget{hashtable_8hpp_source_l00150}{}\hyperlink{class_alveole_aa935efb574de27fcf5171e1a631f40c9}{00150}         \hyperlink{class_alveole_aa935efb574de27fcf5171e1a631f40c9}{Alveole}() : \hyperlink{class_alveole_aa566b7335f9ef0dc83ad2a596e659f90}{\_next}(\hyperlink{hashtable_8hpp_a29fd18bed01c4d836c7ebfe73a125c3f}{END})\{\};
+00151 
+\hypertarget{hashtable_8hpp_source_l00157}{}\hyperlink{class_alveole_afc611d6ccd9406b36c1326653cc80f1e}{00157}         \hyperlink{class_alveole_afc611d6ccd9406b36c1326653cc80f1e}{Alveole}(\hyperlink{sample__hashtable_8cpp_a97d832ae23af4f215e801e37e4f94254}{K} key, \hyperlink{sample__hashtable_8cpp_af40a326b23c68a27cebe60f16634a2cb}{V} value, \hyperlink{class_alveole}{Alveole<K,V>}* next):
+00158         \hyperlink{class_alveole_aebb26347bcaaaf2c0cbe96903b63bc70}{\_key}(key),
+00159         \hyperlink{class_alveole_a50952a1693019a7ca857df267c047c84}{\_value}(value),
+00160         \hyperlink{class_alveole_aa566b7335f9ef0dc83ad2a596e659f90}{\_next}(next)
+00161         \{\}
+00162 
+\hypertarget{hashtable_8hpp_source_l00165}{}\hyperlink{class_alveole_ac5b90a69dc1458b981a742e80499aca0}{00165}         \hyperlink{class_alveole_ac5b90a69dc1458b981a742e80499aca0}{~Alveole}()\{
+00166             \textcolor{comment}{//delete &\_key;}
+00167             \textcolor{comment}{//delete &\_value;}
+00168             \textcolor{comment}{//delete \_next;}
+00169         \}
+00170 
+\hypertarget{hashtable_8hpp_source_l00174}{}\hyperlink{class_alveole_add57358f630300978cfd314a9a392c8b}{00174}         \hyperlink{sample__hashtable_8cpp_a97d832ae23af4f215e801e37e4f94254}{K} \hyperlink{class_alveole_add57358f630300978cfd314a9a392c8b}{getKey}()\{ \textcolor{keywordflow}{return} \hyperlink{class_alveole_aebb26347bcaaaf2c0cbe96903b63bc70}{\_key}; \}
+00175 
+\hypertarget{hashtable_8hpp_source_l00179}{}\hyperlink{class_alveole_a63378af984be5bb63fb755010c61002f}{00179}         \hyperlink{sample__hashtable_8cpp_af40a326b23c68a27cebe60f16634a2cb}{V} \hyperlink{class_alveole_a63378af984be5bb63fb755010c61002f}{getValue}()\{ \textcolor{keywordflow}{return} \hyperlink{class_alveole_a50952a1693019a7ca857df267c047c84}{\_value}; \}
+00180 
+\hypertarget{hashtable_8hpp_source_l00184}{}\hyperlink{class_alveole_ae540dba4d60c74ff17e2abc03deb33c8}{00184}         \hyperlink{class_alveole}{Alveole<K,V>}* \hyperlink{class_alveole_ae540dba4d60c74ff17e2abc03deb33c8}{getNext}()\{ \textcolor{keywordflow}{return} \hyperlink{class_alveole_aa566b7335f9ef0dc83ad2a596e659f90}{\_next}; \}
+00185 
+\hypertarget{hashtable_8hpp_source_l00189}{}\hyperlink{class_alveole_a52932b33fef397328eea9ab139d1621e}{00189}         \textcolor{keywordtype}{void} \hyperlink{class_alveole_a52932b33fef397328eea9ab139d1621e}{setValue}(\hyperlink{sample__hashtable_8cpp_af40a326b23c68a27cebe60f16634a2cb}{V} n\_value)\{ \hyperlink{class_alveole_a50952a1693019a7ca857df267c047c84}{\_value} = n\_value; \}
+00190 
+\hypertarget{hashtable_8hpp_source_l00194}{}\hyperlink{class_alveole_ad756cdf41a7ab00c93c2264c0a1da26c}{00194}         \textcolor{keywordtype}{void} \hyperlink{class_alveole_ad756cdf41a7ab00c93c2264c0a1da26c}{setNext}(\hyperlink{class_alveole}{Alveole<K,V>}* n\_next)\{ \hyperlink{class_alveole_aa566b7335f9ef0dc83ad2a596e659f90}{\_next} = n\_next; \}
+00195 
+\hypertarget{hashtable_8hpp_source_l00199}{}\hyperlink{class_alveole_a504981011163116c40d710a0e1d26a81}{00199}         \textcolor{keywordtype}{string} \hyperlink{class_alveole_a504981011163116c40d710a0e1d26a81}{toString}()\{
+00200             \textcolor{keywordtype}{string} desc = \textcolor{stringliteral}{"\{"} + \hyperlink{class_alveole_aebb26347bcaaaf2c0cbe96903b63bc70}{\_key} + \textcolor{stringliteral}{", "} + \hyperlink{class_alveole_a50952a1693019a7ca857df267c047c84}{\_value} + \textcolor{stringliteral}{"\}"};
+00201             \textcolor{keywordflow}{if}(\hyperlink{hashtable_8hpp_a29fd18bed01c4d836c7ebfe73a125c3f}{END} == \hyperlink{class_alveole_aa566b7335f9ef0dc83ad2a596e659f90}{\_next})\{
+00202                 \textcolor{keywordflow}{return} desc;
+00203             \} \textcolor{keywordflow}{else} \{
+00204                 \textcolor{keywordflow}{return} desc + \textcolor{stringliteral}{", "} + \hyperlink{class_alveole_aa566b7335f9ef0dc83ad2a596e659f90}{\_next}->toString();
+00205             \}
+00206         \}
+00207 \};
+00208 
+00211 \textcolor{keyword}{template} <\textcolor{keyword}{typename} K, \textcolor{keyword}{typename} V>
+\hypertarget{hashtable_8hpp_source_l00212}{}\hyperlink{class_hashtable}{00212} \textcolor{keyword}{class }\hyperlink{class_hashtable}{Hashtable} \{
+00213 
+00214     \textcolor{keyword}{private}:
+\hypertarget{hashtable_8hpp_source_l00215}{}\hyperlink{class_hashtable_a741b7872f368f468f3b49d687830368a}{00215}         \hyperlink{class_alveole}{Alveole<K,V>}** \hyperlink{class_hashtable_a741b7872f368f468f3b49d687830368a}{\_table}; 
+00217     \textcolor{keyword}{public}:
+\hypertarget{hashtable_8hpp_source_l00220}{}\hyperlink{class_hashtable_a2f77d0c6d61286bf8d66552b5ade3f27}{00220}         \hyperlink{class_hashtable_a2f77d0c6d61286bf8d66552b5ade3f27}{Hashtable}()\{
+00221             \hyperlink{class_hashtable_a741b7872f368f468f3b49d687830368a}{\_table} = \textcolor{keyword}{new} \hyperlink{class_alveole}{Alveole<K,V>}*[\hyperlink{hashtable_8hpp_a78d344caabde729a4559393a0552bf1c}{ARRAYSIZE}];
+00222             \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i = 0; i<\hyperlink{hashtable_8hpp_a78d344caabde729a4559393a0552bf1c}{ARRAYSIZE}; ++i)\{
+00223                 \hyperlink{class_hashtable_a741b7872f368f468f3b49d687830368a}{\_table}[i] = \hyperlink{hashtable_8hpp_a29fd18bed01c4d836c7ebfe73a125c3f}{END};
+00224             \}
+00225         \}
+00226 
+\hypertarget{hashtable_8hpp_source_l00229}{}\hyperlink{class_hashtable_a3f4057afda4ad0f6b805f900e43b53f6}{00229}         \hyperlink{class_hashtable_a3f4057afda4ad0f6b805f900e43b53f6}{~Hashtable}()\{
+00230             \textcolor{keyword}{delete}[] \hyperlink{class_hashtable_a741b7872f368f468f3b49d687830368a}{\_table};
+00231         \}
+00232 
+\hypertarget{hashtable_8hpp_source_l00237}{}\hyperlink{class_hashtable_a7521d8ed5476dcfef5ea1079f98acb7b}{00237}         \textcolor{keywordtype}{bool} \hyperlink{class_hashtable_a7521d8ed5476dcfef5ea1079f98acb7b}{contains}(\textcolor{keyword}{const} \hyperlink{sample__hashtable_8cpp_a97d832ae23af4f215e801e37e4f94254}{K} &key)\{
+00238             \textcolor{keywordtype}{bool} here = \textcolor{keyword}{false};
+00239             \textcolor{keywordtype}{int} index = \hyperlink{sample__hashtable_8cpp_ae31ffa0e4fbbbcb53f4e30048ba55b66}{computehash<K>}(key)%\hyperlink{hashtable_8hpp_a78d344caabde729a4559393a0552bf1c}{ARRAYSIZE};
+00240             assert(index>=0);
+00241             assert(index<\hyperlink{hashtable_8hpp_a78d344caabde729a4559393a0552bf1c}{ARRAYSIZE});
+00242             \hyperlink{class_alveole}{Alveole<K,V>}* browser = \hyperlink{class_hashtable_a741b7872f368f468f3b49d687830368a}{\_table}[index];
+00243             \textcolor{keywordflow}{while}(not here and \hyperlink{hashtable_8hpp_a29fd18bed01c4d836c7ebfe73a125c3f}{END} != browser)\{
+00244                 \textcolor{keywordflow}{if}(key == browser->\hyperlink{class_alveole_add57358f630300978cfd314a9a392c8b}{getKey}())\{
+00245                     here = \textcolor{keyword}{true};
+00246                 \}
+00247                 browser = browser->\hyperlink{class_alveole_ae540dba4d60c74ff17e2abc03deb33c8}{getNext}();
+00248                 \}
+00249             \textcolor{keywordflow}{return} here;
+00250         \}
+00251 
+\hypertarget{hashtable_8hpp_source_l00257}{}\hyperlink{class_hashtable_a06702992ba59e62b443e1c2d380625dc}{00257}         \hyperlink{sample__hashtable_8cpp_af40a326b23c68a27cebe60f16634a2cb}{V} \textcolor{keyword}{get}(\textcolor{keyword}{const} \hyperlink{sample__hashtable_8cpp_a97d832ae23af4f215e801e37e4f94254}{K} &key)\{
+00258             \textcolor{keywordtype}{int} index = \hyperlink{sample__hashtable_8cpp_ae31ffa0e4fbbbcb53f4e30048ba55b66}{computehash<K>}(key)%\hyperlink{hashtable_8hpp_a78d344caabde729a4559393a0552bf1c}{ARRAYSIZE};
+00259             assert(index>=0);
+00260             assert(index<\hyperlink{hashtable_8hpp_a78d344caabde729a4559393a0552bf1c}{ARRAYSIZE});
+00261             \hyperlink{class_alveole}{Alveole<K,V>}* browser = \hyperlink{class_hashtable_a741b7872f368f468f3b49d687830368a}{\_table}[index];
+00262             \textcolor{keywordtype}{bool} undone = \textcolor{keyword}{true};
+00263             \textcolor{keywordflow}{while}(undone and \hyperlink{hashtable_8hpp_a29fd18bed01c4d836c7ebfe73a125c3f}{END} != browser)\{
+00264                 \textcolor{keywordflow}{if}(key == browser->\hyperlink{class_alveole_add57358f630300978cfd314a9a392c8b}{getKey}())\{
+00265                     undone = \textcolor{keyword}{false};
+00266                 \}
+00267                 \textcolor{keywordflow}{else} \{
+00268                     browser = browser->\hyperlink{class_alveole_ae540dba4d60c74ff17e2abc03deb33c8}{getNext}();
+00269                 \}
+00270             \}
+00271             \textcolor{keywordflow}{if}(undone)\{
+00272                 \textcolor{keywordflow}{throw} \hyperlink{class_hashtable_exception}{HashtableException}(\textcolor{stringliteral}{"Key not found!"});
+00273             \} \textcolor{keywordflow}{else} \{
+00274                 \textcolor{keywordflow}{return} browser->\hyperlink{class_alveole_a63378af984be5bb63fb755010c61002f}{getValue}();
+00275             \}
+00276         \}
+00277 
+\hypertarget{hashtable_8hpp_source_l00281}{}\hyperlink{class_hashtable_a779816cba88876b2547600f930b293db}{00281}         \textcolor{keywordtype}{bool} \hyperlink{class_hashtable_a779816cba88876b2547600f930b293db}{isEmpty}()\{
+00282             \textcolor{keywordtype}{bool} empty = \textcolor{keyword}{true};
+00283             \textcolor{keywordtype}{int} i = 0;
+00284             \textcolor{keywordflow}{while}(empty and i<\hyperlink{hashtable_8hpp_a78d344caabde729a4559393a0552bf1c}{ARRAYSIZE})\{
+00285                 empty = (\hyperlink{hashtable_8hpp_a29fd18bed01c4d836c7ebfe73a125c3f}{END} == \hyperlink{class_hashtable_a741b7872f368f468f3b49d687830368a}{\_table}[i++]);
+00286             \}
+00287             \textcolor{keywordflow}{return} empty;
+00288         \}
+00289 
+00295         \textcolor{comment}{// TODO: optimize this fucking code}
+\hypertarget{hashtable_8hpp_source_l00296}{}\hyperlink{class_hashtable_af6f9a4e3d5c74f0d5d5f966eece2fc2b}{00296}         \textcolor{keywordtype}{void} \hyperlink{class_hashtable_af6f9a4e3d5c74f0d5d5f966eece2fc2b}{put}(\hyperlink{sample__hashtable_8cpp_a97d832ae23af4f215e801e37e4f94254}{K} key, \hyperlink{sample__hashtable_8cpp_af40a326b23c68a27cebe60f16634a2cb}{V} value)\{
+00297             \textcolor{comment}{// where to put the pair ?}
+00298             \textcolor{keywordtype}{int} index = \hyperlink{sample__hashtable_8cpp_ae31ffa0e4fbbbcb53f4e30048ba55b66}{computehash<K>}(key)%\hyperlink{hashtable_8hpp_a78d344caabde729a4559393a0552bf1c}{ARRAYSIZE};
+00299             assert(index>=0);
+00300             assert(index<\hyperlink{hashtable_8hpp_a78d344caabde729a4559393a0552bf1c}{ARRAYSIZE});
+00301             \textcolor{comment}{// browse alveoles at this place}
+00302             \hyperlink{class_alveole}{Alveole<K,V>}* browser = \hyperlink{class_hashtable_a741b7872f368f468f3b49d687830368a}{\_table}[index];
+00303             \textcolor{keywordtype}{bool} undone = \textcolor{keyword}{true};
+00304             \textcolor{keywordflow}{while}(undone and \hyperlink{hashtable_8hpp_a29fd18bed01c4d836c7ebfe73a125c3f}{END} != browser)\{
+00305                 \textcolor{keywordflow}{if}(key == browser->\hyperlink{class_alveole_add57358f630300978cfd314a9a392c8b}{getKey}())\{
+00306                     \textcolor{comment}{//std::cout << "Updating (" << key << ", " << value <<") at " << index << std::endl; //
+       debug line}
+00307                     browser->\hyperlink{class_alveole_a52932b33fef397328eea9ab139d1621e}{setValue}(value);
+00308                     undone = \textcolor{keyword}{false};
+00309                 \}
+00310                 browser = browser->\hyperlink{class_alveole_ae540dba4d60c74ff17e2abc03deb33c8}{getNext}();
+00311             \}
+00312             \textcolor{keywordflow}{if}(undone)\{
+00313                 \hyperlink{class_hashtable_a741b7872f368f468f3b49d687830368a}{\_table}[index] = \textcolor{keyword}{new} \hyperlink{class_alveole}{Alveole<K,V>}(key, value, 
+      \hyperlink{class_hashtable_a741b7872f368f468f3b49d687830368a}{\_table}[index]);
+00314                 \textcolor{comment}{//std::cout << "Adding (" << key << ", " << value <<") at " << index << std::endl; // debug
+       line}
+00315             \}
+00316         \}
+00317 
+00322         \textcolor{keywordtype}{void} \textcolor{keyword}{remove}(\textcolor{keyword}{const} \hyperlink{sample__hashtable_8cpp_a97d832ae23af4f215e801e37e4f94254}{K} &key)\{
+00324             \textcolor{keywordtype}{int} index = \hyperlink{sample__hashtable_8cpp_ae31ffa0e4fbbbcb53f4e30048ba55b66}{computehash<K>}(key)%\hyperlink{hashtable_8hpp_a78d344caabde729a4559393a0552bf1c}{ARRAYSIZE};
+00325             assert(index>=0);
+00326             assert(index<\hyperlink{hashtable_8hpp_a78d344caabde729a4559393a0552bf1c}{ARRAYSIZE});
+00327             \hyperlink{class_alveole}{Alveole<K,V>}* bef = \textcolor{keyword}{new} \hyperlink{class_alveole}{Alveole<K,V>}();
+00328             bef->\hyperlink{class_alveole_ad756cdf41a7ab00c93c2264c0a1da26c}{setNext}(\hyperlink{class_hashtable_a741b7872f368f468f3b49d687830368a}{\_table}[index]);
+00329             \hyperlink{class_alveole}{Alveole<K,V>}* cur = \hyperlink{class_hashtable_a741b7872f368f468f3b49d687830368a}{\_table}[index];
+00330             \textcolor{keywordtype}{bool} undone = \textcolor{keyword}{true};
+00331             \textcolor{keywordflow}{while}(undone and \hyperlink{hashtable_8hpp_a29fd18bed01c4d836c7ebfe73a125c3f}{END} != cur)\{
+00332                 \textcolor{comment}{//std::cout << cur->toString() << std::endl; // debug line}
+00333                 \textcolor{keywordflow}{if}(key == cur->\hyperlink{class_alveole_add57358f630300978cfd314a9a392c8b}{getKey}())\{
+00334                     bef->\hyperlink{class_alveole_ad756cdf41a7ab00c93c2264c0a1da26c}{setNext}(cur->\hyperlink{class_alveole_ae540dba4d60c74ff17e2abc03deb33c8}{getNext}());
+00335                     assert(bef->\hyperlink{class_alveole_ae540dba4d60c74ff17e2abc03deb33c8}{getNext}() == cur->\hyperlink{class_alveole_ae540dba4d60c74ff17e2abc03deb33c8}{getNext}());
+00336                     undone = \textcolor{keyword}{false};
+00337                     \textcolor{keyword}{delete} cur;
+00338                 \}
+00339                 \textcolor{keywordflow}{else} \{
+00340                     assert(cur != \hyperlink{hashtable_8hpp_a29fd18bed01c4d836c7ebfe73a125c3f}{END});
+00341                     bef = cur;
+00342                     cur = cur->\hyperlink{class_alveole_ae540dba4d60c74ff17e2abc03deb33c8}{getNext}();
+00343                 \}
+00344             \}
+00345             \textcolor{keywordflow}{if}(undone) \textcolor{keywordflow}{throw} \hyperlink{class_hashtable_exception}{HashtableException}(\textcolor{stringliteral}{"Key is not here!"});
+00346         \}
+00347 
+\hypertarget{hashtable_8hpp_source_l00352}{}\hyperlink{class_hashtable_ad3141029cd09f8e5e2026af5156c1e0e}{00352}         \textcolor{keywordtype}{string} \hyperlink{class_hashtable_ad3141029cd09f8e5e2026af5156c1e0e}{toString}()\{
+00353             \textcolor{keywordtype}{string} desc = \textcolor{stringliteral}{"["};
+00354             \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i = 0; i<\hyperlink{hashtable_8hpp_a78d344caabde729a4559393a0552bf1c}{ARRAYSIZE}; ++i)\{
+00355                 \textcolor{keywordflow}{if}(\hyperlink{hashtable_8hpp_a29fd18bed01c4d836c7ebfe73a125c3f}{END} != \hyperlink{class_hashtable_a741b7872f368f468f3b49d687830368a}{\_table}[i])\{
+00356                     desc.size()<2?desc += (\hyperlink{class_hashtable_a741b7872f368f468f3b49d687830368a}{\_table}[i]->toString()):desc += \textcolor{stringliteral}{", "} + (
+      \hyperlink{class_hashtable_a741b7872f368f468f3b49d687830368a}{\_table}[i]->\hyperlink{class_hashtable_ad3141029cd09f8e5e2026af5156c1e0e}{toString}());
+00357                 \}
+00358             \}
+00359             \textcolor{keywordflow}{return} desc + \textcolor{stringliteral}{"]"};
+00360         \}
+00361         
+\hypertarget{hashtable_8hpp_source_l00365}{}\hyperlink{class_hashtable_a75e0588845c907821b884af8a0afe1b7}{00365}          \textcolor{keywordtype}{void} \hyperlink{class_hashtable_a75e0588845c907821b884af8a0afe1b7}{getPairs}(forward\_list<pair<string, int>> &pairs)\{
+00366             \textcolor{comment}{// we can browse Alveole with it}
+00367             \hyperlink{class_alveole}{Alveole<K, V>}* browser;
+00368             \textcolor{comment}{// For each cell in \_table}
+00369             \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i=0; i<\hyperlink{hashtable_8hpp_a78d344caabde729a4559393a0552bf1c}{ARRAYSIZE}; ++i)\{
+00370                 \textcolor{comment}{// browse alveoli here}
+00371                 browser = \hyperlink{class_hashtable_a741b7872f368f468f3b49d687830368a}{\_table}[i];
+00372                 \textcolor{keywordflow}{while}(\hyperlink{hashtable_8hpp_a29fd18bed01c4d836c7ebfe73a125c3f}{END} != browser)\{
+00373                     pairs.push\_front(pair<string, int>(browser->\hyperlink{class_alveole_add57358f630300978cfd314a9a392c8b}{getKey}(), browser->
+      \hyperlink{class_alveole_a63378af984be5bb63fb755010c61002f}{getValue}()));
+00374                     browser = browser->\hyperlink{class_alveole_ae540dba4d60c74ff17e2abc03deb33c8}{getNext}();
+00375                 \}
+00376             \}
+00377         \}
+00378 
+00379 \};
+00380 
+00381 \textcolor{preprocessor}{#endif // HASHTABLE\_HPP}
+\end{DoxyCode}

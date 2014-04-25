@@ -1,0 +1,157 @@
+\hypertarget{class_tree}{\section{Tree$<$ T $>$ Class Template Reference}
+\label{class_tree}\index{Tree$<$ T $>$@{Tree$<$ T $>$}}
+}
+
+
+\hyperlink{class_tree}{Tree} is a recursive structure using nodes.  
+
+
+
+
+{\ttfamily \#include $<$tree.\-hpp$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_tree_a30ebe31999547d31fea5b40cc805f6a2}{Tree} ()
+\item 
+\hyperlink{class_tree_aaefcdf4990c48b9bc90e2c2c3fe74a67}{Tree} (const \hyperlink{class_tree}{Tree}$<$ T $>$ \&other)
+\item 
+\hyperlink{class_tree_acf08fade73658f5ea3df0d2794d95277}{Tree} (T element)
+\item 
+\hyperlink{class_tree_a04affc46d89a0ef5d517ab685c9c346e}{$\sim$\-Tree} ()
+\item 
+bool \hyperlink{class_tree_a6de8e50615c6a644025b2f1af8684f9c}{contains} (T element)
+\item 
+int \hyperlink{class_tree_a9300caf575a5a89292e620e8b73112c7}{height} ()
+\item 
+void \hyperlink{class_tree_a8f0fd8ff56ed1f4a5d1e86f404d364ea}{put} (T element)
+\item 
+void \hyperlink{class_tree_a21d50a1c43b311b6ed5ce90717fad4c8}{remove} (T element)
+\item 
+string \hyperlink{class_tree_aabd6868e9e02fbe9affb1f7eed04d51c}{to\-String} ()
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_node}{Node}$<$ T $>$ \hyperlink{class_tree_a4f23e98860f95126711a63822b7d0a4c}{\-\_\-root}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$typename T = string$>$class Tree$<$ T $>$}
+
+\hyperlink{class_tree}{Tree} is a recursive structure using nodes. 
+
+A root value and subtrees of children, represented as a set of linked nodes. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_tree_a30ebe31999547d31fea5b40cc805f6a2}{\index{Tree@{Tree}!Tree@{Tree}}
+\index{Tree@{Tree}!Tree@{Tree}}
+\subsubsection[{Tree}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T = string$>$ {\bf Tree}$<$ T $>$\-::{\bf Tree} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_tree_a30ebe31999547d31fea5b40cc805f6a2}
+First node of the tree Default constructor \hypertarget{class_tree_aaefcdf4990c48b9bc90e2c2c3fe74a67}{\index{Tree@{Tree}!Tree@{Tree}}
+\index{Tree@{Tree}!Tree@{Tree}}
+\subsubsection[{Tree}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T = string$>$ {\bf Tree}$<$ T $>$\-::{\bf Tree} (
+\begin{DoxyParamCaption}
+\item[{const {\bf Tree}$<$ T $>$ \&}]{other}
+\end{DoxyParamCaption}
+)}}\label{class_tree_aaefcdf4990c48b9bc90e2c2c3fe74a67}
+Copy constructor \hypertarget{class_tree_acf08fade73658f5ea3df0d2794d95277}{\index{Tree@{Tree}!Tree@{Tree}}
+\index{Tree@{Tree}!Tree@{Tree}}
+\subsubsection[{Tree}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T = string$>$ {\bf Tree}$<$ T $>$\-::{\bf Tree} (
+\begin{DoxyParamCaption}
+\item[{T}]{element}
+\end{DoxyParamCaption}
+)}}\label{class_tree_acf08fade73658f5ea3df0d2794d95277}
+Common constructor, create an tree 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em element} & Root of the tree \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_tree_a04affc46d89a0ef5d517ab685c9c346e}{\index{Tree@{Tree}!$\sim$\-Tree@{$\sim$\-Tree}}
+\index{$\sim$\-Tree@{$\sim$\-Tree}!Tree@{Tree}}
+\subsubsection[{$\sim$\-Tree}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T = string$>$ {\bf Tree}$<$ T $>$\-::$\sim${\bf Tree} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_tree_a04affc46d89a0ef5d517ab685c9c346e}
+Destructor, destroy the whole tree 
+
+\subsection{Member Function Documentation}
+\hypertarget{class_tree_a6de8e50615c6a644025b2f1af8684f9c}{\index{Tree@{Tree}!contains@{contains}}
+\index{contains@{contains}!Tree@{Tree}}
+\subsubsection[{contains}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T = string$>$ bool {\bf Tree}$<$ T $>$\-::contains (
+\begin{DoxyParamCaption}
+\item[{T}]{element}
+\end{DoxyParamCaption}
+)}}\label{class_tree_a6de8e50615c6a644025b2f1af8684f9c}
+Is the element in the tree ? 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em element} & Search the element in the \hyperlink{class_tree}{Tree} \\
+\hline
+\mbox{\tt out}  & {\em bool} & True if element is here, else false. \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_tree_a9300caf575a5a89292e620e8b73112c7}{\index{Tree@{Tree}!height@{height}}
+\index{height@{height}!Tree@{Tree}}
+\subsubsection[{height}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T = string$>$ int {\bf Tree}$<$ T $>$\-::height (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_tree_a9300caf575a5a89292e620e8b73112c7}
+The height of the tree 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt out}  & {\em hgt} & Height of the tree \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_tree_a8f0fd8ff56ed1f4a5d1e86f404d364ea}{\index{Tree@{Tree}!put@{put}}
+\index{put@{put}!Tree@{Tree}}
+\subsubsection[{put}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T = string$>$ void {\bf Tree}$<$ T $>$\-::put (
+\begin{DoxyParamCaption}
+\item[{T}]{element}
+\end{DoxyParamCaption}
+)}}\label{class_tree_a8f0fd8ff56ed1f4a5d1e86f404d364ea}
+Put an element in the tree 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em element} & New element to put into the tree \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_tree_a21d50a1c43b311b6ed5ce90717fad4c8}{\index{Tree@{Tree}!remove@{remove}}
+\index{remove@{remove}!Tree@{Tree}}
+\subsubsection[{remove}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T = string$>$ void {\bf Tree}$<$ T $>$\-::remove (
+\begin{DoxyParamCaption}
+\item[{T}]{element}
+\end{DoxyParamCaption}
+)}}\label{class_tree_a21d50a1c43b311b6ed5ce90717fad4c8}
+Remove an element from the tree 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em data} & Element to remove \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_tree_aabd6868e9e02fbe9affb1f7eed04d51c}{\index{Tree@{Tree}!to\-String@{to\-String}}
+\index{to\-String@{to\-String}!Tree@{Tree}}
+\subsubsection[{to\-String}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T = string$>$ string {\bf Tree}$<$ T $>$\-::to\-String (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_tree_aabd6868e9e02fbe9affb1f7eed04d51c}
+Get a string representation of the \hyperlink{class_tree}{Tree} Each node tags is separated with a comma 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt out}  & {\em desc} & String representation of the tree \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{class_tree_a4f23e98860f95126711a63822b7d0a4c}{\index{Tree@{Tree}!\-\_\-root@{\-\_\-root}}
+\index{\-\_\-root@{\-\_\-root}!Tree@{Tree}}
+\subsubsection[{\-\_\-root}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T = string$>$ {\bf Node}$<$T$>$ {\bf Tree}$<$ T $>$\-::\-\_\-root\hspace{0.3cm}{\ttfamily [private]}}}\label{class_tree_a4f23e98860f95126711a63822b7d0a4c}
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+src/\hyperlink{tree_8hpp}{tree.\-hpp}\end{DoxyCompactItemize}

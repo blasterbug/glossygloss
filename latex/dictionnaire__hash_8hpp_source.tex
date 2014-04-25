@@ -1,0 +1,77 @@
+\hypertarget{dictionnaire__hash_8hpp}{\section{dictionnaire\-\_\-hash.\-hpp}
+\label{dictionnaire__hash_8hpp}\index{src/dictionnaire\-\_\-hash.\-hpp@{src/dictionnaire\-\_\-hash.\-hpp}}
+}
+
+\begin{DoxyCode}
+00001 
+00034 \textcolor{preprocessor}{#ifndef DICTIONNAIRE\_HPP}
+00035 \textcolor{preprocessor}{}\textcolor{preprocessor}{#define DICTIONNAIRE\_HPP}
+00036 \textcolor{preprocessor}{}
+00037  
+00038 \textcolor{preprocessor}{#include "\hyperlink{hashtable_8hpp}{hashtable.hpp}"}
+00039 \textcolor{preprocessor}{#include <utility>}
+00040 
+00041  
+00042 \textcolor{keyword}{using} std::pair;
+00043 
+00044 
+\hypertarget{dictionnaire__hash_8hpp_source_l00053}{}\hyperlink{dictionnaire__hash_8hpp_a7335ea62aecc32d159584bba8bb1fbd2}{00053} \textcolor{keywordtype}{bool} \hyperlink{dictionnaire__hash_8hpp_a7335ea62aecc32d159584bba8bb1fbd2}{triPair}(\textcolor{keyword}{const} pair<string, int> &first, \textcolor{keyword}{const} pair<string, int> &second)\{
+00054     \textcolor{keywordflow}{return} first.second > second.second;
+00055 \}
+00056 
+00057 \textcolor{keyword}{class }\hyperlink{class_dictionnaire}{Dictionnaire}\{
+00058     
+00059     \textcolor{keyword}{private} :
+\hypertarget{dictionnaire__hash_8hpp_source_l00061}{}\hyperlink{class_dictionnaire_ae35aafc505cc69d3fd7f9c95609246a9}{00061}         \hyperlink{class_hashtable}{Hashtable<string,int>} \hyperlink{class_dictionnaire_ae35aafc505cc69d3fd7f9c95609246a9}{dico};
+00062 
+00063     \textcolor{keyword}{public} :
+00064     
+\hypertarget{dictionnaire__hash_8hpp_source_l00068}{}\hyperlink{class_dictionnaire_a269116344596a7441062906bd8857b0a}{00068}         \hyperlink{class_dictionnaire_a269116344596a7441062906bd8857b0a}{Dictionnaire}()\{\}
+00069         
+00070         
+\hypertarget{dictionnaire__hash_8hpp_source_l00074}{}\hyperlink{class_dictionnaire_a1421a1ff914425472e7ddc41bf536775}{00074}         \hyperlink{class_dictionnaire_a1421a1ff914425472e7ddc41bf536775}{~Dictionnaire}()\{\}
+00075     
+\hypertarget{dictionnaire__hash_8hpp_source_l00081}{}\hyperlink{class_dictionnaire_a7821613d5c6e03b481d678bb982d29c9}{00081}         \textcolor{keywordtype}{bool} \hyperlink{class_dictionnaire_a7821613d5c6e03b481d678bb982d29c9}{contientMot}(\textcolor{keywordtype}{string} mot)\{
+00082             \textcolor{keywordflow}{return} \hyperlink{class_dictionnaire_af199a172c623826621b6df871ecb5aed}{dico}.contains(mot);
+00083         \}
+00084         
+\hypertarget{dictionnaire__hash_8hpp_source_l00089}{}\hyperlink{class_dictionnaire_add484040376d8e35b086df1222f5dc03}{00089}         \textcolor{keywordtype}{void} \hyperlink{class_dictionnaire_add484040376d8e35b086df1222f5dc03}{ajouterMot}(\textcolor{keywordtype}{string} mot)\{
+00090             \hyperlink{class_dictionnaire_af199a172c623826621b6df871ecb5aed}{dico}.\hyperlink{class_tree_string_ab61ae2b5bdba5d2d7d3a7f170a1d78e5}{put}(mot,1);
+00091         \}   
+00092 
+\hypertarget{dictionnaire__hash_8hpp_source_l00098}{}\hyperlink{class_dictionnaire_a8d1de380d1b5776234c94a313f0f521e}{00098}         \textcolor{keywordtype}{void} \hyperlink{class_dictionnaire_a8d1de380d1b5776234c94a313f0f521e}{associerMot}(\textcolor{keywordtype}{string} mot)\{
+00099             \hyperlink{class_dictionnaire_af199a172c623826621b6df871ecb5aed}{dico}.\hyperlink{class_tree_string_ab61ae2b5bdba5d2d7d3a7f170a1d78e5}{put}(mot,\hyperlink{class_dictionnaire_af199a172c623826621b6df871ecb5aed}{dico}.get(mot)+1);
+00100         \}
+00101         
+\hypertarget{dictionnaire__hash_8hpp_source_l00107}{}\hyperlink{class_dictionnaire_a9eb8f3eec4f1b666dca15db7142d8d35}{00107}         \textcolor{keywordtype}{int} \hyperlink{class_dictionnaire_a9eb8f3eec4f1b666dca15db7142d8d35}{valeurAssociee}(\textcolor{keywordtype}{string} mot)\{
+00108             \textcolor{keywordflow}{try}\{
+00109                 \textcolor{keywordflow}{return} \hyperlink{class_dictionnaire_af199a172c623826621b6df871ecb5aed}{dico}.get(mot);;
+00110             \}\textcolor{keywordflow}{catch}(\hyperlink{class_hashtable_exception}{HashtableException} e)\{
+00111                 \textcolor{keywordflow}{return} 0;
+00112             \}
+00113         \}
+00114                 
+\hypertarget{dictionnaire__hash_8hpp_source_l00119}{}\hyperlink{class_dictionnaire_a087c9d8cf97ab57e9672d2648aeba80f}{00119}         \textcolor{keywordtype}{void} \hyperlink{class_dictionnaire_a087c9d8cf97ab57e9672d2648aeba80f}{plusFrequentes}(pair<string,int> *frequences)\{
+00120             forward\_list<pair<string, int>> pairs;
+00121             \textcolor{comment}{// on récupère les mots avec leurs fréquences}
+00122             \hyperlink{class_dictionnaire_af199a172c623826621b6df871ecb5aed}{dico}.getPairs(pairs);
+00123             \textcolor{comment}{// on tri la liste}
+00124             pairs.sort(&\hyperlink{dictionnaire__hash_8hpp_a7335ea62aecc32d159584bba8bb1fbd2}{triPair}); \textcolor{comment}{// complexité : n(log(n))}
+00125             \textcolor{keyword}{auto} it\_pairs = pairs.begin();
+00126             \textcolor{keywordtype}{int} i = 0;
+00127             \textcolor{comment}{// on met les dix premières pairs dans le tableau}
+00128             \textcolor{keywordflow}{while}(i<10 and pairs.end() != it\_pairs)\{
+00129                 frequences[i++] = *it\_pairs;
+00130                 ++it\_pairs;
+00131             \}
+00132         \}
+00133 \};
+00134 
+\hypertarget{dictionnaire__hash_8hpp_source_l00138}{}\hyperlink{dictionnaire__hash_8hpp_a9f9fe4e9cebe86142ae9312c8ea4d458}{00138} \textcolor{keyword}{template}<> \textcolor{keywordtype}{unsigned} \hyperlink{dictionnaire__hash_8hpp_a9f9fe4e9cebe86142ae9312c8ea4d458}{computehash<string>}(\textcolor{keywordtype}{string} element)\{
+00139     \textcolor{comment}{// calcul de la clé de hachage en utilisant fonction fournie par API}
+00140     std::hash<string> hashcalculator;
+00141     \textcolor{keywordflow}{return} hashcalculator(element);
+00142 \}
+00143 
+00144 \textcolor{preprocessor}{#endif // DICTIONNAIRE\_HPP}
+\end{DoxyCode}

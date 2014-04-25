@@ -1,0 +1,139 @@
+\hypertarget{class_tree_string}{\section{Tree\-String Class Reference}
+\label{class_tree_string}\index{Tree\-String@{Tree\-String}}
+}
+
+
+\hyperlink{class_tree}{Tree} is a recursive structure using nodes.  
+
+
+
+
+{\ttfamily \#include $<$treestring.\-hpp$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_tree_string_a13117ec068109c174402c8f60597f243}{Tree\-String} ()
+\item 
+\hyperlink{class_tree_string_ae522f28db152cfe1376ca74f4d861fa7}{Tree\-String} (const \hyperlink{class_tree_string}{Tree\-String} \&other)
+\item 
+\hyperlink{class_tree_string_ad4672cc528918926c95098738924f3d2}{$\sim$\-Tree\-String} ()
+\item 
+int \hyperlink{class_tree_string_ac9ce25eae04196336cd8ac83ec5cb9b6}{height} ()
+\item 
+void \hyperlink{class_tree_string_ab61ae2b5bdba5d2d7d3a7f170a1d78e5}{put} (const string \&word)
+\item 
+string \hyperlink{class_tree_string_aed814ffed425fac5893e5a74f641977b}{to\-String} ()
+\item 
+void \hyperlink{class_tree_string_a51187eb2f3f6ec062a6709ce40b0234f}{get\-Words} (forward\-\_\-list$<$ string $>$ \&list)
+\item 
+void \hyperlink{class_tree_string_abbea8323b70edd4ac271de19317ac140}{get\-Words\-Frequencies} (forward\-\_\-list$<$ pair$<$ string, int $>$$>$ \&words)
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_node}{Node} \hyperlink{class_tree_string_a370851bf8faefb8655a188994715ed31}{\-\_\-root}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\hyperlink{class_tree}{Tree} is a recursive structure using nodes. 
+
+A root value and subtrees of children, represented as a set of linked nodes. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_tree_string_a13117ec068109c174402c8f60597f243}{\index{Tree\-String@{Tree\-String}!Tree\-String@{Tree\-String}}
+\index{Tree\-String@{Tree\-String}!TreeString@{Tree\-String}}
+\subsubsection[{Tree\-String}]{\setlength{\rightskip}{0pt plus 5cm}Tree\-String\-::\-Tree\-String (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_tree_string_a13117ec068109c174402c8f60597f243}
+First node of the tree Default constructor \hypertarget{class_tree_string_ae522f28db152cfe1376ca74f4d861fa7}{\index{Tree\-String@{Tree\-String}!Tree\-String@{Tree\-String}}
+\index{Tree\-String@{Tree\-String}!TreeString@{Tree\-String}}
+\subsubsection[{Tree\-String}]{\setlength{\rightskip}{0pt plus 5cm}Tree\-String\-::\-Tree\-String (
+\begin{DoxyParamCaption}
+\item[{const {\bf Tree\-String} \&}]{other}
+\end{DoxyParamCaption}
+)}}\label{class_tree_string_ae522f28db152cfe1376ca74f4d861fa7}
+Copy constructor \hypertarget{class_tree_string_ad4672cc528918926c95098738924f3d2}{\index{Tree\-String@{Tree\-String}!$\sim$\-Tree\-String@{$\sim$\-Tree\-String}}
+\index{$\sim$\-Tree\-String@{$\sim$\-Tree\-String}!TreeString@{Tree\-String}}
+\subsubsection[{$\sim$\-Tree\-String}]{\setlength{\rightskip}{0pt plus 5cm}Tree\-String\-::$\sim$\-Tree\-String (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_tree_string_ad4672cc528918926c95098738924f3d2}
+Destructor, destroy the whole tree 
+
+\subsection{Member Function Documentation}
+\hypertarget{class_tree_string_a51187eb2f3f6ec062a6709ce40b0234f}{\index{Tree\-String@{Tree\-String}!get\-Words@{get\-Words}}
+\index{get\-Words@{get\-Words}!TreeString@{Tree\-String}}
+\subsubsection[{get\-Words}]{\setlength{\rightskip}{0pt plus 5cm}void Tree\-String\-::get\-Words (
+\begin{DoxyParamCaption}
+\item[{forward\-\_\-list$<$ string $>$ \&}]{list}
+\end{DoxyParamCaption}
+)}}\label{class_tree_string_a51187eb2f3f6ec062a6709ce40b0234f}
+Put each word in a list The list must be initialized ! 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em list} & List containing string for each word stored in \hyperlink{class_tree}{Tree} \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_tree_string_abbea8323b70edd4ac271de19317ac140}{\index{Tree\-String@{Tree\-String}!get\-Words\-Frequencies@{get\-Words\-Frequencies}}
+\index{get\-Words\-Frequencies@{get\-Words\-Frequencies}!TreeString@{Tree\-String}}
+\subsubsection[{get\-Words\-Frequencies}]{\setlength{\rightskip}{0pt plus 5cm}void Tree\-String\-::get\-Words\-Frequencies (
+\begin{DoxyParamCaption}
+\item[{forward\-\_\-list$<$ pair$<$ string, int $>$$>$ \&}]{words}
+\end{DoxyParamCaption}
+)}}\label{class_tree_string_abbea8323b70edd4ac271de19317ac140}
+Get a list of all words stored in \hyperlink{class_tree}{Tree} and their frequencies, i.\-e. how times a word was added 
+\begin{DoxyParams}{Parameters}
+{\em int\mbox{]}} & list List of pair containing for each word in \hyperlink{class_tree}{Tree} his frequency \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_tree_string_ac9ce25eae04196336cd8ac83ec5cb9b6}{\index{Tree\-String@{Tree\-String}!height@{height}}
+\index{height@{height}!TreeString@{Tree\-String}}
+\subsubsection[{height}]{\setlength{\rightskip}{0pt plus 5cm}int Tree\-String\-::height (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_tree_string_ac9ce25eae04196336cd8ac83ec5cb9b6}
+The height of the tree 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt out}  & {\em hgt} & Height of the tree \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_tree_string_ab61ae2b5bdba5d2d7d3a7f170a1d78e5}{\index{Tree\-String@{Tree\-String}!put@{put}}
+\index{put@{put}!TreeString@{Tree\-String}}
+\subsubsection[{put}]{\setlength{\rightskip}{0pt plus 5cm}void Tree\-String\-::put (
+\begin{DoxyParamCaption}
+\item[{const string \&}]{word}
+\end{DoxyParamCaption}
+)}}\label{class_tree_string_ab61ae2b5bdba5d2d7d3a7f170a1d78e5}
+Put a word in the tree 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em word} & New element to put into the tree \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_tree_string_aed814ffed425fac5893e5a74f641977b}{\index{Tree\-String@{Tree\-String}!to\-String@{to\-String}}
+\index{to\-String@{to\-String}!TreeString@{Tree\-String}}
+\subsubsection[{to\-String}]{\setlength{\rightskip}{0pt plus 5cm}string Tree\-String\-::to\-String (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_tree_string_aed814ffed425fac5893e5a74f641977b}
+Get a string representation of the \hyperlink{class_tree}{Tree} 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt out}  & {\em desc} & A string reprensation of the \hyperlink{class_tree}{Tree} where each \hyperlink{class_node}{Node} tag is separated by a comma \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{class_tree_string_a370851bf8faefb8655a188994715ed31}{\index{Tree\-String@{Tree\-String}!\-\_\-root@{\-\_\-root}}
+\index{\-\_\-root@{\-\_\-root}!TreeString@{Tree\-String}}
+\subsubsection[{\-\_\-root}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Node} Tree\-String\-::\-\_\-root\hspace{0.3cm}{\ttfamily [private]}}}\label{class_tree_string_a370851bf8faefb8655a188994715ed31}
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+src/\hyperlink{treestring_8hpp}{treestring.\-hpp}\end{DoxyCompactItemize}
