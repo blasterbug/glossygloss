@@ -41,32 +41,38 @@ using namespace std;
 
 
  
- int main(){
+ int main(int argc,const char** argv){
+
+	if(2 != argc){
+		perror("Bad arguments!");
+		exit(1);
+	}
 
 	Dictionnaire dico = Dictionnaire();	
-	dico.ajouterMot("mot");
-	dico.ajouterMot("test");
-	dico.associerMot("test");
-	dico.ajouterMot("bla");
-	dico.ajouterMot("truc");
-	dico.ajouterMot("chien");
-	dico.ajouterMot("chat");
-	dico.ajouterMot("banane");
-	dico.ajouterMot("sac");
-	dico.ajouterMot("swag");
-	dico.ajouterMot("mortel");
-	dico.ajouterMot("lapin");
-	dico.associerMot("banane");
-	dico.associerMot("chien");
-	dico.associerMot("chien");
-	dico.associerMot("chien");
-	dico.associerMot("chat");
-	dico.associerMot("mot");
-	dico.associerMot("mortel");
-	pair<string,int>* freq = new std::pair<string,int>[10];
-	dico.plusFrequentes(freq);
-	cout<<freq<<endl<<&dico<<endl;
 	
+	fstream file;
+	string word;
+	file.open(argv[1], ios::in);
+	int j=0;
+	cout<<"Fichier ouvert, début de la lecture"<<endl;
+	while(not file.eof()){
+		file >> word;
+		if(dico.contientMot(word)){
+			dico.associerMot(word);
+		}
+		else{
+			dico.ajouterMot(word);
+		}
+		++j;
+	}
+	file.close();
+	cout<<"Lecture terminé "<<j<<" mots ont été ajoutés"<<endl;
+
+	pair<string,int>* freq = new pair<string,int>[10];
+
+	cout<<"Récupération des mots les plus fréquents : "<<endl;
+	dico.plusFrequentes(freq);
+	cout<<"Test"<<endl;
 	for(int i=0;i<10;++i){
 		cout<<freq[i].first<<" : "<<freq[i].second<<endl;
 	}

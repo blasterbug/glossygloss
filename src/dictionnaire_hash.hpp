@@ -48,7 +48,7 @@ class Dictionnaire{
 		/**
 		 * Fonction basique d'échange
 		 */
-		void echanger(std::pair<string,int>* freq, int i){			
+		void echanger(std::pair<string,int>*freq, int i){			
 			std::pair<string,int> tmp = freq[i];
 			freq[i]=freq[i+1];
 			freq[i+1]=tmp;
@@ -81,7 +81,7 @@ class Dictionnaire{
 		 * @param[in] valeur la valeur à ajouter
 		 * @param[in] nb le nombre de mots déjà présent dans le tableau
 		 */
-		void ajoutTrie(std::pair<string,int>* freq,std::pair<string,int> valeur,int* nb ){						
+		void ajoutTrie(std::pair<string,int> *freq,std::pair<string,int> valeur,int* nb ){						
 			if(*nb<9){//si il y a moins de 9 occurences dans le tableau
 				freq[*nb] = valeur;//on ajoute le mot sans soucier de l'ordre
 				++(*nb);
@@ -171,10 +171,10 @@ class Dictionnaire{
 		 * Fonction qui retourne les 10 mots les plus fréquents
 		 * @param[out] frequences, tableau des paires<mots,occurences> les plus fréquents
 		 */
-		void plusFrequentes(std::pair<string,int>* frequences){
+		void plusFrequentes(std::pair<string,int> *frequences){
 			int nb = 0;
 			std::vector<string> mots(0);
-			dico.getAllKeys(&mots);//on stocke toutes les clés de la table
+			dico.getAllKeys(mots);//on stocke toutes les clés de la table
 			for(string mot : mots){//puis on les ajoutes si nécessaire.
 				ajoutTrie(frequences,std::pair<string,int>(mot,dico.get(mot)), &nb); 
 			}
@@ -186,7 +186,7 @@ class Dictionnaire{
  */
 template<> unsigned computehash<string>(string element){
 	// calcul de la clé de hachage en utilisant fonction fournie par API
-	hash<string> hashcalculator;
+	std::hash<string> hashcalculator;
 	return hashcalculator(element);
 }
 

@@ -45,14 +45,63 @@ class Dictionnaire{
 	private :
 		TreeString dico;
 
-		bool cmp(const pair<string,int> &a, const pair<string,int> &b){
-			 return (a.second<b.second);
+		/**
+		 * Fonction basique d'échange
+		 */
+		void echanger(std::pair<string,int>* freq, int i){			
+			std::pair<string,int> tmp = freq[i];
+			freq[i]=freq[i+1];
+			freq[i+1]=tmp;
+		}
+		
+		/**
+		 * Fonction basique de tri à bulle
+		 */
+		void triABulle(std::pair<string,int>* tableau, int longueur)
+		{
+		   int i;
+		   bool permutation;
+		   do{
+			  permutation = false;
+			  for(i=0; i<longueur-1; i++){
+				 if(tableau[i].second<tableau[i+1].second){
+					echanger(tableau, i);
+					permutation = true;
+				 }
+			  }
+			  longueur--;
+		   }
+		   while(permutation);
+		}
+		
+		
+		/**
+		 * Fonction privée qui ajoute si nécessaire un mot dans la table des occurences
+		 * @param[in] freq le tableau d'occurences
+		 * @param[in] valeur la valeur à ajouter
+		 * @param[in] nb le nombre de mots déjà présent dans le tableau
+		 */
+		void ajoutTrie(std::pair<string,int>* freq,std::pair<string,int> valeur){						
+			int i=0;
+			int j=10;
+			while(valeur.second<freq[i].second and i<10){//on parcours le tableau jusqu'à trouver une occurence inférieur 
+				++i;									//au mot que l'on souhaite ajouter
+			}
+			if(valeur.second>=freq[i].second){//si il en existe une
+				//std::pair<string,int> tmp = freq[i];
+			
+				//~ for(int j = i+1;j<=9;++j){//puis on décale toutes les valeurs
+					//~ std::pair<string,int> tmp2=freq[j];
+					//~ freq[j]=tmp;
+					//~ tmp=tmp2;
+				//~ }
+				while(j<i){
+					freq[--j] = freq[j];
+				}
+				freq[i] = valeur;	//on ajoute le mot
+			}
 		}
 
-		/*
-		template< class Compare >
-		void sort( Compare comp );
-		*/
 
 	public :
 	
@@ -127,12 +176,9 @@ class Dictionnaire{
 		void plusFrequentes(std::pair<string,int>* frequences){
 			forward_list<pair<string,int>> words;
 			dico.getWordsFrequencies(words);
-			words.sort(cmp);
-			int i=0;
 			auto it = words.begin();
-			while(it!=words.end() and i<10){
-				frequences[i]=*it;
-				++i;
+			while(it!=words.end()){
+				ajoutTrie(frequences,*it); 
 				++it;
 			}
 		}	
