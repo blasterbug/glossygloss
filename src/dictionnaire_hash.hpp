@@ -193,7 +193,6 @@ class Dictionnaire{
 				ajoutTrie(frequences,std::pair<string,int>(mot,dico.get(mot)), &nb); 
 			}
 		}	
-				
 };
 /**
  * Fonction pour calculer les clés de hashage 

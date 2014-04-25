@@ -35,7 +35,6 @@
 #ifndef TREE_HPP
 #define TREE_HPP
 
-#include <cassert>
 #include <string>
 //#include <list> // less efficiant
 #include <forward_list>

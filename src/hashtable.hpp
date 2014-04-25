@@ -54,7 +54,7 @@
 #include <vector> 
 
 // will desactive cassert
-//#define NDEBUG
+#define NDEBUG
 
 /**
  * Fonction you must define when you're using Hashable
