@@ -71,8 +71,8 @@ class Dictionnaire{
 	
 		/**
 		 * Fonction qui renvoie vrai le mot est présent dans le Dictionnaire
-		 * @param[in] mot, le mot à tester
-		 * @param[out] bool, vrai si présent, faux sinon.
+		 * @param[in] mot le mot à tester
+		 * @param[out] bool vrai si présent, faux sinon.
 		 */
 		bool contientMot(string mot){
 			bool trouve=false;
@@ -89,7 +89,7 @@ class Dictionnaire{
 		
 		/**
 		 * Fonction qui ajoute un mot non présent dans le dictionnaire
-		 * @param[in] mot, le mot à ajouter
+		 * @param[in] mot le mot à ajouter
 		 */
 		void ajouterMot(string mot){
 			dico.put(mot);
@@ -97,7 +97,7 @@ class Dictionnaire{
 
 		/**
 		 * Fonction qui modifie la valeur d'un mot présent dans le dictionnaire
-		 * @param[in] mot, le mot à modifier
+		 * @param[in] mot le mot à modifier
 		 * @param[out] bool Renvoyer faux si le mot n'est pas présent, sinon vrai
 		 */
 		void associerMot(string mot){
