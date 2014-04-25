@@ -64,14 +64,25 @@ int main(int argc,const char** argv){
 	}
 	
 	file.close();
-	cout << "height : " << storage.height() << endl;
+
+	cout << "Tree nodes : " << storage.toString() << endl;
+	cout << "Tree height : " << storage.height() << endl;
 	forward_list<string> words;
 	storage.getWords(words);
-	cout << "Word in tree :" << endl;
+	cout << "Word in tree :" << words.front();
+	words.pop_front();
 	for(string word : words){
-		cout << word << endl;
+		cout << ", " << word;
 	}
-	cout << storage.toString() << endl;
+	cout << endl;
+	forward_list<pair<string, int>> freq;
+	storage.getWordsFrequencies(freq);
+	cout << "Frequencies words : " << endl;
+	cout << "	" << freq.front().first << " : " << freq.front().second << endl;
+	freq.pop_front();
+	for(pair<string, int> freqWord : freq){
+		cout << "	" << freqWord.first << " : " << freqWord.second << endl;
+	}
 	return 0;
 }
 

@@ -370,7 +370,7 @@ class TreeString {
 		 * @param[int] list List of pair containing for each word in Tree
 		 * his frequency
 		 */
-		getWordsFrequencies(forward_list<pair<string,int>> words){
+		void getWordsFrequencies(forward_list<pair<string,int>> words){
 			// get the list of all words stored
 			_root.toFrequencedList(words, string());
 		}
