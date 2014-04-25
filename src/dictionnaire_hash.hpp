@@ -32,7 +32,7 @@
  * $URL$ http://www.github.com/blasterbug
  */
  
- #include "../hashtable.hpp"
+ #include "hashtable.hpp"
  #include <utility>
  
 #ifndef DICTIONNAIRE_HPP
@@ -131,7 +131,6 @@ class Dictionnaire{
 		/**
 		 * Fonction qui ajoute un mot non présent dans le dictionnaire
 		 * @param[in] mot, le mot à ajouter
-		 * @param[in] v, la valeur associée
 		 */
 		void ajouterMot(string mot){
 			dico.put(mot,1);
@@ -140,7 +139,6 @@ class Dictionnaire{
 		/**
 		 * Fonction qui modifie la valeur d'un mot présent dans le dictionnaire
 		 * @param[in] mot, le mot à modifier
-		 * @param[in] v, la valeur à modifier
 		 * @param[out] bool Renvoyer faux si le mot n'est pas présent, sinon vrai
 		 */
 		bool associerMot(string mot){
@@ -151,21 +149,7 @@ class Dictionnaire{
 			else {
 				return false;
 			}
-		}	
-
-		/**
-		 * Fonction qui supprime un mot présent dans le dictionnaire
-		 * @param[in] mot, le mot à supprimer
-		 * @param[out] bool Renvoie vrai si le mot a été supprimé, sinon faux
-		 */
-		bool supprimerMot(string mot){
-			try{
-				dico.remove(mot);
-				return true;
-			}catch(HashException e){
-				return false;
-			}
-		}	
+		}		
 		
 		/**
 		 * Fonction qui récupère la valeur associée au mot
@@ -197,5 +181,13 @@ class Dictionnaire{
 		}	
 				
 };
+/**
+ * Fonction pour calculer les clés de hashage 
+ */
+template<> unsigned computehash<string>(string element){
+	// calcul de la clé de hachage en utilisant fonction fournie par API
+	hash<string> hashcalculator;
+	return hashcalculator(element);
+}
 
 #endif // DICTIONNAIRE_HPP

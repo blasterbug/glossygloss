@@ -34,15 +34,12 @@
 #include <functional>
 #include <iostream>
 #include <fstream> // Permet de lire et enregistrer des données dans un fichier
-#include "dictionnaire/dictionnaire.hpp" //dictionnaire utilisant la hashtable
+//#include "dictionnaire_hash.hpp" //dictionnaire utilisant la hashtable
+#include "dictionnaire_arbre.hpp"  //dictionnaire utilisant l'arbre
 
 using namespace std;
- 
-template<> unsigned computehash<string>(string element){
-	// calcul de la clé de hachage en utilisant fonction fournie par API
-	hash<string> hashcalculator;
-	return hashcalculator(element);
-}
+
+
  
  int main(){
 
@@ -72,6 +69,6 @@ template<> unsigned computehash<string>(string element){
 	
 	for(int i=0;i<10;++i){
 		cout<<freq[i].first<<" : "<<freq[i].second<<endl;
-	}git 
+	}
 	return 0;
 }
