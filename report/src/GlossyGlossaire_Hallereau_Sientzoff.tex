@@ -6,6 +6,7 @@
 \usepackage{makeidx}
 \usepackage{graphicx}
 \usepackage{tikz}
+\usepackage{hyperref}
 
 \author{François \textsc{Hallereau} \\ Benjamin \textsc{Sientzoff}}
 \title{Dictionnaire}
@@ -45,18 +46,19 @@ Puis pour l'exécution :
 
 \newpage
 
-\section{Le \emph{dictionnache}}
+\section{Le \emph{dictionhache}}
 
-		\begin{figure}[!h]
-			\hspace{-2cm}
+		\begin{figure}[h]
+			\hspace{-1.8cm}
 			\input{class_hashtable.tex}
-			\caption{Diagramme UML des classes pour le chaînage simple.}
-			\label{chaine_1_uml}
+			\caption{Diagramme UML de classes pour le dictionnaire utilisant la \emph{Hashtable}.}
+			\label{hashtable_uml}
 		\end{figure}
 		
-	\paragraph{}{Cette version reprend la table de hachage du précédent tp tout en précisant les types de données qui sont ici : une chaine de caractères pour la clé et un entier pour la valeur associée au mot. \\
-Pour cette implémentation, les fonctions d'ajout, de modification reprennent les fonctions déjà existantes de la table de hachage.}
-	\paragraph{}{La fonction qui renvoie les 10 mots les plus fréquents tri les mots de la table de hachage puis récupère les 10 premier.}
+	\paragraph{}{Cette version reprend la table de hachage du précédent projet tout en précisant les types de données qui sont ici : une chaîne de caractères pour la clé et un entier pour la valeur associée au mot. Ce qui permet de stocker la fréquence du mot en question. \\
+Pour cette implémentation, les fonctions d'ajout et de modification reprennent les fonctions déjà existantes de la table de hachage. De plus une documentation est fournit au format PDF.}
+
+	\paragraph{calcul des}{La fonction qui renvoie les dix mots les plus fréquents tri les mots de la table de hachage puis récupère les dix premiers éléments.}
 	
 	
 \newpage 
@@ -64,15 +66,15 @@ Pour cette implémentation, les fonctions d'ajout, de modification reprennent le
 \section{L'\emph{Arbramots}}
 
 	\paragraph{}{
-Le dictionnaire utilise la version de l'arbre implémenté dans la classe TreeString.
+Le dictionnaire utilise la version de l'arbre implémenté dans la classe \textit{TreeString}.
 Les fonctions d'ajout et de modification sont construite de la même manière puisque l'arbre gère nativement la modification de la valeur associée au mot.
-La fonction valeurAssociee fonctionne de la manière suivante : elle récupère tous les couples <mot,occurences> contenu dans l'arbre puis renvoie la valeur associée du mot passé en paramètre.
+La fonction \textit{valeurAssociee} fonctionne de la manière suivante : elle récupère tous les couples $<mot,occurences>$ contenu dans l'arbre puis renvoie la valeur associée du mot passé en paramètre.
 
 Lors des tests, nous avons put remarquer que le temps d’exécution était nettement plus supérieur comparé à la version utilisant la table de hachage. 
 
 Et pour cause, la fonction contientMot() de l'arbre utilise plus de ressource que celle de la table de hachage. De plus, l'arbre a été conçu pour qu'il n'y est pas besoin d'utiliser cette fonction à chaque ajout. 
 
-On aurait donc très bien put n'utiliser que la fonction ajouterMot() même dans le cas ou le mot est déjà présent. Mais nous avons décider de garder les fonctions ajouterMot et associerMot() dans un soucis du respect du cahier des charges.
+On aurait donc très bien put n'utiliser que la fonction \textit{ajouterMot} même dans le cas ou le mot est déjà présent. Mais nous avons décider de garder les fonctions \textit{ajouterMot} et \textit{associerMot} dans un soucis du respect du cahier des charges.
 
 Pour la fonction qui récupère les 10 mots les plus fréquents, elle est semblable à celle de la table de hachage. La seule différence étant la fonctions qui permet de récupérer tous les mots contenus dans la structure.
 }
@@ -80,7 +82,7 @@ Pour la fonction qui récupère les 10 mots les plus fréquents, elle est sembla
   
 \section*{Conclusion}
 \paragraph{}{
-Dans ce projet, on remarque que la table de hachage à un temps d'exécution inférieur à celui de l'arbre. en effet la table de hachage manipule directement des mots or l'arbre utilise des caractères qui nécessite d'être concaténé pour formé une chaine. 
+Dans ce projet, on remarque que la table de hachage à un temps d'exécution inférieur à celui de l'arbre. en effet la table de hachage manipule directement des mots or l'arbre utilise des caractères qui nécessite d'être concaténé pour former une chaine. 
 }
 \addcontentsline{toc}{section}{\protect\numberline{}Conclusion}
 
